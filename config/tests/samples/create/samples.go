@@ -182,6 +182,7 @@ func waitForReadySingleResource(t *Harness, u *unstructured.Unstructured) {
 		if u.GetKind() == "Secret" { // If unstruct is a Secret and it is found on the API server, then the Secret is ready
 			return true, nil
 		}
+		logger.Info("YUWEN: ", "spec", u.Object["spec"])
 		if u.Object["status"] == nil {
 			logger.Info("resource does not yet have status", "kind", u.GetKind(), "name", u.GetName())
 			return false, nil
