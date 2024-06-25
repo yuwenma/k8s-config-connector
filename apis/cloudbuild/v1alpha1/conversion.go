@@ -18,6 +18,7 @@ import (
 	"fmt"
 
 	cloudbuildpb "cloud.google.com/go/cloudbuild/apiv1/v2/cloudbuildpb"
+	refv1beta1 "github.com/GoogleCloudPlatform/k8s-config-connector/apis/refs/v1beta1"
 )
 
 func Convert_WorkerPool_API_v1_To_KRM_status(in *cloudbuildpb.WorkerPool, out *CloudBuildWorkerPoolStatus) error {
@@ -61,10 +62,14 @@ func Convert_NetworkConfig_API_v1_To_KRM(in *cloudbuildpb.PrivatePoolV1Config_Ne
 	case cloudbuildpb.PrivatePoolV1Config_NetworkConfig_PUBLIC_EGRESS:
 		out.EgressOption = LazyPtr("PUBLIC_EGRESS")
 	default:
-		return fmt.Errorf("unknown egressoption %s", out.EgressOption)
+		return fmt.Errorf("unknown egressoption %s", in.EgressOption)
 	}
 
 	out.PeeredNetworkIPRange = PtrTo(in.GetPeeredNetworkIpRange())
+	out.PeeredNetworkRef = refv1beta1.ComputeNetworkRef{
+		External: in.GetPeeredNetwork(),
+	}
+
 	return nil
 }
 
@@ -131,7 +136,7 @@ func Convert_PrivatePoolV1Config_NetworkConfig_KRM_To_API_v1(in *PrivatePoolV1Co
 	case "PUBLIC_EGRESS":
 		out.EgressOption = 2
 	default:
-		return fmt.Errorf("unknown egressoption %s", obj.EgressOption)
+		return fmt.Errorf("unknown egressoption %s", ValueOf(obj.EgressOption))
 	}
 
 	if obj.PeeredNetworkRef.External != "" {
