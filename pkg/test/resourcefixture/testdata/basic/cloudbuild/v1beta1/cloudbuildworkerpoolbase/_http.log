@@ -1,0 +1,314 @@
+GET https://cloudbuild.googleapis.com/v1/projects/${projectId}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}?%24alt=json%3Benum-encoding%3Dint
+Content-Type: application/json
+x-goog-request-params: location=us-central1
+
+404 Not Found
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND"
+  }
+}
+
+---
+
+POST https://cloudbuild.googleapis.com/v1/projects/${projectId}/locations/us-central1/workerPools?%24alt=json%3Benum-encoding%3Dint&workerPoolId=cloudbuildworkerpool-${uniqueId}
+Content-Type: application/json
+x-goog-request-params: location=us-central1
+
+{
+  "name": "projects/${projectId}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}",
+  "privatePoolV1Config": {
+    "workerConfig": {
+      "diskSizeGb": "100",
+      "machineType": "e2-medium"
+    }
+  }
+}
+
+200 OK
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "metadata": {
+    "@type": "type.googleapis.com/google.devtools.cloudbuild.v1.CreateWorkerPoolOperationMetadata",
+    "createTime": "2024-04-01T12:34:56.123456Z",
+    "workerPool": "projects/${projectId}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}"
+  },
+  "name": "projects/${projectNumber}/locations/us-central1/operations/${operationID}"
+}
+
+---
+
+GET https://cloudbuild.googleapis.com/v1/projects/${projectNumber}/locations/us-central1/operations/${operationID}
+Content-Type: application/json
+x-goog-request-params: name=projects%2F${projectNumber}%2Flocations%2Fus-central1%2Foperations%2F${operationID}
+
+200 OK
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "done": true,
+  "metadata": {
+    "@type": "type.googleapis.com/google.devtools.cloudbuild.v1.CreateWorkerPoolOperationMetadata",
+    "completeTime": "2024-04-01T12:34:56.123456Z",
+    "createTime": "2024-04-01T12:34:56.123456Z",
+    "workerPool": "projects/${projectId}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}"
+  },
+  "name": "projects/${projectNumber}/locations/us-central1/operations/${operationID}",
+  "response": {
+    "@type": "type.googleapis.com/google.devtools.cloudbuild.v1.WorkerPool",
+    "createTime": "2024-04-01T12:34:56.123456Z",
+    "etag": "abcdef0123A=",
+    "name": "projects/${projectNumber}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}",
+    "privatePoolV1Config": {
+      "networkConfig": {
+        "egressOption": "PUBLIC_EGRESS"
+      },
+      "workerConfig": {
+        "diskSizeGb": "100",
+        "machineType": "e2-medium"
+      }
+    },
+    "state": "RUNNING",
+    "uid": "111111111111111111111",
+    "updateTime": "2024-04-01T12:34:56.123456Z"
+  }
+}
+
+---
+
+GET https://cloudbuild.googleapis.com/v1/projects/${projectId}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}?%24alt=json%3Benum-encoding%3Dint
+Content-Type: application/json
+x-goog-request-params: location=us-central1
+
+200 OK
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "createTime": "2024-04-01T12:34:56.123456Z",
+  "etag": "abcdef0123A=",
+  "name": "projects/${projectNumber}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}",
+  "privatePoolV1Config": {
+    "networkConfig": {
+      "egressOption": 2
+    },
+    "workerConfig": {
+      "diskSizeGb": "100",
+      "machineType": "e2-medium"
+    }
+  },
+  "state": 2,
+  "uid": "111111111111111111111",
+  "updateTime": "2024-04-01T12:34:56.123456Z"
+}
+
+---
+
+PATCH https://cloudbuild.googleapis.com/v1/projects/${projectId}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}?%24alt=json%3Benum-encoding%3Dint&updateMask=privatePoolV1Config.workerConfig.diskSizeGb%2CprivatePoolV1Config.workerConfig.machineType
+Content-Type: application/json
+x-goog-request-params: location=us-central1
+
+{
+  "etag": "abcdef0123A=",
+  "name": "projects/${projectId}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}",
+  "privatePoolV1Config": {
+    "workerConfig": {
+      "diskSizeGb": "150",
+      "machineType": "e2-highmem-4"
+    }
+  }
+}
+
+200 OK
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "metadata": {
+    "@type": "type.googleapis.com/google.devtools.cloudbuild.v1.UpdateWorkerPoolOperationMetadata",
+    "createTime": "2024-04-01T12:34:56.123456Z",
+    "workerPool": "projects/${projectId}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}"
+  },
+  "name": "projects/${projectNumber}/locations/us-central1/operations/${operationID}"
+}
+
+---
+
+GET https://cloudbuild.googleapis.com/v1/projects/${projectNumber}/locations/us-central1/operations/${operationID}
+Content-Type: application/json
+x-goog-request-params: name=projects%2F${projectNumber}%2Flocations%2Fus-central1%2Foperations%2F${operationID}
+
+200 OK
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "done": true,
+  "metadata": {
+    "@type": "type.googleapis.com/google.devtools.cloudbuild.v1.UpdateWorkerPoolOperationMetadata",
+    "completeTime": "2024-04-01T12:34:56.123456Z",
+    "createTime": "2024-04-01T12:34:56.123456Z",
+    "workerPool": "projects/${projectId}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}"
+  },
+  "name": "projects/${projectNumber}/locations/us-central1/operations/${operationID}",
+  "response": {
+    "@type": "type.googleapis.com/google.devtools.cloudbuild.v1.WorkerPool",
+    "createTime": "2024-04-01T12:34:56.123456Z",
+    "etag": "abcdef0123A=",
+    "name": "projects/${projectNumber}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}",
+    "privatePoolV1Config": {
+      "networkConfig": {
+        "egressOption": "PUBLIC_EGRESS"
+      },
+      "workerConfig": {
+        "diskSizeGb": "150",
+        "machineType": "e2-highmem-4"
+      }
+    },
+    "state": "RUNNING",
+    "uid": "111111111111111111111",
+    "updateTime": "2024-04-01T12:34:56.123456Z"
+  }
+}
+
+---
+
+GET https://cloudbuild.googleapis.com/v1/projects/${projectId}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}?%24alt=json%3Benum-encoding%3Dint
+Content-Type: application/json
+x-goog-request-params: location=us-central1
+
+200 OK
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "createTime": "2024-04-01T12:34:56.123456Z",
+  "etag": "abcdef0123A=",
+  "name": "projects/${projectNumber}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}",
+  "privatePoolV1Config": {
+    "networkConfig": {
+      "egressOption": 2
+    },
+    "workerConfig": {
+      "diskSizeGb": "150",
+      "machineType": "e2-highmem-4"
+    }
+  },
+  "state": 2,
+  "uid": "111111111111111111111",
+  "updateTime": "2024-04-01T12:34:56.123456Z"
+}
+
+---
+
+DELETE https://cloudbuild.googleapis.com/v1/projects/${projectId}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}?%24alt=json%3Benum-encoding%3Dint&allowMissing=true
+Content-Type: application/json
+x-goog-request-params: location=us-central1
+
+200 OK
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "metadata": {
+    "@type": "type.googleapis.com/google.devtools.cloudbuild.v1.DeleteWorkerPoolOperationMetadata",
+    "createTime": "2024-04-01T12:34:56.123456Z",
+    "workerPool": "projects/${projectId}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}"
+  },
+  "name": "projects/${projectNumber}/locations/us-central1/operations/${operationID}"
+}
+
+---
+
+GET https://cloudbuild.googleapis.com/v1/projects/${projectNumber}/locations/us-central1/operations/${operationID}
+Content-Type: application/json
+x-goog-request-params: name=projects%2F${projectNumber}%2Flocations%2Fus-central1%2Foperations%2F${operationID}
+
+200 OK
+Cache-Control: private
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "done": true,
+  "metadata": {
+    "@type": "type.googleapis.com/google.devtools.cloudbuild.v1.DeleteWorkerPoolOperationMetadata",
+    "completeTime": "2024-04-01T12:34:56.123456Z",
+    "createTime": "2024-04-01T12:34:56.123456Z",
+    "workerPool": "projects/${projectId}/locations/us-central1/workerPools/cloudbuildworkerpool-${uniqueId}"
+  },
+  "name": "projects/${projectNumber}/locations/us-central1/operations/${operationID}",
+  "response": {
+    "@type": "type.googleapis.com/google.protobuf.Empty"
+  }
+}
