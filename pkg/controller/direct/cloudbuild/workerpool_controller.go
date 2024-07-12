@@ -53,7 +53,8 @@ const ctrlName = "cloudbuild-controller"
 var _ directbase.Model = &model{}
 
 type model struct {
-	config config.ControllerConfig
+	GcpClient *gcp.Client
+	config    config.ControllerConfig
 }
 
 func (m *model) client(ctx context.Context) (*gcp.Client, error) {
@@ -113,18 +114,23 @@ func (m *model) AdapterForObject(ctx context.Context, reader client.Reader, u *u
 		obj.Spec.PrivatePoolConfig.NetworkConfig.PeeredNetworkRef.External = networkRef.String()
 	}
 
-	// Get CloudBuild GCP client
-	gcpClient, err := m.client(ctx)
-	if err != nil {
-		return nil, err
-	}
-	return &Adapter{
+	newAdapter := &Adapter{
 		resourceID: resourceID,
 		projectID:  projectID,
 		location:   location,
-		gcpClient:  gcpClient,
 		desired:    obj,
-	}, nil
+	}
+	if m.GcpClient != nil {
+		newAdapter.GcpClient = m.GcpClient
+	} else {
+		gcpClient, err := m.client(ctx)
+		if err != nil {
+			return nil, err
+		}
+		m.GcpClient = gcpClient
+		newAdapter.GcpClient = gcpClient
+	}
+	return newAdapter, nil
 }
 
 func (m *model) AdapterForURL(ctx context.Context, url string) (directbase.Adapter, error) {
@@ -135,7 +141,7 @@ type Adapter struct {
 	resourceID string
 	projectID  string
 	location   string
-	gcpClient  *gcp.Client
+	GcpClient  *gcp.Client
 	desired    *krm.CloudBuildWorkerPool
 	actual     *cloudbuildpb.WorkerPool
 }
@@ -148,7 +154,7 @@ func (a *Adapter) Find(ctx context.Context) (bool, error) {
 	}
 
 	req := &cloudbuildpb.GetWorkerPoolRequest{Name: a.fullyQualifiedName()}
-	workerpoolpb, err := a.gcpClient.GetWorkerPool(ctx, req)
+	workerpoolpb, err := a.GcpClient.GetWorkerPool(ctx, req)
 	if err != nil {
 		if IsNotFound(err) {
 			return false, nil
@@ -185,7 +191,7 @@ func (a *Adapter) Create(ctx context.Context, u *unstructured.Unstructured) erro
 		WorkerPoolId: a.resourceID,
 		WorkerPool:   wp,
 	}
-	op, err := a.gcpClient.CreateWorkerPool(ctx, req)
+	op, err := a.GcpClient.CreateWorkerPool(ctx, req)
 	if err != nil {
 		return fmt.Errorf("cloudbuildworkerpool %s creating failed: %w", wp.Name, err)
 	}
@@ -279,7 +285,7 @@ func (a *Adapter) Update(ctx context.Context, u *unstructured.Unstructured) erro
 		WorkerPool: wp,
 		UpdateMask: updateMask,
 	}
-	op, err := a.gcpClient.UpdateWorkerPool(ctx, req)
+	op, err := a.GcpClient.UpdateWorkerPool(ctx, req)
 	if err != nil {
 		return fmt.Errorf("cloudbuildworkerpool %s updating failed: %w", wp.Name, err)
 	}
@@ -302,7 +308,25 @@ func (a *Adapter) Update(ctx context.Context, u *unstructured.Unstructured) erro
 }
 
 func (a *Adapter) Export(ctx context.Context) (*unstructured.Unstructured, error) {
-	return nil, nil
+	if a.actual == nil {
+		return nil, fmt.Errorf("`Find()` not called")
+	}
+	u := &unstructured.Unstructured{}
+
+	wp := &krm.CloudBuildWorkerPool{}
+	mapCtx := &MapContext{}
+	wp.Spec = ValueOf(CloudBuildWorkerPoolSpec_FromProto(mapCtx, a.actual))
+	if mapCtx.Err() != nil {
+		return nil, mapCtx.Err()
+	}
+	wp.Spec.ProjectRef = &refs.ProjectRef{Name: a.projectID}
+	wp.Spec.Location = a.location
+	obj, err := runtime.DefaultUnstructuredConverter.ToUnstructured(wp)
+	if err != nil {
+		return nil, err
+	}
+	u.Object = obj
+	return u, nil
 }
 
 // Delete implements the Adapter interface.
@@ -312,7 +336,7 @@ func (a *Adapter) Delete(ctx context.Context) (bool, error) {
 		return false, err
 	}
 	req := &cloudbuildpb.DeleteWorkerPoolRequest{Name: a.fullyQualifiedName(), AllowMissing: true}
-	op, err := a.gcpClient.DeleteWorkerPool(ctx, req)
+	op, err := a.GcpClient.DeleteWorkerPool(ctx, req)
 	if err != nil {
 		// likely a server bug. worker_pool can be successfully deleted.
 		if !strings.Contains(err.Error(), "(line 12:3): missing \"value\" field") {

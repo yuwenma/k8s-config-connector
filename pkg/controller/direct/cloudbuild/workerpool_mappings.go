@@ -23,6 +23,17 @@ import (
 	refv1beta1 "github.com/GoogleCloudPlatform/k8s-config-connector/apis/refs/v1beta1"
 )
 
+func CloudBuildWorkerPoolSpec_FromProto(mapCtx *MapContext, in *pb.WorkerPool) *krm.CloudBuildWorkerPoolSpec {
+	if in == nil {
+		return nil
+	}
+	out := &krm.CloudBuildWorkerPoolSpec{}
+	out.DisplayName = in.GetDisplayName()
+	out.ResourceID = LazyPtr(in.GetName())
+	out.PrivatePoolConfig = PrivatePoolV1Config_FromProto(mapCtx, in.GetPrivatePoolV1Config())
+	return out
+}
+
 func CloudBuildWorkerPoolObservedState_FromProto(mapCtx *MapContext, in *pb.WorkerPool) *krm.CloudBuildWorkerPoolObservedState {
 	if in == nil {
 		return nil
