@@ -22,9 +22,22 @@ metadata:
     label-one: value-one
 spec:
   replication:
-    userManaged:
-      replicas:
-      - location: us-central1
+    automatic: true
+    auto:
+      customerManagedEncryption:
+        kmsKeyRef:
+          external:
   topics:
     - topicRef:
-        name: topic-${uniqueId}
+        name: topic-2-${uniqueId}
+  annotations:
+    "foo": secretmanagersecret
+    "bar": secretmanagersecret-bar
+  expireTime: "2025-10-02T15:01:23Z"
+  rotation:
+    nextRotationTime: "2025-10-02T15:01:23.045123456Z"
+    rotationPeriod: "3600s"
+  ttl: "3.5s"
+  versionAliases: 
+    "name": "wrench"
+    
