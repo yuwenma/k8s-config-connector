@@ -11,7 +11,23 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+apiVersion: kms.cnrm.cloud.google.com/v1beta1
+kind: KMSKeyRing
+metadata:
+  name: kmskeyring-${uniqueId}
+spec:
+  location: global
+---
+apiVersion: kms.cnrm.cloud.google.com/v1beta1
+kind: KMSCryptoKey
+metadata:
+  name: kmscryptokey-${uniqueId}
+spec:
+  keyRingRef:
+    name: kmskeyring-${uniqueId}
+  purpose: ENCRYPT_DECRYPT
+  importOnly: false
+---
 apiVersion: pubsub.cnrm.cloud.google.com/v1beta1
 kind: PubSubTopic
 metadata:
@@ -37,7 +53,7 @@ spec:
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicyMember
 metadata:
-  name: iampolicymember-${uniqueId}
+  name: iampolicymember-2-${uniqueId}
 spec:
   member: serviceAccount:service-${projectNumber}@gcp-sa-secretmanager.iam.gserviceaccount.com
   role: roles/pubsub.publisher
@@ -45,3 +61,15 @@ spec:
     apiVersion: pubsub.cnrm.cloud.google.com/v1beta1
     kind: PubSubTopic
     name: topic-2-${uniqueId}
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicyMember
+metadata:
+  name: iampolicymember-kms-${uniqueId}
+spec:
+  member: serviceAccount:service-${projectNumber}@gcp-sa-secretmanager.iam.gserviceaccount.com
+  role: roles/cloudkms.cryptoKeyEncrypterDecrypter
+  resourceRef:
+    apiVersion: kms.cnrm.cloud.google.com/v1beta1
+    kind: KMSCryptoKey
+    name: kmscryptokey-${uniqueId}

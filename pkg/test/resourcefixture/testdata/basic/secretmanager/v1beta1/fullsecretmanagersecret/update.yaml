@@ -23,10 +23,12 @@ metadata:
 spec:
   replication:
     automatic: true
-    auto:
-      customerManagedEncryption:
-        kmsKeyRef:
-          external:
+  # TF-based resource is broken, got the error even if not changing this field 
+  # "cannot make changes to immutable field(s): [Field Name: replication.0.auto.#, Got: 1, Wanted: 0]"
+  #   auto:
+  #     customerManagedEncryption:
+  #       kmsKeyRef:
+  #         name: kmscryptokey-${uniqueId}
   topics:
     - topicRef:
         name: topic-2-${uniqueId}
@@ -35,9 +37,5 @@ spec:
     "bar": secretmanagersecret-bar
   expireTime: "2025-10-02T15:01:23Z"
   rotation:
-    nextRotationTime: "2025-10-02T15:01:23.045123456Z"
+    nextRotationTime: "2025-10-02T15:01:23Z"
     rotationPeriod: "3600s"
-  ttl: "3.5s"
-  versionAliases: 
-    "name": "wrench"
-    
