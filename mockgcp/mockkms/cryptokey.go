@@ -105,6 +105,7 @@ func (r *kmsServer) CreateCryptoKey(ctx context.Context, req *pb.CreateCryptoKey
 			ProtectionLevel: createdVersion.ProtectionLevel,
 		}
 	}
+
 	if err := r.storage.Create(ctx, fqn, obj); err != nil {
 		return nil, err
 	}
