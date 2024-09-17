@@ -16,8 +16,10 @@ package bigqueryconnection
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"reflect"
+	"strings"
 
 	krm "github.com/GoogleCloudPlatform/k8s-config-connector/apis/bigqueryconnection/v1alpha1"
 	refs "github.com/GoogleCloudPlatform/k8s-config-connector/apis/refs/v1beta1"
@@ -82,60 +84,19 @@ func (m *model) AdapterForObject(ctx context.Context, reader client.Reader, u *u
 		return nil, fmt.Errorf("error converting to %T: %w", obj, err)
 	}
 
-	projectRef, err := refs.ResolveProject(ctx, reader, obj, obj.Spec.ProjectRef)
-	if err != nil {
-		return nil, err
-	}
-	projectID := projectRef.ProjectID
-	if projectID == "" {
-		return nil, fmt.Errorf("cannot resolve project")
-	}
-	// Get location
-	location := obj.Spec.Location
-
-	// Get desired service-generated ID from spec
-	desiredServiceID := direct.ValueOf(obj.Spec.ResourceID)
-	if desiredServiceID != "" {
-		if _, err := uuid.Parse(desiredServiceID); err != nil {
-			return nil, fmt.Errorf("spec.resourceID should be in a UUID format, got %s ", desiredServiceID)
+	r := &krm.BigQueryConnectionConnectionRef{}
+	if err := r.Resolve(ctx, reader, u); err != nil {
+		if !errors.Is(err, &krm.ErrNoServerID{}) {
+			return nil, fmt.Errorf("BigQueryConnectionConnection %s resolve identifier: %w", u.GetName(), err)
 		}
 	}
-
-	// Get externalReference
-	var id *BigQueryConnectionConnectionIdentity
-	externalRef := direct.ValueOf(obj.Status.ExternalRef)
-	if externalRef != "" {
-		id, err = asID(externalRef)
-		if err != nil {
-			return nil, err
-		}
-
-		if id.Parent.Project != projectID {
-			return nil, fmt.Errorf("BigQueryConnectionConnection %s/%s has spec.projectRef changed, expect %s, got %s",
-				u.GetNamespace(), u.GetName(), id.Parent.Project, projectID)
-		}
-		if id.Parent.Location != location {
-			return nil, fmt.Errorf("BigQueryConnectionConnection %s/%s has spec.location changed, expect %s, got %s",
-				u.GetNamespace(), u.GetName(), id.Parent.Location, location)
-		}
-
-		if desiredServiceID != "" && id.serviceGeneratedID != desiredServiceID {
-			// Service generated ID shall not be reset in the same BigQueryConnectionConnection.
-			// TODO: what if multiple BigQueryConnectionConnection points to the same GCP Connection?
-			return nil, fmt.Errorf("cannot reset `spec.resourceID` to %s, since it has already acquired the Connection %s",
-				desiredServiceID, id.serviceGeneratedID)
-		}
-	} else {
-		id = BuildIDWithServiceGeneratedID(projectID, location, desiredServiceID)
-	}
-
 	// Get bigqueryconnection GCP client
 	gcpClient, err := m.client(ctx)
 	if err != nil {
 		return nil, err
 	}
 	return &Adapter{
-		id:        id,
+		id:        r,
 		gcpClient: gcpClient,
 		desired:   obj,
 	}, nil
@@ -146,7 +107,7 @@ func (m *model) AdapterForURL(ctx context.Context, url string) (directbase.Adapt
 }
 
 type Adapter struct {
-	id        *BigQueryConnectionConnectionIdentity
+	id        *krm.BigQueryConnectionConnectionRef
 	gcpClient *gcp.Client
 	desired   *krm.BigQueryConnectionConnection
 	actual    *bigqueryconnectionpb.Connection
@@ -157,19 +118,19 @@ var _ directbase.Adapter = &Adapter{}
 func (a *Adapter) Find(ctx context.Context) (bool, error) {
 	log := klog.FromContext(ctx).WithName(ctrlName)
 
-	log.V(2).Info("getting BigQueryConnectionConnection", "name", a.id.AsExternalRef())
+	log.V(2).Info("getting BigQueryConnectionConnection", "name", a.desired.Name)
 
-	if a.id.serviceGeneratedID == "" {
+	if a.id.External == "" {
 		// Cannot retrieve the Connection without ServiceGeneratedID, expecting to create a new Connection.
 		return false, nil
 	}
-	req := &bigqueryconnectionpb.GetConnectionRequest{Name: a.id.FullyQualifiedName()}
+	req := &bigqueryconnectionpb.GetConnectionRequest{Name: a.id.External}
 	connectionpb, err := a.gcpClient.GetConnection(ctx, req)
 	if err != nil {
 		if direct.IsNotFound(err) {
 			return false, nil
 		}
-		return false, fmt.Errorf("getting BigQueryConnectionConnection %q: %w", a.id.FullyQualifiedName(), err)
+		return false, fmt.Errorf("getting BigQueryConnectionConnection %q: %w", a.desired.Name, err)
 	}
 
 	a.actual = connectionpb
@@ -180,7 +141,7 @@ func (a *Adapter) Create(ctx context.Context, createOp *directbase.CreateOperati
 	u := createOp.GetUnstructured()
 
 	log := klog.FromContext(ctx).WithName(ctrlName)
-	log.V(2).Info("creating Connection", "name", a.id.AsExternalRef())
+	log.V(2).Info("creating Connection", "name", a.desired.Name)
 	mapCtx := &direct.MapContext{}
 
 	desired := a.desired.DeepCopy()
@@ -190,23 +151,21 @@ func (a *Adapter) Create(ctx context.Context, createOp *directbase.CreateOperati
 	}
 
 	req := &bigqueryconnectionpb.CreateConnectionRequest{
-		Parent:     a.id.Parent.String(),
+		Parent:     a.id.Parent(),
 		Connection: resource,
 	}
 	created, err := a.gcpClient.CreateConnection(ctx, req)
 	if err != nil {
-		return fmt.Errorf("creating Connection %s: %w", *a.id.AsExternalRef(), err)
+		return fmt.Errorf("creating Connection %s: %w", a.desired.Name, err)
 	}
 	log.V(2).Info("successfully created Connection", "name", created.Name)
 
 	status := &krm.BigQueryConnectionConnectionStatus{}
 	status.ObservedState = BigQueryConnectionConnectionStatusObservedState_FromProto(mapCtx, created)
-	id := ParseNameFromGCP(created.Name)
-	a.id.serviceGeneratedID = id
 	if mapCtx.Err() != nil {
 		return mapCtx.Err()
 	}
-	status.ExternalRef = a.id.AsExternalRef()
+	status.ExternalRef = &created.Name
 	return setStatus(u, status)
 }
 
@@ -214,7 +173,7 @@ func (a *Adapter) Update(ctx context.Context, updateOp *directbase.UpdateOperati
 	u := updateOp.GetUnstructured()
 
 	log := klog.FromContext(ctx).WithName(ctrlName)
-	log.V(2).Info("updating Connection", "name", a.id.AsExternalRef())
+	log.V(2).Info("updating Connection", "name", a.desired.Name)
 	mapCtx := &direct.MapContext{}
 
 	updateMask := &fieldmaskpb.FieldMask{}
@@ -231,7 +190,7 @@ func (a *Adapter) Update(ctx context.Context, updateOp *directbase.UpdateOperati
 		return mapCtx.Err()
 	}
 
-	fqn := a.id.FullyQualifiedName()
+	fqn := a.id.External
 	req := &bigqueryconnectionpb.UpdateConnectionRequest{
 		Name:       fqn,
 		Connection: resource,
@@ -263,8 +222,11 @@ func (a *Adapter) Export(ctx context.Context) (*unstructured.Unstructured, error
 	if mapCtx.Err() != nil {
 		return nil, mapCtx.Err()
 	}
-	obj.Spec.ProjectRef = &refs.ProjectRef{Name: a.id.Parent.Project}
-	obj.Spec.Location = a.id.Parent.Location
+	tokens := strings.Split(a.id.External, "/")
+	if len(tokens) == 6 {
+		obj.Spec.ProjectRef = &refs.ProjectRef{Name: tokens[1]}
+		obj.Spec.Location = tokens[3]
+	}
 	uObj, err := runtime.DefaultUnstructuredConverter.ToUnstructured(obj)
 	if err != nil {
 		return nil, err
@@ -276,9 +238,9 @@ func (a *Adapter) Export(ctx context.Context) (*unstructured.Unstructured, error
 // Delete implements the Adapter interface.
 func (a *Adapter) Delete(ctx context.Context, deleteOp *directbase.DeleteOperation) (bool, error) {
 	log := klog.FromContext(ctx).WithName(ctrlName)
-	log.V(2).Info("deleting Connection", "name", a.id.AsExternalRef())
+	log.V(2).Info("deleting Connection", "name", a.desired.Name)
 
-	fqn := a.id.FullyQualifiedName()
+	fqn := a.id.External
 	req := &bigqueryconnectionpb.DeleteConnectionRequest{Name: fqn}
 	if err := a.gcpClient.DeleteConnection(ctx, req); err != nil {
 		return false, fmt.Errorf("deleting Connection %s: %w", fqn, err)
@@ -298,7 +260,6 @@ func setStatus(u *unstructured.Unstructured, typedStatus any) error {
 		status["conditions"] = old["conditions"]
 		status["observedGeneration"] = old["observedGeneration"]
 		status["externalRef"] = old["externalRef"]
-		status["serviceGeneratedID"] = old["serviceGeneratedID"]
 	}
 
 	u.Object["status"] = status
