@@ -16,9 +16,12 @@ package utils
 
 import (
 	"fmt"
+	"os"
 	"os/exec"
 	"path"
 	"strings"
+
+	"k8s.io/klog/v2"
 )
 
 const (
@@ -71,12 +74,16 @@ func parseKustomizeVersion(input string) (string, error) {
 }
 
 func KustomizeBuild(path, output string) error {
-	kustomizeVersion, err := getKustomizeVersion()
-	if err != nil {
-		return err
-	}
-	if requiredKustomizeVersion != kustomizeVersion {
-		return fmt.Errorf("kustomize version mismatch; want: %s, got: %s", requiredKustomizeVersion, kustomizeVersion)
+	if os.Getenv("IGNORE_KUSTOMIZE_VERSION") != "" {
+		klog.Infof("skipping check of kustomize version, because IGNORE_KUSTOMIZE_VERSION is set")
+	} else {
+		kustomizeVersion, err := getKustomizeVersion()
+		if err != nil {
+			return err
+		}
+		if requiredKustomizeVersion != kustomizeVersion {
+			return fmt.Errorf("kustomize version mismatch; want: %s, got: %s", requiredKustomizeVersion, kustomizeVersion)
+		}
 	}
 	cmd := exec.Command("kustomize", "build", path, "--output", output)
 	return Execute(cmd)
@@ -95,7 +102,7 @@ func Execute(cmd *exec.Cmd) error {
 func ExecuteAndCaptureOutput(cmd *exec.Cmd) (stdout string, err error) {
 	out, err := cmd.CombinedOutput()
 	if err != nil {
-		return "", fmt.Errorf("%w: %v", err, string(out))
+		return "", fmt.Errorf("error running %q: output=%v: %w", strings.Join(cmd.Args, " "), string(out), err)
 	}
 	return string(out), nil
 }
