@@ -41,16 +41,16 @@ type SecretManagerSecretVersionSpec struct {
 	// The actual secret data. Config Connector supports secret data stored in Kubernetes secret or plain data (base64)
 	SecretData *SecretData_OneOf `json:"secretData,omitempty"`
 
-	// DEPRECATED. You do not need to set this field in direct reconciler mode. Use delete-policy annotation instead. https://cloud.google.com/config-connector/docs/how-to/managing-deleting-resources#keeping_resources_after_deletion
 	// The deletion policy for the secret version. Setting 'ABANDON' allows the resource
 	// to be abandoned rather than deleted. Setting 'DISABLE' allows the resource to be
 	// disabled rather than deleted. Default is 'DELETE'. Possible values are:
 	// * DELETE
 	// * DISABLE
 	// * ABANDON.
+	// *DEPRECATED* In direct reconciler mode, please use the `delete-policy`` annotation instead. https://cloud.google.com/config-connector/docs/how-to/managing-deleting-resources#keeping_resources_after_deletion
 	DeletionPolicy *string `json:"deletionPolicy,omitempty"`
 
-	// DEPRECATED. You do not need to set this field in direct reconciler mode.
+	// This is *DEPRECATED* in direct reconciler mode
 	IsSecretDataBase64 *bool `json:"isSecretDataBase64,omitempty"`
 }
 
@@ -74,16 +74,16 @@ type SecretManagerSecretVersionStatus struct {
 	// ObservedState is the state of the resource as most recently observed in GCP.
 	ObservedState *SecretManagerSecretVersionObservedState `json:"observedState,omitempty"`
 
-	// DEPRECATING NOTE: Please use status.observedState.createTime instead.
+	// Suggest using status.observedState.createTime instead.
 	CreateTime *string `json:"createTime,omitempty" tf:"create_time,omitempty"`
 
-	// DEPRECATING NOTE: Please use status.observedState.destroyTime instead.
+	// Suggest using status.observedState.destroyTime instead.
 	DestroyTime *string `json:"destroyTime,omitempty" tf:"destroy_time,omitempty"`
 
-	// DEPRECATING NOTE: Please use status.observedState.name instead.
+	// Suggest using status.observedState.name instead.
 	Name *string `json:"name,omitempty"`
 
-	// DEPRECATED.
+	// The service-generated ID
 	Version *string `json:"version,omitempty"`
 }
 
