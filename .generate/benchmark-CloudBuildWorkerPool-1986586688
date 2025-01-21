@@ -1,0 +1,105 @@
+```go
+// Copyright 2024 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package v1beta1
+
+import (
+	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/apis/k8s/v1alpha1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+)
+
+var CloudBuildWorkerPoolGVK = GroupVersion.WithKind("CloudBuildWorkerPool")
+
+// CloudBuildWorkerPoolSpec defines the desired state of CloudBuildWorkerPool
+// +k8s:openapi-gen=true
+type CloudBuildWorkerPoolSpec struct {
+	v1alpha1.ResourceReference `json:",inline"`
+
+	// A user-specified, human-readable name for the `WorkerPool`. If provided,
+	// this value must be 1-63 characters.
+	DisplayName string `json:"displayName,omitempty"`
+
+	// The `WorkerPool` name. If not given, the metadata.name will be used.
+	ResourceID *string `json:"resourceID,omitempty"`
+
+	// Location of the resource.
+	Location string `json:"location"`
+
+	// Network configuration for the pool.
+	// +optional
+	NetworkConfig *NetworkConfig `json:"networkConfig,omitempty"`
+
+	// Machine configuration for the workers in the pool.
+	// +optional
+	WorkerConfig *WorkerConfig `json:"workerConfig,omitempty"`
+
+	// Annotations map[string]string `json:"annotations,omitempty"`
+}
+
+type NetworkConfig struct {
+	// Immutable. The network definition that the workers are peered to. If this section is left empty, the workers will be peered to WorkerPool.project_id on the service producer network. Must be in the format `projects/{project}/global/networks/{network}`, where {project} is a project number, such as `12345`, and {network} is the name of a VPC network in the project.
+    // +optional
+	PeeredNetworkRef *v1alpha1.ResourceReference `json:"peeredNetworkRef,omitempty"`
+
+	// Option to configure network egress for the workers. Possible values: ["PRIVATE_RANGES_ONLY", "PUBLIC_EGRESS"].
+	// +optional
+	EgressOption *string `json:"egressOption,omitempty"`
+
+	// Immutable. Subnet IP range within the peered network. This is specified in CIDR notation with a slash and the subnet prefix size. You can optionally specify an IP address before the subnet prefix value. e.g. `192.168.0.0/29` would specify an IP range starting at 192.168.0.0 with a prefix size of 29 bits. `/16` would specify a prefix size of 16 bits, with an automatically determined IP within the peered VPC. If unspecified, a value of `/24` will be used.
+    // +optional
+	PeeredNetworkIPRange *string `json:"peeredNetworkIPRange,omitempty"`
+}
+
+type WorkerConfig struct {
+	// Machine type of a worker, such as `e2-medium`. See [Worker pool config file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema). If left blank, Cloud Build will use a sensible default.
+	// +optional
+	MachineType *string `json:"machineType,omitempty"`
+
+	// Size of the disk attached to the worker, in GB. See [Worker pool config file](https://cloud.google.com/build/docs/private-pools/worker-pool-config-file-schema). Specify a value of up to 2000. If `0` is specified, Cloud Build will use a standard disk size.
+	// +optional
+	DiskSizeGb *int64 `json:"diskSizeGb,omitempty"`
+}
+
+type WorkstationAnnotation struct {
+	Key   string `json:"key"`
+	Value string `json:"value"`
+}
+
+type WorkstationLabel struct {
+	Key   string `json:"key"`
+	Value string `json:"value"`
+}
+
+// CloudBuildWorkerPoolStatus defines the observed state of CloudBuildWorkerPool
+// +k8s:openapi-gen=true
+type CloudBuildWorkerPoolStatus struct {
+	// Conditions represent the latest available observations of the
+	// CloudBuildWorkerPool's current state.
+	Conditions []v1alpha1.Condition `json:"conditions,omitempty"`
+
+	// ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
+	ObservedGeneration int64 `json:"observedGeneration,omitempty"`
+
+	CreateTime *metav1.Time `json:"createTime,omitempty"`
+	UpdateTime *metav1.Time `json:"updateTime,omitempty"`
+	DeleteTime *metav1.Time `json:"deleteTime,omitempty"`
+
+	State *string `json:"state,omitempty"`
+
+	UID   string `json:"uid,omitempty"`
+	ETag  string `json:"etag,omitempty"`
+
+}
+```

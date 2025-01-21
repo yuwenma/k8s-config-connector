@@ -1,0 +1,164 @@
+```go
+type BigtableTableSpec struct {
+	// The unique name of the table. Values are of the form
+	// `projects/{project}/instances/{instance}/tables/[_a-zA-Z0-9][-_.a-zA-Z0-9]*`.
+	// Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`
+	// +optional
+	Name *string `json:"name,omitempty"`
+
+	// Output only. Map from cluster ID to per-cluster table state.
+	// If it could not be determined whether or not the table has data in a
+	// particular cluster (for example, if its zone is unavailable), then
+	// there will be an entry for the cluster with UNKNOWN `replication_status`.
+	// Views: `REPLICATION_VIEW`, `ENCRYPTION_VIEW`, `FULL`
+	ClusterStates map[string]TableClusterState `json:"clusterStates,omitempty"`
+
+	// The column families configured for this table, mapped by column family ID.
+	// Views: `SCHEMA_VIEW`, `STATS_VIEW`, `FULL`
+	ColumnFamilies map[string]ColumnFamily `json:"columnFamilies,omitempty"`
+
+	// Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored
+	// in this table. Timestamps not matching the granularity will be rejected. If
+	// unspecified at creation time, the value will be set to `MILLIS`. Views:
+	// `SCHEMA_VIEW`, `FULL`.
+	Granularity *string `json:"granularity,omitempty"`
+
+	// Output only. If this table was restored from another data source (e.g. a
+	// backup), this field will be populated with information about the restore.
+	// +optional
+	RestoreInfo *RestoreInfo `json:"restoreInfo,omitempty"`
+
+	// If specified, enable the change stream on this table.
+	// Otherwise, the change stream is disabled and the change stream is not
+	// retained.
+	ChangeStreamConfig *ChangeStreamConfig `json:"changeStreamConfig,omitempty"`
+
+	// Set to true to make the table protected against data loss. i.e. deleting
+	// the following resources through Admin APIs are prohibited:
+	//
+	// * The table.
+	// * The column families in the table.
+	// * The instance containing the table.
+	//
+	// Note one can still delete the data stored in the table through Data APIs.
+	DeletionProtection *bool `json:"deletionProtection,omitempty"`
+
+	// If specified, automated backups are enabled for this table.
+	// Otherwise, automated backups are disabled.
+	AutomatedBackupPolicy *TableAutomatedBackupPolicy `json:"automatedBackupPolicy,omitempty"`
+
+	ProjectRef  v1beta1.ResourceRef `json:"projectRef"`
+	InstanceRef v1beta1.ResourceRef `json:"instanceRef"`
+
+	// The BigtableTable name. If not given, the metadata.name will be used.
+	ResourceID *string `json:"resourceID,omitempty"`
+
+	// Location represents the geographical location of the BigtableTable. Specify a region name or "global" for global resources. Reference: GCP definition of regions/zones (https://cloud.google.com/compute/docs/regions-zones/)
+	Location string `json:"location,omitempty"`
+}
+
+type BigtableTableObservedState struct {
+
+}
+
+
+type TableAutomatedBackupPolicy struct {
+	// Required. How long the automated backups should be retained. The only
+	// supported value at this time is 3 days.
+	RetentionPeriod *string `json:"retentionPeriod,omitempty"`
+
+	// Required. How frequently automated backups should occur. The only
+	// supported value at this time is 24 hours.
+	Frequency *string `json:"frequency,omitempty"`
+}
+
+type RestoreInfo struct {
+	// The type of the restore source.
+	SourceType *string `json:"sourceType,omitempty"`
+
+	// Information about the backup used to restore the table. The backup
+	// may no longer exist.
+	BackupInfo *BackupInfo `json:"backupInfo,omitempty"`
+}
+
+type BackupInfo struct {
+	// Output only. Name of the backup.
+	Backup *string `json:"backup,omitempty"`
+
+	// Output only. The time that the backup was started. Row data in the backup
+	// will be no older than this timestamp.
+	StartTime *string `json:"startTime,omitempty"`
+
+	// Output only. This time that the backup was finished. Row data in the
+	// backup will be no newer than this timestamp.
+	EndTime *string `json:"endTime,omitempty"`
+
+	// Output only. Name of the table the backup was created from.
+	SourceTable *string `json:"sourceTable,omitempty"`
+
+	// Output only. Name of the backup from which this backup was copied. If a
+	// backup is not created by copying a backup, this field will be empty. Values
+	// are of the form:
+	// projects/<project>/instances/<instance>/clusters/<cluster>/backups/<backup>
+	SourceBackup *string `json:"sourceBackup,omitempty"`
+}
+
+type ChangeStreamConfig struct {
+	// How long the change stream should be retained. Change stream data older
+	// than the retention period will not be returned when reading the change
+	// stream from the table.
+	// Values must be at least 1 day and at most 7 days, and will be truncated to
+	// microsecond granularity.
+	RetentionPeriod *string `json:"retentionPeriod,omitempty"`
+}
+
+
+type TableClusterState struct {
+	// Output only. The state of replication for the table in this cluster.
+	ReplicationState *string `json:"replicationState,omitempty"`
+
+	// Output only. The encryption information for the table in this cluster.
+	// If the encryption key protecting this resource is customer managed, then
+	// its version can be rotated in Cloud Key Management Service (Cloud KMS).
+	// The primary version of the key and its status will be reflected here when
+	// changes propagate from Cloud KMS.
+	EncryptionInfo []EncryptionInfo `json:"encryptionInfo,omitempty"`
+}
+
+
+type ColumnFamily struct {
+	// Garbage collection rule specified as a protobuf.
+	// Must serialize to at most 500 bytes.
+	//
+	// NOTE: Garbage collection executes opportunistically in the background, and
+	// so it's possible for reads to return a cell even if it matches the active
+	// GC expression for its family.
+	GcRule *GcRule `json:"gcRule,omitempty"`
+}
+
+type GcRule struct {
+	// Delete all cells in a column except the most recent N.
+	MaxNumVersions *int32 `json:"maxNumVersions,omitempty"`
+
+	// Delete cells in a column older than the given age.
+	// Values must be at least one millisecond, and will be truncated to
+	// microsecond granularity.
+	MaxAge *string `json:"maxAge,omitempty"`
+
+	// Delete cells that would be deleted by every nested rule.
+	Intersection *GcRuleIntersection `json:"intersection,omitempty"`
+
+	// Delete cells that would be deleted by any nested rule.
+	Union *GcRuleUnion `json:"union,omitempty"`
+}
+
+type GcRuleIntersection struct {
+	// Only delete cells which would be deleted by every element of `rules`.
+	Rules []GcRule `json:"rules,omitempty"`
+}
+
+type GcRuleUnion struct {
+	// Delete cells which would be deleted by any element of `rules`.
+	Rules []GcRule `json:"rules,omitempty"`
+}
+```

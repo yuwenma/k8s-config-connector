@@ -1,0 +1,140 @@
+```go
+// Copyright 2024 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package v1beta1
+
+import (
+	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/apis/k8s/v1alpha1"
+	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/k8s"
+
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+)
+
+type DataformRepositoryGitRemoteSettings struct {
+	/* The name of the Secret Manager secret version to use as an authentication token for Git operations. Must be in the format projects/*/secrets/*/versions/*. */
+	// +optional
+	AuthenticationTokenSecretVersionRef *v1alpha1.ResourceRef `json:"authenticationTokenSecretVersionRef,omitempty"`
+
+	/* The Git remote's default branch name. */
+	// +required
+	DefaultBranch string `json:"defaultBranch"`
+
+	/* Authentication fields for remote uris using SSH protocol. */
+	// +optional
+	SSHAuthenticationConfig *DataformRepositorySSHAuthenticationConfig `json:"sshAuthenticationConfig,omitempty"`
+
+	/* The Git remote's URL. */
+	// +required
+	Url string `json:"url"`
+}
+
+type DataformRepositorySSHAuthenticationConfig struct {
+	/* Required. The name of the Secret Manager secret version to use as a
+	ssh private key for Git operations.
+	Must be in the format `projects/*/secrets/*/versions/*`. */
+	UserPrivateKeySecretVersionRef v1alpha1.ResourceRef `json:"userPrivateKeySecretVersionRef"`
+
+	/* Required. Content of a public SSH key to verify an identity of a remote
+	Git host. */
+	HostPublicKey string `json:"hostPublicKey"`
+}
+
+type DataformRepositoryWorkspaceCompilationOverrides struct {
+	/* Optional. The default database (Google Cloud project ID). */
+	// +optional
+	DefaultDatabase *string `json:"defaultDatabase,omitempty"`
+
+	/* Optional. The suffix that should be appended to all schema (BigQuery dataset ID) names. */
+	// +optional
+	SchemaSuffix *string `json:"schemaSuffix,omitempty"`
+
+	/* Optional. The prefix that should be prepended to all table names. */
+	// +optional
+	TablePrefix *string `json:"tablePrefix,omitempty"`
+}
+
+// DataformRepositorySpec defines the desired state of DataformRepository
+type DataformRepositorySpec struct {
+	v1alpha1.ResourceReference `json:",inline"`
+	ResourceSpec               `json:",inline"`
+	/* Optional. If set, configures this repository to be linked to a Git remote. */
+	// +optional
+	GitRemoteSettings *DataformRepositoryGitRemoteSettings `json:"gitRemoteSettings,omitempty"`
+
+	/* Optional. The repository's user-friendly name. */
+	// +optional
+	DisplayName *string `json:"displayName,omitempty"`
+
+	/* Optional. The name of the Secret Manager secret version to be used to
+	interpolate variables into the .npmrc file for package installation
+	operations. Must be in the format `projects/*/secrets/*/versions/*`. The
+	file itself must be in a JSON format. */
+	// +optional
+	NpmrcEnvironmentVariablesSecretVersionRef *v1alpha1.ResourceRef `json:"npmrcEnvironmentVariablesSecretVersionRef,omitempty"`
+
+	/* Optional. Input only. If set to true, the authenticated user will be
+	granted the roles/dataform.admin role on the created repository. To modify
+	access to the created repository later apply setIamPolicy from
+	https://cloud.google.com/dataform/reference/rest#rest-resource:-v1beta1.projects.locations.repositories */
+	// +optional
+	SetAuthenticatedUserAdmin *bool `json:"setAuthenticatedUserAdmin,omitempty"`
+
+	/* Optional. The service account to run workflow invocations under. */
+	// +optional
+	ServiceAccountRef *v1alpha1.ResourceRef `json:"serviceAccountRef,omitempty"`
+
+	/* Optional. If set, fields of `workspace_compilation_overrides` override the
+	default compilation settings that are specified in dataform.json when
+	creating workspace-scoped compilation results. See documentation for
+	`WorkspaceCompilationOverrides` for more information. */
+	// +optional
+	WorkspaceCompilationOverrides *DataformRepositoryWorkspaceCompilationOverrides `json:"workspaceCompilationOverrides,omitempty"`
+}
+
+// DataformRepositoryStatus defines the observed state of DataformRepository.
+type DataformRepositoryStatus struct {
+	/* Conditions represent the latest available observations of the
+	   DataformRepository's current state. */
+	Conditions []v1alpha1.Condition `json:"conditions,omitempty"`
+	/* ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource. */
+	ObservedGeneration int `json:"observedGeneration,omitempty"`
+}
+
+// +genclient
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+
+// DataformRepository is the Schema for the dataformrepositories API
+// +k8s:openapi-gen=true
+type DataformRepository struct {
+	metav1.TypeMeta   `json:",inline"`
+	metav1.ObjectMeta `json:"metadata,omitempty"`
+
+	Spec   DataformRepositorySpec   `json:"spec,omitempty"`
+	Status DataformRepositoryStatus `json:"status,omitempty"`
+}
+
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+
+// DataformRepositoryList contains a list of DataformRepository
+type DataformRepositoryList struct {
+	metav1.TypeMeta `json:",inline"`
+	metav1.ListMeta `json:"metadata,omitempty"`
+	Items           []DataformRepository `json:"items"`
+}
+
+func init() {
+	SchemeBuilder.Register(&DataformRepository{}, &DataformRepositoryList{})
+}
+```

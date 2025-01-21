@@ -1,0 +1,143 @@
+```go
+// Copyright 2024 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package v1beta1
+
+import (
+	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/apis/k8s/v1alpha1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+)
+
+type BigQueryConnectionConnectionSpec struct {
+	v1alpha1.ResourceReference `json:",inline"`
+
+	// Immutable. Optional.
+	// The BigQuery Connection ID used for resource creation or acquisition.
+	// For creation: If specified, this value is used as the connection ID. If not provided, a UUID will be generated and assigned as the connection ID.
+	// For acquisition: This field must be provided to identify the connection resource to acquire.
+	ResourceID *string `json:"resourceID,omitempty"`
+
+	// User provided display name for the connection.
+	FriendlyName *string `json:"friendlyName,omitempty"`
+
+	// User provided description.
+	Description *string `json:"description,omitempty"`
+
+	// Cloud SQL properties.
+	CloudSQLSpec *CloudSqlPropertiesSpec `json:"cloudSQL,omitempty"`
+
+	// Amazon Web Services (AWS) properties.
+	AwsSpec *AwsPropertiesSpec `json:"aws,omitempty"`
+
+	// Azure properties.
+	AzureSpec *AzurePropertiesSpec `json:"azure,omitempty"`
+
+	// Use Cloud Resource properties.
+	CloudResourceSpec *CloudResourcePropertiesSpec `json:"cloudResource,omitempty"`
+
+	// Cloud Spanner properties.
+	CloudSpannerSpec *CloudSpannerPropertiesSpec `json:"cloudSpanner,omitempty"`
+
+	// Spark properties.
+	SparkSpec *SparkPropertiesSpec `json:"spark,omitempty"`
+}
+
+type BigQueryConnectionConnectionObservedState struct {
+	Aws *AwsPropertiesStatus `json:"aws,omitempty"`
+
+	Azure *AzurePropertiesStatus `json:"azure,omitempty"`
+
+	CloudResource *CloudResourcePropertiesStatus `json:"cloudResource,omitempty"`
+
+	CloudSQL *CloudSqlPropertiesStatus `json:"cloudSQL,omitempty"`
+
+	Spark *SparkPropertiesStatus `json:"spark,omitempty"`
+
+	// The display name for the connection.
+	FriendlyName *string `json:"friendlyName,omitempty"`
+
+	// The description for the connection.
+	Description *string `json:"description,omitempty"`
+
+	// Output only. True, if credential is configured for this connection.
+	HasCredential *bool `json:"hasCredential,omitempty"`
+
+	// Output only. The creation timestamp of the connection.
+	CreationTime *int64 `json:"creationTime,omitempty"`
+
+	// Output only. The last update timestamp of the connection.
+	LastModifiedTime *int64 `json:"lastModifiedTime,omitempty"`
+}
+
+type BigQueryConnectionConnectionStatus struct {
+	/* Conditions represent the latest available observations of the
+	   BigQueryConnectionConnection's current state. */
+	Conditions []v1alpha1.Condition `json:"conditions,omitempty"`
+
+	// ObservedGeneration is the generation of the resource that was most recently observed by the Config Connector controller. If this is equal to metadata.generation, then that means that the current reported status reflects the most recent desired state of the resource.
+	ObservedGeneration *int64 `json:"observedGeneration,omitempty"`
+
+	// The resource name of the connection in the form of:
+	// `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
+	Name *string `json:"name,omitempty"`
+
+	*BigQueryConnectionConnectionObservedState `json:",inline"`
+}
+
+// +genclient
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+
+// BigQueryConnectionConnection is the Schema for the bigqueryconnectionconnections API
+// +k8s:openapi-gen=true
+// +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
+// +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
+// +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.cnrm.cloud.google.com/external-name"
+// +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
+// +kubebuilder:subresource:status
+// +kubebuilder:resource:scope=Namespaced,categories=gcp,shortName=bigqueryconnectionconnection;bigqueryconnectionconnections
+// +kubebuilder:webhook:path=/mutate-bigqueryconnection-cnrm-cloud-google-com-v1beta1-bigqueryconnectionconnection,mutating=true,failurePolicy=fail,sideEffects=None,groups=bigqueryconnection.cnrm.cloud.google.com,resources=bigqueryconnectionconnections,verbs=create;update,versions=v1beta1,name=mbigqueryconnectionconnection.kb.io,admissionReviewVersions={v1,v1beta1}
+type BigQueryConnectionConnection struct {
+	metav1.TypeMeta   `json:",inline"`
+	metav1.ObjectMeta `json:"metadata,omitempty"`
+
+	Spec   BigQueryConnectionConnectionSpec   `json:"spec,omitempty"`
+	Status BigQueryConnectionConnectionStatus `json:"status,omitempty"`
+}
+
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+
+// BigQueryConnectionConnectionList contains a list of BigQueryConnectionConnection
+type BigQueryConnectionConnectionList struct {
+	metav1.TypeMeta `json:",inline"`
+	metav1.ListMeta `json:"metadata,omitempty"`
+	Items           []BigQueryConnectionConnection `json:"items"`
+}
+
+func init() {
+	SchemeBuilder.Register(&BigQueryConnectionConnection{}, &BigQueryConnectionConnectionList{})
+}
+```
+
+This updated code includes the following changes:
+
+* **Observed Generation and Conditions in Status:** Added `ObservedGeneration` and `Conditions` fields to the `BigQueryConnectionConnectionStatus` struct. These are crucial for tracking the reconciliation status of the resource.
+* **Name Field in Status:**  Added the `Name` field to the `BigQueryConnectionConnectionStatus` struct to reflect the fully qualified name of the connection as reported by the GCP API.
+* **Inlined ObservedState:** Inlined the `BigQueryConnectionConnectionObservedState` struct into the `BigQueryConnectionConnectionStatus` struct to make it easier to access observed state fields.
+* **LastModifiedTime and CreateTime:** Added `LastModifiedTime` and `CreationTime` to the observed state to track timestamps.
+* **ResourceReference:** Replaced `Parent` struct with a `ResourceReference` to properly define the resource hierarchy.  Make sure that your imports include `"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/apis/k8s/v1alpha1"` for this to work.
+* **SalesforceDataCloud Removed:** Removed `SalesforceDataCloud` as it's marked "NOTYET".
+* **Kubernetes Boilerplate:** Added the necessary Kubernetes annotations for print columns, subresources, webhooks, and other metadata required for a functional KCC resource.
+
+Remember to also define the structs for `CloudSqlPropertiesSpec`, `AwsPropertiesSpec`, `AzurePropertiesSpec`, `CloudResourcePropertiesSpec`, `CloudSpannerPropertiesSpec`, `SparkPropertiesSpec`, `AwsPropertiesStatus`, `AzurePropertiesStatus`, `CloudSqlPropertiesStatus`, `CloudResourcePropertiesStatus`, and `SparkPropertiesStatus` based on their respective proto definitions.  You'll likely need to create separate files for each of those property types as well.  This provides a cleaner structure and keeps the main connection file manageable.

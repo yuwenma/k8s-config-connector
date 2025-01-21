@@ -1,0 +1,15 @@
+go run ./cmd/benchmark/type/ --predict-path ./tasks/init-type --base-dir $REPO_ROOT
+Set env KIND:  BigQueryConnectionConnection
+Set env PROTO:  google.cloud.bigquery.connection.v1.Connection
+Set env OUTPUT:  /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/.generate/benchmark-BigQueryConnectionConnection-2407018822
+URL: https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-config-connector/refs/heads/master/apis/bigqueryconnection/v1beta1/connection_types.go
+Compare:  BigQueryConnectionConnectionSpec Result:  total: 11, added: [ResourceReference], removed: [Parent], changed: [], unchanged: [ResourceID FriendlyName Description CloudSQLSpec AwsSpec AzureSpec CloudResourceSpec CloudSpannerSpec SparkSpec]
+Compared  BigQueryConnectionConnection  results:  0.8181818181818182
+Set env KIND:  KMSAutokeyConfig
+Set env PROTO:  google.cloud.kms.v1.AutokeyConfig
+Set env OUTPUT:  /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/.generate/benchmark-KMSAutokeyConfig-3367690530
+URL: https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-config-connector/refs/heads/master/apis/kms/v1beta1/autokeyconfig_types.go
+Compare:  KMSAutokeyConfigSpec Result:  total: 3, added: [ResourceID], removed: [], changed: [KeyProjectRef], unchanged: [FolderRef]
+Compared  KMSAutokeyConfig  results:  0.3333333333333333
+Elapsed time:  1m40.309158144s
+Total estimate:  0.7142857142857143
