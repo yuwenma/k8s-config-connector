@@ -63,6 +63,7 @@ If you think the code should be changed, use the tools to apply those changes in
 `
 
 	model.SystemInstruction = &genai.Content{
+		Role: "user",
 		Parts: []genai.Part{
 			genai.Text(systemPrompt),
 		},

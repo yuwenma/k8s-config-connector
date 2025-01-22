@@ -1,0 +1,63 @@
+The error messages indicate that the `controller-gen` tool is having trouble with map types in your proto definitions for the Bigtable Table resource.  Specifically, it doesn't know how to represent the `map<string, ClusterState>` (cluster_states) and `map<string, ColumnFamily>` (column_families) fields in the generated CRD.  Config Connector doesn't currently have full support for arbitrary map types in CRDs.
+
+Here's how to fix this:
+
+1. **Represent Maps as Lists of Objects:** The recommended approach is to change the proto definition to use repeated (list) fields of a message type that encapsulates the key-value pairs.  This is a common pattern for representing maps in Kubernetes resources.
+
+   ```protobuf
+   message Table {
+     // ... other fields ...
+
+     // Instead of map<string, ClusterState>
+     message ClusterStatePair {
+       string cluster_id = 1;
+       ClusterState cluster_state = 2;
+     }
+     repeated ClusterStatePair cluster_states = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+     // Instead of map<string, ColumnFamily>
+     message ColumnFamilyPair {
+       string family_id = 1;
+       ColumnFamily column_family = 2;
+     }
+     repeated ColumnFamilyPair column_families = 3;
+
+     // ... other fields ...
+   }
+   ```
+
+2. **Regenerate CRD:** After modifying the proto definition, re-run `controller-gen` to regenerate the CRD YAML.  This time, it should be able to handle the list-of-objects structure without errors.
+
+3. **Update Code (If Necessary):**  If you have any Go code that interacts with the Bigtable Table resource, you'll need to update it to work with the new list-based structure instead of the maps.
+
+**Example Go Code Changes (Illustrative):**
+
+Before (using map):
+
+```go
+clusterStates := table.Spec.ClusterStates
+for clusterID, state := range clusterStates {
+    // ... use clusterID and state ...
+}
+```
+
+After (using list):
+
+```go
+clusterStatePairs := table.Spec.ClusterStates
+for _, pair := range clusterStatePairs {
+    clusterID := pair.ClusterID
+    state := pair.ClusterState
+    // ... use clusterID and state ...
+}
+```
+
+
+**Important Considerations:**
+
+* **Backward Compatibility:**  If you already have existing BigtableTable resources deployed using the map structure, you'll need to migrate them to the new list-based structure after updating the CRD.
+* **Config Connector Limitations:** Keep in mind that there might still be some limitations on what types are allowed within the nested objects in the list.  Refer to the Config Connector documentation for the latest information on supported types.  For very complex nested structures, sometimes you might have to simplify the representation for compatibility.
+
+
+
+By using this list-of-objects approach, you'll create a CRD that is compatible with Kubernetes and Config Connector, enabling you to manage Bigtable Tables effectively.

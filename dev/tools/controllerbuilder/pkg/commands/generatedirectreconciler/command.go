@@ -41,7 +41,6 @@ type GenerateBasicReconcilerOptions struct {
 func (o *GenerateBasicReconcilerOptions) BindFlags(cmd *cobra.Command) {
 	cmd.Flags().StringVarP(&o.ProtoName, "proto-resource", "p", "", "the GCP resource proto name. It should match the name in the proto apis. i.e. For resource google.storage.v1.bucket, the `--proto-resource` should be `bucket`. If `--kind` is not given, the `--proto-resource` value will also be used as the kind name with a capital letter `Storage`.")
 	cmd.Flags().StringVarP(&o.Kind, "kind", "k", "", "the KCC resource Kind. requires `--proto-resource`.")
-	//	cmd.Flags().StringVar(&o.OutputAPIDirectory, "output-api", o.OutputAPIDirectory, "base directory for writing APIs")
 	cmd.Flags().StringVar(&o.APIGoPackagePath, "api-go-package-path", o.APIGoPackagePath, "package path")
 	cmd.Flags().StringVar(&o.APIDirectory, "api-dir", o.APIDirectory, "base directory for reading APIs")
 	cmd.Flags().StringVar(&o.OutputMapperDirectory, "output-dir", o.OutputMapperDirectory, "base directory for writing mappers")
@@ -54,7 +53,6 @@ func (o *GenerateBasicReconcilerOptions) InitDefaults() error {
 	}
 	o.APIGoPackagePath = "github.com/GoogleCloudPlatform/k8s-config-connector/apis/"
 	o.APIDirectory = root + "/apis/"
-	//	o.OutputAPIDirectory = root + "/apis/"
 	o.OutputMapperDirectory = root + "/pkg/controller/direct/"
 	return nil
 }

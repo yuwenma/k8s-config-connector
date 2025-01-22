@@ -1,0 +1,275 @@
+The error messages indicate that `controller-gen` is having trouble with the `map` types in the `google.bigtable.admin.v2.Table` message definition.  Config Connector's code generator doesn't directly support `map` types in the way they are defined in the Protobuf.
+
+Here's the corrected code for the `BigtableTable` CRD generation.  It avoids using `map` types directly and instead uses structs and lists, which are compatible with Kubernetes CRDs.  This involves defining separate types for the `ClusterStates` and `ColumnFamilies` fields:
+
+
+```go
+// BigtableTableSpec defines the desired state of Table
+type BigtableTableSpec struct {
+    /* Immutable. The name of the instance in which to create the table. */
+    InstanceRef v1beta1.ResourceRef `json:"instanceRef"`
+
+    // The Table name. If not given, the metadata.name will be used.
+    ResourceID *string `json:"resourceID,omitempty"`
+
+	// Immutable. The granularity (i.e. `MILLIS`) at which timestamps are stored in this
+	// table. Timestamps not matching the granularity will be rejected. If
+	// unspecified at creation time, the value will be set to `MILLIS`. Views:
+	// `SCHEMA_VIEW`, `FULL`.
+	Granularity *string `json:"granularity,omitempty"`
+
+    // +kubebuilder:validation:Optional
+    // If specified, enable the change stream on this table.
+    //  Otherwise, the change stream is disabled and the change stream is not
+    //  retained.
+    ChangeStreamConfig *ChangeStreamConfig `json:"changeStreamConfig,omitempty"`
+
+    // Set to true to make the table protected against data loss. i.e. deleting the
+    // following resources through Admin APIs are prohibited: * The table. * The
+    // column families in the table. * The instance containing the table. Note one can
+    // still delete the data stored in the table through Data APIs.
+    DeletionProtection *bool `json:"deletionProtection,omitempty"`
+
+	// If specified, automated backups are enabled for this table.
+	//  Otherwise, automated backups are disabled.
+    // +kubebuilder:validation:Optional
+	AutomatedBackupPolicy *AutomatedBackupPolicy `json:"automatedBackupPolicy,omitempty"`
+
+    ColumnFamilies []ColumnFamily `json:"columnFamilies,omitempty"`
+}
+
+// BigtableTableObservedState is the state of the {{ .Kind }} resource as most recently observed in GCP.
+type BigtableTableObservedState struct {
+	// Output only. Map from cluster ID to per-cluster table state. If it could not be
+	// determined whether or not the table has data in a particular cluster (for
+	// example, if its zone is unavailable), then there will be an entry for the
+	// cluster with UNKNOWN `replication_status`. Views: `REPLICATION_VIEW`,
+	// `ENCRYPTION_VIEW`, `FULL`
+    // +kubebuilder:validation:Optional
+    ClusterStates []ClusterState `json:"clusterStates,omitempty"`
+
+	// Output only. If this table was restored from another data source (e.g. a backup),
+	// this field will be populated with information about the restore.
+    // +kubebuilder:validation:Optional
+	RestoreInfo *RestoreInfo `json:"restoreInfo,omitempty"`
+}
+
+type ChangeStreamConfig struct {
+	// How long the change stream should be retained. Change stream data older than the
+	// retention period will not be returned when reading the change stream from the
+	// table. Values must be at least 1 day and at most 7 days, and will be truncated
+	// to microsecond granularity.
+	RetentionPeriod *string `json:"retentionPeriod,omitempty"`
+}
+
+type AutomatedBackupPolicy struct {
+    // Required. How long the automated backups should be retained. The only
+    // supported value at this time is 3 days.
+	RetentionPeriod *string `json:"retentionPeriod,omitempty"`
+
+    // Required. How frequently automated backups should occur. The only
+    // supported value at this time is 24 hours.
+	Frequency *string `json:"frequency,omitempty"`
+}
+
+// RestoreInfo defines the restore information of the table
+type RestoreInfo struct {
+    // The type of the restore source. Possible values: ["BACKUP"]
+    SourceType *string `json:"sourceType,omitempty"`
+
+    BackupInfo *BackupInfo `json:"backupInfo,omitempty"`
+}
+
+
+// BackupInfo defines the backup information used to restore the table
+type BackupInfo struct {
+    Backup     *string `json:"backup,omitempty"`
+    StartTime  *string `json:"startTime,omitempty"`
+    EndTime    *string `json:"endTime,omitempty"`
+    SourceTable *string `json:"sourceTable,omitempty"`
+    SourceBackup *string `json:"sourceBackup,omitempty"`
+}
+
+type EncryptionInfo struct {
+	// Output only. The type of encryption used to protect this resource.
+	EncryptionType *string `json:"encryptionType,omitempty"`
+
+	// Output only. The status of encrypt/decrypt calls on underlying data for this
+	// resource. Regardless of status, the existing data is always encrypted at rest.
+	//EncryptionStatus *status.Status `json:"encryptionStatus,omitempty"` // NOTYET
+
+	// Output only. The version of the Cloud KMS key specified in the parent cluster
+	// that is in use for the data underlying this table.
+	KmsKeyVersion *string `json:"kmsKeyVersion,omitempty"`
+}
+
+type ColumnFamily struct {
+	// Garbage collection rule specified as a protobuf. Must serialize to at most 500
+	// bytes. NOTE: Garbage collection executes opportunistically in the background,
+	// and so it's possible for reads to return a cell even if it matches the active
+	// GC expression for its family.
+    Family string `json:"family"`
+    GcRule *GcRule `json:"gcRule,omitempty"` // +optional
+    ValueType *Type `json:"valueType,omitempty"` // +optional
+}
+
+type GcRule struct {
+	// Delete all cells in a column except the most recent N.
+	MaxNumVersions *int32 `json:"maxNumVersions,omitempty"`
+
+	// Delete cells in a column older than the given age. Values must be at least one
+	// millisecond, and will be truncated to microsecond granularity.
+	MaxAge *string `json:"maxAge,omitempty"`
+
+	// Delete cells that would be deleted by every nested rule.
+	Intersection *GcRuleIntersection `json:"intersection,omitempty"`
+
+	// Delete cells that would be deleted by any nested rule.
+	Union *GcRuleUnion `json:"union,omitempty"`
+}
+
+type GcRuleIntersection struct {
+	// Only delete cells which would be deleted by every element of `rules`.
+	Rules []GcRule `json:"rules,omitempty"`
+}
+
+type GcRuleUnion struct {
+	// Delete cells which would be deleted by any element of `rules`.
+	Rules []GcRule `json:"rules,omitempty"`
+}
+
+
+type Type struct {
+    Code string `json:"code"`
+    // +kubebuilder:validation:Optional
+	BytesType *TypeBytes `json:"bytesType,omitempty"`
+	// +kubebuilder:validation:Optional
+	StringType *TypeString `json:"stringType,omitempty"`
+	// +kubebuilder:validation:Optional
+	Int64Type *TypeInt64 `json:"int64Type,omitempty"`
+	// +kubebuilder:validation:Optional
+	Float32Type *TypeFloat32 `json:"float32Type,omitempty"`
+	// +kubebuilder:validation:Optional
+	Float64Type *TypeFloat64 `json:"float64Type,omitempty"`
+	// +kubebuilder:validation:Optional
+	BoolType *TypeBool `json:"boolType,omitempty"`
+	// +kubebuilder:validation:Optional
+	TimestampType *TypeTimestamp `json:"timestampType,omitempty"`
+	// +kubebuilder:validation:Optional
+	DateType *TypeDate `json:"dateType,omitempty"`
+	// +kubebuilder:validation:Optional
+	AggregateType *TypeAggregate `json:"aggregateType,omitempty"`
+	// +kubebuilder:validation:Optional
+	StructType *TypeStruct `json:"structType,omitempty"`
+	// +kubebuilder:validation:Optional
+	ArrayType *TypeArray `json:"arrayType,omitempty"`
+	// +kubebuilder:validation:Optional
+	MapType *TypeMap `json:"mapType,omitempty"`
+}
+
+
+type TypeBytes struct {
+	Encoding TypeBytesEncoding `json:"encoding"` // +optional
+}
+
+type TypeBytesEncoding struct { // +kubebuilder:validation:Enum:=RAW
+    Code string `json:"code"` // +optional
+}
+
+type TypeString struct {
+    // +kubebuilder:validation:Optional
+	Encoding TypeStringEncoding `json:"encoding,omitempty"`
+}
+
+type TypeStringEncoding struct { // +kubebuilder:validation:Enum:=UTF8_BYTES
+    Code string `json:"code"` // +optional
+}
+
+
+type TypeInt64 struct {
+	Encoding TypeInt64Encoding `json:"encoding,omitempty"` // +optional
+}
+
+type TypeInt64Encoding struct { // +kubebuilder:validation:Enum:=BIG_ENDIAN_BYTES
+	Code string `json:"code"`
+	BytesType *TypeBytes `json:"bytesType,omitempty"` // Deprecated
+}
+
+
+type TypeFloat32 struct {
+
+}
+
+type TypeFloat64 struct {
+}
+
+
+type TypeBool struct {
+
+}
+
+
+type TypeTimestamp struct {
+}
+
+
+type TypeDate struct {
+
+}
+
+
+type TypeAggregate struct {
+    Aggregator string `json:"aggregator"`
+    // +kubebuilder:validation:Optional
+	InputType *Type `json:"inputType,omitempty"`
+	StateType *Type `json:"stateType,omitempty"` // Output only.
+}
+
+type TypeStruct struct {
+	Fields []TypeStructField `json:"fields,omitempty"` // +optional
+}
+
+
+type TypeStructField struct {
+    // +kubebuilder:validation:Optional
+	FieldName *string `json:"fieldName,omitempty"`
+	Type      *Type   `json:"type,omitempty"`  // +optional
+}
+
+
+type TypeArray struct {
+	ElementType *Type `json:"elementType,omitempty"` // +optional
+}
+
+
+type TypeMap struct {
+    // +kubebuilder:validation:Optional
+	KeyType   *Type `json:"keyType,omitempty"`
+	ValueType *Type `json:"valueType,omitempty"` // +optional
+}
+
+// ClusterState defines per-cluster table state
+type ClusterState struct {
+    Cluster string `json:"cluster"`
+    ReplicationState *string `json:"replicationState,omitempty"`  // Output only
+    EncryptionInfo []EncryptionInfo `json:"encryptionInfo,omitempty"` // Output only,  // +optional
+}
+
+```
+
+**Key Changes and Explanations:**
+
+* **Lists for map-like structures:** The `cluster_states` and `column_families` fields, which were originally maps, are now represented as lists of `ClusterState` and `ColumnFamily` structs, respectively.  This allows Kubernetes to handle the data correctly.
+* **`Family` field in `ColumnFamily`:** Added a `Family` field to the `ColumnFamily` struct to hold the column family ID, which was previously the key in the map.
+* **`Cluster` field in `ClusterState`:** Added a `Cluster` field to the `ClusterState` struct to hold the cluster ID, which was previously the key in the map.
+* **Nested structs:**  Preserve the nested structure of the original Protobuf definition using corresponding Go structs (e.g., `GcRule`, `GcRuleIntersection`, `GcRuleUnion`, `Type`,  `TypeBytes`, `TypeString`, etc.). This ensures all configuration options are available.
+* **Enums:**  Enums are represented as strings with validation using kubebuilder markers (e.g., `+kubebuilder:validation:Enum`).
+* **Omitempty:** The `+optional` tag (or `omitempty` in the JSON tag)  is used where appropriate to allow fields to be omitted if they are not needed.
+* **Kubebuilder Markers:**  Use `+kubebuilder:validation:Optional` and other markers where needed to provide validation and other directives to the kubebuilder code generator.
+* **Imports:** Make sure you have the necessary imports for `v1beta1.ResourceRef`, other types from the `bigtable/v1beta1` package, and potentially the `status` package if you uncomment the `EncryptionStatus` field (after it's supported in the GCP API).
+* **ResourceID consistency:**  Use the `spec.resourceID`  field consistently for the table name (if provided)  to align with Config Connector conventions.
+
+This revised code should generate the CRD correctly and allow you to manage Bigtable Tables with Config Connector. Remember to adjust package names and imports to match your project structure.  Also, make sure to register the new types with the scheme.
+
+
+This detailed example provides a more robust and maintainable way to handle complex protobuf message types when generating Kubernetes CRDs using Config Connector.  It also anticipates some potential future changes in the GCP API (like the addition of the `EncryptionStatus` field) and structures the code in a way that makes it easier to adapt to these changes.

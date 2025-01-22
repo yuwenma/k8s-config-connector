@@ -1,0 +1,197 @@
+```go
+// Copyright 2023 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package v1beta1
+
+import (
+	"k8s.io/apimachinery/pkg/runtime/schema"
+	"sigs.k8s.io/controller-runtime/pkg/scheme"
+)
+
+var (
+	// SchemeBuilder is used to add go types to the GroupVersionKind scheme.
+	SchemeBuilder = &scheme.Builder{GroupVersion: SchemeGroupVersion}
+
+	// AddToScheme is a global function that registers this API group & version to a scheme
+	AddToScheme = SchemeBuilder.AddToScheme
+
+	// SchemeGroupVersion is the group version used to register these objects.
+	SchemeGroupVersion = schema.GroupVersion{Group: "bigtableadmin.cnrm.cloud.google.com", Version: "v1beta1"}
+)
+
+type BigtableTableSpec struct {
+	// The BigtableTable name. If not given, the metadata.name will be used.
+	ResourceID *string `json:"resourceID,omitempty"`
+}
+
+// BigtableTableObservedState is the state of the BigtableTable resource as most recently observed in GCP.
+type BigtableTableObservedState struct {
+}
+
+type Access struct {
+	// An IAM role ID that should be granted to the user, group,
+	// or domain specified in this access entry.
+	// The following legacy mappings will be applied:
+	//
+	// * `OWNER`: `roles/bigquery.dataOwner`
+	// * `WRITER`: `roles/bigquery.dataEditor`
+	// * `READER`: `roles/bigquery.dataViewer`
+	//
+	// This field will accept any of the above formats, but will return only
+	// the legacy format. For example, if you set this field to
+	// "roles/bigquery.dataOwner", it will be returned back as "OWNER".
+	Role *string `json:"role,omitempty"`
+
+	// [Pick one] An email address of a user to grant access to. For example:
+	// fred@example.com. Maps to IAM policy member "user:EMAIL" or
+	// "serviceAccount:EMAIL".
+	UserByEmail *string `json:"userByEmail,omitempty"`
+
+	// [Pick one] An email address of a Google Group to grant access to.
+	// Maps to IAM policy member "group:GROUP".
+	GroupByEmail *string `json:"groupByEmail,omitempty"`
+
+	// [Pick one] A domain to grant access to. Any users signed in with the domain
+	// specified will be granted the specified access. Example: "example.com".
+	// Maps to IAM policy member "domain:DOMAIN".
+	Domain *string `json:"domain,omitempty"`
+
+	// [Pick one] A special group to grant access to. Possible values include:
+	//
+	// * projectOwners: Owners of the enclosing project.
+	// * projectReaders: Readers of the enclosing project.
+	// * projectWriters: Writers of the enclosing project.
+	// * allAuthenticatedUsers: All authenticated BigQuery users.
+	//
+	// Maps to similarly-named IAM members.
+	SpecialGroup *string `json:"specialGroup,omitempty"`
+
+	// [Pick one] Some other type of member that appears in the IAM Policy but
+	// isn't a user, group, domain, or special group.
+	IamMember *string `json:"iamMember,omitempty"`
+
+	// [Pick one] A view from a different dataset to grant access to. Queries
+	// executed against that view will have read access to views/tables/routines
+	// in this dataset.
+	// The role field is not required when this field is set. If that view is
+	// updated by any user, access to the view needs to be granted again via an
+	// update operation.
+	View *TableReference `json:"view,omitempty"`
+
+	// [Pick one] A routine from a different dataset to grant access to. Queries
+	// executed against that routine will have read access to
+	// views/tables/routines in this dataset. Only UDF is supported for now.
+	// The role field is not required when this field is set. If that routine is
+	// updated by any user, access to the routine needs to be granted again via
+	// an update operation.
+	Routine *RoutineReference `json:"routine,omitempty"`
+
+	// [Pick one] A grant authorizing all resources of a particular type in a
+	// particular dataset access to this dataset. Only views are supported for
+	// now. The role field is not required when this field is set. If that dataset
+	// is deleted and re-created, its access needs to be granted again via an
+	// update operation.
+	Dataset *DatasetAccessEntry `json:"dataset,omitempty"`
+}
+
+type BigQueryDatasetSpec struct {
+	// The BigQueryDataset name. If not given, the metadata.name will be used.
+	ResourceID *string `json:"resourceID,omitempty"`
+
+	// An array of objects that define dataset access for one or more entities.
+	// +optional
+	Access []Access `json:"access,omitempty"`
+
+	// Optional. Defines the default collation specification of future tables
+	// created in the dataset. If a table is created in this dataset without
+	// table-level default collation, then the table inherits the dataset default
+	// collation, which is applied to the string fields that do not have explicit
+	// collation specified. A change to this field affects only tables created
+	// afterwards, and does not alter the existing tables.
+	// The following values are supported:
+	//
+	// * 'und:ci': undetermined locale, case-insensitive.
+	// * '': empty string. Default to case-sensitive behavior.
+	DefaultCollation *string `json:"defaultCollation,omitempty"`
+
+	// The default encryption key for all tables in the dataset.
+	// After this property is set, the encryption key of all newly-created tables
+	// in the dataset is set to this value unless the table creation request or
+	// query explicitly overrides the key.
+	DefaultEncryptionConfiguration *EncryptionConfiguration `json:"defaultEncryptionConfiguration,omitempty"`
+
+	// This default partition expiration, expressed in milliseconds.
+	//
+	// When new time-partitioned tables are created in a dataset where this
+	// property is set, the table will inherit this value, propagated as the
+	// `TimePartitioning.expirationMs` property on the new table.  If you set
+	// `TimePartitioning.expirationMs` explicitly when creating a table,
+	// the `defaultPartitionExpirationMs` of the containing dataset is ignored.
+	//
+	// When creating a partitioned table, if `defaultPartitionExpirationMs`
+	// is set, the `defaultTableExpirationMs` value is ignored and the table
+	// will not be inherit a table expiration deadline.
+	DefaultPartitionExpirationMs *int64 `json:"defaultPartitionExpirationMs,omitempty"`
+
+	// Optional. The default lifetime of all tables in the dataset, in
+	// milliseconds. The minimum lifetime value is 3600000 milliseconds (one
+	// hour). To clear an existing default expiration with a PATCH request, set to
+	// 0. Once this property is set, all newly-created tables in the dataset will
+	// have an expirationTime property set to the creation time plus the value in
+	// this property, and changing the value will only affect new tables, not
+	// existing ones. When the expirationTime for a given table is reached, that
+	// table will be deleted automatically.
+	// If a table's expirationTime is modified or removed before the table
+	// expires, or if you provide an explicit expirationTime when creating a
+	// table, that value takes precedence over the default expiration time
+	// indicated by this property.
+	DefaultTableExpirationMs *int64 `json:"defaultTableExpirationMs,omitempty"`
+
+	// Optional. A user-friendly description of the dataset.
+	Description *string `json:"description,omitempty"`
+
+	// Optional. A descriptive name for the dataset.
+	FriendlyName *string `json:"friendlyName,omitempty"`
+
+	// Optional. TRUE if the dataset and its table names are case-insensitive,
+	// otherwise FALSE. By default, this is FALSE, which means the dataset and its
+	// table names are case-sensitive. This field does not affect routine
+	// references.
+	IsCaseInsensitive *bool `json:"isCaseInsensitive,omitempty"`
+
+	// Optional. The geographic location where the dataset should reside. See
+	// https://cloud.google.com/bigquery/docs/locations for supported
+	// locations.
+	Location *string `json:"location,omitempty"`
+
+	// Optional. Defines the time travel window in hours. The value can be from 48
+	// to 168 hours (2 to 7 days). The default value is 168 hours if this is not
+	// set.
+	MaxTimeTravelHours *string `json:"maxTimeTravelHours,omitempty"`
+
+	// Optional. The project that this resource belongs to.
+	ProjectRef *v1beta1.ProjectRef `json:"projectRef,omitempty"`
+
+	// Optional. Updates storage_billing_model for the dataset.
+	StorageBillingModel *string `json:"storageBillingModel,omitempty"`
+}
+
+type BigQueryDatasetObservedState struct {
+	// Optional. If the location is not specified in the spec, the GCP server defaults to a location and will be captured here.
+	Location *string `json:"location,omitempty"`
+}
+
+// other types omitted for brevity
+```

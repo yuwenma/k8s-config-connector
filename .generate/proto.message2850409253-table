@@ -1,0 +1,32 @@
+The error message tells you the root cause:
+
+```
+github.com/GoogleCloudPlatform/k8s-config-connector/apis/bigtable/v1beta1:-: use of unimported package "v1beta1"
+```
+
+Your `table_types.go` file is trying to use types from a package named `v1beta1` without actually importing it.  You need to determine *which* `v1beta1` package it should be.  Based on the `.proto` definition, it appears to be `google.bigtable.admin.v2`.  Therefore, you need to add the following import to the top of your `table_types.go` file:
+
+```go
+import v1beta1 "google.bigtable.admin.v2"  // Or the correct path if different
+```
+
+**Explanation of the other errors:**
+
+The subsequent errors:
+
+```
+/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/apis/bigtable/v1beta1/table_types.go:68:2: invalid field type: invalid type
+/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/apis/bigtable/v1beta1/table_types.go:77:2: invalid field type: invalid type
+```
+
+These are *consequences* of the missing import. Because `v1beta1` isn't recognized as a package, the `map` types using `v1beta1.ClusterState` and `v1beta1.ColumnFamily` are also invalid. Once you fix the import, these errors should resolve automatically.
+
+**Additional Tips for Debugging**
+
+* **Verify the import path:** Double-check that `google.bigtable.admin.v2` is the correct path to the package containing `ClusterState` and `ColumnFamily`. The error message sometimes indicates a slightly different location to where the actual problem is.
+* **Go Modules:** Make sure your project is using Go Modules correctly. A properly configured `go.mod` file is essential for dependency management.  Run `go mod tidy` to ensure dependencies are up-to-date and correctly resolved.
+* **Clean Build:** Sometimes cached build artifacts can cause issues. Try running `go clean -modcache` to clear the module cache and then rebuild.
+
+
+
+After adding the import, re-run the `controller-gen` command.  If the correct `v1beta1` package is now imported and contains the necessary types (`ClusterState` and `ColumnFamily`), the compilation should succeed.
