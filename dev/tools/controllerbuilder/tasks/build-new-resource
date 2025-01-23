@@ -53,34 +53,14 @@ if [[ -z "${OUTPUT:-}" ]]; then
   fi
 fi
 
-
 # Add basic framework
 # Example: go run . generate-direct-reconciler --service google.bigtable.admin.v2 --kind  BigtableTable  --api-version bigtable.cnrm.cloud.google.com/v1beta1 --proto-resource Table
 go run . generate-direct-reconciler --service ${SERVICE} --kind  ${KIND}  --api-version ${GROUP}.cnrm.cloud.google.com/${VERSION} --proto-resource ${PROTO}
 
-for ((i=0; i<5; i++)); do
-  
-  gencrd_output=$(${REPO_ROOT}/dev/tasks/generate-crds 2>&1 || true) 
-  feedback="fix: ${gencrd_output}"
-  echo ${feedback}
-  # Add API
-  output=$(go run . prompt --src-dir="${REPO_ROOT}" --proto-dir="${REPO_ROOT}/dev/tools/proto-to-mapper/third_party/googleapis/" --output=${OUTPUT} <<EOF
-// +kcc:proto=${SERVICE}.${PROTO}
-// kind: ${KIND}
-// ${feedback} 
-EOF
-2>&1)
-
-  # Update API
-  last_line="${output##*$'\n'}"
-  echo "Output is cached to $last_line"
-  mv ${last_line} ${last_line}-${PROTO,,}
-  SRC_FILE=${last_line}-${PROTO,,}
-  go run . apply --src-file="${SRC_FILE}" --dest-file="${REPO_ROOT}/apis/${GROUP}/${VERSION}/${PROTO,,}_types.go"
-
-  # hack/record-gcp fixtures/${PROTO}
-done
 
 # Add controller
-# go run ./cmd/base/main.go  --base-dir $REPO_ROOT --group ${GROUP} --proto ${PROTO,,}
+# We retry to kind of bypass the quota limit
+for ((i=0; i<5; i++)); do
+  go run ./cmd/base/main.go  --base-dir $REPO_ROOT --group ${GROUP} --proto ${PROTO,,} --version ${VERSION}
+done
 

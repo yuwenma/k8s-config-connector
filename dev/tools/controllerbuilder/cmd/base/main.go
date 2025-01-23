@@ -14,6 +14,7 @@
 package main
 
 import (
+	"errors"
 	"flag"
 	"fmt"
 	"io/fs"
@@ -23,6 +24,8 @@ import (
 
 	"cloud.google.com/go/vertexai/genai"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/codebot"
+	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/codebot/ui"
+
 	"k8s.io/klog"
 
 	"context"
@@ -39,8 +42,8 @@ func main() {
 type Options struct {
 	BaseDir       string
 	Group         string
+	Version       string
 	ProtoResource string
-	Retries       int
 }
 
 func run(ctx context.Context) error {
@@ -49,8 +52,8 @@ func run(ctx context.Context) error {
 	klog.InitFlags(nil)
 	flag.StringVar(&o.BaseDir, "base-dir", o.BaseDir, "base directory for the project code")
 	flag.StringVar(&o.Group, "group", o.Group, "the Config Connector service name")
+	flag.StringVar(&o.Version, "version", o.Version, "the Config Connector version")
 	flag.StringVar(&o.ProtoResource, "proto", o.ProtoResource, "the proto name")
-	flag.IntVar(&o.Retries, "retries", o.Retries, "the max number of attempts to rerun the prediction for better result")
 
 	flag.Parse()
 
@@ -60,33 +63,76 @@ func run(ctx context.Context) error {
 	if o.Group == "" {
 		return fmt.Errorf("group is required")
 	}
-	fpath := filepath.Join("./pkg/controller/direct/", o.Group, o.ProtoResource+"_controller.go")
+	// Target files
+	controllerPath := filepath.Join("./pkg/controller/direct/", o.Group, o.ProtoResource+"_controller.go")
+	apiPath := filepath.Join("./apis", o.Group, o.Version, o.ProtoResource+"_types.go")
+	identityPath := filepath.Join("./apis", o.Group, o.Version, o.ProtoResource+"_identity.go")
+	referencePath := filepath.Join("./apis", o.Group, o.Version, o.ProtoResource+"_reference.go")
 
+	// Selectively choose the files to pass to gemini.
+	// It maybe better to pass in the entire dir, but it exceeds the token limits.
 	includeDirs := []string{
+		// "./apis/",
+		// "./pkg/controller/direct/",
+
 		"./apis/bigqueryconnection",
 		"./apis/cloudbuild",
 		"./apis/kms",
-		"./apis/" + o.Group,
 		"./pkg/controller/direct/common",
 		"./pkg/controller/direct/bigqueryconnection",
 		"./pkg/controller/direct/cloudbuild",
 		"./pkg/controller/direct/kms",
-		fpath,
 		"./pkg/controller/direct/directbase",
 		"./pkg/controller/direct/registry",
+		controllerPath,
+		apiPath,
+		identityPath,
+		referencePath,
 	}
 	contextFiles, err := readGoSourceFromSubdirs(o.BaseDir, includeDirs)
 	if err != nil {
 		return fmt.Errorf("read Go source directory %s: %w", o.BaseDir, err)
 	}
 
-	// Construct the prompt
-	prompt := fmt.Sprintf("File %q:\n", fpath)
+	u := ui.NewTerminalUI()
 
-	for range o.Retries {
-		content := generateContent(ctx, o.BaseDir, prompt, contextFiles)
-
+	chat, err := codebot.NewChat(ctx, o.BaseDir, contextFiles, u)
+	if err != nil {
+		return err
 	}
+	defer chat.Close()
+
+	var errs error
+
+	// "I can't answer this question because the file path is not specific enough for me to understand what file you're referencing.  Please specify the full path to the file"
+
+	//
+	if err := chat.SendMessage(ctx,
+		genai.Text("write or fix the given file, it should be a compilable Kubernetes controller, similar to the other *_controller.go I gave"),
+		genai.Text(fmt.Sprintf("File %q:\n", controllerPath)),
+	); err != nil {
+		errs = errors.Join(errs, err)
+	}
+	if err := chat.SendMessage(ctx,
+		genai.Text("write or fix the given file, it is kubernetes CRD in golang which is compatible with Kubebuilder"),
+		genai.Text(fmt.Sprintf("File %q:\n", apiPath)),
+	); err != nil {
+		errs = errors.Join(errs, err)
+	}
+
+	if err := chat.SendMessage(ctx,
+		genai.Text("write or fix the given go code file, whose identity matches the GCP URL path, similar to the other *_identity.go I gave"),
+		genai.Text(fmt.Sprintf("File %q:\n", identityPath)),
+	); err != nil {
+		errs = errors.Join(errs, err)
+	}
+	if err := chat.SendMessage(ctx,
+		genai.Text("write or fix the given go code file with correct NormalizeExternal function, similar to the other *_reference.go I gave"),
+		genai.Text(fmt.Sprintf("File %q:\n", referencePath)),
+	); err != nil {
+		errs = errors.Join(errs, err)
+	}
+	return nil
 }
 
 func readGoSourceFromSubdirs(rootDir string, subdirs []string) (map[string]*codebot.FileInfo, error) {
@@ -121,19 +167,4 @@ func readGoSourceFromSubdirs(rootDir string, subdirs []string) (map[string]*code
 	}
 
 	return contextFiles, nil
-}
-
-// Placeholder function for interacting with the Gemini API
-func generateContent(ctx context.Context, basedir, prompt string, contextFiles map[string]*codebot.FileInfo) error {
-	funcDecl := []*genai.FunctionDeclaration{}
-	chat, err := codebot.NewChat(ctx, basedir, contextFiles, funcDecl)
-	if err != nil {
-		return err
-	}
-	defer chat.Close()
-
-	if err := chat.SendMessage(ctx, genai.Text(prompt)); err != nil {
-		return err
-	}
-	return nil
 }

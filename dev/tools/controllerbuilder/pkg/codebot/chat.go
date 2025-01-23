@@ -63,7 +63,6 @@ If you think the code should be changed, use the tools to apply those changes in
 `
 
 	model.SystemInstruction = &genai.Content{
-		Role: "user",
 		Parts: []genai.Part{
 			genai.Text(systemPrompt),
 		},
@@ -195,6 +194,10 @@ func (c *Chat) SendMessage(ctx context.Context, userParts ...genai.Part) error {
 
 		var functionResponses []genai.Part
 
+		if content == nil {
+			klog.V(2).Infof("no content", userParts)
+			return nil
+		}
 		for _, part := range content.Parts {
 			if text, ok := part.(genai.Text); ok {
 				s := string(text)
