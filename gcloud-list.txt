@@ -1,0 +1,2539 @@
+access-context-manager authorized-orgs
+access-context-manager cloud-bindings
+access-context-manager levels
+access-context-manager perimeters
+access-context-manager perimeters dry-run
+access-context-manager policies
+access-context-manager supported-services
+active-directory domains backups
+active-directory domains
+active-directory operations
+active-directory peerings
+ai custom-jobs
+ai endpoints
+ai hp-tuning-jobs
+ai index-endpoints
+ai indexes
+ai model-monitoring-jobs
+ai models
+ai operations
+ai persistent-resources
+ai tensorboards
+ai-platform jobs
+ai-platform models
+ai-platform operations
+ai-platform versions
+alloydb backups
+alloydb clusters
+alloydb instances
+alloydb operations
+anthos config controller
+anthos config operations
+api-gateway api-configs
+api-gateway apis
+api-gateway gateways
+api-gateway operations
+apigee apis
+apigee applications
+apigee deployments
+apigee developers
+apigee products
+app
+app domain-mappings
+app firewall-rules
+app instances
+app operations
+app services
+app ssl-certificates
+app versions
+apphub applications
+apphub applications services
+apphub applications workloads
+apphub discovered-services
+apphub discovered-workloads
+apphub locations
+apphub operations
+apphub service-projects
+artifacts docker images
+artifacts files
+artifacts operations
+artifacts packages
+artifacts repositories
+artifacts rules
+artifacts settings
+artifacts versions
+artifacts vpcsc-config
+asset feeds
+asset operations
+asset saved-queries
+assured operations
+assured workloads
+assured workloads violations
+audit-manager operations
+backup-dr backup-plan-associations
+backup-dr backup-plans
+backup-dr backup-vaults
+backup-dr backups
+backup-dr data-sources
+backup-dr management-servers
+backup-dr operations
+batch jobs
+batch tasks
+bigtable app-profiles
+bigtable authorized-views
+bigtable backups
+bigtable clusters
+bigtable instances
+bigtable instances tables
+bigtable operations
+bigtable tables
+billing accounts
+billing budgets
+billing projects
+bms instances
+bms networks
+bms nfs-shares
+bms operations
+bms os-images
+bms volumes
+bms volumes luns
+bms volumes snapshots
+builds connections
+builds
+builds repositories
+builds triggers
+builds worker-pools
+certificate-manager certificates
+certificate-manager dns-authorizations
+certificate-manager issuance-configs
+certificate-manager maps
+certificate-manager maps entries
+certificate-manager operations
+certificate-manager trust-configs
+colab executions
+colab runtime-templates
+colab runtimes
+colab schedules
+composer environments
+composer environments user-workloads-config-maps
+composer environments user-workloads-secrets
+composer operations
+compute accelerator-types
+compute addresses
+compute backend-buckets
+compute backend-services
+compute commitments
+compute disk-types
+compute disks
+compute external-vpn-gateways
+compute firewall-policies
+compute firewall-policies rules
+compute firewall-rules
+compute forwarding-rules
+compute health-checks
+compute http-health-checks
+compute https-health-checks
+compute images
+compute instance-groups
+compute instance-groups managed
+compute instance-groups managed resize-requests
+compute instance-groups unmanaged
+compute instance-templates
+compute instances
+compute instances ops-agents policies
+compute instances os-inventory
+compute instant-snapshots
+compute interconnects attachments
+compute interconnects
+compute interconnects locations
+compute interconnects remote-locations
+compute machine-images
+compute machine-types
+compute network-attachments
+compute network-edge-security-services
+compute network-endpoint-groups
+compute network-firewall-policies
+compute network-firewall-policies rules
+compute network-profiles
+compute networks
+compute networks subnets
+compute networks vpc-access connectors
+compute networks vpc-access operations
+compute operations
+compute os-config inventories
+compute os-config os-policy-assignment-reports
+compute os-config os-policy-assignments
+compute os-config os-policy-assignments operations
+compute os-config patch-deployments
+compute os-config patch-jobs
+compute os-config project-feature-settings
+compute os-config vulnerability-reports
+compute os-login ssh-keys
+compute packet-mirrorings
+compute project-info
+compute project-zonal-metadata
+compute public-advertised-prefixes
+compute public-delegated-prefixes
+compute regions
+compute reservations
+compute resource-policies
+compute routers
+compute routers nats
+compute routers nats rules
+compute routes
+compute security-policies
+compute security-policies rules
+compute service-attachments
+compute snapshot-settings
+compute snapshots
+compute sole-tenancy node-groups
+compute sole-tenancy node-templates
+compute sole-tenancy node-types
+compute ssl-certificates
+compute ssl-policies
+compute storage-pool-types
+compute storage-pools
+compute target-grpc-proxies
+compute target-http-proxies
+compute target-https-proxies
+compute target-instances
+compute target-pools
+compute target-ssl-proxies
+compute target-tcp-proxies
+compute target-vpn-gateways
+compute tpus accelerator-types
+compute tpus
+compute tpus execution-groups
+compute tpus locations
+compute tpus queued-resources
+compute tpus tpu-vm accelerator-types
+compute tpus tpu-vm
+compute tpus tpu-vm versions
+compute tpus versions
+compute url-maps
+compute vpn-gateways
+compute vpn-tunnels
+compute zones
+config configurations
+container attached clusters
+container attached operations
+container aws clusters
+container aws node-pools
+container aws operations
+container azure clients
+container azure clusters
+container azure node-pools
+container azure operations
+container bare-metal admin-clusters
+container bare-metal clusters
+container bare-metal node-pools
+container bare-metal operations
+container binauthz attestors
+container clusters
+container fleet cloudrun
+container fleet clusterupgrade
+container fleet dataplane-v2-encryption
+container fleet
+container fleet fleetobservability
+container fleet identity-service
+container fleet ingress
+container fleet memberships bindings
+container fleet memberships
+container fleet memberships support-access
+container fleet mesh
+container fleet multi-cluster-services
+container fleet operations
+container fleet policycontroller
+container fleet scopes
+container fleet scopes namespaces
+container fleet scopes rbacrolebindings
+container hub cloudrun
+container hub clusterupgrade
+container hub dataplane-v2-encryption
+container hub
+container hub fleetobservability
+container hub identity-service
+container hub ingress
+container hub memberships bindings
+container hub memberships
+container hub memberships support-access
+container hub mesh
+container hub multi-cluster-services
+container hub operations
+container hub policycontroller
+container hub scopes
+container hub scopes namespaces
+container hub scopes rbacrolebindings
+container images
+container node-pools
+container operations
+container vmware admin-clusters
+container vmware clusters
+container vmware node-pools
+container vmware operations
+data-catalog entries
+data-catalog entry-groups
+data-catalog tag-templates
+data-catalog taxonomies
+data-catalog taxonomies policy-tags
+database-migration connection-profiles
+database-migration conversion-workspaces
+database-migration migration-jobs
+database-migration operations
+database-migration private-connections
+dataflow jobs
+dataflow snapshots
+dataplex aspect-types
+dataplex assets
+dataplex content
+dataplex datascans
+dataplex datascans jobs
+dataplex entries
+dataplex entry-groups
+dataplex entry-types
+dataplex environments
+dataplex lakes
+dataplex tasks
+dataplex tasks jobs
+dataplex zones
+dataproc autoscaling-policies
+dataproc batches
+dataproc clusters
+dataproc jobs
+dataproc node-groups
+dataproc operations
+dataproc workflow-templates
+datastore indexes
+datastore operations
+datastream connection-profiles
+datastream locations
+datastream objects
+datastream operations
+datastream private-connections
+datastream routes
+datastream streams
+deploy automation-runs
+deploy automations
+deploy custom-target-types
+deploy delivery-pipelines
+deploy deploy-policies
+deploy job-runs
+deploy releases
+deploy rollouts
+deploy targets
+deployment-manager deployments
+deployment-manager manifests
+deployment-manager operations
+deployment-manager resources
+developer-connect connections
+developer-connect connections git-repository-links
+developer-connect operations
+dns dns-keys
+dns managed-zones
+dns operations
+dns policies
+dns project-info
+dns record-sets changes
+dns record-sets
+dns record-sets transaction
+dns response-policies
+dns response-policies rules
+domains registrations
+domains registrations operations
+edge-cache keysets
+edge-cache operations
+edge-cache origins
+edge-cache services
+edge-cloud container clusters
+edge-cloud container clusters node-pools
+edge-cloud container machines
+edge-cloud container operations
+edge-cloud container regions
+edge-cloud container vpn-connections
+edge-cloud container zones
+edge-cloud networking interconnects attachments
+edge-cloud networking interconnects
+edge-cloud networking networks
+edge-cloud networking operations
+edge-cloud networking routers
+edge-cloud networking subnets
+endpoints configs
+endpoints operations
+endpoints services
+essential-contacts
+eventarc channel-connections
+eventarc channels
+eventarc google-channels
+eventarc providers
+eventarc triggers
+filestore backups
+filestore instances
+filestore instances snapshots
+filestore locations
+filestore operations
+firebase test android locales
+firebase test android models
+firebase test android versions
+firebase test ios locales
+firebase test ios models
+firebase test ios versions
+firebase test network-profiles
+firestore backups
+firestore backups schedules
+firestore databases
+firestore indexes composite
+firestore indexes fields
+firestore operations
+functions
+gemini code-repository-indexes
+gemini code-repository-indexes repository-groups
+gemini operations
+healthcare consent-stores
+healthcare datasets
+healthcare dicom-stores
+healthcare fhir-stores
+healthcare hl7v2-stores
+healthcare operations
+iam oauth-clients credentials
+iam oauth-clients
+iam policy-bindings
+iam principal-access-boundary-policies
+iam roles
+iam service-accounts
+iam workforce-pools
+iam workforce-pools operations
+iam workforce-pools providers
+iam workforce-pools providers keys
+iam workforce-pools providers keys operations
+iam workforce-pools providers operations
+iam workforce-pools subjects operations
+iam workload-identity-pools
+iam workload-identity-pools operations
+iam workload-identity-pools providers
+iam workload-identity-pools providers keys
+iam workload-identity-pools providers keys operations
+iam workload-identity-pools providers operations
+iap oauth-brands
+iap oauth-clients
+iap tcp dest-groups
+identity groups
+identity groups memberships
+ids endpoints
+immersive-stream xr contents
+immersive-stream xr instances
+immersive-stream xr operations
+infra-manager deployments
+infra-manager previews
+infra-manager resources
+infra-manager revisions
+infra-manager terraform-versions
+kms ekm-config
+kms ekm-connections
+kms import-jobs
+kms keyrings
+kms keys
+kms keys versions
+logging buckets
+logging links
+logging locations
+logging metrics
+logging operations
+logging scopes
+logging settings
+logging sinks
+logging views
+looker instances
+looker operations
+managed-kafka clusters
+managed-kafka consumer-groups
+managed-kafka topics
+memcache instances
+memcache operations
+memcache regions
+memorystore instances
+memorystore operations
+metastore federations
+metastore locations
+metastore operations
+metastore services backups
+metastore services
+migration vms image-imports
+migration vms machine-image-imports
+ml speech operations
+ml video operations
+ml-engine jobs
+ml-engine models
+ml-engine operations
+ml-engine versions
+monitoring dashboards
+monitoring snoozes
+monitoring uptime
+netapp active-directories
+netapp backup-policies
+netapp backup-vaults backups
+netapp backup-vaults
+netapp kms-configs
+netapp locations
+netapp operations
+netapp storage-pools
+netapp volumes
+netapp volumes quota-rules
+netapp volumes replications
+netapp volumes snapshots
+network-connectivity hubs
+network-connectivity hubs groups
+network-connectivity hubs route-tables
+network-connectivity hubs route-tables routes
+network-connectivity internal-ranges
+network-connectivity locations
+network-connectivity operations
+network-connectivity policy-based-routes
+network-connectivity regional-endpoints
+network-connectivity service-connection-policies
+network-connectivity spokes
+network-management connectivity-tests
+network-management operations
+network-management vpc-flow-logs-configs
+network-security address-groups
+network-security firewall-endpoint-associations
+network-security firewall-endpoints
+network-security org-address-groups
+network-security security-profile-groups
+network-security server-tls-policies
+network-services endpoint-policies
+network-services gateways
+network-services grpc-routes
+network-services http-routes
+network-services meshes
+network-services route-views
+network-services service-bindings
+network-services service-lb-policies
+network-services tcp-routes
+network-services tls-routes
+notebooks environments
+notebooks instances
+notebooks runtimes
+oracle-database autonomous-databases
+oracle-database cloud-exadata-infrastructures
+oracle-database cloud-vm-clusters
+oracle-database operations
+org-policies
+organizations
+pam entitlements
+pam grants
+pam operations
+preview config configurations
+privateca certificates
+privateca pools
+privateca roots
+privateca subordinates
+privateca templates
+projects
+pubsub lite-operations
+pubsub lite-reservations
+pubsub lite-subscriptions
+pubsub lite-topics
+pubsub schemas
+pubsub snapshots
+pubsub subscriptions
+pubsub topics
+recaptcha firewall-policies
+recaptcha keys
+recommender insight-type-config
+recommender insights
+recommender recommendations
+recommender recommender-config
+redis clusters
+redis instances
+redis operations
+redis regions
+resource-manager folders
+resource-manager org-policies
+resource-manager tags keys
+resource-manager tags values
+run domain-mappings
+run jobs
+run jobs executions
+run jobs executions tasks
+run revisions
+run services
+scc assets
+scc iac-validation-reports
+scc manage custom-modules etd
+scc manage custom-modules sha
+scc manage services
+scc notifications
+scc operations
+scc posture-deployments
+scc posture-operations
+scc posture-templates
+scc postures
+scc sources
+scheduler jobs
+scheduler locations
+secrets
+secrets locations
+secrets versions
+service-directory endpoints
+service-directory locations
+service-directory namespaces
+service-directory services
+service-extensions lb-route-extensions
+service-extensions lb-traffic-extensions
+services api-keys
+services operations
+services vpc-peerings operations
+source project-configs
+source repos
+spanner backup-schedules
+spanner backups
+spanner databases ddl
+spanner databases
+spanner instance-configs
+spanner instances
+spanner operations
+sql backups
+sql databases
+sql instances
+sql operations
+sql ssl client-certs
+sql ssl-certs
+sql users
+storage buckets
+storage buckets notifications
+storage folders
+storage hmac
+storage insights inventory-reports
+storage insights inventory-reports details
+storage managed-folders
+storage objects
+storage operations
+tasks cmek-config
+tasks
+tasks locations
+tasks queues
+telco-automation operations
+telco-automation orchestration-cluster
+transcoder jobs
+transcoder templates
+transfer agent-pools
+transfer jobs
+transfer operations
+vmware dns-bind-permission
+vmware network-peerings
+vmware network-policies
+vmware network-policies external-access-rules
+vmware networks
+vmware node-types
+vmware operations
+vmware private-clouds clusters
+vmware private-clouds clusters nodes
+vmware private-clouds
+vmware private-clouds dns-forwarding
+vmware private-clouds external-addresses
+vmware private-clouds hcx activationkeys
+vmware private-clouds logging-servers
+vmware private-clouds management-dns-zone-bindings
+vmware private-clouds nsx credentials
+vmware private-clouds subnets
+vmware private-clouds vcenter credentials
+vmware private-connections
+workbench instances
+workflows
+workflows executions
+workspace-add-ons deployments
+workstations clusters
+workstations configs
+workstations
+access-context-manager authorized-orgs
+access-context-manager cloud-bindings
+access-context-manager levels
+access-context-manager perimeters
+access-context-manager perimeters dry-run
+access-context-manager policies
+access-context-manager supported-services
+active-directory domains backups
+active-directory domains
+active-directory operations
+active-directory peerings
+ai custom-jobs
+ai endpoints
+ai hp-tuning-jobs
+ai index-endpoints
+ai indexes
+ai model-monitoring-jobs
+ai models
+ai operations
+ai persistent-resources
+ai tensorboards
+ai-platform jobs
+ai-platform models
+ai-platform operations
+ai-platform versions
+alloydb backups
+alloydb clusters
+alloydb instances
+alloydb operations
+alpha access-context-manager authorized-orgs
+alpha access-context-manager cloud-bindings
+alpha access-context-manager levels
+alpha access-context-manager perimeters
+alpha access-context-manager perimeters dry-run
+alpha access-context-manager policies
+alpha access-context-manager supported-services
+alpha active-directory domains backups
+alpha active-directory domains
+alpha active-directory domains sql-integrations
+alpha active-directory operations
+alpha active-directory peerings
+alpha ai custom-jobs
+alpha ai endpoints
+alpha ai hp-tuning-jobs
+alpha ai index-endpoints
+alpha ai indexes
+alpha ai model-monitoring-jobs
+alpha ai models
+alpha ai operations
+alpha ai persistent-resources
+alpha ai tensorboard-experiments
+alpha ai tensorboard-runs
+alpha ai tensorboard-time-series
+alpha ai tensorboards
+alpha ai-platform jobs
+alpha ai-platform locations
+alpha ai-platform models
+alpha ai-platform operations
+alpha ai-platform versions
+alpha alloydb backups
+alpha alloydb clusters
+alpha alloydb instances
+alpha alloydb operations
+alpha anthos config controller
+alpha anthos config operations
+alpha anthos config sync repo
+alpha api-gateway api-configs
+alpha api-gateway apis
+alpha api-gateway gateways
+alpha api-gateway operations
+alpha apigee apis
+alpha apigee applications
+alpha apigee archives
+alpha apigee deployments
+alpha apigee developers
+alpha apigee environments
+alpha apigee operations
+alpha apigee products
+alpha app domain-mappings
+alpha app ssl-certificates
+alpha apphub applications
+alpha apphub applications services
+alpha apphub applications workloads
+alpha apphub discovered-services
+alpha apphub discovered-workloads
+alpha apphub locations
+alpha apphub operations
+alpha apphub service-projects
+alpha artifacts docker images
+alpha artifacts operations
+alpha artifacts repositories
+alpha artifacts settings
+alpha artifacts vpcsc-config
+alpha asset feeds
+alpha asset operations
+alpha asset saved-queries
+alpha assured operations
+alpha assured workloads
+alpha assured workloads violations
+alpha audit-manager operations
+alpha backup-dr backup-plan-associations
+alpha backup-dr backup-plans
+alpha backup-dr backup-vaults
+alpha backup-dr backups
+alpha backup-dr data-sources
+alpha backup-dr management-servers
+alpha backup-dr operations
+alpha batch jobs
+alpha batch resource-allowances
+alpha batch tasks
+alpha beyondcorp app connections
+alpha beyondcorp app connectors
+alpha beyondcorp app operations
+alpha bigtable app-profiles
+alpha bigtable authorized-views
+alpha bigtable backups
+alpha bigtable clusters
+alpha bigtable instances
+alpha bigtable instances tables
+alpha bigtable operations
+alpha bigtable tables
+alpha billing accounts
+alpha billing accounts projects
+alpha billing budgets
+alpha billing projects
+alpha blockchain-node-engine locations
+alpha blockchain-node-engine nodes
+alpha blockchain-node-engine operations
+alpha blockchain-validator blockchain-validator-configs
+alpha blockchain-validator operations
+alpha bms instances
+alpha bms networks
+alpha bms nfs-shares
+alpha bms os-images
+alpha bms volumes
+alpha bms volumes luns
+alpha bms volumes snapshots
+alpha bq datasets
+alpha bq jobs
+alpha bq tables
+alpha builds connections
+alpha builds
+alpha builds enterprise-config bitbucketserver
+alpha builds enterprise-config github
+alpha builds enterprise-config gitlab
+alpha builds repositories
+alpha builds triggers
+alpha builds worker-pools
+alpha certificate-manager certificates
+alpha certificate-manager dns-authorizations
+alpha certificate-manager issuance-configs
+alpha certificate-manager maps
+alpha certificate-manager maps entries
+alpha certificate-manager operations
+alpha certificate-manager trust-configs
+alpha composer environments
+alpha composer environments user-workloads-config-maps
+alpha composer environments user-workloads-secrets
+alpha composer operations
+alpha compute accelerator-types
+alpha compute addresses
+alpha compute backend-buckets
+alpha compute backend-services
+alpha compute commitments
+alpha compute disk-types
+alpha compute disks
+alpha compute external-vpn-gateways
+alpha compute firewall-policies
+alpha compute firewall-policies mirroring-rules
+alpha compute firewall-policies rules
+alpha compute firewall-rules
+alpha compute forwarding-rules
+alpha compute future-reservations
+alpha compute health-checks
+alpha compute http-health-checks
+alpha compute https-health-checks
+alpha compute images
+alpha compute instance-groups
+alpha compute instance-groups managed
+alpha compute instance-groups managed resize-requests
+alpha compute instance-groups unmanaged
+alpha compute instance-templates
+alpha compute instances
+alpha compute instances ops-agents policies
+alpha compute instances os-inventory
+alpha compute instant-snapshots
+alpha compute interconnects attachments
+alpha compute interconnects attachments groups
+alpha compute interconnects cross-site-networks
+alpha compute interconnects
+alpha compute interconnects groups
+alpha compute interconnects locations
+alpha compute interconnects remote-locations
+alpha compute interconnects wire-groups
+alpha compute machine-images
+alpha compute machine-types
+alpha compute network-attachments
+alpha compute network-edge-security-services
+alpha compute network-endpoint-groups
+alpha compute network-firewall-policies
+alpha compute network-firewall-policies mirroring-rules
+alpha compute network-firewall-policies rules
+alpha compute network-profiles
+alpha compute networks
+alpha compute networks subnets
+alpha compute operations
+alpha compute org-security-policies
+alpha compute org-security-policies rules
+alpha compute os-config instance-os-policies-compliances
+alpha compute os-config inventories
+alpha compute os-config os-policy-assignment-reports
+alpha compute os-config os-policy-assignments
+alpha compute os-config os-policy-assignments operations
+alpha compute os-config policy-orchestrators
+alpha compute os-config vulnerability-reports
+alpha compute os-login ssh-keys
+alpha compute packet-mirrorings
+alpha compute project-info
+alpha compute project-zonal-metadata
+alpha compute public-advertised-prefixes
+alpha compute public-delegated-prefixes
+alpha compute queued-resources
+alpha compute regions
+alpha compute reservations blocks
+alpha compute reservations
+alpha compute resource-policies
+alpha compute routers
+alpha compute routers nats
+alpha compute routers nats rules
+alpha compute routes
+alpha compute security-policies
+alpha compute security-policies rules
+alpha compute service-attachments
+alpha compute snapshot-settings
+alpha compute snapshots
+alpha compute sole-tenancy node-groups
+alpha compute sole-tenancy node-templates
+alpha compute sole-tenancy node-types
+alpha compute ssl-certificates
+alpha compute ssl-policies
+alpha compute storage-pool-types
+alpha compute storage-pools
+alpha compute target-grpc-proxies
+alpha compute target-http-proxies
+alpha compute target-https-proxies
+alpha compute target-instances
+alpha compute target-pools
+alpha compute target-ssl-proxies
+alpha compute target-tcp-proxies
+alpha compute target-vpn-gateways
+alpha compute tpus accelerator-types
+alpha compute tpus
+alpha compute tpus execution-groups
+alpha compute tpus locations
+alpha compute tpus queued-resources
+alpha compute tpus tpu-vm accelerator-types
+alpha compute tpus tpu-vm
+alpha compute tpus tpu-vm versions
+alpha compute tpus versions
+alpha compute url-maps
+alpha compute vpn-gateways
+alpha compute vpn-tunnels
+alpha compute zones
+alpha config configurations
+alpha container attached clusters
+alpha container attached operations
+alpha container aws clusters
+alpha container aws node-pools
+alpha container aws operations
+alpha container azure clients
+alpha container azure clusters
+alpha container azure node-pools
+alpha container azure operations
+alpha container backup-restore backup-plans
+alpha container backup-restore backups
+alpha container backup-restore locations
+alpha container backup-restore restore-plans
+alpha container backup-restore restores
+alpha container backup-restore volume-backups
+alpha container backup-restore volume-restores
+alpha container bare-metal admin-clusters
+alpha container bare-metal clusters
+alpha container bare-metal node-pools
+alpha container bare-metal operations
+alpha container bare-metal standalone-clusters
+alpha container binauthz attestors
+alpha container binauthz continuous-validation
+alpha container binauthz policy
+alpha container clusters
+alpha container fleet cloudrun
+alpha container fleet clusterupgrade
+alpha container fleet dataplane-v2-encryption
+alpha container fleet
+alpha container fleet fleetobservability
+alpha container fleet identity-service
+alpha container fleet ingress
+alpha container fleet memberships bindings
+alpha container fleet memberships
+alpha container fleet memberships support-access
+alpha container fleet mesh
+alpha container fleet multi-cluster-services
+alpha container fleet namespaceactuation
+alpha container fleet operations
+alpha container fleet packages
+alpha container fleet packages resource-bundles
+alpha container fleet packages resource-bundles releases
+alpha container fleet packages rollouts
+alpha container fleet policycontroller
+alpha container fleet scopes
+alpha container fleet scopes namespaces
+alpha container fleet scopes rbacrolebindings
+alpha container fleet service-directory
+alpha container hub cloudrun
+alpha container hub clusterupgrade
+alpha container hub dataplane-v2-encryption
+alpha container hub
+alpha container hub fleetobservability
+alpha container hub identity-service
+alpha container hub ingress
+alpha container hub memberships bindings
+alpha container hub memberships
+alpha container hub memberships support-access
+alpha container hub mesh
+alpha container hub multi-cluster-services
+alpha container hub namespaceactuation
+alpha container hub operations
+alpha container hub packages
+alpha container hub packages resource-bundles
+alpha container hub packages resource-bundles releases
+alpha container hub packages rollouts
+alpha container hub policycontroller
+alpha container hub scopes
+alpha container hub scopes namespaces
+alpha container hub scopes rbacrolebindings
+alpha container hub service-directory
+alpha container images
+alpha container node-pools
+alpha container operations
+alpha container vmware admin-clusters
+alpha container vmware clusters
+alpha container vmware node-pools
+alpha container vmware operations
+alpha data-catalog crawler-runs
+alpha data-catalog crawlers
+alpha data-catalog entries
+alpha data-catalog entry-groups
+alpha data-catalog tag-templates
+alpha data-catalog taxonomies
+alpha data-catalog taxonomies policy-tags
+alpha database-migration connection-profiles
+alpha database-migration migration-jobs
+alpha database-migration operations
+alpha dataflow snapshots
+alpha dataplex aspect-types
+alpha dataplex assets
+alpha dataplex content
+alpha dataplex data-attribute-bindings
+alpha dataplex data-taxonomies attributes
+alpha dataplex data-taxonomies
+alpha dataplex datascans
+alpha dataplex datascans jobs
+alpha dataplex entries
+alpha dataplex entry-groups
+alpha dataplex entry-types
+alpha dataplex environments
+alpha dataplex lakes
+alpha dataplex tasks
+alpha dataplex tasks jobs
+alpha dataplex zones
+alpha dataproc autoscaling-policies
+alpha dataproc clusters
+alpha dataproc jobs
+alpha dataproc node-groups
+alpha dataproc operations
+alpha dataproc workflow-templates
+alpha datastore indexes
+alpha datastore operations
+alpha deploy automation-runs
+alpha deploy automations
+alpha deploy custom-target-types
+alpha deploy delivery-pipelines
+alpha deploy deploy-policies
+alpha deploy job-runs
+alpha deploy releases
+alpha deploy rollouts
+alpha deploy targets
+alpha deployment-manager deployments
+alpha deployment-manager manifests
+alpha deployment-manager operations
+alpha deployment-manager resources
+alpha deployment-manager type-providers
+alpha deployment-manager types
+alpha developer-connect connections
+alpha developer-connect connections git-repository-links
+alpha developer-connect operations
+alpha dialogflow agent
+alpha dialogflow entity-types
+alpha dialogflow intents
+alpha dlp job-triggers
+alpha dlp jobs
+alpha dns dns-keys
+alpha dns managed-zones
+alpha dns operations
+alpha dns policies
+alpha dns project-info
+alpha dns record-sets changes
+alpha dns record-sets
+alpha dns record-sets transaction
+alpha dns response-policies
+alpha dns response-policies rules
+alpha domains registrations
+alpha domains registrations operations
+alpha edge-cache keysets
+alpha edge-cache operations
+alpha edge-cache origins
+alpha edge-cache services
+alpha edge-cloud container clusters
+alpha edge-cloud container clusters node-pools
+alpha edge-cloud container machines
+alpha edge-cloud container operations
+alpha edge-cloud container regions
+alpha edge-cloud container vpn-connections
+alpha edge-cloud container zones
+alpha edge-cloud networking interconnects attachments
+alpha edge-cloud networking interconnects
+alpha edge-cloud networking networks
+alpha edge-cloud networking operations
+alpha edge-cloud networking routers
+alpha edge-cloud networking subnets
+alpha endpoints configs
+alpha endpoints operations
+alpha endpoints services
+alpha essential-contacts
+alpha filestore backups
+alpha filestore instances
+alpha filestore locations
+alpha filestore operations
+alpha filestore snapshots
+alpha firebase test android locales
+alpha firebase test android models
+alpha firebase test android versions
+alpha firebase test ios locales
+alpha firebase test ios models
+alpha firebase test ios versions
+alpha firebase test network-profiles
+alpha firestore backups
+alpha firestore backups schedules
+alpha firestore databases
+alpha firestore indexes composite
+alpha firestore indexes fields
+alpha firestore locations
+alpha firestore operations
+alpha functions
+alpha genomics operations
+alpha healthcare annotation-stores
+alpha healthcare consent-stores
+alpha healthcare datasets
+alpha healthcare dicom-stores
+alpha healthcare fhir-stores
+alpha healthcare hl7v2-stores
+alpha healthcare operations
+alpha iam oauth-clients credentials
+alpha iam oauth-clients
+alpha iam roles
+alpha iam service-accounts
+alpha iam workforce-pools
+alpha iam workforce-pools operations
+alpha iam workforce-pools providers
+alpha iam workforce-pools providers keys
+alpha iam workforce-pools providers keys operations
+alpha iam workforce-pools providers operations
+alpha iam workload-identity-pools
+alpha iam workload-identity-pools operations
+alpha iam workload-identity-pools providers
+alpha iam workload-identity-pools providers operations
+alpha iap oauth-brands
+alpha iap oauth-clients
+alpha iap tcp dest-groups
+alpha identity groups
+alpha identity groups memberships
+alpha ids endpoints
+alpha ids operations
+alpha immersive-stream xr contents
+alpha immersive-stream xr instances
+alpha immersive-stream xr operations
+alpha kms autokey-config
+alpha kms ekm-config
+alpha kms ekm-connections
+alpha kms import-jobs
+alpha kms key-handles
+alpha kms keyrings
+alpha kms keys
+alpha kms keys versions
+alpha lifesciences locations
+alpha lifesciences operations
+alpha logging buckets
+alpha logging links
+alpha logging locations
+alpha logging metrics
+alpha logging operations
+alpha logging settings
+alpha logging sinks
+alpha logging views
+alpha looker instances
+alpha looker operations
+alpha managed-flink deployments
+alpha managed-flink jobs
+alpha managed-kafka clusters
+alpha managed-kafka consumer-groups
+alpha managed-kafka topics
+alpha memcache instances
+alpha memcache operations
+alpha memcache regions
+alpha memorystore instances
+alpha memorystore operations
+alpha metastore federations
+alpha metastore locations
+alpha metastore operations
+alpha metastore services backups
+alpha metastore services
+alpha metastore services imports
+alpha metastore services migrations
+alpha migration vms image-imports
+alpha migration vms machine-image-imports
+alpha ml speech operations
+alpha ml speech recognizers
+alpha ml video operations
+alpha ml vision operations
+alpha ml vision product-search images
+alpha ml vision product-search product-sets
+alpha ml vision product-search products
+alpha ml-engine jobs
+alpha ml-engine locations
+alpha ml-engine models
+alpha ml-engine operations
+alpha ml-engine versions
+alpha monitoring channel-descriptors
+alpha monitoring channels
+alpha monitoring dashboards
+alpha monitoring metrics-scopes
+alpha monitoring policies conditions
+alpha monitoring policies
+alpha monitoring snoozes
+alpha monitoring uptime
+alpha netapp active-directories
+alpha netapp locations
+alpha netapp operations
+alpha netapp storage-pools
+alpha netapp volumes
+alpha netapp volumes snapshots
+alpha network-connectivity hubs
+alpha network-connectivity internal-ranges
+alpha network-connectivity policy-based-routes
+alpha network-connectivity spokes
+alpha network-security address-groups
+alpha network-security firewall-endpoint-associations
+alpha network-security firewall-endpoints
+alpha network-security intercept-deployment-groups
+alpha network-security intercept-deployments
+alpha network-security intercept-endpoint-group-associations
+alpha network-security intercept-endpoint-groups
+alpha network-security mirroring-deployment-groups
+alpha network-security mirroring-deployments
+alpha network-security mirroring-endpoint-group-associations
+alpha network-security mirroring-endpoint-groups
+alpha network-security org-address-groups
+alpha network-security security-profile-groups
+alpha network-security security-profiles custom-intercept
+alpha network-security security-profiles custom-mirroring
+alpha network-security security-profiles
+alpha network-security server-tls-policies
+alpha network-services endpoint-policies
+alpha network-services gateways
+alpha network-services grpc-routes
+alpha network-services http-filters
+alpha network-services http-routes
+alpha network-services meshes
+alpha network-services multicast-consumer-associations
+alpha network-services multicast-domain-activations
+alpha network-services multicast-domain-groups
+alpha network-services multicast-domains
+alpha network-services multicast-group-consumer-activations
+alpha network-services multicast-group-definitions
+alpha network-services multicast-group-producer-activations
+alpha network-services multicast-group-range-activations
+alpha network-services multicast-group-ranges
+alpha network-services multicast-groups
+alpha network-services multicast-producer-associations
+alpha network-services observability-policies
+alpha network-services route-views
+alpha network-services service-bindings
+alpha network-services service-lb-policies
+alpha network-services tcp-routes
+alpha network-services tls-routes
+alpha notebooks environments
+alpha notebooks instances
+alpha organizations
+alpha pam entitlements
+alpha pam grants
+alpha pam operations
+alpha projects
+alpha pubsub lite-operations
+alpha pubsub lite-reservations
+alpha pubsub lite-subscriptions
+alpha pubsub lite-topics
+alpha pubsub schemas
+alpha pubsub snapshots
+alpha pubsub subscriptions
+alpha pubsub topics
+alpha quotas info
+alpha quotas preferences
+alpha recaptcha firewall-policies
+alpha recaptcha keys
+alpha recommender insights
+alpha recommender recommendations
+alpha recommender recommender-configs
+alpha redis clusters backup-collections
+alpha redis clusters backups
+alpha redis clusters
+alpha redis instances
+alpha redis operations
+alpha redis regions
+alpha resource-manager folders
+alpha resource-manager operations
+alpha resource-manager org-policies
+alpha resource-manager tags keys
+alpha resource-manager tags values
+alpha run domain-mappings
+alpha run jobs
+alpha run jobs executions
+alpha run jobs executions tasks
+alpha run multi-region-services
+alpha run revisions
+alpha run services
+alpha run workers
+alpha run workers revisions
+alpha scc assets
+alpha scc iac-validation-reports
+alpha scc manage custom-modules etd
+alpha scc manage custom-modules sha
+alpha scc manage services
+alpha scc notifications
+alpha scc operations
+alpha scc posture-deployments
+alpha scc posture-operations
+alpha scc posture-templates
+alpha scc postures
+alpha scc remediation-intents
+alpha scc settings services
+alpha scc settings services modules
+alpha scc sources
+alpha scheduler jobs
+alpha scheduler locations
+alpha service-directory endpoints
+alpha service-directory locations
+alpha service-directory namespaces
+alpha service-directory services
+alpha service-extensions lb-route-extensions
+alpha service-extensions lb-traffic-extensions
+alpha service-extensions wasm-actions
+alpha service-extensions wasm-plugin-versions
+alpha service-extensions wasm-plugins
+alpha services api-keys
+alpha services operations
+alpha services vpc-peerings operations
+alpha source project-configs
+alpha source repos
+alpha source-manager instances
+alpha source-manager operations
+alpha source-manager repos
+alpha spanner backup-schedules
+alpha spanner backups
+alpha spanner databases ddl
+alpha spanner databases
+alpha spanner instance-configs
+alpha spanner instance-partitions
+alpha spanner instances
+alpha spanner operations
+alpha sql backups
+alpha sql databases
+alpha sql instances
+alpha sql operations
+alpha sql ssl client-certs
+alpha sql ssl-certs
+alpha sql users
+alpha storage batch-operations jobs
+alpha storage buckets anywhere-caches
+alpha storage buckets
+alpha storage buckets notifications
+alpha storage folders
+alpha storage hmac
+alpha storage insights dataset-configs
+alpha storage insights inventory-reports
+alpha storage insights inventory-reports details
+alpha storage insights operations
+alpha storage managed-folders
+alpha storage management-hub
+alpha storage objects
+alpha storage operations
+alpha tasks cmek-config
+alpha tasks
+alpha tasks locations
+alpha tasks queues
+alpha telco-automation operations
+alpha telco-automation orchestration-cluster
+alpha trace sinks
+alpha transfer agent-pools
+alpha transfer appliances
+alpha transfer appliances orders
+alpha transfer jobs
+alpha transfer operations
+alpha web-security-scanner scan-configs
+alpha web-security-scanner scan-runs
+alpha workstations clusters
+alpha workstations configs
+alpha workstations
+anthos config controller
+anthos config operations
+api-gateway api-configs
+api-gateway apis
+api-gateway gateways
+api-gateway operations
+apigee apis
+apigee applications
+apigee deployments
+apigee developers
+apigee products
+app
+app domain-mappings
+app firewall-rules
+app instances
+app operations
+app services
+app ssl-certificates
+app versions
+apphub applications
+apphub applications services
+apphub applications workloads
+apphub discovered-services
+apphub discovered-workloads
+apphub locations
+apphub operations
+apphub service-projects
+artifacts docker images
+artifacts files
+artifacts operations
+artifacts packages
+artifacts repositories
+artifacts rules
+artifacts settings
+artifacts versions
+artifacts vpcsc-config
+asset feeds
+asset operations
+asset saved-queries
+assured operations
+assured workloads
+assured workloads violations
+audit-manager operations
+backup-dr backup-plan-associations
+backup-dr backup-plans
+backup-dr backup-vaults
+backup-dr backups
+backup-dr data-sources
+backup-dr management-servers
+backup-dr operations
+batch jobs
+batch tasks
+beta access-context-manager levels
+beta access-context-manager perimeters
+beta access-context-manager perimeters dry-run
+beta access-context-manager policies
+beta access-context-manager supported-services
+beta active-directory domains backups
+beta active-directory domains
+beta active-directory domains sql-integrations
+beta active-directory operations
+beta active-directory peerings
+beta ai custom-jobs
+beta ai endpoints
+beta ai hp-tuning-jobs
+beta ai index-endpoints
+beta ai indexes
+beta ai model-monitoring-jobs
+beta ai models
+beta ai operations
+beta ai persistent-resources
+beta ai tensorboard-experiments
+beta ai tensorboard-runs
+beta ai tensorboard-time-series
+beta ai tensorboards
+beta ai-platform jobs
+beta ai-platform models
+beta ai-platform operations
+beta ai-platform versions
+beta alloydb backups
+beta alloydb clusters
+beta alloydb instances
+beta alloydb operations
+beta api-gateway api-configs
+beta api-gateway apis
+beta api-gateway gateways
+beta api-gateway operations
+beta apigee apis
+beta apigee applications
+beta apigee archives
+beta apigee deployments
+beta apigee developers
+beta apigee environments
+beta apigee operations
+beta apigee products
+beta app
+beta app domain-mappings
+beta app firewall-rules
+beta app instances
+beta app operations
+beta app services
+beta app ssl-certificates
+beta app versions
+beta artifacts docker images
+beta artifacts operations
+beta artifacts repositories
+beta artifacts settings
+beta artifacts vpcsc-config
+beta asset feeds
+beta asset operations
+beta asset saved-queries
+beta assured operations
+beta assured workloads
+beta assured workloads violations
+beta backup-dr management-servers
+beta backup-dr operations
+beta batch jobs
+beta batch tasks
+beta beyondcorp app connections
+beta beyondcorp app connectors
+beta beyondcorp app gateways
+beta beyondcorp app operations
+beta beyondcorp client-connector gateways
+beta beyondcorp client-connector operations
+beta beyondcorp client-connector services
+beta bigtable app-profiles
+beta bigtable authorized-views
+beta bigtable backups
+beta bigtable clusters
+beta bigtable instances
+beta bigtable instances tables
+beta bigtable operations
+beta bigtable tables
+beta billing accounts
+beta billing budgets
+beta billing projects
+beta builds connections
+beta builds
+beta builds repositories
+beta builds triggers
+beta builds worker-pools
+beta certificate-manager certificates
+beta certificate-manager dns-authorizations
+beta certificate-manager issuance-configs
+beta certificate-manager maps
+beta certificate-manager maps entries
+beta certificate-manager operations
+beta certificate-manager trust-configs
+beta colab executions
+beta colab runtime-templates
+beta colab runtimes
+beta colab schedules
+beta composer environments
+beta composer environments user-workloads-config-maps
+beta composer environments user-workloads-secrets
+beta composer operations
+beta compute accelerator-types
+beta compute addresses
+beta compute backend-buckets
+beta compute backend-services
+beta compute commitments
+beta compute disk-types
+beta compute disks
+beta compute external-vpn-gateways
+beta compute firewall-policies
+beta compute firewall-policies mirroring-rules
+beta compute firewall-policies rules
+beta compute firewall-rules
+beta compute forwarding-rules
+beta compute future-reservations
+beta compute health-checks
+beta compute http-health-checks
+beta compute https-health-checks
+beta compute images
+beta compute instance-groups
+beta compute instance-groups managed
+beta compute instance-groups managed resize-requests
+beta compute instance-groups unmanaged
+beta compute instance-templates
+beta compute instances
+beta compute instances ops-agents policies
+beta compute instances os-inventory
+beta compute instant-snapshots
+beta compute interconnects attachments
+beta compute interconnects
+beta compute interconnects locations
+beta compute interconnects remote-locations
+beta compute machine-images
+beta compute machine-types
+beta compute network-attachments
+beta compute network-edge-security-services
+beta compute network-endpoint-groups
+beta compute network-firewall-policies
+beta compute network-firewall-policies mirroring-rules
+beta compute network-firewall-policies rules
+beta compute network-profiles
+beta compute networks
+beta compute networks subnets
+beta compute networks vpc-access connectors
+beta compute networks vpc-access operations
+beta compute operations
+beta compute org-security-policies
+beta compute org-security-policies rules
+beta compute os-config guest-policies
+beta compute os-config patch-deployments
+beta compute os-config patch-jobs
+beta compute os-config policy-orchestrators
+beta compute os-login ssh-keys
+beta compute packet-mirrorings
+beta compute project-info
+beta compute project-zonal-metadata
+beta compute public-advertised-prefixes
+beta compute public-delegated-prefixes
+beta compute regions
+beta compute reservations blocks
+beta compute reservations
+beta compute resource-policies
+beta compute routers
+beta compute routers nats
+beta compute routers nats rules
+beta compute routes
+beta compute security-policies
+beta compute security-policies rules
+beta compute service-attachments
+beta compute snapshot-settings
+beta compute snapshots
+beta compute sole-tenancy node-groups
+beta compute sole-tenancy node-templates
+beta compute sole-tenancy node-types
+beta compute ssl-certificates
+beta compute ssl-policies
+beta compute storage-pool-types
+beta compute storage-pools
+beta compute target-grpc-proxies
+beta compute target-http-proxies
+beta compute target-https-proxies
+beta compute target-instances
+beta compute target-pools
+beta compute target-ssl-proxies
+beta compute target-tcp-proxies
+beta compute target-vpn-gateways
+beta compute tpus accelerator-types
+beta compute tpus
+beta compute tpus execution-groups
+beta compute tpus locations
+beta compute tpus versions
+beta compute url-maps
+beta compute vpn-gateways
+beta compute vpn-tunnels
+beta compute zones
+beta config configurations
+beta container backup-restore backup-plans
+beta container backup-restore backups
+beta container backup-restore locations
+beta container backup-restore restore-plans
+beta container backup-restore restores
+beta container backup-restore volume-backups
+beta container backup-restore volume-restores
+beta container bare-metal admin-clusters
+beta container bare-metal clusters
+beta container bare-metal node-pools
+beta container bare-metal operations
+beta container binauthz attestors
+beta container binauthz policy
+beta container clusters
+beta container fleet cloudrun
+beta container fleet clusterupgrade
+beta container fleet dataplane-v2-encryption
+beta container fleet
+beta container fleet fleetobservability
+beta container fleet identity-service
+beta container fleet ingress
+beta container fleet memberships bindings
+beta container fleet memberships
+beta container fleet memberships support-access
+beta container fleet mesh
+beta container fleet multi-cluster-services
+beta container fleet operations
+beta container fleet policycontroller
+beta container fleet scopes
+beta container fleet scopes namespaces
+beta container fleet scopes rbacrolebindings
+beta container hub cloudrun
+beta container hub clusterupgrade
+beta container hub dataplane-v2-encryption
+beta container hub
+beta container hub fleetobservability
+beta container hub identity-service
+beta container hub ingress
+beta container hub memberships bindings
+beta container hub memberships
+beta container hub memberships support-access
+beta container hub mesh
+beta container hub multi-cluster-services
+beta container hub operations
+beta container hub policycontroller
+beta container hub scopes
+beta container hub scopes namespaces
+beta container hub scopes rbacrolebindings
+beta container images
+beta container node-pools
+beta container operations
+beta container vmware admin-clusters
+beta container vmware clusters
+beta container vmware node-pools
+beta container vmware operations
+beta data-catalog entries
+beta data-catalog entry-groups
+beta data-catalog tag-templates
+beta data-catalog taxonomies
+beta data-catalog taxonomies policy-tags
+beta data-fusion instances
+beta dataflow jobs
+beta dataflow snapshots
+beta datapipelines pipeline
+beta dataproc autoscaling-policies
+beta dataproc batches
+beta dataproc clusters
+beta dataproc jobs
+beta dataproc node-groups
+beta dataproc operations
+beta dataproc session-templates
+beta dataproc sessions
+beta dataproc workflow-templates
+beta datastore indexes
+beta datastore operations
+beta datastream connection-profiles
+beta datastream locations
+beta datastream operations
+beta datastream private-connections
+beta datastream routes
+beta datastream streams
+beta deploy automation-runs
+beta deploy automations
+beta deploy custom-target-types
+beta deploy delivery-pipelines
+beta deploy deploy-policies
+beta deploy job-runs
+beta deploy releases
+beta deploy rollouts
+beta deploy targets
+beta deployment-manager deployments
+beta deployment-manager manifests
+beta deployment-manager operations
+beta deployment-manager resources
+beta deployment-manager type-providers
+beta deployment-manager types
+beta developer-connect connections
+beta developer-connect connections git-repository-links
+beta developer-connect operations
+beta dns dns-keys
+beta dns managed-zones
+beta dns operations
+beta dns policies
+beta dns project-info
+beta dns record-sets changes
+beta dns record-sets
+beta dns record-sets transaction
+beta dns response-policies
+beta dns response-policies rules
+beta domains registrations
+beta domains registrations operations
+beta endpoints configs
+beta endpoints operations
+beta endpoints services
+beta essential-contacts
+beta eventarc enrollments
+beta eventarc google-api-sources
+beta eventarc message-buses
+beta eventarc pipelines
+beta filestore backups
+beta filestore instances
+beta filestore instances snapshots
+beta filestore locations
+beta filestore operations
+beta firebase test android locales
+beta firebase test android models
+beta firebase test android versions
+beta firebase test ios locales
+beta firebase test ios models
+beta firebase test ios versions
+beta firebase test network-profiles
+beta firestore backups
+beta firestore backups schedules
+beta firestore databases
+beta firestore indexes composite
+beta firestore indexes fields
+beta firestore operations
+beta functions
+beta healthcare annotation-stores
+beta healthcare consent-stores
+beta healthcare datasets
+beta healthcare dicom-stores
+beta healthcare fhir-stores
+beta healthcare hl7v2-stores
+beta healthcare operations
+beta iam policy-bindings
+beta iam principal-access-boundary-policies
+beta iam roles
+beta iam service-accounts
+beta iam workforce-pools
+beta iam workforce-pools operations
+beta iam workforce-pools providers
+beta iam workforce-pools providers keys
+beta iam workforce-pools providers keys operations
+beta iam workforce-pools providers operations
+beta iam workload-identity-pools
+beta iam workload-identity-pools operations
+beta iam workload-identity-pools providers
+beta iam workload-identity-pools providers operations
+beta iap oauth-brands
+beta iap oauth-clients
+beta iap tcp dest-groups
+beta identity groups
+beta identity groups memberships
+beta ids endpoints
+beta kms autokey-config
+beta kms ekm-config
+beta kms ekm-connections
+beta kms import-jobs
+beta kms key-handles
+beta kms keyrings
+beta kms keys
+beta kms keys versions
+beta lifesciences locations
+beta lifesciences operations
+beta logging buckets
+beta logging links
+beta logging locations
+beta logging metrics
+beta logging operations
+beta logging settings
+beta logging sinks
+beta logging views
+beta managed-kafka clusters
+beta managed-kafka consumer-groups
+beta managed-kafka topics
+beta memcache instances
+beta memcache operations
+beta memcache regions
+beta memorystore instances
+beta memorystore operations
+beta metastore federations
+beta metastore locations
+beta metastore operations
+beta metastore services backups
+beta metastore services
+beta metastore services imports
+beta metastore services migrations
+beta ml speech operations
+beta ml video operations
+beta ml vision operations
+beta ml vision product-search images
+beta ml vision product-search product-sets
+beta ml vision product-search products
+beta ml-engine jobs
+beta ml-engine models
+beta ml-engine operations
+beta ml-engine versions
+beta monitoring channel-descriptors
+beta monitoring channels
+beta monitoring dashboards
+beta monitoring metrics-scopes
+beta monitoring snoozes
+beta monitoring uptime
+beta netapp active-directories
+beta netapp backup-policies
+beta netapp backup-vaults backups
+beta netapp backup-vaults
+beta netapp kms-configs
+beta netapp locations
+beta netapp operations
+beta netapp storage-pools
+beta netapp volumes
+beta netapp volumes quota-rules
+beta netapp volumes replications
+beta netapp volumes snapshots
+beta network-connectivity hubs
+beta network-connectivity hubs groups
+beta network-connectivity hubs route-tables
+beta network-connectivity hubs route-tables routes
+beta network-connectivity locations
+beta network-connectivity operations
+beta network-connectivity policy-based-routes
+beta network-connectivity regional-endpoints
+beta network-connectivity spokes
+beta network-management connectivity-tests
+beta network-management operations
+beta network-management vpc-flow-logs-configs
+beta network-security address-groups
+beta network-security authz-policies
+beta network-security firewall-endpoint-associations
+beta network-security firewall-endpoints
+beta network-security intercept-deployment-groups
+beta network-security intercept-deployments
+beta network-security intercept-endpoint-group-associations
+beta network-security intercept-endpoint-groups
+beta network-security mirroring-deployment-groups
+beta network-security mirroring-deployments
+beta network-security mirroring-endpoint-group-associations
+beta network-security mirroring-endpoint-groups
+beta network-security org-address-groups
+beta network-security security-profile-groups
+beta network-security security-profiles custom-intercept
+beta network-security security-profiles custom-mirroring
+beta network-security server-tls-policies
+beta network-services endpoint-policies
+beta network-services multicast-consumer-associations
+beta network-services multicast-domain-activations
+beta network-services multicast-domain-groups
+beta network-services multicast-domains
+beta network-services multicast-group-consumer-activations
+beta network-services multicast-group-producer-activations
+beta network-services multicast-group-range-activations
+beta network-services multicast-group-ranges
+beta network-services multicast-producer-associations
+beta network-services service-bindings
+beta network-services service-lb-policies
+beta notebooks environments
+beta notebooks instances
+beta organizations
+beta pam entitlements
+beta pam grants
+beta pam operations
+beta projects
+beta pubsub lite-operations
+beta pubsub lite-reservations
+beta pubsub lite-subscriptions
+beta pubsub lite-topics
+beta pubsub schemas
+beta pubsub snapshots
+beta pubsub subscriptions
+beta pubsub topics
+beta quotas adjuster settings
+beta quotas info
+beta quotas preferences
+beta recommender insight-type-config
+beta recommender insights
+beta recommender recommendations
+beta recommender recommender-config
+beta redis clusters backup-collections
+beta redis clusters backups
+beta redis clusters
+beta redis instances
+beta redis operations
+beta redis regions
+beta resource-manager folders
+beta resource-manager org-policies
+beta resource-manager tags keys
+beta resource-manager tags values
+beta run domain-mappings
+beta run jobs
+beta run jobs executions
+beta run jobs executions tasks
+beta run multi-region-services
+beta run revisions
+beta run services
+beta runtime-config configs
+beta runtime-config configs variables
+beta runtime-config configs waiters
+beta scc assets
+beta scc notifications
+beta scc operations
+beta scc sources
+beta scheduler jobs
+beta scheduler locations
+beta secrets
+beta secrets locations
+beta secrets versions
+beta service-directory endpoints
+beta service-directory locations
+beta service-directory namespaces
+beta service-directory services
+beta service-extensions authz-extensions
+beta service-extensions lb-route-extensions
+beta service-extensions lb-traffic-extensions
+beta service-extensions wasm-plugin-versions
+beta service-extensions wasm-plugins
+beta services api-keys
+beta services operations
+beta services vpc-peerings operations
+beta source project-configs
+beta source repos
+beta source-manager instances
+beta source-manager operations
+beta source-manager repos
+beta spanner backup-schedules
+beta spanner backups
+beta spanner databases ddl
+beta spanner databases
+beta spanner instance-configs
+beta spanner instance-partitions
+beta spanner instances
+beta spanner operations
+beta sql backups
+beta sql databases
+beta sql instances
+beta sql operations
+beta sql ssl client-certs
+beta sql ssl-certs
+beta sql users
+beta tasks cmek-config
+beta tasks
+beta tasks locations
+beta tasks queues
+beta workflows
+beta workflows executions
+beta workstations clusters
+beta workstations configs
+beta workstations
+bigtable app-profiles
+bigtable authorized-views
+bigtable backups
+bigtable clusters
+bigtable instances
+bigtable instances tables
+bigtable operations
+bigtable tables
+billing accounts
+billing budgets
+billing projects
+bms instances
+bms networks
+bms nfs-shares
+bms operations
+bms os-images
+bms volumes
+bms volumes luns
+bms volumes snapshots
+builds connections
+builds
+builds repositories
+builds triggers
+builds worker-pools
+certificate-manager certificates
+certificate-manager dns-authorizations
+certificate-manager issuance-configs
+certificate-manager maps
+certificate-manager maps entries
+certificate-manager operations
+certificate-manager trust-configs
+colab executions
+colab runtime-templates
+colab runtimes
+colab schedules
+composer environments
+composer environments user-workloads-config-maps
+composer environments user-workloads-secrets
+composer operations
+compute accelerator-types
+compute addresses
+compute backend-buckets
+compute backend-services
+compute commitments
+compute disk-types
+compute disks
+compute external-vpn-gateways
+compute firewall-policies
+compute firewall-policies rules
+compute firewall-rules
+compute forwarding-rules
+compute health-checks
+compute http-health-checks
+compute https-health-checks
+compute images
+compute instance-groups
+compute instance-groups managed
+compute instance-groups managed resize-requests
+compute instance-groups unmanaged
+compute instance-templates
+compute instances
+compute instances ops-agents policies
+compute instances os-inventory
+compute instant-snapshots
+compute interconnects attachments
+compute interconnects
+compute interconnects locations
+compute interconnects remote-locations
+compute machine-images
+compute machine-types
+compute network-attachments
+compute network-edge-security-services
+compute network-endpoint-groups
+compute network-firewall-policies
+compute network-firewall-policies rules
+compute network-profiles
+compute networks
+compute networks subnets
+compute networks vpc-access connectors
+compute networks vpc-access operations
+compute operations
+compute os-config inventories
+compute os-config os-policy-assignment-reports
+compute os-config os-policy-assignments
+compute os-config os-policy-assignments operations
+compute os-config patch-deployments
+compute os-config patch-jobs
+compute os-config project-feature-settings
+compute os-config vulnerability-reports
+compute os-login ssh-keys
+compute packet-mirrorings
+compute project-info
+compute project-zonal-metadata
+compute public-advertised-prefixes
+compute public-delegated-prefixes
+compute regions
+compute reservations
+compute resource-policies
+compute routers
+compute routers nats
+compute routers nats rules
+compute routes
+compute security-policies
+compute security-policies rules
+compute service-attachments
+compute snapshot-settings
+compute snapshots
+compute sole-tenancy node-groups
+compute sole-tenancy node-templates
+compute sole-tenancy node-types
+compute ssl-certificates
+compute ssl-policies
+compute storage-pool-types
+compute storage-pools
+compute target-grpc-proxies
+compute target-http-proxies
+compute target-https-proxies
+compute target-instances
+compute target-pools
+compute target-ssl-proxies
+compute target-tcp-proxies
+compute target-vpn-gateways
+compute tpus accelerator-types
+compute tpus
+compute tpus execution-groups
+compute tpus locations
+compute tpus queued-resources
+compute tpus tpu-vm accelerator-types
+compute tpus tpu-vm
+compute tpus tpu-vm versions
+compute tpus versions
+compute url-maps
+compute vpn-gateways
+compute vpn-tunnels
+compute zones
+config configurations
+container attached clusters
+container attached operations
+container aws clusters
+container aws node-pools
+container aws operations
+container azure clients
+container azure clusters
+container azure node-pools
+container azure operations
+container bare-metal admin-clusters
+container bare-metal clusters
+container bare-metal node-pools
+container bare-metal operations
+container binauthz attestors
+container clusters
+container fleet cloudrun
+container fleet clusterupgrade
+container fleet dataplane-v2-encryption
+container fleet
+container fleet fleetobservability
+container fleet identity-service
+container fleet ingress
+container fleet memberships bindings
+container fleet memberships
+container fleet memberships support-access
+container fleet mesh
+container fleet multi-cluster-services
+container fleet operations
+container fleet policycontroller
+container fleet scopes
+container fleet scopes namespaces
+container fleet scopes rbacrolebindings
+container hub cloudrun
+container hub clusterupgrade
+container hub dataplane-v2-encryption
+container hub
+container hub fleetobservability
+container hub identity-service
+container hub ingress
+container hub memberships bindings
+container hub memberships
+container hub memberships support-access
+container hub mesh
+container hub multi-cluster-services
+container hub operations
+container hub policycontroller
+container hub scopes
+container hub scopes namespaces
+container hub scopes rbacrolebindings
+container images
+container node-pools
+container operations
+container vmware admin-clusters
+container vmware clusters
+container vmware node-pools
+container vmware operations
+data-catalog entries
+data-catalog entry-groups
+data-catalog tag-templates
+data-catalog taxonomies
+data-catalog taxonomies policy-tags
+database-migration connection-profiles
+database-migration conversion-workspaces
+database-migration migration-jobs
+database-migration operations
+database-migration private-connections
+dataflow jobs
+dataflow snapshots
+dataplex aspect-types
+dataplex assets
+dataplex content
+dataplex datascans
+dataplex datascans jobs
+dataplex entries
+dataplex entry-groups
+dataplex entry-types
+dataplex environments
+dataplex lakes
+dataplex tasks
+dataplex tasks jobs
+dataplex zones
+dataproc autoscaling-policies
+dataproc batches
+dataproc clusters
+dataproc jobs
+dataproc node-groups
+dataproc operations
+dataproc workflow-templates
+datastore indexes
+datastore operations
+datastream connection-profiles
+datastream locations
+datastream objects
+datastream operations
+datastream private-connections
+datastream routes
+datastream streams
+deploy automation-runs
+deploy automations
+deploy custom-target-types
+deploy delivery-pipelines
+deploy deploy-policies
+deploy job-runs
+deploy releases
+deploy rollouts
+deploy targets
+deployment-manager deployments
+deployment-manager manifests
+deployment-manager operations
+deployment-manager resources
+developer-connect connections
+developer-connect connections git-repository-links
+developer-connect operations
+dns dns-keys
+dns managed-zones
+dns operations
+dns policies
+dns project-info
+dns record-sets changes
+dns record-sets
+dns record-sets transaction
+dns response-policies
+dns response-policies rules
+domains registrations
+domains registrations operations
+edge-cache keysets
+edge-cache operations
+edge-cache origins
+edge-cache services
+edge-cloud container clusters
+edge-cloud container clusters node-pools
+edge-cloud container machines
+edge-cloud container operations
+edge-cloud container regions
+edge-cloud container vpn-connections
+edge-cloud container zones
+edge-cloud networking interconnects attachments
+edge-cloud networking interconnects
+edge-cloud networking networks
+edge-cloud networking operations
+edge-cloud networking routers
+edge-cloud networking subnets
+endpoints configs
+endpoints operations
+endpoints services
+essential-contacts
+eventarc channel-connections
+eventarc channels
+eventarc google-channels
+eventarc providers
+eventarc triggers
+filestore backups
+filestore instances
+filestore instances snapshots
+filestore locations
+filestore operations
+firebase test android locales
+firebase test android models
+firebase test android versions
+firebase test ios locales
+firebase test ios models
+firebase test ios versions
+firebase test network-profiles
+firestore backups
+firestore backups schedules
+firestore databases
+firestore indexes composite
+firestore indexes fields
+firestore operations
+functions
+gemini code-repository-indexes
+gemini code-repository-indexes repository-groups
+gemini operations
+healthcare consent-stores
+healthcare datasets
+healthcare dicom-stores
+healthcare fhir-stores
+healthcare hl7v2-stores
+healthcare operations
+iam oauth-clients credentials
+iam oauth-clients
+iam policy-bindings
+iam principal-access-boundary-policies
+iam roles
+iam service-accounts
+iam workforce-pools
+iam workforce-pools operations
+iam workforce-pools providers
+iam workforce-pools providers keys
+iam workforce-pools providers keys operations
+iam workforce-pools providers operations
+iam workforce-pools subjects operations
+iam workload-identity-pools
+iam workload-identity-pools operations
+iam workload-identity-pools providers
+iam workload-identity-pools providers keys
+iam workload-identity-pools providers keys operations
+iam workload-identity-pools providers operations
+iap oauth-brands
+iap oauth-clients
+iap tcp dest-groups
+identity groups
+identity groups memberships
+ids endpoints
+immersive-stream xr contents
+immersive-stream xr instances
+immersive-stream xr operations
+infra-manager deployments
+infra-manager previews
+infra-manager resources
+infra-manager revisions
+infra-manager terraform-versions
+kms ekm-config
+kms ekm-connections
+kms import-jobs
+kms keyrings
+kms keys
+kms keys versions
+logging buckets
+logging links
+logging locations
+logging metrics
+logging operations
+logging scopes
+logging settings
+logging sinks
+logging views
+looker instances
+looker operations
+managed-kafka clusters
+managed-kafka consumer-groups
+managed-kafka topics
+memcache instances
+memcache operations
+memcache regions
+memorystore instances
+memorystore operations
+metastore federations
+metastore locations
+metastore operations
+metastore services backups
+metastore services
+migration vms image-imports
+migration vms machine-image-imports
+ml speech operations
+ml video operations
+ml-engine jobs
+ml-engine models
+ml-engine operations
+ml-engine versions
+monitoring dashboards
+monitoring snoozes
+monitoring uptime
+netapp active-directories
+netapp backup-policies
+netapp backup-vaults backups
+netapp backup-vaults
+netapp kms-configs
+netapp locations
+netapp operations
+netapp storage-pools
+netapp volumes
+netapp volumes quota-rules
+netapp volumes replications
+netapp volumes snapshots
+network-connectivity hubs
+network-connectivity hubs groups
+network-connectivity hubs route-tables
+network-connectivity hubs route-tables routes
+network-connectivity internal-ranges
+network-connectivity locations
+network-connectivity operations
+network-connectivity policy-based-routes
+network-connectivity regional-endpoints
+network-connectivity service-connection-policies
+network-connectivity spokes
+network-management connectivity-tests
+network-management operations
+network-management vpc-flow-logs-configs
+network-security address-groups
+network-security firewall-endpoint-associations
+network-security firewall-endpoints
+network-security org-address-groups
+network-security security-profile-groups
+network-security server-tls-policies
+network-services endpoint-policies
+network-services gateways
+network-services grpc-routes
+network-services http-routes
+network-services meshes
+network-services route-views
+network-services service-bindings
+network-services service-lb-policies
+network-services tcp-routes
+network-services tls-routes
+notebooks environments
+notebooks instances
+notebooks runtimes
+oracle-database autonomous-databases
+oracle-database cloud-exadata-infrastructures
+oracle-database cloud-vm-clusters
+oracle-database operations
+org-policies
+organizations
+pam entitlements
+pam grants
+pam operations
+preview config configurations
+privateca certificates
+privateca pools
+privateca roots
+privateca subordinates
+privateca templates
+projects
+pubsub lite-operations
+pubsub lite-reservations
+pubsub lite-subscriptions
+pubsub lite-topics
+pubsub schemas
+pubsub snapshots
+pubsub subscriptions
+pubsub topics
+recaptcha firewall-policies
+recaptcha keys
+recommender insight-type-config
+recommender insights
+recommender recommendations
+recommender recommender-config
+redis clusters
+redis instances
+redis operations
+redis regions
+resource-manager folders
+resource-manager org-policies
+resource-manager tags keys
+resource-manager tags values
+run domain-mappings
+run jobs
+run jobs executions
+run jobs executions tasks
+run revisions
+run services
+scc assets
+scc iac-validation-reports
+scc manage custom-modules etd
+scc manage custom-modules sha
+scc manage services
+scc notifications
+scc operations
+scc posture-deployments
+scc posture-operations
+scc posture-templates
+scc postures
+scc sources
+scheduler jobs
+scheduler locations
+secrets
+secrets locations
+secrets versions
+service-directory endpoints
+service-directory locations
+service-directory namespaces
+service-directory services
+service-extensions lb-route-extensions
+service-extensions lb-traffic-extensions
+services api-keys
+services operations
+services vpc-peerings operations
+source project-configs
+source repos
+spanner backup-schedules
+spanner backups
+spanner databases ddl
+spanner databases
+spanner instance-configs
+spanner instances
+spanner operations
+sql backups
+sql databases
+sql instances
+sql operations
+sql ssl client-certs
+sql ssl-certs
+sql users
+storage buckets
+storage buckets notifications
+storage folders
+storage hmac
+storage insights inventory-reports
+storage insights inventory-reports details
+storage managed-folders
+storage objects
+storage operations
+tasks cmek-config
+tasks
+tasks locations
+tasks queues
+telco-automation operations
+telco-automation orchestration-cluster
+transcoder jobs
+transcoder templates
+transfer agent-pools
+transfer jobs
+transfer operations
+vmware dns-bind-permission
+vmware network-peerings
+vmware network-policies
+vmware network-policies external-access-rules
+vmware networks
+vmware node-types
+vmware operations
+vmware private-clouds clusters
+vmware private-clouds clusters nodes
+vmware private-clouds
+vmware private-clouds dns-forwarding
+vmware private-clouds external-addresses
+vmware private-clouds hcx activationkeys
+vmware private-clouds logging-servers
+vmware private-clouds management-dns-zone-bindings
+vmware private-clouds nsx credentials
+vmware private-clouds subnets
+vmware private-clouds vcenter credentials
+vmware private-connections
+workbench instances
+workflows
+workflows executions
+workspace-add-ons deployments
+workstations clusters
+workstations configs
+workstations

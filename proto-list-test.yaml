@@ -1,0 +1,22 @@
+
+service: config
+package: google.cloud.config.v1
+proto: Resource
+kind: ConfigResource
+protopath: google.cloud.config.v1.Resource
+validated: null
+---
+service: config
+package: google.cloud.config.v1
+proto: Preview
+kind: ConfigPreview
+protopath: google.cloud.config.v1.Preview
+validated: null
+---
+service: config
+package: google.cloud.config.v1
+proto: TerraformVersion
+kind: ConfigTerraformVersion
+protopath: google.cloud.config.v1.TerraformVersion
+validated: null
+---

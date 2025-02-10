@@ -1,0 +1,183 @@
+This is a great extraction of data from the protobuf definitions, generating corresponding Go structs.  Here's a breakdown of what's been done well, along with suggestions and explanations of the remaining `// TODO`, `/* NOTYET */`, and general areas for improvement:
+
+**Strengths and What's Well Done:**
+
+*   **Clear Mapping:** The mapping from protobuf `message` to Go `struct` is excellent.  Field names, types, and `json` tags are correctly derived.
+*   **KCC Annotations:** The use of `// +kcc:proto:field=` is accurate.  This is *crucial* for Config Connector to map the Go structs back to the protobuf fields for reconciliation.
+*   **Resource References:** The `refs` package (presumably `github.com/GoogleCloudPlatform/k8s-config-connector/pkg/apis/refs/v1beta1`) is correctly used for fields that reference other GCP resources (e.g., `NetworkRef`, `KMSKeyNameRef`).  This is essential for KCC's dependency management.
+*   **Immutability:** Fields marked with `(google.api.field_behavior) = IMMUTABLE` in the protobuf are correctly tagged with `// +kubebuilder:validation:XValidation:rule="self == oldSelf",message="<field> field is immutable"` in the generated Go structs.
+*   **Required Fields:** Fields marked with `(google.api.field_behavior) = REQUIRED` or `(google.api.field_behavior) = REQUIRED` are correctly marked with `// +required` in the Go struct.
+*   **Optional Fields:** Fields marked with `(google.api.field_behavior) = OPTIONAL` are correctly made pointers in Go structs, allowing them to be omitted.
+*   **Output Only Fields:** Fields marked `(google.api.field_behavior) = OUTPUT_ONLY` are correctly handled and typically included only in observed state.
+*   **Enums:** Protobuf enums are mostly correctly translated to Go `string` types.
+*   **Oneof Fields:** Protobuf `oneof` fields are handled.
+*   **Deprecated Fields:** Fields marked `[deprecated = true]` are called out in comments.
+*   **Maps:** `map<string, string>` is correctly used for protobuf maps.
+*   **Comments:** Comments from the protobuf definitions are generally well-preserved in the Go structs, providing valuable context.
+*   **Packages:** The `package v1alpha1` and `package v1beta1` directives are correctly generated based on the proto package.
+*  **Type Conversion**: The code correctly converts protobuf types to Go types. For example, `google.protobuf.Timestamp` to `string`, `google.protobuf.Duration` to `string`.
+
+**Suggestions and Explanations of `TODO` and `NOTYET`:**
+
+1.  **`// TODO: Remove "// +required" marker for StartTime after using direct controller.` (and similar)**
+
+    *   **Explanation:** This comment indicates that the `// +required` marker on certain nested fields (like `StartTimes` within `WeeklySchedule`) might be unnecessary when using a "direct controller".  A "direct controller" likely refers to a controller that directly manages the GCP resource through the GCP API, rather than relying on Config Connector's usual reconciliation loop.  The reasoning is that the GCP API itself might handle default values or optionality for these fields.
+    *   **Action:** Investigate whether the GCP API for the relevant resource *does* handle default values or optionality for these fields. If it does, the `// +required` can be removed.  If not, keep it.  Err on the side of keeping it `required` if you're unsure, as omitting it could lead to errors if a user doesn't provide a value.
+
+2.  **`// TODO: Verify if "// +required" marker is needed for Password after using direct controller.` (and similar)**
+
+    *   **Explanation:** This is the same as above, but specifically for the `Password` field, which is likely a sensitive value.
+    *   **Action:** Same as above. Verify if the GCP API requires it.
+
+3.  **`// TODO: Verify if "// +required" marker is needed for PrimaryClusterNameRef after using direct controller.` (and similar)**
+
+    *   **Explanation:** Same as above, but for reference fields.
+    *   **Action:** Verify if the GCP API requires it.
+
+4.   **`/* NOTYET */` Comments (e.g., `DatabaseVersion`, `Etag`, `Annotations`, `SSLConfig`, `PSCConfig`, `GeminiConfig`, `Tags`)**
+
+    *   **Explanation:** These comments indicate features that haven't been implemented yet. They represent fields in the protobuf definition that are not yet mapped to the Go struct.
+    *   **Action:** Implement these fields. This typically involves:
+        *   Adding the field to the Go struct with the correct type.
+        *   Adding the `// +kcc:proto:field=` annotation.
+        *   Adding any necessary validation markers (e.g., `// +optional`, `// +required`).
+        *   Considering whether the field should be in the `Spec` or `ObservedState` or both.
+
+5.  **`// TODO: map type string message for family_subsets` and `// TODO: map type string message for cluster_states`**
+    * These TODO comments flag that a nested message within a map needs to be translated, for example in `in.proto.message: google.cloud.bigquery.v2.Dataset`.
+
+    * Example solution:
+
+    ```go
+    type Dataset_Access struct {
+        // ... other fields ...
+        Role *string `json:"role,omitempty"`
+
+        UserByEmail *string `json:"userByEmail,omitempty"`
+
+        GroupByEmail *string `json:"groupByEmail,omitempty"`
+
+        Domain *string `json:"domain,omitempty"`
+
+        SpecialGroup *string `json:"specialGroup,omitempty"`
+
+        IamMember *string `json:"iamMember,omitempty"`
+
+        View *TableReference `json:"view,omitempty"`
+
+        Routine *RoutineReference `json:"routine,omitempty"`
+
+        Dataset *DatasetAccessEntry `json:"dataset,omitempty"`
+
+        // +optional
+        FamilySubsets map[string]*FamilySubsets `json:"familySubsets,omitempty"`
+
+        // +optional
+        ClusterStates map[string]*ClusterState `json:"clusterStates,omitempty"`
+    }
+
+    // FamilySubsets represents the FamilySubsets message.
+    type FamilySubsets struct {
+    	// +optional
+    	Qualifiers []string `json:"qualifiers,omitempty"`
+
+    	// +optional
+    	QualifierPrefixes []string `json:"qualifierPrefixes,omitempty"`
+    }
+
+    // ClusterState represents the ClusterState message.
+    type ClusterState struct {
+    	// +optional
+    	ReplicationState *string `json:"replicationState,omitempty"`
+
+    	// +optional
+    	EncryptionInfo []*EncryptionInfo `json:"encryptionInfo,omitempty"`
+    }
+    ```
+
+6. **`// TODO: Remove="// +required" marker for StartTime after using direct controller.`**
+
+    * There are multiple such occurences, and needs to be changed as discussed above.
+
+7.  **Enums:** While enums are mapped to strings, consider creating named constants for the enum values in Go. This improves type safety and readability. Example:
+
+    ```go
+    // From the ClusterType enum:
+    const (
+    	ClusterTypePrimary   = "PRIMARY"
+    	ClusterTypeSecondary = "SECONDARY"
+    )
+
+    type AlloyDBClusterSpec struct {
+    	// ...
+    	ClusterType *string `json:"clusterType,omitempty"` // Possible values: ["PRIMARY", "SECONDARY"].
+    	// ...
+    }
+    ```
+
+8.  **Bytes Fields:** Fields of type `bytes` in protobuf are represented as `[]byte` in Go. You've done this correctly.  Ensure that any code interacting with these fields handles base64 encoding/decoding if necessary (especially for user-provided input).
+
+9.  **`oneof` Fields:** Oneof fields are handled, ensure that only one field from oneof in proto should be present.
+
+10. **`google.protobuf.Struct`:**  These are correctly mapped to `map[string]string` in several places.  However, `google.protobuf.Struct` can hold *arbitrary* JSON-like data, not just string-to-string mappings.  If you need to support more complex data within these fields, you might consider using `map[string]interface{}` or a custom struct with `json.RawMessage` for more flexibility. But if you are sure those fields will only contain string-to-string maps, the current implementation is fine.
+
+11. **`google.protobuf.BoolValue`, `google.protobuf.Int64Value`, `google.protobuf.StringValue`**: These wrapper types are correctly handled in most cases by mapping them to pointer types (`*bool`, `*int64`, `*string`).
+
+12. **`google.protobuf.Timestamp` and `google.protobuf.Duration`:** These are usually mapped to `string` in the KCC style guide, as you've done. This uses RFC3339 format for timestamps and a Go duration string for durations.
+
+13. **Resource Names:** You've correctly handled resource names and references.
+
+14.  **Observed State (`AlloyDBClusterObservedState`, `AlloyDBInstanceObservedState`, etc.):**  These structs are placeholders for fields that are read from the GCP API's response (output-only fields).  You'll need to populate these with the appropriate fields and types as you implement the resource.
+
+15. **Secret References:** The use of `refsv1beta1secret.Legacy` for `UserPassword.Password` is a good approach. Make sure that the referenced secret exists and has the right format.
+
+16. **CloudSQLBackupRunSource:** There is a discrepancy in the field `instance_id`. In the spec, it should be `InstanceID *string`. It is also not consistent with the naming convention of other `Ref` types. I suggest renaming it as `InstanceIDRef`.
+
+17. **Package Names:** Ensure your generated package names (`v1alpha1`, `v1beta1`) align with the intended API version and stability level.
+
+18. **`google.api.http` Annotations:** These annotations, which define the REST API mappings, are *not* relevant for Config Connector. You can safely ignore/remove them during the generation process.
+
+19. **`option (google.api.default_host)` and other `google.api` options:** These are also not relevant for Config Connector, except for `google.api.resource`.
+
+20. **Field Ordering**: Order the struct fields consistently. For example, put `ResourceID` at the beginning and reference fields at the end, and arrange the other fields in a meaningful, logical order.
+
+21. **Code Generation:** You've shown the *output* of a code generation process. It would be very helpful to also see the *input* to that process (the relevant parts of the `.proto` files) to fully understand the transformation and offer more specific advice.
+
+22.  **Comments:** Add comments to the observed state to explain any specific behavior or meaning of the fields.
+
+**Example of Applying the Suggestions (AlloyDBCluster):**
+
+```go
+package v1alpha1
+
+import (
+	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/apis/k8s/v1beta1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/apis/refs/v1beta1"
+	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/apis/iam/v1beta1"  // Example, adjust if needed
+)
+
+// Constants for ClusterType
+const (
+	ClusterTypePrimary   = "PRIMARY"
+	ClusterTypeSecondary = "SECONDARY"
+)
+
+type AlloyDBClusterSpec struct {
+	// The AlloyDBCluster name. If not given, the metadata.name will be used.
+	// +optional
+	ResourceID *string `json:"resourceID,omitempty"`
+
+	// The type of cluster. If not set, defaults to PRIMARY.
+	// Default value: "PRIMARY"
+	// +optional
+	ClusterType *string `json:"clusterType,omitempty"`
+
+	// Policy to determine if the cluster should be deleted forcefully.
+	// ... (rest of the fields) ...
+
+	// Optional. The database engine major version. This is an optional field and
+	//  it is populated at the Cluster creation time. If a database version is not
+	//  supplied at cluster creation time, then a default database version will
+	//  be used.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta1.Cluster.database_version,

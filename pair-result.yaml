@@ -1,0 +1,34 @@
+
+# Mapping of gcloud commands to proto definitions
+
+gcloud_command_pairs:
+  - gcloud_command: access-context-manager authorized-orgs
+    service: ""
+    package: google.identity.accesscontextmanager.v1
+    proto: AccessPolicy
+    kind: IdentityAccessPolicy
+    protopath: google.identity.accesscontextmanager.v1.AccessPolicy
+  - gcloud_command: access-context-manager cloud-bindings
+    service: ""
+    package: google.identity.accesscontextmanager.v1
+    proto: GcpUserAccessBinding
+    kind: IdentityGcpUserAccessBinding
+    protopath: google.identity.accesscontextmanager.v1.GcpUserAccessBinding
+  - gcloud_command: access-context-manager levels
+    service: ""
+    package: google.identity.accesscontextmanager.v1
+    proto: AccessLevel
+    kind: IdentityAccessLevel
+    protopath: google.identity.accesscontextmanager.v1.AccessLevel
+  - gcloud_command: access-context-manager perimeters
+    service: ""
+    package: google.identity.accesscontextmanager.v1
+    proto: ServicePerimeter
+    kind: IdentityServicePerimeter
+    protopath: google.identity.accesscontextmanager.v1.ServicePerimeter
+  - gcloud_command: access-context-manager perimeters dry-run
+    service: ""
+    package: google.identity.accesscontextmanager.v1
+    proto: ServicePerimeter
+    kind: IdentityServicePerimeter
+    protopath: google.identity.accesscontextmanager.v1.ServicePerimeter
