@@ -89,7 +89,7 @@ feedback="${3:-}"
 
 instruction=""
 
-if [[ -n $feedback ]]; then
+if [[ -n ${feedback} ]]; then
   instruction=$(cat <<EOF
 ${instruction}
 
@@ -99,7 +99,6 @@ EOF
 )
 fi
 
-# --proto-dir ${dest_repo}/.build/third_party/googleapis/
 instruction=$(cat <<EOF
 $instruction
 
@@ -112,10 +111,10 @@ instruction=$(cat <<EOF
 $instruction
 
 
-The prompt script is "go run $dest_cmd prompt --src-dir $dest_repo --proto-dir ${dest_repo}/.build/third_party/googleapis/ <<EOF
+The prompt script is 'go run $dest_cmd prompt --src-dir $dest_repo --proto-dir ${dest_repo}/.build/third_party/googleapis/ <<EOF
 // +kcc:proto=${package}.${proto}
 // kind: ${kind}
-EOF"
+EOF'
 EOF
 )
 

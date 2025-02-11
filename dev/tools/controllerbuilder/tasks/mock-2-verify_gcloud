@@ -13,22 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-set -o errexit
-set -o nounset
-set -o pipefail
 set -e
-set -x
 
-export REPO_ROOT="$(git rev-parse --show-toplevel)"
-
-# TODO context file
-feedback="${@:-}"
-
-output=$(go run $REPO_ROOT/dev/tools/controllerbuilder/cmd/codebot/main.go --ui-type "bash" --proto-dir $REPO_ROOT/.build/third_party/googleapis/ --instruction "$feedback" 2>&1 )
-# output=$(go run $REPO_ROOT/dev/tools/controllerbuilder/cmd/codebot --ui-type="bash" --instruction "$feedback" 2>&1 )
-
-if [[ $? -ne 0 ]]; then
-  echo  "run codebot failed: $output"
-  exit 1
-fi
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+CMD=${REPO_ROOT}/dev/tools/controllerbuilder

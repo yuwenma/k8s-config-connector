@@ -1,4 +1,3 @@
-
 service: config
 package: google.cloud.config.v1
 proto: Resource

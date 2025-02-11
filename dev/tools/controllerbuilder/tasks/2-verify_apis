@@ -13,12 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-set -o errexit
-set -o nounset
-set -o pipefail
 set -e
-set -x
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 CMD=${REPO_ROOT}/dev/tools/controllerbuilder
@@ -55,12 +50,12 @@ else
 fi
 
 
-output=$(${REPO_ROOT}/dev/tasks/generate-crds 2>&1)
+# output=$(${REPO_ROOT}/dev/tasks/generate-crds 2>&1)
 
-if [[ $? -ne 0 ]]; then
-    echo ${output}
-    exit 1
-fi
+# if [[ $? -ne 0 ]]; then
+#     echo ${output}
+#     exit 1
+# fi
 
 # Check no compile error.
 service=$(echo "$metadata" | jq -r '.service')
@@ -73,9 +68,9 @@ if [[ -z "$files" ]]; then
   exit 1
 fi
 
-output=$(go build $resource_dir 2>&1)
+go build -v $resource_dir 2>&1
+
 if [[ $? -ne 0 ]]; then
-  echo  "go build failed: $output"
   exit 1
 fi
 
