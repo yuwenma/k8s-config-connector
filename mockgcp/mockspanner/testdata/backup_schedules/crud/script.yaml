@@ -1,0 +1,4 @@
+- exec: gcloud spanner backup-schedules create test-${uniqueId} --instance=test-instance --database=test-db --cron="0 0 * * *" --retention-duration=1d
+- exec: gcloud spanner backup-schedules list --instance=test-instance --database=test-db
+- exec: gcloud spanner backup-schedules describe test-${uniqueId} --instance=test-instance --database=test-db
+- exec: gcloud spanner backup-schedules delete test-${uniqueId} --instance=test-instance --database=test-db

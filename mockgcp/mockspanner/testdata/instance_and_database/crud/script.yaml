@@ -1,0 +1,6 @@
+
+- exec: gcloud spanner instances create test-instance-${uniqueId} --config=regional-us-central1 --description="Test Instance" --nodes=1
+- exec: gcloud spanner databases create test-db-${uniqueId} --instance=test-instance-${uniqueId}
+- exec: gcloud spanner databases describe test-db-${uniqueId} --instance=test-instance-${uniqueId}
+- exec: gcloud spanner databases delete test-db-${uniqueId} --instance=test-instance-${uniqueId} -q
+- exec: gcloud spanner instances delete test-instance-${uniqueId} -q
