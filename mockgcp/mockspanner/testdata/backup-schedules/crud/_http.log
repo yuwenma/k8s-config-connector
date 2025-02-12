@@ -227,7 +227,7 @@ X-Xss-Protection: 0
     "@type": "type.googleapis.com/google.spanner.admin.database.v1.Database",
     "createTime": "2024-04-01T12:34:56.123456Z",
     "databaseDialect": "GOOGLE_STANDARD_SQL",
-    "earliestVersionTime": "2025-02-12T06:30:40.529149Z",
+    "earliestVersionTime": "2025-02-12T06:31:50.402067Z",
     "name": "projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}",
     "state": "READY",
     "versionRetentionPeriod": "1h"
@@ -302,11 +302,11 @@ X-Xss-Protection: 0
       "spec": {
         "cronSpec": {
           "creationWindow": "14400s",
-          "text": "23 12 * * *",
+          "text": "10 12 * * *",
           "timeZone": "UTC"
         }
       },
-      "updateTime": "2025-02-12T06:30:40.529149Z"
+      "updateTime": "2025-02-12T06:31:50.402067Z"
     }
   ]
 }
