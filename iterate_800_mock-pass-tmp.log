@@ -1,0 +1,376 @@
+[create project] secrets-locations already exist
+[create project] secrets-locations already exist
+[enable service] secrets-locations-12 accessapproval.googleapis.com
+[create project] spanner-backups already exist
+[enable service] spanner-backups-12 accessapproval.googleapis.com
+[project validation] vmware-private-clouds-management-dns-zone-bindings-12 too long
+[project validation] private-clouds-management-dns-zone-bindings-12 too long
+[project validation] clouds-management-dns-zone-bindings-12 too long
+[project validation] management-dns-zone-bindings-12 too long
+[create project] vmware-private-clouds-management-dns-zone-bindings already exist
+[enable service] dns-zone-bindings-12 accessapproval.googleapis.com
+[create project] secrets-locations already exist
+[enable service] secrets-locations-12 accessapproval.googleapis.com
+[enable service] secrets-locations-12 accesscontextmanager.googleapis.com
+[enable service] secrets-locations-12 apigateway.googleapis.com
+[create project] secrets-locations already exist
+[enable service] secrets-locations-12 accessapproval.googleapis.com
+[enable service] secrets-locations-12 accesscontextmanager.googleapis.com
+[enable service] secrets-locations-12 apigateway.googleapis.com
+[enable service] secrets-locations-12 apigee.googleapis.com
+[enable service] secrets-locations-12 appengine.googleapis.com
+[enable service] secrets-locations-12 apphub.googleapis.com
+[enable service] secrets-locations-12 assuredworkloads.googleapis.com
+[enable service] secrets-locations-12 auditmanager.googleapis.com
+[enable service] secrets-locations-12 baremetalsolution.googleapis.com
+[enable service] secrets-locations-12 bigtableadmin.googleapis.com
+[enable service] secrets-locations-12 cloudasset.googleapis.com
+[link billing account secrets-locations]: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/secrets-locations-12/billingInfo
+projectId: secrets-locations-12 
+[enable service] secrets-locations-12 accessapproval.googleapis.com
+[enable service] secrets-locations-12 accesscontextmanager.googleapis.com
+[enable service] secrets-locations-12 aiplatform.googleapis.com
+[enable service] secrets-locations-12 apigateway.googleapis.com
+[enable service] secrets-locations-12 apigee.googleapis.com
+[enable service] secrets-locations-12 appengine.googleapis.com
+[enable service] secrets-locations-12 apphub.googleapis.com
+[enable service] secrets-locations-12 artifactregistry.googleapis.com
+[enable service] secrets-locations-12 assuredworkloads.googleapis.com
+[enable service] secrets-locations-12 auditmanager.googleapis.com
+[enable service] secrets-locations-12 baremetalsolution.googleapis.com
+[enable service] secrets-locations-12 bigtableadmin.googleapis.com
+[enable service] secrets-locations-12 certificatemanager.googleapis.com
+[enable service] secrets-locations-12 cloudasset.googleapis.com
+[enable service] secrets-locations-12 cloudbilling.googleapis.com
+[enable service] secrets-locations-12 cloudbuild.googleapis.com
+[enable service] secrets-locations-12 cloudcommerceconsumerprocurement.googleapis.com
+[enable service] secrets-locations-12 clouddeploy.googleapis.com
+[enable service] secrets-locations-12 clouderrorreporting.googleapis.com
+[enable service] secrets-locations-12 cloudfunctions.googleapis.com
+[enable service] secrets-locations-12 cloudidentity.googleapis.com
+[enable service] secrets-locations-12 cloudkms.googleapis.com
+[enable service] secrets-locations-12 cloudresourcemanager.googleapis.com
+[enable service] secrets-locations-12 cloudscheduler.googleapis.com
+[enable service] secrets-locations-12 cloudtasks.googleapis.com
+[enable service] secrets-locations-12 cloudtrace.googleapis.com
+[enable service] secrets-locations-12 composer.googleapis.com
+[enable service] secrets-locations-12 compute.googleapis.com
+[enable service] secrets-locations-12 config.googleapis.com
+[enable service] secrets-locations-12 container.googleapis.com
+[enable service] secrets-locations-12 datacatalog.googleapis.com
+[enable service] secrets-locations-12 dataflow.googleapis.com
+[enable service] secrets-locations-12 datafusion.googleapis.com
+[enable service] secrets-locations-12 datamigration.googleapis.com
+[enable service] secrets-locations-12 datapipelines.googleapis.com
+[enable service] secrets-locations-12 dataplex.googleapis.com
+[enable service] secrets-locations-12 dataproc.googleapis.com
+[enable service] secrets-locations-12 datastore.googleapis.com
+[enable service] secrets-locations-12 datastream.googleapis.com
+[enable service] secrets-locations-12 deploymentmanager.googleapis.com
+[enable service] secrets-locations-12 developerconnect.googleapis.com
+[enable service] secrets-locations-12 dns.googleapis.com
+[enable service] secrets-locations-12 domains.googleapis.com
+[enable service] secrets-locations-12 edgecontainer.googleapis.com
+[enable service] secrets-locations-12 eventarc.googleapis.com
+[enable service] secrets-locations-12 eventarcpublishing.googleapis.com
+[enable service] secrets-locations-12 file.googleapis.com
+[enable service] secrets-locations-12 firebasedataconnect.googleapis.com
+[enable service] secrets-locations-12 firestore.googleapis.com
+[enable service] secrets-locations-12 gkemulticloud.googleapis.com
+[enable service] secrets-locations-12 healthcare.googleapis.com
+[enable service] secrets-locations-12 iam.googleapis.com
+[enable service] secrets-locations-12 iamcredentials.googleapis.com
+[enable service] secrets-locations-12 iap.googleapis.com
+[enable service] secrets-locations-12 ids.googleapis.com
+[enable service] secrets-locations-12 krmapihosting.googleapis.com
+[enable service] secrets-locations-12 language.googleapis.com
+[enable service] secrets-locations-12 lifesciences.googleapis.com
+[enable service] secrets-locations-12 logging.googleapis.com
+[enable service] secrets-locations-12 looker.googleapis.com
+[enable service] secrets-locations-12 managedidentities.googleapis.com
+[enable service] secrets-locations-12 memcache.googleapis.com
+[enable service] secrets-locations-12 metastore.googleapis.com
+[enable service] secrets-locations-12 monitoring.googleapis.com
+[enable service] secrets-locations-12 netapp.googleapis.com
+[enable service] secrets-locations-12 networkconnectivity.googleapis.com
+[enable service] secrets-locations-12 networkmanagement.googleapis.com
+[enable service] secrets-locations-12 networksecurity.googleapis.com
+[enable service] secrets-locations-12 networkservices.googleapis.com
+[enable service] secrets-locations-12 notebooks.googleapis.com
+[enable service] secrets-locations-12 policyanalyzer.googleapis.com
+[enable service] secrets-locations-12 privateca.googleapis.com
+[enable service] secrets-locations-12 publicca.googleapis.com
+[enable service] secrets-locations-12 pubsub.googleapis.com
+[enable service] secrets-locations-12 recaptchaenterprise.googleapis.com
+[enable service] secrets-locations-12 recommender.googleapis.com
+[enable service] secrets-locations-12 redis.googleapis.com
+[enable service] secrets-locations-12 resourcesettings.googleapis.com
+[enable service] secrets-locations-12 run.googleapis.com
+[enable service] secrets-locations-12 runtimeconfig.googleapis.com
+[enable service] secrets-locations-12 secretmanager.googleapis.com
+[enable service] secrets-locations-12 securitycenter.googleapis.com
+[enable service] secrets-locations-12 servicedirectory.googleapis.com
+[enable service] secrets-locations-12 servicemanagement.googleapis.com
+[enable service] secrets-locations-12 sourcerepo.googleapis.com
+[enable service] secrets-locations-12 spanner.googleapis.com
+[enable service] secrets-locations-12 storage.googleapis.com
+[enable service] secrets-locations-12 testing.googleapis.com
+[enable service] secrets-locations-12 transferappliance.googleapis.com
+[enable service] secrets-locations-12 vision.googleapis.com
+[enable service] secrets-locations-12 vmmigration.googleapis.com
+[enable service] secrets-locations-12 vmwareengine.googleapis.com
+[enable service] secrets-locations-12 workflowexecutions.googleapis.com
+[enable service] secrets-locations-12 workflows.googleapis.com
+[enable service] secrets-locations-12 workstations.googleapis.com
+[link billing account spanner-backups]: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/spanner-backups-12/billingInfo
+projectId: spanner-backups-12 
+[enable service] spanner-backups-12 accessapproval.googleapis.com
+[enable service] spanner-backups-12 accesscontextmanager.googleapis.com
+[enable service] spanner-backups-12 aiplatform.googleapis.com
+[enable service] spanner-backups-12 apigateway.googleapis.com
+[enable service] spanner-backups-12 apigee.googleapis.com
+[enable service] spanner-backups-12 appengine.googleapis.com
+[enable service] spanner-backups-12 apphub.googleapis.com
+[enable service] spanner-backups-12 artifactregistry.googleapis.com
+[enable service] spanner-backups-12 assuredworkloads.googleapis.com
+[enable service] spanner-backups-12 auditmanager.googleapis.com
+[enable service] spanner-backups-12 baremetalsolution.googleapis.com
+[enable service] spanner-backups-12 bigtableadmin.googleapis.com
+[enable service] spanner-backups-12 certificatemanager.googleapis.com
+[enable service] spanner-backups-12 cloudasset.googleapis.com
+[enable service] spanner-backups-12 cloudbilling.googleapis.com
+[enable service] spanner-backups-12 cloudbuild.googleapis.com
+[enable service] spanner-backups-12 cloudcommerceconsumerprocurement.googleapis.com
+[enable service] spanner-backups-12 clouddeploy.googleapis.com
+[enable service] spanner-backups-12 clouderrorreporting.googleapis.com
+[enable service] spanner-backups-12 cloudfunctions.googleapis.com
+[enable service] spanner-backups-12 cloudidentity.googleapis.com
+[enable service] spanner-backups-12 cloudkms.googleapis.com
+[enable service] spanner-backups-12 cloudresourcemanager.googleapis.com
+[enable service] spanner-backups-12 cloudscheduler.googleapis.com
+[enable service] spanner-backups-12 cloudtasks.googleapis.com
+[enable service] spanner-backups-12 cloudtrace.googleapis.com
+[enable service] spanner-backups-12 composer.googleapis.com
+[enable service] spanner-backups-12 container.googleapis.com
+[enable service] spanner-backups-12 datacatalog.googleapis.com
+[enable service] spanner-backups-12 dataflow.googleapis.com
+[enable service] spanner-backups-12 datafusion.googleapis.com
+[enable service] spanner-backups-12 datamigration.googleapis.com
+[enable service] spanner-backups-12 datapipelines.googleapis.com
+[enable service] spanner-backups-12 dataplex.googleapis.com
+[enable service] spanner-backups-12 dataproc.googleapis.com
+[enable service] spanner-backups-12 datastore.googleapis.com
+[enable service] spanner-backups-12 datastream.googleapis.com
+[enable service] spanner-backups-12 deploymentmanager.googleapis.com
+[enable service] spanner-backups-12 developerconnect.googleapis.com
+[enable service] spanner-backups-12 dns.googleapis.com
+[enable service] spanner-backups-12 domains.googleapis.com
+[enable service] spanner-backups-12 edgecontainer.googleapis.com
+[enable service] spanner-backups-12 eventarc.googleapis.com
+[enable service] spanner-backups-12 eventarcpublishing.googleapis.com
+[enable service] spanner-backups-12 file.googleapis.com
+[enable service] spanner-backups-12 firebasedataconnect.googleapis.com
+[enable service] spanner-backups-12 firestore.googleapis.com
+[enable service] spanner-backups-12 gkemulticloud.googleapis.com
+[enable service] spanner-backups-12 healthcare.googleapis.com
+[enable service] spanner-backups-12 iam.googleapis.com
+[enable service] spanner-backups-12 iamcredentials.googleapis.com
+[enable service] spanner-backups-12 iap.googleapis.com
+[enable service] spanner-backups-12 ids.googleapis.com
+[enable service] spanner-backups-12 krmapihosting.googleapis.com
+[enable service] spanner-backups-12 language.googleapis.com
+[enable service] spanner-backups-12 lifesciences.googleapis.com
+[enable service] spanner-backups-12 logging.googleapis.com
+[enable service] spanner-backups-12 looker.googleapis.com
+[enable service] spanner-backups-12 managedidentities.googleapis.com
+[enable service] spanner-backups-12 memcache.googleapis.com
+[enable service] spanner-backups-12 metastore.googleapis.com
+[enable service] spanner-backups-12 monitoring.googleapis.com
+[enable service] spanner-backups-12 netapp.googleapis.com
+[enable service] spanner-backups-12 networkconnectivity.googleapis.com
+[enable service] spanner-backups-12 networkmanagement.googleapis.com
+[enable service] spanner-backups-12 networksecurity.googleapis.com
+[enable service] spanner-backups-12 networkservices.googleapis.com
+[enable service] spanner-backups-12 notebooks.googleapis.com
+[enable service] spanner-backups-12 orgpolicy.googleapis.com
+[enable service] spanner-backups-12 policyanalyzer.googleapis.com
+[enable service] spanner-backups-12 privateca.googleapis.com
+[enable service] spanner-backups-12 publicca.googleapis.com
+[enable service] spanner-backups-12 pubsub.googleapis.com
+[enable service] spanner-backups-12 recaptchaenterprise.googleapis.com
+[enable service] spanner-backups-12 recommender.googleapis.com
+[enable service] spanner-backups-12 redis.googleapis.com
+[enable service] spanner-backups-12 resourcesettings.googleapis.com
+[enable service] spanner-backups-12 run.googleapis.com
+[enable service] spanner-backups-12 runtimeconfig.googleapis.com
+[enable service] spanner-backups-12 secretmanager.googleapis.com
+[enable service] spanner-backups-12 securitycenter.googleapis.com
+[enable service] spanner-backups-12 servicedirectory.googleapis.com
+[enable service] spanner-backups-12 servicemanagement.googleapis.com
+[enable service] spanner-backups-12 sourcerepo.googleapis.com
+[enable service] spanner-backups-12 spanner.googleapis.com
+[enable service] spanner-backups-12 speech.googleapis.com
+[enable service] spanner-backups-12 storage.googleapis.com
+[enable service] spanner-backups-12 testing.googleapis.com
+[enable service] spanner-backups-12 transferappliance.googleapis.com
+[enable service] spanner-backups-12 vision.googleapis.com
+[enable service] spanner-backups-12 vmmigration.googleapis.com
+[enable service] spanner-backups-12 vmwareengine.googleapis.com
+[enable service] spanner-backups-12 workflowexecutions.googleapis.com
+[enable service] spanner-backups-12 workflows.googleapis.com
+[enable service] spanner-backups-12 workstations.googleapis.com
+[project validation] vmware-private-clouds-management-dns-zone-bindings-12 too long
+[project validation] private-clouds-management-dns-zone-bindings-12 too long
+[project validation] clouds-management-dns-zone-bindings-12 too long
+[project validation] management-dns-zone-bindings-12 too long
+[link billing account vmware-private-clouds-management-dns-zone-bindings]: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/dns-zone-bindings-12/billingInfo
+projectId: dns-zone-bindings-12 
+[enable service] dns-zone-bindings-12 accessapproval.googleapis.com
+[enable service] dns-zone-bindings-12 accesscontextmanager.googleapis.com
+[enable service] dns-zone-bindings-12 aiplatform.googleapis.com
+[enable service] dns-zone-bindings-12 apigateway.googleapis.com
+[enable service] dns-zone-bindings-12 apigee.googleapis.com
+[enable service] dns-zone-bindings-12 appengine.googleapis.com
+[enable service] dns-zone-bindings-12 apphub.googleapis.com
+[enable service] dns-zone-bindings-12 artifactregistry.googleapis.com
+[enable service] dns-zone-bindings-12 assuredworkloads.googleapis.com
+[enable service] dns-zone-bindings-12 auditmanager.googleapis.com
+[enable service] dns-zone-bindings-12 baremetalsolution.googleapis.com
+[enable service] dns-zone-bindings-12 bigtableadmin.googleapis.com
+[enable service] dns-zone-bindings-12 certificatemanager.googleapis.com
+[enable service] dns-zone-bindings-12 cloudasset.googleapis.com
+[enable service] dns-zone-bindings-12 cloudbilling.googleapis.com
+[enable service] dns-zone-bindings-12 cloudbuild.googleapis.com
+[enable service] dns-zone-bindings-12 cloudcommerceconsumerprocurement.googleapis.com
+[enable service] dns-zone-bindings-12 clouddeploy.googleapis.com
+[enable service] dns-zone-bindings-12 clouderrorreporting.googleapis.com
+[enable service] dns-zone-bindings-12 cloudfunctions.googleapis.com
+[enable service] dns-zone-bindings-12 cloudidentity.googleapis.com
+[enable service] dns-zone-bindings-12 cloudkms.googleapis.com
+[enable service] dns-zone-bindings-12 cloudresourcemanager.googleapis.com
+[enable service] dns-zone-bindings-12 cloudscheduler.googleapis.com
+[enable service] dns-zone-bindings-12 cloudtasks.googleapis.com
+[enable service] dns-zone-bindings-12 cloudtrace.googleapis.com
+[enable service] dns-zone-bindings-12 composer.googleapis.com
+[enable service] dns-zone-bindings-12 compute.googleapis.com
+[enable service] dns-zone-bindings-12 config.googleapis.com
+[enable service] dns-zone-bindings-12 container.googleapis.com
+[enable service] dns-zone-bindings-12 datacatalog.googleapis.com
+[enable service] dns-zone-bindings-12 dataflow.googleapis.com
+[enable service] dns-zone-bindings-12 datafusion.googleapis.com
+[enable service] dns-zone-bindings-12 datamigration.googleapis.com
+[enable service] dns-zone-bindings-12 datapipelines.googleapis.com
+[enable service] dns-zone-bindings-12 dataplex.googleapis.com
+[enable service] dns-zone-bindings-12 dataproc.googleapis.com
+[enable service] dns-zone-bindings-12 datastore.googleapis.com
+[enable service] dns-zone-bindings-12 datastream.googleapis.com
+[enable service] dns-zone-bindings-12 deploymentmanager.googleapis.com
+[enable service] dns-zone-bindings-12 developerconnect.googleapis.com
+[enable service] dns-zone-bindings-12 dns.googleapis.com
+[enable service] dns-zone-bindings-12 domains.googleapis.com
+[enable service] dns-zone-bindings-12 edgecontainer.googleapis.com
+[enable service] dns-zone-bindings-12 eventarc.googleapis.com
+[enable service] dns-zone-bindings-12 eventarcpublishing.googleapis.com
+[enable service] dns-zone-bindings-12 file.googleapis.com
+[enable service] dns-zone-bindings-12 firebasedataconnect.googleapis.com
+[enable service] dns-zone-bindings-12 firestore.googleapis.com
+[enable service] dns-zone-bindings-12 gkemulticloud.googleapis.com
+[enable service] dns-zone-bindings-12 healthcare.googleapis.com
+[enable service] dns-zone-bindings-12 iam.googleapis.com
+[enable service] dns-zone-bindings-12 iamcredentials.googleapis.com
+[enable service] dns-zone-bindings-12 iap.googleapis.com
+[enable service] dns-zone-bindings-12 ids.googleapis.com
+[enable service] dns-zone-bindings-12 krmapihosting.googleapis.com
+[enable service] dns-zone-bindings-12 language.googleapis.com
+[enable service] dns-zone-bindings-12 lifesciences.googleapis.com
+[enable service] dns-zone-bindings-12 logging.googleapis.com
+[enable service] dns-zone-bindings-12 looker.googleapis.com
+[enable service] dns-zone-bindings-12 managedidentities.googleapis.com
+[enable service] dns-zone-bindings-12 memcache.googleapis.com
+[enable service] dns-zone-bindings-12 metastore.googleapis.com
+[enable service] dns-zone-bindings-12 monitoring.googleapis.com
+[enable service] dns-zone-bindings-12 netapp.googleapis.com
+[enable service] dns-zone-bindings-12 networkconnectivity.googleapis.com
+[enable service] dns-zone-bindings-12 networkmanagement.googleapis.com
+[enable service] dns-zone-bindings-12 networksecurity.googleapis.com
+[enable service] dns-zone-bindings-12 networkservices.googleapis.com
+[enable service] dns-zone-bindings-12 notebooks.googleapis.com
+[enable service] dns-zone-bindings-12 orgpolicy.googleapis.com
+[enable service] dns-zone-bindings-12 policyanalyzer.googleapis.com
+[enable service] dns-zone-bindings-12 privateca.googleapis.com
+[enable service] dns-zone-bindings-12 publicca.googleapis.com
+[enable service] dns-zone-bindings-12 pubsub.googleapis.com
+[enable service] dns-zone-bindings-12 recaptchaenterprise.googleapis.com
+[enable service] dns-zone-bindings-12 recommender.googleapis.com
+[enable service] dns-zone-bindings-12 redis.googleapis.com
+[enable service] dns-zone-bindings-12 resourcesettings.googleapis.com
+[enable service] dns-zone-bindings-12 run.googleapis.com
+[enable service] dns-zone-bindings-12 runtimeconfig.googleapis.com
+[enable service] dns-zone-bindings-12 secretmanager.googleapis.com
+[enable service] dns-zone-bindings-12 securitycenter.googleapis.com
+[enable service] dns-zone-bindings-12 servicedirectory.googleapis.com
+[enable service] dns-zone-bindings-12 servicemanagement.googleapis.com
+[enable service] dns-zone-bindings-12 sourcerepo.googleapis.com
+[enable service] dns-zone-bindings-12 spanner.googleapis.com
+[enable service] dns-zone-bindings-12 speech.googleapis.com
+[enable service] dns-zone-bindings-12 storage.googleapis.com
+[enable service] dns-zone-bindings-12 testing.googleapis.com
+[enable service] dns-zone-bindings-12 transferappliance.googleapis.com
+[enable service] dns-zone-bindings-12 vision.googleapis.com
+[enable service] dns-zone-bindings-12 vmmigration.googleapis.com
+[enable service] dns-zone-bindings-12 vmwareengine.googleapis.com
+[enable service] dns-zone-bindings-12 workflowexecutions.googleapis.com
+[enable service] dns-zone-bindings-12 workflows.googleapis.com
+[enable service] dns-zone-bindings-12 workstations.googleapis.com
+[clone repo] already exist
+[project validation] vmware-private-clouds-management-dns-zone-bindings-12 too long
+[project validation] private-clouds-management-dns-zone-bindings-12 too long
+[project validation] clouds-management-dns-zone-bindings-12 too long
+[project validation] management-dns-zone-bindings-12 too long
+[clone repo] already exist
+[checkout branch] spanner-backups mock-llm-spanner-backups
+[project validation] vmware-private-clouds-management-dns-zone-bindings-12 too long
+[project validation] private-clouds-management-dns-zone-bindings-12 too long
+[project validation] clouds-management-dns-zone-bindings-12 too long
+[project validation] management-dns-zone-bindings-12 too long
+[checkout branch] vmware-private-clouds-management-dns-zone-bindings mock-llm-vmware-private-clouds-management-dns-zone-bindings
+[clone repo] already exist /usr/local/google/home/yuwenma/go/scr/github.com/GoogleCloudPlatform/secrets-locations
+[clone repo] already exist /usr/local/google/home/yuwenma/go/scr/github.com/GoogleCloudPlatform/spanner-backups
+[project validation] vmware-private-clouds-management-dns-zone-bindings-12 too long
+[project validation] private-clouds-management-dns-zone-bindings-12 too long
+[project validation] clouds-management-dns-zone-bindings-12 too long
+[project validation] management-dns-zone-bindings-12 too long
+[clone repo] already exist /usr/local/google/home/yuwenma/go/scr/github.com/GoogleCloudPlatform/vmware-private-clouds-management-dns-zone-bindings
+[checkout branch] secrets-locations mock-llm-secrets-locations
+[checkout branch] spanner-backups mock-llm-spanner-backups
+[project validation] vmware-private-clouds-management-dns-zone-bindings-12 too long
+[project validation] private-clouds-management-dns-zone-bindings-12 too long
+[project validation] clouds-management-dns-zone-bindings-12 too long
+[project validation] management-dns-zone-bindings-12 too long
+[checkout branch] vmware-private-clouds-management-dns-zone-bindings mock-llm-vmware-private-clouds-management-dns-zone-bindings
+[project validation] vmware-private-clouds-management-dns-zone-bindings-12 too long
+[project validation] private-clouds-management-dns-zone-bindings-12 too long
+[project validation] clouds-management-dns-zone-bindings-12 too long
+[project validation] management-dns-zone-bindings-12 too long
+[project validation] vmware-private-clouds-management-dns-zone-bindings-12 too long
+[project validation] private-clouds-management-dns-zone-bindings-12 too long
+[project validation] clouds-management-dns-zone-bindings-12 too long
+[project validation] management-dns-zone-bindings-12 too long
+[project validation] vmware-private-clouds-management-dns-zone-bindings-12 too long
+[project validation] private-clouds-management-dns-zone-bindings-12 too long
+[project validation] clouds-management-dns-zone-bindings-12 too long
+[project validation] management-dns-zone-bindings-12 too long
+[project validation] vmware-private-clouds-management-dns-zone-bindings-12 too long
+[project validation] private-clouds-management-dns-zone-bindings-12 too long
+[project validation] clouds-management-dns-zone-bindings-12 too long
+[project validation] management-dns-zone-bindings-12 too long
+[project validation] vmware-private-clouds-management-dns-zone-bindings-12 too long
+[project validation] private-clouds-management-dns-zone-bindings-12 too long
+[project validation] clouds-management-dns-zone-bindings-12 too long
+[project validation] management-dns-zone-bindings-12 too long

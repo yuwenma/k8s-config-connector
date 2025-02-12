@@ -1,0 +1,3 @@
+gcloud secrets locations
+gcloud spanner backups
+gcloud vmware private-clouds management-dns-zone-bindings

@@ -19,6 +19,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"strings"
+	"time"
 
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/codebot/ui"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/llm"
@@ -93,6 +94,7 @@ func (c *Chat) SendMessage(ctx context.Context, userParts ...string) error {
 		return fmt.Errorf("sending message to LLM: %w", err)
 	}
 
+	time.Sleep(7 * time.Second)
 	for {
 		// Print the usage metadata (includes token count i.e. cost)
 		klog.Infof("UsageMetadata: %+v", resp.UsageMetadata())

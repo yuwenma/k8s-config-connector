@@ -1,0 +1,1300 @@
+[enable service] secrets-locations-12 gcloud secrets locations.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+Help Token: AV6GkAzU8aa2CH7egAbvdFGPqw9ZPdkgJlcECQ0Sw2941C9a8SNRVtA_flrd8gGV2Go2K6m6a-UxK3meRlpsQcxDL3JJ9qOphB64QP8OzHoigT5L. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=gcloud+secrets+locations.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: gcloud secrets locations.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+    [google.rpc.error_details_ext] { code: 7 message: "Not found or permission denied
+    for service(s): gcloud secrets locations.googleapis.com.\nHelp Token: AV6GkAzU8aa2CH7egAbvdFGPqw9ZPdkgJlcECQ0Sw2941C9a8SNRVtA_flrd8gGV2Go2K6m6a-UxK3meRlpsQcxDL3JJ9qOphB64QP8OzHoigT5L"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=gcloud+secrets+locations.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "gcloud
+    secrets locations.googleapis.com" } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 gcloud secrets locations.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+Help Token: AV6GkAywKnCdYZfHduC1O0pis5zUt2FsAnW_oJ3NkOg6aRGJO8JBv95YoCeys3dUdz5H31QcYmaCv1qrAdaVyT850iNFYc7OZqBdDeU7XsCZ1v1W. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=gcloud+secrets+locations.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: gcloud secrets locations.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+    [google.rpc.error_details_ext] { code: 7 message: "Not found or permission denied
+    for service(s): gcloud secrets locations.googleapis.com.\nHelp Token: AV6GkAywKnCdYZfHduC1O0pis5zUt2FsAnW_oJ3NkOg6aRGJO8JBv95YoCeys3dUdz5H31QcYmaCv1qrAdaVyT850iNFYc7OZqBdDeU7XsCZ1v1W"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=gcloud+secrets+locations.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "gcloud
+    secrets locations.googleapis.com" } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 gcloud secrets locations.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+Help Token: AV6GkAxVePK7pO4Xqu33iiJe5aTDEnRjOYbKZj0kqeDlBWVEYvn_op4Vmt0ljlcPkJbIB5IOe33MFc8pSi2Bh7r5UYKeEWfNJCsQAZAV4sMJSoIo. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=gcloud+secrets+locations.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: gcloud secrets locations.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+    [google.rpc.error_details_ext] { code: 7 message: "Not found or permission denied
+    for service(s): gcloud secrets locations.googleapis.com.\nHelp Token: AV6GkAxVePK7pO4Xqu33iiJe5aTDEnRjOYbKZj0kqeDlBWVEYvn_op4Vmt0ljlcPkJbIB5IOe33MFc8pSi2Bh7r5UYKeEWfNJCsQAZAV4sMJSoIo"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=gcloud+secrets+locations.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "gcloud
+    secrets locations.googleapis.com" } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 gcloud secrets locations.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+Help Token: AV6GkAzJOGmkteO_IZgZAfBDOxt-joLWtxu6IHYnVOgvafZ6Sc3DCWoFO07fQm_xf0WeRPtM7tAxpVIVYZOaW6aIUB_lNtnUyYucSCBvPRRhMdwE. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=gcloud+secrets+locations.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: gcloud secrets locations.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+    [google.rpc.error_details_ext] { code: 7 message: "Not found or permission denied
+    for service(s): gcloud secrets locations.googleapis.com.\nHelp Token: AV6GkAzJOGmkteO_IZgZAfBDOxt-joLWtxu6IHYnVOgvafZ6Sc3DCWoFO07fQm_xf0WeRPtM7tAxpVIVYZOaW6aIUB_lNtnUyYucSCBvPRRhMdwE"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=gcloud+secrets+locations.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "gcloud
+    secrets locations.googleapis.com" } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 gcloud secrets locations.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+Help Token: AV6GkAyZgbIBYQs16bXubXREzO7TcRgy9reScZFlfIzGLY6OIgtjq7OqvkOE80-bJ4LMkvCh7l6k0WJqQOsQ_0Gq9l_8emMccQsyRYgp1P9X_l7c. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=gcloud+secrets+locations.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: gcloud secrets locations.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+    [google.rpc.error_details_ext] { code: 7 message: "Not found or permission denied
+    for service(s): gcloud secrets locations.googleapis.com.\nHelp Token: AV6GkAyZgbIBYQs16bXubXREzO7TcRgy9reScZFlfIzGLY6OIgtjq7OqvkOE80-bJ4LMkvCh7l6k0WJqQOsQ_0Gq9l_8emMccQsyRYgp1P9X_l7c"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=gcloud+secrets+locations.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "gcloud
+    secrets locations.googleapis.com" } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 gcloud secrets locations.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+Help Token: AV6GkAxddM3jFa1NeOPAcNY8N5voshFu7rVDu8NL7nG-ylfrvzhyNpRUOxpA3Aeva4xeqh81mVL5fy0LnxcGvvS-sDMTL1otg_lPmJVYt5H2fgTR. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=gcloud+secrets+locations.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: gcloud secrets locations.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+    [google.rpc.error_details_ext] { code: 7 message: "Not found or permission denied
+    for service(s): gcloud secrets locations.googleapis.com.\nHelp Token: AV6GkAxddM3jFa1NeOPAcNY8N5voshFu7rVDu8NL7nG-ylfrvzhyNpRUOxpA3Aeva4xeqh81mVL5fy0LnxcGvvS-sDMTL1otg_lPmJVYt5H2fgTR"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=gcloud+secrets+locations.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "gcloud
+    secrets locations.googleapis.com" } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 gcloud secrets locations.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+Help Token: AV6GkAyaXOJ5Jhw4ri1lHV4fSU6BSpaRlDU7YOhvA3ArwO_YjG1tswWt076GtymrWl6EzzC5a9wom_GBqfbPiqNLmcMGjlMnIHF0AcL5YPz3Hl1X. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=gcloud+secrets+locations.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: gcloud secrets locations.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+    [google.rpc.error_details_ext] { code: 7 message: "Not found or permission denied
+    for service(s): gcloud secrets locations.googleapis.com.\nHelp Token: AV6GkAyaXOJ5Jhw4ri1lHV4fSU6BSpaRlDU7YOhvA3ArwO_YjG1tswWt076GtymrWl6EzzC5a9wom_GBqfbPiqNLmcMGjlMnIHF0AcL5YPz3Hl1X"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=gcloud+secrets+locations.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "gcloud
+    secrets locations.googleapis.com" } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 gcloud secrets locations.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+Help Token: AV6GkAxMBHxwtnxeEf_lqTVJfRpwSAmD-AnPVxneQrm8ZYMtcj8PZy5yR2fASUv-COr6726ZzAU9wNlI8gtKkFGehaDrI737zj52x8So9RtGAysj. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=gcloud+secrets+locations.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: gcloud secrets locations.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): gcloud secrets locations.googleapis.com.
+    [google.rpc.error_details_ext] { code: 7 message: "Not found or permission denied
+    for service(s): gcloud secrets locations.googleapis.com.\nHelp Token: AV6GkAxMBHxwtnxeEf_lqTVJfRpwSAmD-AnPVxneQrm8ZYMtcj8PZy5yR2fASUv-COr6726ZzAU9wNlI8gtKkFGehaDrI737zj52x8So9RtGAysj"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=gcloud+secrets+locations.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "gcloud
+    secrets locations.googleapis.com" } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 ai.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): ai.googleapis.com.
+Help Token: AV6GkAzlonbXOsfnUhCbdo5FE4ZuuRWLNCAzwG9gJpa9T2_9rJRGkeZJn-uy5KPo-l-D_jAwXiqng-uCu7hZkNqjvG6f4dq4Mkn3ET5qhx08sGVT. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=ai.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: ai.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): ai.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): ai.googleapis.com.\nHelp
+    Token: AV6GkAzlonbXOsfnUhCbdo5FE4ZuuRWLNCAzwG9gJpa9T2_9rJRGkeZJn-uy5KPo-l-D_jAwXiqng-uCu7hZkNqjvG6f4dq4Mkn3ET5qhx08sGVT"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=ai.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "ai.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 aiplatform.googleapis.com: ERROR: (gcloud.services.enable) FAILED_PRECONDITION: Billing account for project '458460696276' is not found. Billing must be enabled for activation of service(s) 'aiplatform.googleapis.com' to proceed.
+Help Token: AV6GkAwicXtt5u74AjwbPwEAyuT1JhDZ9ltG_gOcNsT2G3L97AnQ_jkKK0gTkXoYxOAUtbi2BXu9IjWM7revYuv1S4Wb4WXzj2DYceNELb0laegX
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=390001&project=458460696276&services=aiplatform.googleapis.com
+    type: googleapis.com/billing-enabled
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com/billing-enabled
+  metadata:
+    project: '458460696276'
+    services: aiplatform.googleapis.com
+  reason: UREQ_PROJECT_BILLING_NOT_FOUND
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: "[ORIGINAL ERROR] tenantmanager::390001: com.google.api.tenant.error.TenantManagerException:\
+    \ Billing account for project '458460696276' is not found. Billing must be enabled\
+    \ for activation of service(s) 'aiplatform.googleapis.com' to proceed. [google.rpc.error_details_ext]\
+    \ { code: 9 message: \"Billing account for project \\'458460696276\\' is not found.\
+    \ Billing must be enabled for activation of service(s) \\'aiplatform.googleapis.com\\\
+    ' to proceed.\\nHelp Token: AV6GkAwicXtt5u74AjwbPwEAyuT1JhDZ9ltG_gOcNsT2G3L97AnQ_jkKK0gTkXoYxOAUtbi2BXu9IjWM7revYuv1S4Wb4WXzj2DYceNELb0laegX\"\
+    \ details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations\
+    \ { type: \"googleapis.com/billing-enabled\" subject: \"?error_code=390001&project=458460696276&services=aiplatform.googleapis.com\"\
+    \ } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: \"UREQ_PROJECT_BILLING_NOT_FOUND\"\
+    \ domain: \"serviceusage.googleapis.com/billing-enabled\" metadata { key: \"project\"\
+    \ value: \"458460696276\" } metadata { key: \"services\" value: \"aiplatform.googleapis.com\"\
+    \ } } } } 391798925 { 1: 390001 }" 
+[enable service] secrets-locations-12 anthosevents.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): anthosevents.googleapis.com.
+Help Token: AV6GkAyYQVIQ0P9adcbVPAMaU9d9s4kecayuOGh-pEg1-CoBOKRJrr3tPT4rqDskhC36ww5pgXUnEnPoBwIVvpBKrpr03wCNrbORr2OF1RUj39Sj. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=anthosevents.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: anthosevents.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): anthosevents.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): anthosevents.googleapis.com.\nHelp
+    Token: AV6GkAyYQVIQ0P9adcbVPAMaU9d9s4kecayuOGh-pEg1-CoBOKRJrr3tPT4rqDskhC36ww5pgXUnEnPoBwIVvpBKrpr03wCNrbORr2OF1RUj39Sj"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=anthosevents.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "anthosevents.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 anthospolicycontrollerstatus_pa.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): anthospolicycontrollerstatus_pa.googleapis.com.
+Help Token: AV6GkAxhH7WXWprHKHLktmBDTob9H4pLBT3fF9FpS7wx0goHK30zBJRQJiV9givSPbwKJT4atCFjCsGf8FEVnVQtfwOH6uO9vT9pCoWFCbSl51QV. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=anthospolicycontrollerstatus_pa.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: anthospolicycontrollerstatus_pa.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): anthospolicycontrollerstatus_pa.googleapis.com.
+    [google.rpc.error_details_ext] { code: 7 message: "Not found or permission denied
+    for service(s): anthospolicycontrollerstatus_pa.googleapis.com.\nHelp Token: AV6GkAxhH7WXWprHKHLktmBDTob9H4pLBT3fF9FpS7wx0goHK30zBJRQJiV9givSPbwKJT4atCFjCsGf8FEVnVQtfwOH6uO9vT9pCoWFCbSl51QV"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=anthospolicycontrollerstatus_pa.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "anthospolicycontrollerstatus_pa.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 ai.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): ai.googleapis.com.
+Help Token: AV6GkAwtX4-xXnni8UGHZBQpusdHMri1j2MD53V4WS2_NpYj6nrMBA6ZJTInU92omh0lB3wRAeD5iRwUI913d_dPwv9V2KTsEjz7j9GBJ8v8Xwt9. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=ai.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: ai.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): ai.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): ai.googleapis.com.\nHelp
+    Token: AV6GkAwtX4-xXnni8UGHZBQpusdHMri1j2MD53V4WS2_NpYj6nrMBA6ZJTInU92omh0lB3wRAeD5iRwUI913d_dPwv9V2KTsEjz7j9GBJ8v8Xwt9"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=ai.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "ai.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 aiplatform.googleapis.com: ERROR: (gcloud.services.enable) FAILED_PRECONDITION: Billing account for project '458460696276' is not found. Billing must be enabled for activation of service(s) 'aiplatform.googleapis.com' to proceed.
+Help Token: AV6GkAyXIklPf5AbRAiFjsJEfxy0KvIyIJ1wVVjs0moMlIcZZsNt9YLUKWAJnx2aiI1COZKcWEGcdqrnhWz4-69MGLENdsJICV-JYTK8EdKRILjc
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=390001&project=458460696276&services=aiplatform.googleapis.com
+    type: googleapis.com/billing-enabled
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com/billing-enabled
+  metadata:
+    project: '458460696276'
+    services: aiplatform.googleapis.com
+  reason: UREQ_PROJECT_BILLING_NOT_FOUND
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: "[ORIGINAL ERROR] tenantmanager::390001: com.google.api.tenant.error.TenantManagerException:\
+    \ Billing account for project '458460696276' is not found. Billing must be enabled\
+    \ for activation of service(s) 'aiplatform.googleapis.com' to proceed. [google.rpc.error_details_ext]\
+    \ { code: 9 message: \"Billing account for project \\'458460696276\\' is not found.\
+    \ Billing must be enabled for activation of service(s) \\'aiplatform.googleapis.com\\\
+    ' to proceed.\\nHelp Token: AV6GkAyXIklPf5AbRAiFjsJEfxy0KvIyIJ1wVVjs0moMlIcZZsNt9YLUKWAJnx2aiI1COZKcWEGcdqrnhWz4-69MGLENdsJICV-JYTK8EdKRILjc\"\
+    \ details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations\
+    \ { type: \"googleapis.com/billing-enabled\" subject: \"?error_code=390001&project=458460696276&services=aiplatform.googleapis.com\"\
+    \ } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: \"UREQ_PROJECT_BILLING_NOT_FOUND\"\
+    \ domain: \"serviceusage.googleapis.com/billing-enabled\" metadata { key: \"project\"\
+    \ value: \"458460696276\" } metadata { key: \"services\" value: \"aiplatform.googleapis.com\"\
+    \ } } } } 391798925 { 1: 390001 }" 
+[enable service] secrets-locations-12 anthosevents.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): anthosevents.googleapis.com.
+Help Token: AV6GkAyH0XTSeODtaNqMsgVll5ad966NegEvcBoIxKxIqKVuCe9qJqa6RFBJOxy4igry_b0wy4fNr3-H_QjP8ZyxPGnbzX7ACKAxixoAJ_eI5GYn. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=anthosevents.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: anthosevents.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): anthosevents.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): anthosevents.googleapis.com.\nHelp
+    Token: AV6GkAyH0XTSeODtaNqMsgVll5ad966NegEvcBoIxKxIqKVuCe9qJqa6RFBJOxy4igry_b0wy4fNr3-H_QjP8ZyxPGnbzX7ACKAxixoAJ_eI5GYn"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=anthosevents.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "anthosevents.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 artifactregistry.googleapis.com: ERROR: (gcloud.services.enable) FAILED_PRECONDITION: Billing account for project '458460696276' is not found. Billing must be enabled for activation of service(s) 'artifactregistry.googleapis.com' to proceed.
+Help Token: AV6GkAzpJiV7KBBblAUevSzziqztHCtWvgc0E-KCd4B7kmBX-Za08csz9CPnRJ6wrbC9xUg4j_FdVIDScYZeb_McdzwOEP8k4rENJP-vALReRYdO
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=390001&project=458460696276&services=artifactregistry.googleapis.com
+    type: googleapis.com/billing-enabled
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com/billing-enabled
+  metadata:
+    project: '458460696276'
+    services: artifactregistry.googleapis.com
+  reason: UREQ_PROJECT_BILLING_NOT_FOUND
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: "[ORIGINAL ERROR] tenantmanager::390001: com.google.api.tenant.error.TenantManagerException:\
+    \ Billing account for project '458460696276' is not found. Billing must be enabled\
+    \ for activation of service(s) 'artifactregistry.googleapis.com' to proceed. [google.rpc.error_details_ext]\
+    \ { code: 9 message: \"Billing account for project \\'458460696276\\' is not found.\
+    \ Billing must be enabled for activation of service(s) \\'artifactregistry.googleapis.com\\\
+    ' to proceed.\\nHelp Token: AV6GkAzpJiV7KBBblAUevSzziqztHCtWvgc0E-KCd4B7kmBX-Za08csz9CPnRJ6wrbC9xUg4j_FdVIDScYZeb_McdzwOEP8k4rENJP-vALReRYdO\"\
+    \ details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations\
+    \ { type: \"googleapis.com/billing-enabled\" subject: \"?error_code=390001&project=458460696276&services=artifactregistry.googleapis.com\"\
+    \ } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: \"UREQ_PROJECT_BILLING_NOT_FOUND\"\
+    \ domain: \"serviceusage.googleapis.com/billing-enabled\" metadata { key: \"project\"\
+    \ value: \"458460696276\" } metadata { key: \"services\" value: \"artifactregistry.googleapis.com\"\
+    \ } } } } 391798925 { 1: 390001 }" 
+[enable service] secrets-locations-12 certificatemanager.googleapis.com: ERROR: (gcloud.services.enable) FAILED_PRECONDITION: Billing account for project '458460696276' is not found. Billing must be enabled for activation of service(s) 'certificatemanager.googleapis.com' to proceed.
+Help Token: AV6GkAwNILLk7PJBbT2eZOFDv1dViTXWCnTEMOz4f147Y0U8XajLGJnotznMmCflikTSnY40r1q72uSycS1-6VoNTc5geoiI2e8XADPBDGKzSUdk
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=390001&project=458460696276&services=certificatemanager.googleapis.com
+    type: googleapis.com/billing-enabled
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com/billing-enabled
+  metadata:
+    project: '458460696276'
+    services: certificatemanager.googleapis.com
+  reason: UREQ_PROJECT_BILLING_NOT_FOUND
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: "[ORIGINAL ERROR] tenantmanager::390001: com.google.api.tenant.error.TenantManagerException:\
+    \ Billing account for project '458460696276' is not found. Billing must be enabled\
+    \ for activation of service(s) 'certificatemanager.googleapis.com' to proceed.\
+    \ [google.rpc.error_details_ext] { code: 9 message: \"Billing account for project\
+    \ \\'458460696276\\' is not found. Billing must be enabled for activation of service(s)\
+    \ \\'certificatemanager.googleapis.com\\' to proceed.\\nHelp Token: AV6GkAwNILLk7PJBbT2eZOFDv1dViTXWCnTEMOz4f147Y0U8XajLGJnotznMmCflikTSnY40r1q72uSycS1-6VoNTc5geoiI2e8XADPBDGKzSUdk\"\
+    \ details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations\
+    \ { type: \"googleapis.com/billing-enabled\" subject: \"?error_code=390001&project=458460696276&services=certificatemanager.googleapis.com\"\
+    \ } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: \"UREQ_PROJECT_BILLING_NOT_FOUND\"\
+    \ domain: \"serviceusage.googleapis.com/billing-enabled\" metadata { key: \"project\"\
+    \ value: \"458460696276\" } metadata { key: \"services\" value: \"certificatemanager.googleapis.com\"\
+    \ } } } } 391798925 { 1: 390001 }" 
+[enable service] secrets-locations-12 ai.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): ai.googleapis.com.
+Help Token: AV6GkAw3T1wdRsGzQXjPbDglwNbls-WFayiMzvK0X_ins0506AOko8VOyjhGfhn1eJsp_1cvfZ35p1GJHOgktz8HUka53kgSvG8oEUREnGzns9Cg. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=ai.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: ai.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): ai.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): ai.googleapis.com.\nHelp
+    Token: AV6GkAw3T1wdRsGzQXjPbDglwNbls-WFayiMzvK0X_ins0506AOko8VOyjhGfhn1eJsp_1cvfZ35p1GJHOgktz8HUka53kgSvG8oEUREnGzns9Cg"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=ai.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "ai.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 anthosevents.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): anthosevents.googleapis.com.
+Help Token: AV6GkAzrPEJeqX_eAILQuNfy5ow9jfzggfCxqENqrS50y1wd5V0DCv_oX8Cwg-Ukttz4N61kvmDV82qewQ1Es89TJp1FeEkKWAwgOJhieaBjUNmz. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=anthosevents.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: anthosevents.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): anthosevents.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): anthosevents.googleapis.com.\nHelp
+    Token: AV6GkAzrPEJeqX_eAILQuNfy5ow9jfzggfCxqENqrS50y1wd5V0DCv_oX8Cwg-Ukttz4N61kvmDV82qewQ1Es89TJp1FeEkKWAwgOJhieaBjUNmz"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=anthosevents.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "anthosevents.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 clouddebugger.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): clouddebugger.googleapis.com.
+Help Token: AV6GkAy0TPeUxOe_wqRmK5OZxbHPYE8YJlWqQPyxaA09ZkmXTBZ_AMegf_kOGLv42miAegcHl7qJoLAUOPa9aWQNfMDTFnnRC5cfkXBNKVXok3XX. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=clouddebugger.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: clouddebugger.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): clouddebugger.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): clouddebugger.googleapis.com.\nHelp
+    Token: AV6GkAy0TPeUxOe_wqRmK5OZxbHPYE8YJlWqQPyxaA09ZkmXTBZ_AMegf_kOGLv42miAegcHl7qJoLAUOPa9aWQNfMDTFnnRC5cfkXBNKVXok3XX"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=clouddebugger.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "clouddebugger.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 faultinjectiontesting.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Permission denied to enable service [faultinjectiontesting.googleapis.com]
+Help Token: AV6GkAyWOfP0IoZaxI6hkz-ZZIAFPEu4SsZgHHNHwrtpw_hf71jcSvYn4wEGFU4K_N5LCKFz30tCvUeBAYDmiM2IpjdG5y6jDEk4ozG822Ci1g1N. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=secrets-locations-12
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    permission: servicemanagement.services.bind
+    resource: secrets-locations-12
+    service: servicemanagement.googleapis.com
+  reason: AUTH_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: |-
+    [ORIGINAL ERROR] generic::permission_denied: com.google.apps.framework.auth.IamPermissionDeniedException: Permission denied to enable service [faultinjectiontesting.googleapis.com] {
+      Details: [
+        AnyOf [
+        	AllOf [
+        	IAM{policy: 'servicemanagement_services-/000000304f9adb99/faultinjectiontesting.googleapis.com' resource: 'services/faultinjectiontesting.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+        	ServiceAccessCheck{errorMsg=Optional[Service 'faultinjectiontesting.googleapis.com' is only open to ORG, the caller should be a member of everyone@google.com or g/inception-recognized-google-internal-robots], isPublic=false}
+        ]
+        	ServiceAccessResourceBasedCheck{errorMsg=Optional[Service faultinjectiontesting.googleapis.com is not available to this consumer.], serviceName=faultinjectiontesting.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=458460696276, id=secrets-locations-12, requestedId=Optional[secrets-locations-12], active=true}}
+        ] denied {auditlog: true, cloudaudit: false}
+          Bind permission denied for service: faultinjectiontesting.googleapis.com
+          Service faultinjectiontesting.googleapis.com is not available to this consumer. {
+            Details: [
+              AllOf [
+              	IAM{policy: 'servicemanagement_services-/000000304f9adb99/faultinjectiontesting.googleapis.com' resource: 'services/faultinjectiontesting.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+              	ServiceAccessCheck{errorMsg=Optional[Service 'faultinjectiontesting.googleapis.com' is only open to ORG, the caller should be a member of everyone@google.com or g/inception-recognized-google-internal-robots], isPublic=false}
+              ] denied {auditlog: true, cloudaudit: false}
+                Bind permission denied for service: faultinjectiontesting.googleapis.com {
+                  Details: [
+                    IAM{policy: 'servicemanagement_services-/000000304f9adb99/faultinjectiontesting.googleapis.com' resource: 'services/faultinjectiontesting.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      Bind permission denied for service: faultinjectiontesting.googleapis.com {
+                        IAM{policy: 'servicemanagement_services-/000000304f9adb99/faultinjectiontesting.googleapis.com' resource: 'services/faultinjectiontesting.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      }
+                  ]
+                }
+              ServiceAccessResourceBasedCheck{errorMsg=Optional[Service faultinjectiontesting.googleapis.com is not available to this consumer.], serviceName=faultinjectiontesting.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=458460696276, id=secrets-locations-12, requestedId=Optional[secrets-locations-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                Service faultinjectiontesting.googleapis.com is not available to this consumer. {
+                  ServiceAccessResourceBasedCheck{errorMsg=Optional[Service faultinjectiontesting.googleapis.com is not available to this consumer.], serviceName=faultinjectiontesting.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=458460696276, id=secrets-locations-12, requestedId=Optional[secrets-locations-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                }
+            ]
+          }
+      ]
+    } (Neither system permission tenantmanagement.write granted nor fine-grained check com.google.api.tenant.auth.PublicAnnotations$DefaultTenantManagerAuthChecker passed): securityContext=ValidatedSecurityContext{opaque} [google.rpc.error_details_ext] { code: 7 message: "Permission denied to enable service [faultinjectiontesting.googleapis.com]\nHelp Token: AV6GkAyWOfP0IoZaxI6hkz-ZZIAFPEu4SsZgHHNHwrtpw_hf71jcSvYn4wEGFU4K_N5LCKFz30tCvUeBAYDmiM2IpjdG5y6jDEk4ozG822Ci1g1N" details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations { type: "googleapis.com" subject: "?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=secrets-locations-12" } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "AUTH_PERMISSION_DENIED" domain: "serviceusage.googleapis.com" metadata { key: "permission" value: "servicemanagement.services.bind" } metadata { key: "resource" value: "secrets-locations-12" } metadata { key: "service" value: "servicemanagement.googleapis.com" } } } } 391798925 { 1: 110002 } 
+[enable service] secrets-locations-12 genomics.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Permission denied to enable service [genomics.googleapis.com]
+Help Token: AV6GkAxAQ7YmCwpSTvDzfWszX4Kms-N-SjFF2zDb8GPhUho7Wi96zacREamkZz9gFP6wXDLJIF1HEXKkxRBoScaOfg48FIKFhbVkd_xc5P8TD_oG. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=secrets-locations-12
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    permission: servicemanagement.services.bind
+    resource: secrets-locations-12
+    service: servicemanagement.googleapis.com
+  reason: AUTH_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: |-
+    [ORIGINAL ERROR] generic::permission_denied: com.google.apps.framework.auth.IamPermissionDeniedException: Permission denied to enable service [genomics.googleapis.com] {
+      Details: [
+        AnyOf [
+        	AllOf [
+        	IAM{policy: 'servicemanagement_services-/00000030767710ed/genomics.googleapis.com' resource: 'services/genomics.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+        	ServiceAccessCheck{errorMsg=Optional[Service with public scope.], isPublic=true}
+        ]
+        	ServiceAccessResourceBasedCheck{errorMsg=Optional[Service genomics.googleapis.com is not available to this consumer.], serviceName=genomics.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=458460696276, id=secrets-locations-12, requestedId=Optional[secrets-locations-12], active=true}}
+        ] denied {auditlog: true, cloudaudit: false}
+          Bind permission denied for service: genomics.googleapis.com
+          Service genomics.googleapis.com is not available to this consumer. {
+            Details: [
+              AllOf [
+              	IAM{policy: 'servicemanagement_services-/00000030767710ed/genomics.googleapis.com' resource: 'services/genomics.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+              	ServiceAccessCheck{errorMsg=Optional[Service with public scope.], isPublic=true}
+              ] denied {auditlog: true, cloudaudit: false}
+                Bind permission denied for service: genomics.googleapis.com {
+                  Details: [
+                    IAM{policy: 'servicemanagement_services-/00000030767710ed/genomics.googleapis.com' resource: 'services/genomics.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      Bind permission denied for service: genomics.googleapis.com {
+                        IAM{policy: 'servicemanagement_services-/00000030767710ed/genomics.googleapis.com' resource: 'services/genomics.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      }
+                  ]
+                }
+              ServiceAccessResourceBasedCheck{errorMsg=Optional[Service genomics.googleapis.com is not available to this consumer.], serviceName=genomics.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=458460696276, id=secrets-locations-12, requestedId=Optional[secrets-locations-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                Service genomics.googleapis.com is not available to this consumer. {
+                  ServiceAccessResourceBasedCheck{errorMsg=Optional[Service genomics.googleapis.com is not available to this consumer.], serviceName=genomics.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=458460696276, id=secrets-locations-12, requestedId=Optional[secrets-locations-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                }
+            ]
+          }
+      ]
+    } (Neither system permission tenantmanagement.write granted nor fine-grained check com.google.api.tenant.auth.PublicAnnotations$DefaultTenantManagerAuthChecker passed): securityContext=ValidatedSecurityContext{opaque} [google.rpc.error_details_ext] { code: 7 message: "Permission denied to enable service [genomics.googleapis.com]\nHelp Token: AV6GkAxAQ7YmCwpSTvDzfWszX4Kms-N-SjFF2zDb8GPhUho7Wi96zacREamkZz9gFP6wXDLJIF1HEXKkxRBoScaOfg48FIKFhbVkd_xc5P8TD_oG" details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations { type: "googleapis.com" subject: "?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=secrets-locations-12" } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "AUTH_PERMISSION_DENIED" domain: "serviceusage.googleapis.com" metadata { key: "permission" value: "servicemanagement.services.bind" } metadata { key: "resource" value: "secrets-locations-12" } metadata { key: "service" value: "servicemanagement.googleapis.com" } } } } 391798925 { 1: 110002 } 
+[enable service] secrets-locations-12 marketplacesolutions.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Permission denied to enable service [marketplacesolutions.googleapis.com]
+Help Token: AV6GkAwp7CIxY6l-M-Sx_O0gTcnLjnpt2y2h6Cg7cv_j7_GFUXs596SfGgcraTOui-YLO8ynPt_Sfw57ANUVkuE-iS2ZLtCIxkZSlrJJpivhN6Ft. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=secrets-locations-12
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    permission: servicemanagement.services.bind
+    resource: secrets-locations-12
+    service: servicemanagement.googleapis.com
+  reason: AUTH_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: |-
+    [ORIGINAL ERROR] generic::permission_denied: com.google.apps.framework.auth.IamPermissionDeniedException: Permission denied to enable service [marketplacesolutions.googleapis.com] {
+      Details: [
+        AnyOf [
+        	AllOf [
+        	IAM{policy: 'servicemanagement_services-/000000ac51776b34/marketplacesolutions.googleapis.com' resource: 'services/marketplacesolutions.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+        	ServiceAccessCheck{errorMsg=Optional[Service 'marketplacesolutions.googleapis.com' is only open to ORG, the caller should be a member of everyone@google.com or g/inception-recognized-google-internal-robots], isPublic=false}
+        ]
+        	ServiceAccessResourceBasedCheck{errorMsg=Optional[Service marketplacesolutions.googleapis.com is not available to this consumer.], serviceName=marketplacesolutions.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=458460696276, id=secrets-locations-12, requestedId=Optional[secrets-locations-12], active=true}}
+        ] denied {auditlog: true, cloudaudit: false}
+          Bind permission denied for service: marketplacesolutions.googleapis.com
+          Service marketplacesolutions.googleapis.com is not available to this consumer. {
+            Details: [
+              AllOf [
+              	IAM{policy: 'servicemanagement_services-/000000ac51776b34/marketplacesolutions.googleapis.com' resource: 'services/marketplacesolutions.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+              	ServiceAccessCheck{errorMsg=Optional[Service 'marketplacesolutions.googleapis.com' is only open to ORG, the caller should be a member of everyone@google.com or g/inception-recognized-google-internal-robots], isPublic=false}
+              ] denied {auditlog: true, cloudaudit: false}
+                Bind permission denied for service: marketplacesolutions.googleapis.com {
+                  Details: [
+                    IAM{policy: 'servicemanagement_services-/000000ac51776b34/marketplacesolutions.googleapis.com' resource: 'services/marketplacesolutions.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      Bind permission denied for service: marketplacesolutions.googleapis.com {
+                        IAM{policy: 'servicemanagement_services-/000000ac51776b34/marketplacesolutions.googleapis.com' resource: 'services/marketplacesolutions.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      }
+                  ]
+                }
+              ServiceAccessResourceBasedCheck{errorMsg=Optional[Service marketplacesolutions.googleapis.com is not available to this consumer.], serviceName=marketplacesolutions.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=458460696276, id=secrets-locations-12, requestedId=Optional[secrets-locations-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                Service marketplacesolutions.googleapis.com is not available to this consumer. {
+                  ServiceAccessResourceBasedCheck{errorMsg=Optional[Service marketplacesolutions.googleapis.com is not available to this consumer.], serviceName=marketplacesolutions.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=458460696276, id=secrets-locations-12, requestedId=Optional[secrets-locations-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                }
+            ]
+          }
+      ]
+    } (Neither system permission tenantmanagement.write granted nor fine-grained check com.google.api.tenant.auth.PublicAnnotations$DefaultTenantManagerAuthChecker passed): securityContext=ValidatedSecurityContext{opaque} [google.rpc.error_details_ext] { code: 7 message: "Permission denied to enable service [marketplacesolutions.googleapis.com]\nHelp Token: AV6GkAwp7CIxY6l-M-Sx_O0gTcnLjnpt2y2h6Cg7cv_j7_GFUXs596SfGgcraTOui-YLO8ynPt_Sfw57ANUVkuE-iS2ZLtCIxkZSlrJJpivhN6Ft" details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations { type: "googleapis.com" subject: "?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=secrets-locations-12" } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "AUTH_PERMISSION_DENIED" domain: "serviceusage.googleapis.com" metadata { key: "permission" value: "servicemanagement.services.bind" } metadata { key: "resource" value: "secrets-locations-12" } metadata { key: "service" value: "servicemanagement.googleapis.com" } } } } 391798925 { 1: 110002 } 
+[enable service] secrets-locations-12 mediaasset.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Permission denied to enable service [mediaasset.googleapis.com]
+Help Token: AV6GkAyf4FZ1Vtn0JkjKkNcStihEwtJiVWuP_AwG5uA8jQabiR55FTCmm9B06f60Wg-knRgtFZpRc1xkOB0GnyZ3zkwRry3_oDsB-uIctFf2Vu0b. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=secrets-locations-12
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    permission: servicemanagement.services.bind
+    resource: secrets-locations-12
+    service: servicemanagement.googleapis.com
+  reason: AUTH_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: |-
+    [ORIGINAL ERROR] generic::permission_denied: com.google.apps.framework.auth.IamPermissionDeniedException: Permission denied to enable service [mediaasset.googleapis.com] {
+      Details: [
+        AnyOf [
+        	AllOf [
+        	IAM{policy: 'servicemanagement_services-/000000eb94071d99/mediaasset.googleapis.com' resource: 'services/mediaasset.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+        	ServiceAccessCheck{errorMsg=Optional[Service with public scope.], isPublic=true}
+        ]
+        	ServiceAccessResourceBasedCheck{errorMsg=Optional[Service mediaasset.googleapis.com is not available to this consumer.], serviceName=mediaasset.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=458460696276, id=secrets-locations-12, requestedId=Optional[secrets-locations-12], active=true}}
+        ] denied {auditlog: true, cloudaudit: false}
+          Bind permission denied for service: mediaasset.googleapis.com
+          Service mediaasset.googleapis.com is not available to this consumer. {
+            Details: [
+              AllOf [
+              	IAM{policy: 'servicemanagement_services-/000000eb94071d99/mediaasset.googleapis.com' resource: 'services/mediaasset.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+              	ServiceAccessCheck{errorMsg=Optional[Service with public scope.], isPublic=true}
+              ] denied {auditlog: true, cloudaudit: false}
+                Bind permission denied for service: mediaasset.googleapis.com {
+                  Details: [
+                    IAM{policy: 'servicemanagement_services-/000000eb94071d99/mediaasset.googleapis.com' resource: 'services/mediaasset.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      Bind permission denied for service: mediaasset.googleapis.com {
+                        IAM{policy: 'servicemanagement_services-/000000eb94071d99/mediaasset.googleapis.com' resource: 'services/mediaasset.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      }
+                  ]
+                }
+              ServiceAccessResourceBasedCheck{errorMsg=Optional[Service mediaasset.googleapis.com is not available to this consumer.], serviceName=mediaasset.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=458460696276, id=secrets-locations-12, requestedId=Optional[secrets-locations-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                Service mediaasset.googleapis.com is not available to this consumer. {
+                  ServiceAccessResourceBasedCheck{errorMsg=Optional[Service mediaasset.googleapis.com is not available to this consumer.], serviceName=mediaasset.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=458460696276, id=secrets-locations-12, requestedId=Optional[secrets-locations-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                }
+            ]
+          }
+      ]
+    } (Neither system permission tenantmanagement.write granted nor fine-grained check com.google.api.tenant.auth.PublicAnnotations$DefaultTenantManagerAuthChecker passed): securityContext=ValidatedSecurityContext{opaque} [google.rpc.error_details_ext] { code: 7 message: "Permission denied to enable service [mediaasset.googleapis.com]\nHelp Token: AV6GkAyf4FZ1Vtn0JkjKkNcStihEwtJiVWuP_AwG5uA8jQabiR55FTCmm9B06f60Wg-knRgtFZpRc1xkOB0GnyZ3zkwRry3_oDsB-uIctFf2Vu0b" details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations { type: "googleapis.com" subject: "?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=secrets-locations-12" } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "AUTH_PERMISSION_DENIED" domain: "serviceusage.googleapis.com" metadata { key: "permission" value: "servicemanagement.services.bind" } metadata { key: "resource" value: "secrets-locations-12" } metadata { key: "service" value: "servicemanagement.googleapis.com" } } } } 391798925 { 1: 110002 } 
+[enable service] secrets-locations-12 sddc.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): sddc.googleapis.com.
+Help Token: AV6GkAzkBBGTceB34snwcr5uRr0fKyBfKyYY5lV2FuyW2NUV3F7R_9dua9Yx4flS5tJB0nNgzc_699iiRMiKFWk_LR6KCNq7_r0IEFrsAbP4FXlJ. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=sddc.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: sddc.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): sddc.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): sddc.googleapis.com.\nHelp
+    Token: AV6GkAzkBBGTceB34snwcr5uRr0fKyBfKyYY5lV2FuyW2NUV3F7R_9dua9Yx4flS5tJB0nNgzc_699iiRMiKFWk_LR6KCNq7_r0IEFrsAbP4FXlJ"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=sddc.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "sddc.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 ech.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): ech.googleapis.com.
+Help Token: AV6GkAw0p_u740J8gJygNj63KAUcJxO9uV2SxNmUqJlcOxr-UhRFxw4ROdhd2NNBOBBk7bm2t6MlERcVQb2rsDysEPhBH28czTolbEhTAxYADVKx. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=ech.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: ech.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): ech.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): ech.googleapis.com.\nHelp
+    Token: AV6GkAw0p_u740J8gJygNj63KAUcJxO9uV2SxNmUqJlcOxr-UhRFxw4ROdhd2NNBOBBk7bm2t6MlERcVQb2rsDysEPhBH28czTolbEhTAxYADVKx"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=ech.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "ech.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 sql.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): sql.googleapis.com.
+Help Token: AV6GkAxGHPqmxrqP0zEZAY3Bz6vGVEtqemrAdfsooLjR1-oKG5wQSUn-urn6GowVNVF7i8YvCdiOZsmwD4NQ4N-aFGTrY-xezux2J2g8ZqIrL5jX. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=sql.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: sql.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): sql.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): sql.googleapis.com.\nHelp
+    Token: AV6GkAxGHPqmxrqP0zEZAY3Bz6vGVEtqemrAdfsooLjR1-oKG5wQSUn-urn6GowVNVF7i8YvCdiOZsmwD4NQ4N-aFGTrY-xezux2J2g8ZqIrL5jX"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=sql.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "sql.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] secrets-locations-12 transfer.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): transfer.googleapis.com.
+Help Token: AV6GkAyq0FBlsYPrViIYMILQbxb1Fv1BgFrTYtqx8_nHgqHOS6kcR3VKnIC7QLoZa6KlrXe0v7JkoBTUrvs7C00qBAr4G2lX6FDo3uGiCr6575Sw. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=transfer.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: transfer.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): transfer.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): transfer.googleapis.com.\nHelp
+    Token: AV6GkAyq0FBlsYPrViIYMILQbxb1Fv1BgFrTYtqx8_nHgqHOS6kcR3VKnIC7QLoZa6KlrXe0v7JkoBTUrvs7C00qBAr4G2lX6FDo3uGiCr6575Sw"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=transfer.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "transfer.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] spanner-backups-12 anthosevents.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): anthosevents.googleapis.com.
+Help Token: AV6GkAxR0Ei7v4UPvupTgQ_MZZ_qf77T6t4hTLjywzQXTJpStNSiMZTbQSgIIVVwk9gA22VBFaMva0P6bwqtZpE-vl_wcRb6NZQZxT1A_fZ8ovgy. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=anthosevents.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: anthosevents.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): anthosevents.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): anthosevents.googleapis.com.\nHelp
+    Token: AV6GkAxR0Ei7v4UPvupTgQ_MZZ_qf77T6t4hTLjywzQXTJpStNSiMZTbQSgIIVVwk9gA22VBFaMva0P6bwqtZpE-vl_wcRb6NZQZxT1A_fZ8ovgy"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=anthosevents.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "anthosevents.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] spanner-backups-12 g.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): g.googleapis.com.
+Help Token: AV6GkAy1Yi4SKO9b7MxHm8Q6pQG5OSNMAv5fMxA5SOgltbETN-TXqqvZTLY6xpywNgxBP--BPDgOdixMHdKhnkO7QB9LUTuwU3AVHaB_u7sGQUKg. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=g.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: g.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): g.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): g.googleapis.com.\nHelp
+    Token: AV6GkAy1Yi4SKO9b7MxHm8Q6pQG5OSNMAv5fMxA5SOgltbETN-TXqqvZTLY6xpywNgxBP--BPDgOdixMHdKhnkO7QB9LUTuwU3AVHaB_u7sGQUKg"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=g.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "g.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] spanner-backups-12 faultinjectiontesting.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Permission denied to enable service [faultinjectiontesting.googleapis.com]
+Help Token: AV6GkAx_dHIgXNlOG3xIvDyITVTqsCrfba6iTgwXvsglSnMmWVdvmLphrKNcp1J3SSQ9F7hnR_Q8isPZOxT8EynHPjSSzbC7svJplRymVUwbSfyP. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=spanner-backups-12
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    permission: servicemanagement.services.bind
+    resource: spanner-backups-12
+    service: servicemanagement.googleapis.com
+  reason: AUTH_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: |-
+    [ORIGINAL ERROR] generic::permission_denied: com.google.apps.framework.auth.IamPermissionDeniedException: Permission denied to enable service [faultinjectiontesting.googleapis.com] {
+      Details: [
+        AnyOf [
+        	AllOf [
+        	IAM{policy: 'servicemanagement_services-/000000304f9adb99/faultinjectiontesting.googleapis.com' resource: 'services/faultinjectiontesting.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+        	ServiceAccessCheck{errorMsg=Optional[Service 'faultinjectiontesting.googleapis.com' is only open to ORG, the caller should be a member of everyone@google.com or g/inception-recognized-google-internal-robots], isPublic=false}
+        ]
+        	ServiceAccessResourceBasedCheck{errorMsg=Optional[Service faultinjectiontesting.googleapis.com is not available to this consumer.], serviceName=faultinjectiontesting.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=248472805281, id=spanner-backups-12, requestedId=Optional[spanner-backups-12], active=true}}
+        ] denied {auditlog: true, cloudaudit: false}
+          Bind permission denied for service: faultinjectiontesting.googleapis.com
+          Service faultinjectiontesting.googleapis.com is not available to this consumer. {
+            Details: [
+              AllOf [
+              	IAM{policy: 'servicemanagement_services-/000000304f9adb99/faultinjectiontesting.googleapis.com' resource: 'services/faultinjectiontesting.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+              	ServiceAccessCheck{errorMsg=Optional[Service 'faultinjectiontesting.googleapis.com' is only open to ORG, the caller should be a member of everyone@google.com or g/inception-recognized-google-internal-robots], isPublic=false}
+              ] denied {auditlog: true, cloudaudit: false}
+                Bind permission denied for service: faultinjectiontesting.googleapis.com {
+                  Details: [
+                    IAM{policy: 'servicemanagement_services-/000000304f9adb99/faultinjectiontesting.googleapis.com' resource: 'services/faultinjectiontesting.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      Bind permission denied for service: faultinjectiontesting.googleapis.com {
+                        IAM{policy: 'servicemanagement_services-/000000304f9adb99/faultinjectiontesting.googleapis.com' resource: 'services/faultinjectiontesting.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      }
+                  ]
+                }
+              ServiceAccessResourceBasedCheck{errorMsg=Optional[Service faultinjectiontesting.googleapis.com is not available to this consumer.], serviceName=faultinjectiontesting.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=248472805281, id=spanner-backups-12, requestedId=Optional[spanner-backups-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                Service faultinjectiontesting.googleapis.com is not available to this consumer. {
+                  ServiceAccessResourceBasedCheck{errorMsg=Optional[Service faultinjectiontesting.googleapis.com is not available to this consumer.], serviceName=faultinjectiontesting.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=248472805281, id=spanner-backups-12, requestedId=Optional[spanner-backups-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                }
+            ]
+          }
+      ]
+    } (Neither system permission tenantmanagement.write granted nor fine-grained check com.google.api.tenant.auth.PublicAnnotations$DefaultTenantManagerAuthChecker passed): securityContext=ValidatedSecurityContext{opaque} [google.rpc.error_details_ext] { code: 7 message: "Permission denied to enable service [faultinjectiontesting.googleapis.com]\nHelp Token: AV6GkAx_dHIgXNlOG3xIvDyITVTqsCrfba6iTgwXvsglSnMmWVdvmLphrKNcp1J3SSQ9F7hnR_Q8isPZOxT8EynHPjSSzbC7svJplRymVUwbSfyP" details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations { type: "googleapis.com" subject: "?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=spanner-backups-12" } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "AUTH_PERMISSION_DENIED" domain: "serviceusage.googleapis.com" metadata { key: "permission" value: "servicemanagement.services.bind" } metadata { key: "resource" value: "spanner-backups-12" } metadata { key: "service" value: "servicemanagement.googleapis.com" } } } } 391798925 { 1: 110002 } 
+[enable service] spanner-backups-12 genomics.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Permission denied to enable service [genomics.googleapis.com]
+Help Token: AV6GkAwVkvTN1U2hLkLWyrTH50jdXVr61LqKCS1kyWtk4WQrpBy6niAgQTLzpL37y_lDnK3vOPhW-OuJxTwBxXTHApftNCQcbs63gP_XU4HbuzM7. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=spanner-backups-12
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    permission: servicemanagement.services.bind
+    resource: spanner-backups-12
+    service: servicemanagement.googleapis.com
+  reason: AUTH_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: |-
+    [ORIGINAL ERROR] generic::permission_denied: com.google.apps.framework.auth.IamPermissionDeniedException: Permission denied to enable service [genomics.googleapis.com] {
+      Details: [
+        AnyOf [
+        	AllOf [
+        	IAM{policy: 'servicemanagement_services-/00000030767710ed/genomics.googleapis.com' resource: 'services/genomics.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+        	ServiceAccessCheck{errorMsg=Optional[Service with public scope.], isPublic=true}
+        ]
+        	ServiceAccessResourceBasedCheck{errorMsg=Optional[Service genomics.googleapis.com is not available to this consumer.], serviceName=genomics.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=248472805281, id=spanner-backups-12, requestedId=Optional[spanner-backups-12], active=true}}
+        ] denied {auditlog: true, cloudaudit: false}
+          Bind permission denied for service: genomics.googleapis.com
+          Service genomics.googleapis.com is not available to this consumer. {
+            Details: [
+              AllOf [
+              	IAM{policy: 'servicemanagement_services-/00000030767710ed/genomics.googleapis.com' resource: 'services/genomics.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+              	ServiceAccessCheck{errorMsg=Optional[Service with public scope.], isPublic=true}
+              ] denied {auditlog: true, cloudaudit: false}
+                Bind permission denied for service: genomics.googleapis.com {
+                  Details: [
+                    IAM{policy: 'servicemanagement_services-/00000030767710ed/genomics.googleapis.com' resource: 'services/genomics.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      Bind permission denied for service: genomics.googleapis.com {
+                        IAM{policy: 'servicemanagement_services-/00000030767710ed/genomics.googleapis.com' resource: 'services/genomics.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      }
+                  ]
+                }
+              ServiceAccessResourceBasedCheck{errorMsg=Optional[Service genomics.googleapis.com is not available to this consumer.], serviceName=genomics.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=248472805281, id=spanner-backups-12, requestedId=Optional[spanner-backups-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                Service genomics.googleapis.com is not available to this consumer. {
+                  ServiceAccessResourceBasedCheck{errorMsg=Optional[Service genomics.googleapis.com is not available to this consumer.], serviceName=genomics.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=248472805281, id=spanner-backups-12, requestedId=Optional[spanner-backups-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                }
+            ]
+          }
+      ]
+    } (Neither system permission tenantmanagement.write granted nor fine-grained check com.google.api.tenant.auth.PublicAnnotations$DefaultTenantManagerAuthChecker passed): securityContext=ValidatedSecurityContext{opaque} [google.rpc.error_details_ext] { code: 7 message: "Permission denied to enable service [genomics.googleapis.com]\nHelp Token: AV6GkAwVkvTN1U2hLkLWyrTH50jdXVr61LqKCS1kyWtk4WQrpBy6niAgQTLzpL37y_lDnK3vOPhW-OuJxTwBxXTHApftNCQcbs63gP_XU4HbuzM7" details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations { type: "googleapis.com" subject: "?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=spanner-backups-12" } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "AUTH_PERMISSION_DENIED" domain: "serviceusage.googleapis.com" metadata { key: "permission" value: "servicemanagement.services.bind" } metadata { key: "resource" value: "spanner-backups-12" } metadata { key: "service" value: "servicemanagement.googleapis.com" } } } } 391798925 { 1: 110002 } 
+[enable service] spanner-backups-12 marketplacesolutions.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Permission denied to enable service [marketplacesolutions.googleapis.com]
+Help Token: AV6GkAyQN64k_WUzkb6MbPAG6xwJstij4Qq_K_NpmYVELgtg7RgNXvYEc9FgaUoHi6-se2RH0tfK7CfEpqhribVAte98zqVTF_ey2MBueq9LZDnp. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=spanner-backups-12
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    permission: servicemanagement.services.bind
+    resource: spanner-backups-12
+    service: servicemanagement.googleapis.com
+  reason: AUTH_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: |-
+    [ORIGINAL ERROR] generic::permission_denied: com.google.apps.framework.auth.IamPermissionDeniedException: Permission denied to enable service [marketplacesolutions.googleapis.com] {
+      Details: [
+        AnyOf [
+        	AllOf [
+        	IAM{policy: 'servicemanagement_services-/000000ac51776b34/marketplacesolutions.googleapis.com' resource: 'services/marketplacesolutions.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+        	ServiceAccessCheck{errorMsg=Optional[Service 'marketplacesolutions.googleapis.com' is only open to ORG, the caller should be a member of everyone@google.com or g/inception-recognized-google-internal-robots], isPublic=false}
+        ]
+        	ServiceAccessResourceBasedCheck{errorMsg=Optional[Service marketplacesolutions.googleapis.com is not available to this consumer.], serviceName=marketplacesolutions.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=248472805281, id=spanner-backups-12, requestedId=Optional[spanner-backups-12], active=true}}
+        ] denied {auditlog: true, cloudaudit: false}
+          Bind permission denied for service: marketplacesolutions.googleapis.com
+          Service marketplacesolutions.googleapis.com is not available to this consumer. {
+            Details: [
+              AllOf [
+              	IAM{policy: 'servicemanagement_services-/000000ac51776b34/marketplacesolutions.googleapis.com' resource: 'services/marketplacesolutions.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+              	ServiceAccessCheck{errorMsg=Optional[Service 'marketplacesolutions.googleapis.com' is only open to ORG, the caller should be a member of everyone@google.com or g/inception-recognized-google-internal-robots], isPublic=false}
+              ] denied {auditlog: true, cloudaudit: false}
+                Bind permission denied for service: marketplacesolutions.googleapis.com {
+                  Details: [
+                    IAM{policy: 'servicemanagement_services-/000000ac51776b34/marketplacesolutions.googleapis.com' resource: 'services/marketplacesolutions.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      Bind permission denied for service: marketplacesolutions.googleapis.com {
+                        IAM{policy: 'servicemanagement_services-/000000ac51776b34/marketplacesolutions.googleapis.com' resource: 'services/marketplacesolutions.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      }
+                  ]
+                }
+              ServiceAccessResourceBasedCheck{errorMsg=Optional[Service marketplacesolutions.googleapis.com is not available to this consumer.], serviceName=marketplacesolutions.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=248472805281, id=spanner-backups-12, requestedId=Optional[spanner-backups-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                Service marketplacesolutions.googleapis.com is not available to this consumer. {
+                  ServiceAccessResourceBasedCheck{errorMsg=Optional[Service marketplacesolutions.googleapis.com is not available to this consumer.], serviceName=marketplacesolutions.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=248472805281, id=spanner-backups-12, requestedId=Optional[spanner-backups-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                }
+            ]
+          }
+      ]
+    } (Neither system permission tenantmanagement.write granted nor fine-grained check com.google.api.tenant.auth.PublicAnnotations$DefaultTenantManagerAuthChecker passed): securityContext=ValidatedSecurityContext{opaque} [google.rpc.error_details_ext] { code: 7 message: "Permission denied to enable service [marketplacesolutions.googleapis.com]\nHelp Token: AV6GkAyQN64k_WUzkb6MbPAG6xwJstij4Qq_K_NpmYVELgtg7RgNXvYEc9FgaUoHi6-se2RH0tfK7CfEpqhribVAte98zqVTF_ey2MBueq9LZDnp" details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations { type: "googleapis.com" subject: "?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=spanner-backups-12" } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "AUTH_PERMISSION_DENIED" domain: "serviceusage.googleapis.com" metadata { key: "permission" value: "servicemanagement.services.bind" } metadata { key: "resource" value: "spanner-backups-12" } metadata { key: "service" value: "servicemanagement.googleapis.com" } } } } 391798925 { 1: 110002 } 
+[enable service] spanner-backups-12 mediaasset.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Permission denied to enable service [mediaasset.googleapis.com]
+Help Token: AV6GkAyJ3z-IDlajgwGOErlzIfJEjuyj_JQUss8r5UpTHKZ71T-Rp1d6TR2XREuXYf-fp9Q_Y3EZ_3IsleiX57x95stvwBLCduwTNEFMRXeIGlwH. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=spanner-backups-12
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    permission: servicemanagement.services.bind
+    resource: spanner-backups-12
+    service: servicemanagement.googleapis.com
+  reason: AUTH_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: |-
+    [ORIGINAL ERROR] generic::permission_denied: com.google.apps.framework.auth.IamPermissionDeniedException: Permission denied to enable service [mediaasset.googleapis.com] {
+      Details: [
+        AnyOf [
+        	AllOf [
+        	IAM{policy: 'servicemanagement_services-/000000eb94071d99/mediaasset.googleapis.com' resource: 'services/mediaasset.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+        	ServiceAccessCheck{errorMsg=Optional[Service with public scope.], isPublic=true}
+        ]
+        	ServiceAccessResourceBasedCheck{errorMsg=Optional[Service mediaasset.googleapis.com is not available to this consumer.], serviceName=mediaasset.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=248472805281, id=spanner-backups-12, requestedId=Optional[spanner-backups-12], active=true}}
+        ] denied {auditlog: true, cloudaudit: false}
+          Bind permission denied for service: mediaasset.googleapis.com
+          Service mediaasset.googleapis.com is not available to this consumer. {
+            Details: [
+              AllOf [
+              	IAM{policy: 'servicemanagement_services-/000000eb94071d99/mediaasset.googleapis.com' resource: 'services/mediaasset.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+              	ServiceAccessCheck{errorMsg=Optional[Service with public scope.], isPublic=true}
+              ] denied {auditlog: true, cloudaudit: false}
+                Bind permission denied for service: mediaasset.googleapis.com {
+                  Details: [
+                    IAM{policy: 'servicemanagement_services-/000000eb94071d99/mediaasset.googleapis.com' resource: 'services/mediaasset.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      Bind permission denied for service: mediaasset.googleapis.com {
+                        IAM{policy: 'servicemanagement_services-/000000eb94071d99/mediaasset.googleapis.com' resource: 'services/mediaasset.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      }
+                  ]
+                }
+              ServiceAccessResourceBasedCheck{errorMsg=Optional[Service mediaasset.googleapis.com is not available to this consumer.], serviceName=mediaasset.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=248472805281, id=spanner-backups-12, requestedId=Optional[spanner-backups-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                Service mediaasset.googleapis.com is not available to this consumer. {
+                  ServiceAccessResourceBasedCheck{errorMsg=Optional[Service mediaasset.googleapis.com is not available to this consumer.], serviceName=mediaasset.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=248472805281, id=spanner-backups-12, requestedId=Optional[spanner-backups-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                }
+            ]
+          }
+      ]
+    } (Neither system permission tenantmanagement.write granted nor fine-grained check com.google.api.tenant.auth.PublicAnnotations$DefaultTenantManagerAuthChecker passed): securityContext=ValidatedSecurityContext{opaque} [google.rpc.error_details_ext] { code: 7 message: "Permission denied to enable service [mediaasset.googleapis.com]\nHelp Token: AV6GkAyJ3z-IDlajgwGOErlzIfJEjuyj_JQUss8r5UpTHKZ71T-Rp1d6TR2XREuXYf-fp9Q_Y3EZ_3IsleiX57x95stvwBLCduwTNEFMRXeIGlwH" details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations { type: "googleapis.com" subject: "?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=spanner-backups-12" } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "AUTH_PERMISSION_DENIED" domain: "serviceusage.googleapis.com" metadata { key: "permission" value: "servicemanagement.services.bind" } metadata { key: "resource" value: "spanner-backups-12" } metadata { key: "service" value: "servicemanagement.googleapis.com" } } } } 391798925 { 1: 110002 } 
+[enable service] spanner-backups-12 pam.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): pam.googleapis.com.
+Help Token: AV6GkAw0F0DE4f75rpmAbibah_TJ0N3nWRQzSTXjgWgB4KSU1dUjCjQSic1G81Dex8LfIeFj0JYk6PsPxLZ5lspUcLforPGtNV2zXGQ7YMCVtSAB. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=pam.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: pam.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): pam.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): pam.googleapis.com.\nHelp
+    Token: AV6GkAw0F0DE4f75rpmAbibah_TJ0N3nWRQzSTXjgWgB4KSU1dUjCjQSic1G81Dex8LfIeFj0JYk6PsPxLZ5lspUcLforPGtNV2zXGQ7YMCVtSAB"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=pam.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "pam.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] spanner-backups-12 sddc.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): sddc.googleapis.com.
+Help Token: AV6GkAxXS1SgxLnAU9GuNNMtRyhXlWD8giUTYjSRnd_X-tRla8C5aTg8BwlfTYLjT91tLnkapM1BRhtLs654wPGBRThTRFit8uyBMRd9pz9K1QM7. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=sddc.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: sddc.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): sddc.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): sddc.googleapis.com.\nHelp
+    Token: AV6GkAxXS1SgxLnAU9GuNNMtRyhXlWD8giUTYjSRnd_X-tRla8C5aTg8BwlfTYLjT91tLnkapM1BRhtLs654wPGBRThTRFit8uyBMRd9pz9K1QM7"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=sddc.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "sddc.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] spanner-backups-12 sql.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): sql.googleapis.com.
+Help Token: AV6GkAw3E4MAt8jTQXwtfbe_QsYIVFOTYba3VUJ-xEX1dpK-AyXBL-ADT3smhGXOv6WHABXkymEWqvPGTYvPYu27wiE4zWFJjFWAUi3xGUsSP0Vw. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=sql.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: sql.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): sql.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): sql.googleapis.com.\nHelp
+    Token: AV6GkAw3E4MAt8jTQXwtfbe_QsYIVFOTYba3VUJ-xEX1dpK-AyXBL-ADT3smhGXOv6WHABXkymEWqvPGTYvPYu27wiE4zWFJjFWAUi3xGUsSP0Vw"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=sql.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "sql.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] spanner-backups-12 transfer.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): transfer.googleapis.com.
+Help Token: AV6GkAys7ViqNORVfzh1auM3jgqbqTKRW0E0Wao7_Ca-GPtHTDP5_ujEoGQdNOYrjj4KufGUIOAT5uvI6KMFEtK6KLpmwGZgGdb5jL8wiEE7q4RP. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=transfer.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: transfer.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): transfer.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): transfer.googleapis.com.\nHelp
+    Token: AV6GkAys7ViqNORVfzh1auM3jgqbqTKRW0E0Wao7_Ca-GPtHTDP5_ujEoGQdNOYrjj4KufGUIOAT5uvI6KMFEtK6KLpmwGZgGdb5jL8wiEE7q4RP"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=transfer.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "transfer.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] dns-zone-bindings-12 faultinjectiontesting.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Permission denied to enable service [faultinjectiontesting.googleapis.com]
+Help Token: AV6GkAwFaamZ6DoEiBGnwrRaV2EGtXFDYLz47DyUnro5s0vVTy5voFeJV1VZNKgPqViPTC8THJIBuunyArdTdd-3i17OymlgrJ_YUWEI4bO3Oo1U. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=dns-zone-bindings-12
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    permission: servicemanagement.services.bind
+    resource: dns-zone-bindings-12
+    service: servicemanagement.googleapis.com
+  reason: AUTH_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: |-
+    [ORIGINAL ERROR] generic::permission_denied: com.google.apps.framework.auth.IamPermissionDeniedException: Permission denied to enable service [faultinjectiontesting.googleapis.com] {
+      Details: [
+        AnyOf [
+        	AllOf [
+        	IAM{policy: 'servicemanagement_services-/000000304f9adb99/faultinjectiontesting.googleapis.com' resource: 'services/faultinjectiontesting.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+        	ServiceAccessCheck{errorMsg=Optional[Service 'faultinjectiontesting.googleapis.com' is only open to ORG, the caller should be a member of everyone@google.com or g/inception-recognized-google-internal-robots], isPublic=false}
+        ]
+        	ServiceAccessResourceBasedCheck{errorMsg=Optional[Service faultinjectiontesting.googleapis.com is not available to this consumer.], serviceName=faultinjectiontesting.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=135144280436, id=dns-zone-bindings-12, requestedId=Optional[dns-zone-bindings-12], active=true}}
+        ] denied {auditlog: true, cloudaudit: false}
+          Bind permission denied for service: faultinjectiontesting.googleapis.com
+          Service faultinjectiontesting.googleapis.com is not available to this consumer. {
+            Details: [
+              AllOf [
+              	IAM{policy: 'servicemanagement_services-/000000304f9adb99/faultinjectiontesting.googleapis.com' resource: 'services/faultinjectiontesting.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+              	ServiceAccessCheck{errorMsg=Optional[Service 'faultinjectiontesting.googleapis.com' is only open to ORG, the caller should be a member of everyone@google.com or g/inception-recognized-google-internal-robots], isPublic=false}
+              ] denied {auditlog: true, cloudaudit: false}
+                Bind permission denied for service: faultinjectiontesting.googleapis.com {
+                  Details: [
+                    IAM{policy: 'servicemanagement_services-/000000304f9adb99/faultinjectiontesting.googleapis.com' resource: 'services/faultinjectiontesting.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      Bind permission denied for service: faultinjectiontesting.googleapis.com {
+                        IAM{policy: 'servicemanagement_services-/000000304f9adb99/faultinjectiontesting.googleapis.com' resource: 'services/faultinjectiontesting.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      }
+                  ]
+                }
+              ServiceAccessResourceBasedCheck{errorMsg=Optional[Service faultinjectiontesting.googleapis.com is not available to this consumer.], serviceName=faultinjectiontesting.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=135144280436, id=dns-zone-bindings-12, requestedId=Optional[dns-zone-bindings-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                Service faultinjectiontesting.googleapis.com is not available to this consumer. {
+                  ServiceAccessResourceBasedCheck{errorMsg=Optional[Service faultinjectiontesting.googleapis.com is not available to this consumer.], serviceName=faultinjectiontesting.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=135144280436, id=dns-zone-bindings-12, requestedId=Optional[dns-zone-bindings-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                }
+            ]
+          }
+      ]
+    } (Neither system permission tenantmanagement.write granted nor fine-grained check com.google.api.tenant.auth.PublicAnnotations$DefaultTenantManagerAuthChecker passed): securityContext=ValidatedSecurityContext{opaque} [google.rpc.error_details_ext] { code: 7 message: "Permission denied to enable service [faultinjectiontesting.googleapis.com]\nHelp Token: AV6GkAwFaamZ6DoEiBGnwrRaV2EGtXFDYLz47DyUnro5s0vVTy5voFeJV1VZNKgPqViPTC8THJIBuunyArdTdd-3i17OymlgrJ_YUWEI4bO3Oo1U" details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations { type: "googleapis.com" subject: "?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=dns-zone-bindings-12" } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "AUTH_PERMISSION_DENIED" domain: "serviceusage.googleapis.com" metadata { key: "permission" value: "servicemanagement.services.bind" } metadata { key: "resource" value: "dns-zone-bindings-12" } metadata { key: "service" value: "servicemanagement.googleapis.com" } } } } 391798925 { 1: 110002 } 
+[enable service] dns-zone-bindings-12 genomics.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Permission denied to enable service [genomics.googleapis.com]
+Help Token: AV6GkAxSP-gBseEyj0XRDT4JAki84K2g1SDHGsxskEUV1QwXi1MQiTvPvcDObfjLhB0fofb0ECIqX9GdOcS7Flt-cxzNKGVR0_6pZ0Suo9gt3Nkh. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=dns-zone-bindings-12
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    permission: servicemanagement.services.bind
+    resource: dns-zone-bindings-12
+    service: servicemanagement.googleapis.com
+  reason: AUTH_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: |-
+    [ORIGINAL ERROR] generic::permission_denied: com.google.apps.framework.auth.IamPermissionDeniedException: Permission denied to enable service [genomics.googleapis.com] {
+      Details: [
+        AnyOf [
+        	AllOf [
+        	IAM{policy: 'servicemanagement_services-/00000030767710ed/genomics.googleapis.com' resource: 'services/genomics.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+        	ServiceAccessCheck{errorMsg=Optional[Service with public scope.], isPublic=true}
+        ]
+        	ServiceAccessResourceBasedCheck{errorMsg=Optional[Service genomics.googleapis.com is not available to this consumer.], serviceName=genomics.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=135144280436, id=dns-zone-bindings-12, requestedId=Optional[dns-zone-bindings-12], active=true}}
+        ] denied {auditlog: true, cloudaudit: false}
+          Bind permission denied for service: genomics.googleapis.com
+          Service genomics.googleapis.com is not available to this consumer. {
+            Details: [
+              AllOf [
+              	IAM{policy: 'servicemanagement_services-/00000030767710ed/genomics.googleapis.com' resource: 'services/genomics.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+              	ServiceAccessCheck{errorMsg=Optional[Service with public scope.], isPublic=true}
+              ] denied {auditlog: true, cloudaudit: false}
+                Bind permission denied for service: genomics.googleapis.com {
+                  Details: [
+                    IAM{policy: 'servicemanagement_services-/00000030767710ed/genomics.googleapis.com' resource: 'services/genomics.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      Bind permission denied for service: genomics.googleapis.com {
+                        IAM{policy: 'servicemanagement_services-/00000030767710ed/genomics.googleapis.com' resource: 'services/genomics.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      }
+                  ]
+                }
+              ServiceAccessResourceBasedCheck{errorMsg=Optional[Service genomics.googleapis.com is not available to this consumer.], serviceName=genomics.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=135144280436, id=dns-zone-bindings-12, requestedId=Optional[dns-zone-bindings-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                Service genomics.googleapis.com is not available to this consumer. {
+                  ServiceAccessResourceBasedCheck{errorMsg=Optional[Service genomics.googleapis.com is not available to this consumer.], serviceName=genomics.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=135144280436, id=dns-zone-bindings-12, requestedId=Optional[dns-zone-bindings-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                }
+            ]
+          }
+      ]
+    } (Neither system permission tenantmanagement.write granted nor fine-grained check com.google.api.tenant.auth.PublicAnnotations$DefaultTenantManagerAuthChecker passed): securityContext=ValidatedSecurityContext{opaque} [google.rpc.error_details_ext] { code: 7 message: "Permission denied to enable service [genomics.googleapis.com]\nHelp Token: AV6GkAxSP-gBseEyj0XRDT4JAki84K2g1SDHGsxskEUV1QwXi1MQiTvPvcDObfjLhB0fofb0ECIqX9GdOcS7Flt-cxzNKGVR0_6pZ0Suo9gt3Nkh" details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations { type: "googleapis.com" subject: "?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=dns-zone-bindings-12" } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "AUTH_PERMISSION_DENIED" domain: "serviceusage.googleapis.com" metadata { key: "permission" value: "servicemanagement.services.bind" } metadata { key: "resource" value: "dns-zone-bindings-12" } metadata { key: "service" value: "servicemanagement.googleapis.com" } } } } 391798925 { 1: 110002 } 
+[enable service] dns-zone-bindings-12 marketplacesolutions.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Permission denied to enable service [marketplacesolutions.googleapis.com]
+Help Token: AV6GkAwxJCZqwxqP55AUjjtgo3SUsKUXPQDZwV8dfCj2wc8OE0tTr0CjYJFh4Y07sIoJJZXdoQJfIGHo95I9NBNdo7TdteLm6-iMwNGEvISsNxmN. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=dns-zone-bindings-12
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    permission: servicemanagement.services.bind
+    resource: dns-zone-bindings-12
+    service: servicemanagement.googleapis.com
+  reason: AUTH_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: |-
+    [ORIGINAL ERROR] generic::permission_denied: com.google.apps.framework.auth.IamPermissionDeniedException: Permission denied to enable service [marketplacesolutions.googleapis.com] {
+      Details: [
+        AnyOf [
+        	AllOf [
+        	IAM{policy: 'servicemanagement_services-/000000ac51776b34/marketplacesolutions.googleapis.com' resource: 'services/marketplacesolutions.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+        	ServiceAccessCheck{errorMsg=Optional[Service 'marketplacesolutions.googleapis.com' is only open to ORG, the caller should be a member of everyone@google.com or g/inception-recognized-google-internal-robots], isPublic=false}
+        ]
+        	ServiceAccessResourceBasedCheck{errorMsg=Optional[Service marketplacesolutions.googleapis.com is not available to this consumer.], serviceName=marketplacesolutions.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=135144280436, id=dns-zone-bindings-12, requestedId=Optional[dns-zone-bindings-12], active=true}}
+        ] denied {auditlog: true, cloudaudit: false}
+          Bind permission denied for service: marketplacesolutions.googleapis.com
+          Service marketplacesolutions.googleapis.com is not available to this consumer. {
+            Details: [
+              AllOf [
+              	IAM{policy: 'servicemanagement_services-/000000ac51776b34/marketplacesolutions.googleapis.com' resource: 'services/marketplacesolutions.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+              	ServiceAccessCheck{errorMsg=Optional[Service 'marketplacesolutions.googleapis.com' is only open to ORG, the caller should be a member of everyone@google.com or g/inception-recognized-google-internal-robots], isPublic=false}
+              ] denied {auditlog: true, cloudaudit: false}
+                Bind permission denied for service: marketplacesolutions.googleapis.com {
+                  Details: [
+                    IAM{policy: 'servicemanagement_services-/000000ac51776b34/marketplacesolutions.googleapis.com' resource: 'services/marketplacesolutions.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      Bind permission denied for service: marketplacesolutions.googleapis.com {
+                        IAM{policy: 'servicemanagement_services-/000000ac51776b34/marketplacesolutions.googleapis.com' resource: 'services/marketplacesolutions.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      }
+                  ]
+                }
+              ServiceAccessResourceBasedCheck{errorMsg=Optional[Service marketplacesolutions.googleapis.com is not available to this consumer.], serviceName=marketplacesolutions.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=135144280436, id=dns-zone-bindings-12, requestedId=Optional[dns-zone-bindings-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                Service marketplacesolutions.googleapis.com is not available to this consumer. {
+                  ServiceAccessResourceBasedCheck{errorMsg=Optional[Service marketplacesolutions.googleapis.com is not available to this consumer.], serviceName=marketplacesolutions.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=135144280436, id=dns-zone-bindings-12, requestedId=Optional[dns-zone-bindings-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                }
+            ]
+          }
+      ]
+    } (Neither system permission tenantmanagement.write granted nor fine-grained check com.google.api.tenant.auth.PublicAnnotations$DefaultTenantManagerAuthChecker passed): securityContext=ValidatedSecurityContext{opaque} [google.rpc.error_details_ext] { code: 7 message: "Permission denied to enable service [marketplacesolutions.googleapis.com]\nHelp Token: AV6GkAwxJCZqwxqP55AUjjtgo3SUsKUXPQDZwV8dfCj2wc8OE0tTr0CjYJFh4Y07sIoJJZXdoQJfIGHo95I9NBNdo7TdteLm6-iMwNGEvISsNxmN" details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations { type: "googleapis.com" subject: "?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=dns-zone-bindings-12" } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "AUTH_PERMISSION_DENIED" domain: "serviceusage.googleapis.com" metadata { key: "permission" value: "servicemanagement.services.bind" } metadata { key: "resource" value: "dns-zone-bindings-12" } metadata { key: "service" value: "servicemanagement.googleapis.com" } } } } 391798925 { 1: 110002 } 
+[enable service] dns-zone-bindings-12 mediaasset.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Permission denied to enable service [mediaasset.googleapis.com]
+Help Token: AV6GkAzuwNVGz9TF5wNeVq_XtHwyF5S2M-sHJKeb-IkF6Hy78G2cWWWyIjR4_nfz7_jmsRAol2_9cZllAWTWWEnZv5OIw2CEPueO7wjrvrHcsIHX. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=dns-zone-bindings-12
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    permission: servicemanagement.services.bind
+    resource: dns-zone-bindings-12
+    service: servicemanagement.googleapis.com
+  reason: AUTH_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: |-
+    [ORIGINAL ERROR] generic::permission_denied: com.google.apps.framework.auth.IamPermissionDeniedException: Permission denied to enable service [mediaasset.googleapis.com] {
+      Details: [
+        AnyOf [
+        	AllOf [
+        	IAM{policy: 'servicemanagement_services-/000000eb94071d99/mediaasset.googleapis.com' resource: 'services/mediaasset.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+        	ServiceAccessCheck{errorMsg=Optional[Service with public scope.], isPublic=true}
+        ]
+        	ServiceAccessResourceBasedCheck{errorMsg=Optional[Service mediaasset.googleapis.com is not available to this consumer.], serviceName=mediaasset.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=135144280436, id=dns-zone-bindings-12, requestedId=Optional[dns-zone-bindings-12], active=true}}
+        ] denied {auditlog: true, cloudaudit: false}
+          Bind permission denied for service: mediaasset.googleapis.com
+          Service mediaasset.googleapis.com is not available to this consumer. {
+            Details: [
+              AllOf [
+              	IAM{policy: 'servicemanagement_services-/000000eb94071d99/mediaasset.googleapis.com' resource: 'services/mediaasset.googleapis.com' 	permission: 'servicemanagement.services.bind'}
+              	ServiceAccessCheck{errorMsg=Optional[Service with public scope.], isPublic=true}
+              ] denied {auditlog: true, cloudaudit: false}
+                Bind permission denied for service: mediaasset.googleapis.com {
+                  Details: [
+                    IAM{policy: 'servicemanagement_services-/000000eb94071d99/mediaasset.googleapis.com' resource: 'services/mediaasset.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      Bind permission denied for service: mediaasset.googleapis.com {
+                        IAM{policy: 'servicemanagement_services-/000000eb94071d99/mediaasset.googleapis.com' resource: 'services/mediaasset.googleapis.com' 	permission: 'servicemanagement.services.bind'} denied {auditlog: true, cloudaudit: false}
+                      }
+                  ]
+                }
+              ServiceAccessResourceBasedCheck{errorMsg=Optional[Service mediaasset.googleapis.com is not available to this consumer.], serviceName=mediaasset.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=135144280436, id=dns-zone-bindings-12, requestedId=Optional[dns-zone-bindings-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                Service mediaasset.googleapis.com is not available to this consumer. {
+                  ServiceAccessResourceBasedCheck{errorMsg=Optional[Service mediaasset.googleapis.com is not available to this consumer.], serviceName=mediaasset.googleapis.com, consumer=ResourceInfo{type=PROJECT, number=135144280436, id=dns-zone-bindings-12, requestedId=Optional[dns-zone-bindings-12], active=true}} denied {auditlog: false, cloudaudit: false}
+                }
+            ]
+          }
+      ]
+    } (Neither system permission tenantmanagement.write granted nor fine-grained check com.google.api.tenant.auth.PublicAnnotations$DefaultTenantManagerAuthChecker passed): securityContext=ValidatedSecurityContext{opaque} [google.rpc.error_details_ext] { code: 7 message: "Permission denied to enable service [mediaasset.googleapis.com]\nHelp Token: AV6GkAzuwNVGz9TF5wNeVq_XtHwyF5S2M-sHJKeb-IkF6Hy78G2cWWWyIjR4_nfz7_jmsRAol2_9cZllAWTWWEnZv5OIw2CEPueO7wjrvrHcsIHX" details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations { type: "googleapis.com" subject: "?error_code=110002&service=servicemanagement.googleapis.com&permission=servicemanagement.services.bind&resource=dns-zone-bindings-12" } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "AUTH_PERMISSION_DENIED" domain: "serviceusage.googleapis.com" metadata { key: "permission" value: "servicemanagement.services.bind" } metadata { key: "resource" value: "dns-zone-bindings-12" } metadata { key: "service" value: "servicemanagement.googleapis.com" } } } } 391798925 { 1: 110002 } 
+[enable service] dns-zone-bindings-12 pam.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): pam.googleapis.com.
+Help Token: AV6GkAwT9ZKiJ7gVogtasvtPQbxz0wS9xMPt6sNGKk2nFkMYnkUoXGetM73ZEF9KzjfSlpyt3d_-9NIC_nAHsTyro6oB2Ua-HJ6fANqGZiHnfhbw. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=pam.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: pam.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): pam.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): pam.googleapis.com.\nHelp
+    Token: AV6GkAwT9ZKiJ7gVogtasvtPQbxz0wS9xMPt6sNGKk2nFkMYnkUoXGetM73ZEF9KzjfSlpyt3d_-9NIC_nAHsTyro6oB2Ua-HJ6fANqGZiHnfhbw"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=pam.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "pam.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] dns-zone-bindings-12 sddc.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): sddc.googleapis.com.
+Help Token: AV6GkAwVRHtaewohg6CTGGWkZNrHicECjFq9H1x0FovKg3uvnHYkPEekiyw1QPdXgkYJoiDSQlNlmKvCtWCoGKK08gNm9_u1BoC34RS_f5DsET20. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=sddc.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: sddc.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): sddc.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): sddc.googleapis.com.\nHelp
+    Token: AV6GkAwVRHtaewohg6CTGGWkZNrHicECjFq9H1x0FovKg3uvnHYkPEekiyw1QPdXgkYJoiDSQlNlmKvCtWCoGKK08gNm9_u1BoC34RS_f5DsET20"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=sddc.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "sddc.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] dns-zone-bindings-12 sql.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): sql.googleapis.com.
+Help Token: AV6GkAyQTa1r8xjoN-pLezgUmBW1hDjPvqLHOWN44EC-pKCaN8bfQajMg8OvmryiVWL7C7mfrYAOjmEy3AP41Drats5UAeZFa2lkp6yYSa6pYBgh. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=sql.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: sql.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): sql.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): sql.googleapis.com.\nHelp
+    Token: AV6GkAyQTa1r8xjoN-pLezgUmBW1hDjPvqLHOWN44EC-pKCaN8bfQajMg8OvmryiVWL7C7mfrYAOjmEy3AP41Drats5UAeZFa2lkp6yYSa6pYBgh"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=sql.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "sql.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[enable service] dns-zone-bindings-12 transfer.googleapis.com: ERROR: (gcloud.services.enable) PERMISSION_DENIED: Not found or permission denied for service(s): transfer.googleapis.com.
+Help Token: AV6GkAwFQ8ZpsED1Gro3q0o3hw1ol7Nk24PH6j9IB9xx4Sr4ALGhuSt006ZydJR9gzXWfO0ndnOoYTt0jerIVci9vFNjbAFns8mMQG_IW4BWE1O8. This command is authenticated as yuwenma@google.com which is the active account specified by the [core/account] property
+- '@type': type.googleapis.com/google.rpc.PreconditionFailure
+  violations:
+  - subject: ?error_code=220002&services=transfer.googleapis.com
+    type: googleapis.com
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: serviceusage.googleapis.com
+  metadata:
+    services: transfer.googleapis.com
+  reason: SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: '[ORIGINAL ERROR] tenantmanager::220002: com.google.api.tenant.error.TenantManagerException:
+    Not found or permission denied for service(s): transfer.googleapis.com. [google.rpc.error_details_ext]
+    { code: 7 message: "Not found or permission denied for service(s): transfer.googleapis.com.\nHelp
+    Token: AV6GkAwFQ8ZpsED1Gro3q0o3hw1ol7Nk24PH6j9IB9xx4Sr4ALGhuSt006ZydJR9gzXWfO0ndnOoYTt0jerIVci9vFNjbAFns8mMQG_IW4BWE1O8"
+    details { [type.googleapis.com/google.rpc.PreconditionFailure] { violations {
+    type: "googleapis.com" subject: "?error_code=220002&services=transfer.googleapis.com"
+    } } } details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: "SERVICE_CONFIG_NOT_FOUND_OR_PERMISSION_DENIED"
+    domain: "serviceusage.googleapis.com" metadata { key: "services" value: "transfer.googleapis.com"
+    } } } } 391798925 { 1: 220002 }' 
+[checkout branch] spanner-backups mock-llm-spanner-backups: Cloning into '/usr/local/google/home/yuwenma/go/scr/github.com/GoogleCloudPlatform/spanner-backups'...
+warning: Could not find remote branch mock-llm-spanner-backups to clone.
+fatal: Remote branch mock-llm-spanner-backups not found in upstream origin 
+[checkout branch] vmware-private-clouds-management-dns-zone-bindings mock-llm-vmware-private-clouds-management-dns-zone-bindings: Cloning into '/usr/local/google/home/yuwenma/go/scr/github.com/GoogleCloudPlatform/vmware-private-clouds-management-dns-zone-bindings'...
+warning: Could not find remote branch mock-llm-vmware-private-clouds-management-dns-zone-bindings to clone.
+fatal: Remote branch mock-llm-vmware-private-clouds-management-dns-zone-bindings not found in upstream origin 

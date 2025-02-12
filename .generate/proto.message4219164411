@@ -1,0 +1,273 @@
+This protobuf message defines a Google Cloud AlloyDB cluster resource, including its nested messages and enums. Here's a breakdown and analysis, followed by suggestions for improvements to the generated Go structs:
+
+**Breakdown of `in.proto.message: google.cloud.alloydb.v1beta.Cluster`**
+
+The `Cluster` message is the main definition.  It represents an AlloyDB cluster and includes:
+
+*   **Resource Metadata:** The `google.api.resource` option defines how this resource is mapped within the Google Cloud API.  This is crucial for tools like Config Connector, as it provides the resource type, URL pattern, and human-readable names.
+*   **Nested Messages:**
+    *   `NetworkConfig`:  Handles network settings (VPC, IP ranges).  This is well-structured.
+    *   `SecondaryConfig`: Configuration for secondary (read replica) clusters.  Includes the primary cluster's name.
+    *   `PrimaryConfig`: Configuration *specific* to a primary cluster (the source of replication). It only lists the *names* of secondary clusters replicating from it.
+    *   `PscConfig`:  Settings for Private Service Connect (PSC), allowing connections from PSC endpoints.
+    *   `TrialMetadata`: Contains metadata specific to trial clusters.
+    *   `State`: An enum defining the operational state of the cluster (e.g., `READY`, `STOPPED`, `CREATING`, etc.).  This is a standard and good practice.
+    *   `ClusterType`: An enum specifying whether the cluster is `PRIMARY` or `SECONDARY`.
+*   **`oneof source`:** This cleverly handles the different ways a cluster can be created:
+    *   `backup_source`:  Created from a backup.
+    *   `migration_source`: Created via a Database Migration Service (DMS) job.
+    *   'cloudsql_backup_run_source': Created from a CloudSQL backup run.
+*   **Fields:**  The message has numerous fields covering various aspects of the cluster:
+    *   `name`:  The resource name (output only).
+    *   `display_name`:  A human-readable name.
+    *   `uid`:  A system-generated unique ID (output only).
+    *   `create_time`, `update_time`, `delete_time`:  Timestamps (output only).
+    *   `labels`: Key-value labels.
+    *   `state`:  The current `State` (output only).
+    *   `cluster_type`: The `ClusterType` (output only).
+    *   `database_version`:  The database engine version (optional).
+    *   `network_config`: Network configuration (optional)
+    *   `network`:  Deprecated field for VPC network (required, but deprecated in favor of `network_config`).
+    *   `etag`:  For optimistic concurrency control.
+    *   `annotations`:  Arbitrary key-value data for client tools.
+    *   `reconciling`:  Indicates if the cluster is currently being updated (output only).
+    *   `initial_user`:  Initial user setup (input only, required for creation).
+    *   `automated_backup_policy`:  Backup policy.
+    *   `ssl_config`:  SSL configuration (deprecated).
+    *   `encryption_config`:  Customer-managed encryption key (CMEK) settings (optional).
+    *   `encryption_info`:  Encryption information (output only).
+    *   `continuous_backup_config`: Continuous backup settings (optional).
+    *   `continuous_backup_info`:  Continuous backup status (output only).
+    *   `secondary_config`:  Configuration for secondary clusters.
+    *   `primary_config`:  Configuration for primary clusters (output only).
+    *   `satisfies_pzs`:  Reserved for future use (output only).
+    *   `psc_config`: Private service connect configuration (optional).
+    *    `maintenance_update_policy`: Determines when to allow or deny updates (optional).
+    *    `maintenance_schedule`: Describes the maintenance schedule when maintenance windows are set(output only)
+    *   `gemini_config`:  Configuration for the Gemini in Databases add-on (optional).
+    *    `subscription_type`: Defines the subscription type of the cluster (optional).
+    *   `trial_metadata`: Metadata of trial clusters.
+    *  `tags` : Tag keys/values bound to the cluster.
+
+**Analysis of the Generated Go Structs**
+
+The generated Go structs are a good starting point, but need several improvements to be fully idiomatic and usable with Config Connector. Here's a detailed analysis of the issues, categorized for clarity:
+
+**1. Missing Fields in `AlloyDBClusterObservedState`**
+   - The `AlloyDBClusterObservedState` struct is missing many of the `OUTPUT_ONLY` fields from the protobuf definition. This is the most critical issue, as it prevents Config Connector from observing the actual state of the resource in GCP. Fields like `create_time`, `update_time`, `delete_time`, `state`, `reconciling`, `primary_config` need to be present in the observed state.
+   - Added those missing fields with proper type definition.
+
+**2. Missing `// +required` Markers for Struct Fields**
+    - For the required fields of the nested structs, they were missing `// +required` markers, added the markers for them.
+
+**3. Incorrect Reference Types**
+
+   - `KMSKeyNameRef` in `EncryptionConfig` should be `*refs.KMSCryptoKeyRef`
+   - `BackupNameRef` in `BackupSource` should be `*refs.AlloyDBBackupRef`
+   - `PrimaryClusterNameRef` in `Cluster_SecondaryConfig` should be `*refs.AlloyDBClusterRef`
+
+**4. Field Renaming and Structuring**
+
+    - Renamed `GeminiConfig` to `GeminiClusterConfigObservedState` in `ClusterObservedState` struct to align with other nested structs.
+    - Added `CloudSQLBackupRunSource`, `CreateTime`, `UpdateTime`, `DeleteTime`, `State`, `Reconciling`, `PrimaryConfig`, `SatisfiesPzs`, `MaintenanceSchedule`, `GeminiConfig` and `TrialMetadata` fields to `ClusterObservedState` struct.
+
+**Improved Go Structs (Illustrative Example - Focusing on `AlloyDBClusterSpec` and `AlloyDBClusterObservedState`)**
+
+```go
+// AlloyDBClusterSpec defines the desired state of AlloyDBCluster
+type AlloyDBClusterSpec struct {
+	// The AlloyDBCluster name. If not given, the metadata.name will be used.
+	ResourceID *string `json:"resourceID,omitempty"`
+
+	// The type of cluster. If not set, defaults to PRIMARY.
+	// Default value: "PRIMARY" Possible values: ["PRIMARY", "SECONDARY"].
+	ClusterType *string `json:"clusterType,omitempty"`
+
+	// Policy to determine if the cluster should be deleted forcefully.
+	// Deleting a cluster forcefully, deletes the cluster and all its associated
+	// instances within the cluster.
+	// Deleting a Secondary cluster with a secondary instance REQUIRES setting
+	// deletion_policy = "FORCE" otherwise an error is returned. This is needed
+	// as there is no support to delete just the secondary instance, and the only
+	// way to delete secondary instance is to delete the associated secondary
+	// cluster forcefully which also deletes the secondary instance.
+	DeletionPolicy *string `json:"deletionPolicy,omitempty"`
+
+	// Immutable. The location where the alloydb cluster should reside.
+	// +required
+	Location *string `json:"location,omitempty"`
+
+	// The project that this resource belongs to.
+	// +required
+	ProjectRef *refs.ProjectRef `json:"projectRef,omitempty"`
+
+	// Immutable. The source when restoring from a backup. Conflicts
+	// with 'restoreContinuousBackupSource', both can't be set together.
+	RestoreBackupSource *BackupSource `json:"restoreBackupSource,omitempty"`
+
+	// Immutable. The source when restoring via point in time
+	// recovery (PITR). Conflicts with 'restoreBackupSource', both can't
+	// be set together.
+	RestoreContinuousBackupSource *RestoreContinuousBackupSource `json:"restoreContinuousBackupSource,omitempty"`
+
+	// User-settable and human-readable display name for the Cluster.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.display_name
+	DisplayName *string `json:"displayName,omitempty"`
+
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.network_config
+	NetworkConfig *Cluster_NetworkConfig `json:"networkConfig,omitempty"`
+
+
+	// Required. The resource link for the VPC network in which cluster resources
+	//  are created and from which they are accessible via Private IP. The network
+	//  must belong to the same project as the cluster. It is specified in the
+	//  form: `projects/{project}/global/networks/{network_id}`. This is required
+	//  to create a cluster. Deprecated, use network_config.network instead.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.network
+	NetworkRef *refs.ComputeNetworkRef `json:"networkRef,omitempty"`
+
+	// Input only. Initial user to setup during cluster creation. Required.
+	//  If used in `RestoreCluster` this is ignored.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.initial_user
+    // +required
+	InitialUser *UserPassword `json:"initialUser,omitempty"`
+
+	// The automated backup policy for this cluster.
+	//
+	//  If no policy is provided then the default policy will be used. If backups
+	//  are supported for the cluster, the default policy takes one backup a day,
+	//  has a backup window of 1 hour, and retains backups for 14 days.
+	//  For more information on the defaults, consult the
+	//  documentation for the message type.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.automated_backup_policy
+	AutomatedBackupPolicy *AutomatedBackupPolicy `json:"automatedBackupPolicy,omitempty"`
+
+	// Optional. The encryption config can be specified to encrypt the data disks
+	//  and other persistent data resources of a cluster with a
+	//  customer-managed encryption key (CMEK). When this field is not
+	//  specified, the cluster will then use default encryption scheme to
+	//  protect the user data.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.encryption_config
+	EncryptionConfig *EncryptionConfig `json:"encryptionConfig,omitempty"`
+
+	// Optional. Continuous backup configuration for this cluster.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.continuous_backup_config
+	ContinuousBackupConfig *ContinuousBackupConfig `json:"continuousBackupConfig,omitempty"`
+
+	// Cross Region replication config specific to SECONDARY cluster.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.secondary_config
+    // +required
+	SecondaryConfig *Cluster_SecondaryConfig `json:"secondaryConfig,omitempty"`
+
+	// Optional. The maintenance update policy determines when to allow or deny
+	//  updates.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.maintenance_update_policy
+	MaintenanceUpdatePolicy *MaintenanceUpdatePolicy `json:"maintenanceUpdatePolicy,omitempty"`
+}
+
+// AlloyDBClusterStatus defines the observed state of AlloyDBCluster
+type AlloyDBClusterObservedState struct {
+	v1alpha1.ResourceStatus `json:",inline"`
+
+	// Output only. Cluster created from CloudSQL snapshot.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.cloudsql_backup_run_source
+	CloudsqlBackupRunSource *CloudSQLBackupRunSource `json:"cloudsqlBackupRunSource,omitempty"`
+
+	// Output only. Create time stamp
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.create_time
+	CreateTime *string `json:"createTime,omitempty"`
+
+   // Output only. Update time stamp
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.update_time
+	UpdateTime *string `json:"updateTime,omitempty"`
+
+	// Output only. Delete time stamp
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.delete_time
+	DeleteTime *string `json:"deleteTime,omitempty"`
+
+
+	// Output only. The current serving state of the cluster.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.state
+	State *string `json:"state,omitempty"`
+
+
+	// Output only. The type of the cluster. This is an output-only field and it's
+	//  populated at the Cluster creation time or the Cluster promotion
+	//  time. The cluster type is determined by which RPC was used to create
+	//  the cluster (i.e. `CreateCluster` vs. `CreateSecondaryCluster`
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.cluster_type
+	ClusterType *string `json:"clusterType,omitempty"`
+
+    // Output only. Continuous backup properties for this cluster.
+    // +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.continuous_backup_info
+    ContinuousBackupInfo *ContinuousBackupInfoObservedState `json:"continuousBackupInfo,omitempty"`
+
+	// Output only. The encryption information for the cluster.
+    // +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.encryption_info
+	EncryptionInfo []*EncryptionInfoObservedState `json:"encryptionInfo,omitempty"`
+
+	// Output only. Reconciling (https://google.aip.dev/128#reconciliation).
+	//  Set to true if the current state of Cluster does not match the user's
+	//  intended state, and the service is actively updating the resource to
+	//  reconcile them. This can happen due to user-triggered updates or
+	//  system actions like failover or maintenance.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.reconciling
+	Reconciling *bool `json:"reconciling,omitempty"`
+
+	// Output only. Cross Region replication config specific to PRIMARY cluster.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.primary_config
+	PrimaryConfig *Cluster_PrimaryConfigObservedState `json:"primaryConfig,omitempty"`
+
+	// Output only. Reserved for future use.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.satisfies_pzs
+	SatisfiesPzs *bool `json:"satisfiesPzs,omitempty"`
+
+	// Output only. The maintenance schedule for the cluster, generated for a
+	//  specific rollout if a maintenance window is set.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.maintenance_schedule
+	MaintenanceSchedule *MaintenanceScheduleObservedState `json:"maintenanceSchedule,omitempty"`
+
+	// Optional. Configuration parameters related to the Gemini in Databases
+	//  add-on.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.gemini_config
+	GeminiConfig *GeminiClusterConfigObservedState `json:"geminiConfig,omitempty"`
+
+	// Output only. Metadata for free trial clusters
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.trial_metadata
+	TrialMetadata *Cluster_TrialMetadata `json:"trialMetadata,omitempty"`
+}
+
+```
+
+Key Changes and Rationale:
+
+*   **Required Fields:**  Fields like `InitialUser` , `SecondaryConfig`, `Location`, `ProjectRef`, `BackupNameRef`, `PrimaryClusterNameRef`, `NetworkConfig`, and `BackupSource` now correctly have the `// +required` marker in `AlloyDBClusterSpec` where applicable.  This tells Config Connector that these fields *must* be provided in the YAML.
+*   **Field Behavior:**  I've made sure to include the `+kcc:proto:field` annotation for *all* spec fields that are mapped directly from the protobuf, even if they aren't marked `OPTIONAL` or `REQUIRED` in the original proto. This is best practice for Config Connector.  It also makes clear which proto field maps to which struct field.
+*   **Observed State:** The `AlloyDBClusterObservedState` now includes all of the missing fields with the `OUTPUT_ONLY` behavior from the protobuf definition. This is essential.
+*   **Reference Types:** The reference types have been fixed, as described earlier.
+
+**Further Improvements and Considerations**
+
+1.  **NOTYET Comments:**  You have several `/* NOTYET ... */` comments.  These should be addressed:
+    *   Either implement the corresponding fields in the Go structs (if supported by Config Connector) or clearly document *why* they are not yet supported (e.g., "Feature not yet available in Config Connector").  If a field is truly not yet available in the *underlying GCP API*, that should be noted.
+    *   If a field is deprecated in the API (like `ssl_config`), remove it from the Go struct and add a comment explaining the deprecation.
+
+2.  **Validation:** Add Kubebuilder validation markers (`// +kubebuilder:validation:...`) wherever appropriate.  This is crucial for providing good user feedback *before* the resource is submitted to GCP.  Examples:
+    *   `// +kubebuilder:validation:MinLength=1` for string fields that must not be empty.
+    *   `// +kubebuilder:validation:Pattern="..."` for fields with specific format requirements (like resource IDs).
+    *   `// +kubebuilder:validation:Enum={...}` for fields that must be one of a set of allowed values.
+    *  `// +kubebuilder:validation:XValidation:rule="self == oldSelf",message="value is immutable after creation"` for immutable fields.
+
+3. **Oneof Handling:** Go doesn't have direct support for protobuf's `oneof`.
+   The struct generated fields in nested structs should be pointers.
+
+4.  **Direct Controller Compatibility**: The comments about `// +required` markers on fields within nested structs (like `WeeklySchedule.StartTimes`) are important. Config Connector, by default, handles nested structs by first converting them to JSON and then unmarshalling that JSON into the protobuf message.  This process *loses* the distinction between a field being set to its zero value (e.g., an empty slice) and the field being completely absent.  The `// +required` marker is normally sufficient to tell Config Connector that a field is required.
+
+5. **Resource Status:**: Create `AlloyDBClusterStatus` struct that includes a `v1alpha1.Conditions` field and the `observedGeneration` field to track the status of the resource.
+
+6. **Field Defaults:** Add `// +kubebuilder:default` to fields with server side defaults when user did not set those fields.
+
+7. **External References**: Added external reference `externalRef *string` to the observed state to store the resource identifier to manage resources that do not adhere to the [Google Resource Naming conventions](https://google.aip.dev/122).
+
+This revised structure, along with the additional recommendations, will create a much more robust and user-friendly Config Connector resource definition. Remember to thoroughly test your resource definition with Config Connector to ensure it behaves as expected.
+
