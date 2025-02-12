@@ -1,5 +1,6 @@
-
+- exec: gcloud spanner instances create test-instance --config=regional-us-central1 --description="Test Instance" --nodes=1
 - exec: gcloud spanner backup-schedules create test-${uniqueId} --instance=test-instance --database=test-database --backup-type=full-backup --cron="0 2 * * *" --retention-duration=7d
 - exec: gcloud spanner backup-schedules describe test-${uniqueId} --instance=test-instance --database=test-database
 - exec: gcloud spanner backup-schedules list --instance=test-instance --database=test-database
 - exec: gcloud spanner backup-schedules delete test-${uniqueId} --instance=test-instance --database=test-database
+- exec: gcloud spanner instances delete test-instance --quiet

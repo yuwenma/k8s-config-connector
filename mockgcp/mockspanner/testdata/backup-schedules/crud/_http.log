@@ -109,3 +109,23 @@ X-Xss-Protection: 0
     "status": "NOT_FOUND"
   }
 }
+
+---
+
+DELETE https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-instance?alt=json
+Accept: application/json
+Authorization: (removed)
+Connection: keep-alive
+Content-Length: 0
+X-Goog-User-Project: ${projectId}
+
+200 OK
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{}
