@@ -1,3 +1,174 @@
+POST https://spanner.googleapis.com/v1/projects/${projectId}/instances?alt=json
+Accept: application/json
+Authorization: (removed)
+Connection: keep-alive
+Content-Length: 178
+Content-Type: application/json
+X-Goog-User-Project: ${projectId}
+
+{
+  "instance": {
+    "config": "projects/${projectId}/instanceConfigs/regional-us-central1",
+    "displayName": "\"Test\"",
+    "nodeCount": 1
+  },
+  "instanceId": "test-${uniqueId}"
+}
+
+200 OK
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "metadata": {
+    "@type": "type.googleapis.com/google.spanner.admin.instance.v1.CreateInstanceMetadata",
+    "instance": {
+      "config": "projects/${projectId}/instanceConfigs/regional-us-central1",
+      "defaultBackupScheduleType": "AUTOMATIC",
+      "displayName": "\"Test\"",
+      "edition": "STANDARD",
+      "instanceType": "PROVISIONED",
+      "name": "projects/${projectId}/instances/test-${uniqueId}",
+      "nodeCount": 1,
+      "processingUnits": 1000,
+      "replicaComputeCapacity": [
+        {
+          "nodeCount": 1,
+          "replicaSelection": {
+            "location": "us-central1"
+          }
+        }
+      ],
+      "resourceLocation": "us-central1",
+      "state": "READY"
+    },
+    "startTime": "2024-04-01T12:34:56.123456Z"
+  },
+  "name": "projects/${projectId}/instances/test-${uniqueId}/operations/${operationID}"
+}
+
+---
+
+GET https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-${uniqueId}/operations/${operationID}?alt=json
+Accept: application/json
+Authorization: (removed)
+Connection: keep-alive
+Content-Length: 0
+X-Goog-User-Project: ${projectId}
+
+200 OK
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "done": true,
+  "metadata": {
+    "@type": "type.googleapis.com/google.spanner.admin.instance.v1.CreateInstanceMetadata",
+    "endTime": "2024-04-01T12:34:56.123456Z",
+    "expectedFulfillmentPeriod": "FULFILLMENT_PERIOD_NORMAL",
+    "instance": {
+      "config": "projects/${projectId}/instanceConfigs/regional-us-central1",
+      "createTime": "2024-04-01T12:34:56.123456Z",
+      "defaultBackupScheduleType": "AUTOMATIC",
+      "displayName": "\"Test\"",
+      "edition": "STANDARD",
+      "instanceType": "PROVISIONED",
+      "name": "projects/${projectId}/instances/test-${uniqueId}",
+      "nodeCount": 1,
+      "processingUnits": 1000,
+      "replicaComputeCapacity": [
+        {
+          "nodeCount": 1,
+          "replicaSelection": {
+            "location": "us-central1"
+          }
+        }
+      ],
+      "resourceLocation": "us-central1",
+      "state": "READY",
+      "updateTime": "2024-04-01T12:34:56.123456Z"
+    },
+    "startTime": "2024-04-01T12:34:56.123456Z"
+  },
+  "name": "projects/${projectId}/instances/test-${uniqueId}/operations/${operationID}",
+  "response": {
+    "@type": "type.googleapis.com/google.spanner.admin.instance.v1.Instance",
+    "config": "projects/${projectId}/instanceConfigs/regional-us-central1",
+    "createTime": "2024-04-01T12:34:56.123456Z",
+    "defaultBackupScheduleType": "AUTOMATIC",
+    "displayName": "\"Test\"",
+    "edition": "STANDARD",
+    "instanceType": "PROVISIONED",
+    "name": "projects/${projectId}/instances/test-${uniqueId}",
+    "nodeCount": 1,
+    "processingUnits": 1000,
+    "replicaComputeCapacity": [
+      {
+        "nodeCount": 1,
+        "replicaSelection": {
+          "location": "us-central1"
+        }
+      }
+    ],
+    "resourceLocation": "us-central1",
+    "state": "READY",
+    "updateTime": "2024-04-01T12:34:56.123456Z"
+  }
+}
+
+---
+
+GET https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-${uniqueId}?alt=json
+Accept: application/json
+Authorization: (removed)
+Connection: keep-alive
+Content-Length: 0
+X-Goog-User-Project: ${projectId}
+
+200 OK
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "config": "projects/${projectId}/instanceConfigs/regional-us-central1",
+  "createTime": "2024-04-01T12:34:56.123456Z",
+  "defaultBackupScheduleType": "AUTOMATIC",
+  "displayName": "\"Test\"",
+  "edition": "STANDARD",
+  "instanceType": "PROVISIONED",
+  "name": "projects/${projectId}/instances/test-${uniqueId}",
+  "nodeCount": 1,
+  "processingUnits": 1000,
+  "replicaComputeCapacity": [
+    {
+      "nodeCount": 1,
+      "replicaSelection": {
+        "location": "us-central1"
+      }
+    }
+  ],
+  "resourceLocation": "us-central1",
+  "state": "READY",
+  "updateTime": "2024-04-01T12:34:56.123456Z"
+}
+
+---
+
 POST https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-${uniqueId}/databases?alt=json
 Accept: application/json
 Authorization: (removed)
@@ -10,7 +181,7 @@ X-Goog-User-Project: ${projectId}
   "createStatement": "CREATE DATABASE `test-${uniqueId}`"
 }
 
-404 Not Found
+200 OK
 Content-Type: application/json; charset=UTF-8
 Server: ESF
 Vary: Origin
@@ -20,22 +191,46 @@ X-Frame-Options: SAMEORIGIN
 X-Xss-Protection: 0
 
 {
-  "error": {
-    "code": 404,
-    "details": [
-      {
-        "@type": "type.googleapis.com/google.rpc.ResourceInfo",
-        "description": "Instance does not exist.",
-        "resourceName": "projects/${projectId}/instances/test-${uniqueId}",
-        "resourceType": "type.googleapis.com/google.spanner.admin.instance.v1.Instance"
-      },
-      {
-        "@type": "type.googleapis.com/google.rpc.DebugInfo",
-        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-${uniqueId} [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-${uniqueId}\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-${uniqueId}\" 4: \"Instance does not exist.\" } } } }"
-      }
-    ],
-    "message": "Instance not found: projects/${projectId}/instances/test-${uniqueId}",
-    "status": "NOT_FOUND"
+  "metadata": {
+    "@type": "type.googleapis.com/google.spanner.admin.database.v1.CreateDatabaseMetadata",
+    "database": "projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}"
+  },
+  "name": "projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/operations/${operationID}"
+}
+
+---
+
+GET https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/operations/${operationID}?alt=json
+Accept: application/json
+Authorization: (removed)
+Connection: keep-alive
+Content-Length: 0
+X-Goog-User-Project: ${projectId}
+
+200 OK
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "done": true,
+  "metadata": {
+    "@type": "type.googleapis.com/google.spanner.admin.database.v1.CreateDatabaseMetadata",
+    "database": "projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}"
+  },
+  "name": "projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/operations/${operationID}",
+  "response": {
+    "@type": "type.googleapis.com/google.spanner.admin.database.v1.Database",
+    "createTime": "2024-04-01T12:34:56.123456Z",
+    "databaseDialect": "GOOGLE_STANDARD_SQL",
+    "earliestVersionTime": "2025-02-12T06:30:40.529149Z",
+    "name": "projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}",
+    "state": "READY",
+    "versionRetentionPeriod": "1h"
   }
 }
 
@@ -63,16 +258,16 @@ X-Xss-Protection: 0
     "details": [
       {
         "@type": "type.googleapis.com/google.rpc.ResourceInfo",
-        "description": "Instance does not exist.",
-        "resourceName": "projects/${projectId}/instances/test-${uniqueId}",
-        "resourceType": "type.googleapis.com/google.spanner.admin.instance.v1.Instance"
+        "description": "Backup schedule does not exist.",
+        "resourceName": "projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}",
+        "resourceType": "type.googleapis.com/google.spanner.admin.database.v1.BackupSchedule"
       },
       {
         "@type": "type.googleapis.com/google.rpc.DebugInfo",
-        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-${uniqueId} [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-${uniqueId}\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-${uniqueId}\" 4: \"Instance does not exist.\" } } } }"
+        "detail": "[ORIGINAL ERROR] generic::not_found: Backup schedule not found: projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId} [google.rpc.error_details_ext] { message: \"Backup schedule not found: projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.database.v1.BackupSchedule\" resource_name: \"projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}\" description: \"Backup schedule does not exist.\" } } } 485239697 { 1: \"Backup schedule not found: projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}\" 2 { 2: \"Backup schedule not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.database.v1.BackupSchedule\" 2: \"projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}\" 4: \"Backup schedule does not exist.\" } } } }"
       }
     ],
-    "message": "Instance not found: projects/${projectId}/instances/test-${uniqueId}",
+    "message": "Backup schedule not found: projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}",
     "status": "NOT_FOUND"
   }
 }
@@ -86,7 +281,7 @@ Connection: keep-alive
 Content-Length: 0
 X-Goog-User-Project: ${projectId}
 
-404 Not Found
+200 OK
 Content-Type: application/json; charset=UTF-8
 Server: ESF
 Vary: Origin
@@ -96,23 +291,24 @@ X-Frame-Options: SAMEORIGIN
 X-Xss-Protection: 0
 
 {
-  "error": {
-    "code": 404,
-    "details": [
-      {
-        "@type": "type.googleapis.com/google.rpc.ResourceInfo",
-        "description": "Instance does not exist.",
-        "resourceName": "projects/${projectId}/instances/test-${uniqueId}",
-        "resourceType": "type.googleapis.com/google.spanner.admin.instance.v1.Instance"
+  "backupSchedules": [
+    {
+      "encryptionConfig": {
+        "encryptionType": "USE_DATABASE_ENCRYPTION"
       },
-      {
-        "@type": "type.googleapis.com/google.rpc.DebugInfo",
-        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-${uniqueId} [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-${uniqueId}\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-${uniqueId}\" 4: \"Instance does not exist.\" } } } }"
-      }
-    ],
-    "message": "Instance not found: projects/${projectId}/instances/test-${uniqueId}",
-    "status": "NOT_FOUND"
-  }
+      "fullBackupSpec": {},
+      "name": "projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/default_daily_full_backup_schedule",
+      "retentionDuration": "604800s",
+      "spec": {
+        "cronSpec": {
+          "creationWindow": "14400s",
+          "text": "23 12 * * *",
+          "timeZone": "UTC"
+        }
+      },
+      "updateTime": "2025-02-12T06:30:40.529149Z"
+    }
+  ]
 }
 
 ---
@@ -139,16 +335,16 @@ X-Xss-Protection: 0
     "details": [
       {
         "@type": "type.googleapis.com/google.rpc.ResourceInfo",
-        "description": "Instance does not exist.",
-        "resourceName": "projects/${projectId}/instances/test-${uniqueId}",
-        "resourceType": "type.googleapis.com/google.spanner.admin.instance.v1.Instance"
+        "description": "Backup schedule does not exist.",
+        "resourceName": "projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}",
+        "resourceType": "type.googleapis.com/google.spanner.admin.database.v1.BackupSchedule"
       },
       {
         "@type": "type.googleapis.com/google.rpc.DebugInfo",
-        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-${uniqueId} [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-${uniqueId}\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-${uniqueId}\" 4: \"Instance does not exist.\" } } } }"
+        "detail": "[ORIGINAL ERROR] generic::not_found: Backup schedule not found: projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId} [google.rpc.error_details_ext] { message: \"Backup schedule not found: projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.database.v1.BackupSchedule\" resource_name: \"projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}\" description: \"Backup schedule does not exist.\" } } } 485239697 { 1: \"Backup schedule not found: projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}\" 2 { 2: \"Backup schedule not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.database.v1.BackupSchedule\" 2: \"projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}\" 4: \"Backup schedule does not exist.\" } } } }"
       }
     ],
-    "message": "Instance not found: projects/${projectId}/instances/test-${uniqueId}",
+    "message": "Backup schedule not found: projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}",
     "status": "NOT_FOUND"
   }
 }
