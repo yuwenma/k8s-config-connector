@@ -1,0 +1,111 @@
+GET https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-instance/databases/test-database/backupSchedules/test-${uniqueId}?alt=json
+Accept: application/json
+Authorization: (removed)
+Connection: keep-alive
+Content-Length: 0
+X-Goog-User-Project: ${projectId}
+
+404 Not Found
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "error": {
+    "code": 404,
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ResourceInfo",
+        "description": "Instance does not exist.",
+        "resourceName": "projects/${projectId}/instances/test-instance",
+        "resourceType": "type.googleapis.com/google.spanner.admin.instance.v1.Instance"
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.DebugInfo",
+        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-instance [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-instance\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-instance\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-instance\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-instance\" 4: \"Instance does not exist.\" } } } }"
+      }
+    ],
+    "message": "Instance not found: projects/${projectId}/instances/test-instance",
+    "status": "NOT_FOUND"
+  }
+}
+
+---
+
+GET https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-instance/databases/test-database/backupSchedules?alt=json&pageSize=100
+Accept: application/json
+Authorization: (removed)
+Connection: keep-alive
+Content-Length: 0
+X-Goog-User-Project: ${projectId}
+
+404 Not Found
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "error": {
+    "code": 404,
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ResourceInfo",
+        "description": "Instance does not exist.",
+        "resourceName": "projects/${projectId}/instances/test-instance",
+        "resourceType": "type.googleapis.com/google.spanner.admin.instance.v1.Instance"
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.DebugInfo",
+        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-instance [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-instance\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-instance\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-instance\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-instance\" 4: \"Instance does not exist.\" } } } }"
+      }
+    ],
+    "message": "Instance not found: projects/${projectId}/instances/test-instance",
+    "status": "NOT_FOUND"
+  }
+}
+
+---
+
+DELETE https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-instance/databases/test-database/backupSchedules/test-${uniqueId}?alt=json
+Accept: application/json
+Authorization: (removed)
+Connection: keep-alive
+Content-Length: 0
+X-Goog-User-Project: ${projectId}
+
+404 Not Found
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "error": {
+    "code": 404,
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ResourceInfo",
+        "description": "Instance does not exist.",
+        "resourceName": "projects/${projectId}/instances/test-instance",
+        "resourceType": "type.googleapis.com/google.spanner.admin.instance.v1.Instance"
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.DebugInfo",
+        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-instance [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-instance\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-instance\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-instance\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-instance\" 4: \"Instance does not exist.\" } } } }"
+      }
+    ],
+    "message": "Instance not found: projects/${projectId}/instances/test-instance",
+    "status": "NOT_FOUND"
+  }
+}
