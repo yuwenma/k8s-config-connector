@@ -1,4 +1,47 @@
-GET https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-instance/databases/test-database/backupSchedules/test-${uniqueId}?alt=json
+POST https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-${uniqueId}/databases?alt=json
+Accept: application/json
+Authorization: (removed)
+Connection: keep-alive
+Content-Length: 62
+Content-Type: application/json
+X-Goog-User-Project: ${projectId}
+
+{
+  "createStatement": "CREATE DATABASE `test-${uniqueId}`"
+}
+
+404 Not Found
+Content-Type: application/json; charset=UTF-8
+Server: ESF
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+X-Frame-Options: SAMEORIGIN
+X-Xss-Protection: 0
+
+{
+  "error": {
+    "code": 404,
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ResourceInfo",
+        "description": "Instance does not exist.",
+        "resourceName": "projects/${projectId}/instances/test-${uniqueId}",
+        "resourceType": "type.googleapis.com/google.spanner.admin.instance.v1.Instance"
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.DebugInfo",
+        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-${uniqueId} [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-${uniqueId}\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-${uniqueId}\" 4: \"Instance does not exist.\" } } } }"
+      }
+    ],
+    "message": "Instance not found: projects/${projectId}/instances/test-${uniqueId}",
+    "status": "NOT_FOUND"
+  }
+}
+
+---
+
+GET https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}?alt=json
 Accept: application/json
 Authorization: (removed)
 Connection: keep-alive
@@ -21,22 +64,22 @@ X-Xss-Protection: 0
       {
         "@type": "type.googleapis.com/google.rpc.ResourceInfo",
         "description": "Instance does not exist.",
-        "resourceName": "projects/${projectId}/instances/test-instance",
+        "resourceName": "projects/${projectId}/instances/test-${uniqueId}",
         "resourceType": "type.googleapis.com/google.spanner.admin.instance.v1.Instance"
       },
       {
         "@type": "type.googleapis.com/google.rpc.DebugInfo",
-        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-instance [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-instance\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-instance\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-instance\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-instance\" 4: \"Instance does not exist.\" } } } }"
+        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-${uniqueId} [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-${uniqueId}\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-${uniqueId}\" 4: \"Instance does not exist.\" } } } }"
       }
     ],
-    "message": "Instance not found: projects/${projectId}/instances/test-instance",
+    "message": "Instance not found: projects/${projectId}/instances/test-${uniqueId}",
     "status": "NOT_FOUND"
   }
 }
 
 ---
 
-GET https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-instance/databases/test-database/backupSchedules?alt=json&pageSize=100
+GET https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules?alt=json&pageSize=100
 Accept: application/json
 Authorization: (removed)
 Connection: keep-alive
@@ -59,22 +102,22 @@ X-Xss-Protection: 0
       {
         "@type": "type.googleapis.com/google.rpc.ResourceInfo",
         "description": "Instance does not exist.",
-        "resourceName": "projects/${projectId}/instances/test-instance",
+        "resourceName": "projects/${projectId}/instances/test-${uniqueId}",
         "resourceType": "type.googleapis.com/google.spanner.admin.instance.v1.Instance"
       },
       {
         "@type": "type.googleapis.com/google.rpc.DebugInfo",
-        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-instance [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-instance\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-instance\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-instance\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-instance\" 4: \"Instance does not exist.\" } } } }"
+        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-${uniqueId} [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-${uniqueId}\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-${uniqueId}\" 4: \"Instance does not exist.\" } } } }"
       }
     ],
-    "message": "Instance not found: projects/${projectId}/instances/test-instance",
+    "message": "Instance not found: projects/${projectId}/instances/test-${uniqueId}",
     "status": "NOT_FOUND"
   }
 }
 
 ---
 
-DELETE https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-instance/databases/test-database/backupSchedules/test-${uniqueId}?alt=json
+DELETE https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-${uniqueId}/databases/test-${uniqueId}/backupSchedules/test-${uniqueId}?alt=json
 Accept: application/json
 Authorization: (removed)
 Connection: keep-alive
@@ -97,22 +140,22 @@ X-Xss-Protection: 0
       {
         "@type": "type.googleapis.com/google.rpc.ResourceInfo",
         "description": "Instance does not exist.",
-        "resourceName": "projects/${projectId}/instances/test-instance",
+        "resourceName": "projects/${projectId}/instances/test-${uniqueId}",
         "resourceType": "type.googleapis.com/google.spanner.admin.instance.v1.Instance"
       },
       {
         "@type": "type.googleapis.com/google.rpc.DebugInfo",
-        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-instance [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-instance\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-instance\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-instance\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-instance\" 4: \"Instance does not exist.\" } } } }"
+        "detail": "[ORIGINAL ERROR] generic::not_found: Instance not found: projects/${projectId}/instances/test-${uniqueId} [google.rpc.error_details_ext] { message: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" details { [type.googleapis.com/google.rpc.ResourceInfo] { resource_type: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" resource_name: \"projects/${projectId}/instances/test-${uniqueId}\" description: \"Instance does not exist.\" } } } 485239697 { 1: \"Instance not found: projects/${projectId}/instances/test-${uniqueId}\" 2 { 2: \"Instance not found: [REDACTED]\" 3 { 1: \"type.googleapis.com/google.rpc.ResourceInfo\" 2 { 1: \"type.googleapis.com/google.spanner.admin.instance.v1.Instance\" 2: \"projects/${projectId}/instances/test-${uniqueId}\" 4: \"Instance does not exist.\" } } } }"
       }
     ],
-    "message": "Instance not found: projects/${projectId}/instances/test-instance",
+    "message": "Instance not found: projects/${projectId}/instances/test-${uniqueId}",
     "status": "NOT_FOUND"
   }
 }
 
 ---
 
-DELETE https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-instance?alt=json
+DELETE https://spanner.googleapis.com/v1/projects/${projectId}/instances/test-${uniqueId}?alt=json
 Accept: application/json
 Authorization: (removed)
 Connection: keep-alive
