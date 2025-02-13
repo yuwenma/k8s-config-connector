@@ -26,6 +26,7 @@ import (
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/commands/generatefuzzer"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/commands/generatemapper"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/commands/generatetypes"
+	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/commands/iteratetypes"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/commands/updatetypes"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/options"
 	"github.com/spf13/cobra"
@@ -50,6 +51,7 @@ func Execute() {
 	rootCmd.AddCommand(apply.BuildCommand(&generateOptions))
 	rootCmd.AddCommand(detectnewfields.BuildCommand(&generateOptions))
 	rootCmd.AddCommand(generatefuzzer.BuildCommand(&generateOptions))
+	rootCmd.AddCommand(iteratetypes.BuildCommand(&generateOptions))
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Fprintf(os.Stderr, "%v\n", err)

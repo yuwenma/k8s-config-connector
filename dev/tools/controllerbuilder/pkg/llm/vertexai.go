@@ -27,8 +27,13 @@ import (
 	"k8s.io/klog/v2"
 )
 
+type GCPOptions interface {
+	GetProject() string
+	GetLocation() string
+}
+
 // BuildVertexAIClient builds a client for the VertexAI API.
-func BuildVertexAIClient(ctx context.Context) (*VertexAIClient, error) {
+func BuildVertexAIClient(ctx context.Context, options ...GCPOptions) (*VertexAIClient, error) {
 	log := klog.FromContext(ctx)
 
 	var opts []option.ClientOption
@@ -41,6 +46,13 @@ func BuildVertexAIClient(ctx context.Context) (*VertexAIClient, error) {
 
 	projectID := ""
 	location := ""
+
+	for _, o := range options {
+		if o != nil {
+			projectID = o.GetProject()
+			location = o.GetLocation()
+		}
+	}
 
 	if projectID == "" {
 		cmd := exec.CommandContext(ctx, "gcloud", "config", "get", "project")

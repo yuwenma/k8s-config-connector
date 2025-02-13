@@ -4,8 +4,6 @@ For example, if I just created a script mockpubsub/testdata/topic/crud/script.ya
 
 `WRITE_GOLDEN_OUTPUT=1 E2E_GCP_TARGET=real go test ./mockgcptests -run TestScripts/mockpubsub/testdata/topic/crud`
 
-I would then run `git add mockpubsub/testdata/topic/crud/_http.log`, then `git commit` that with a commit message like "mockgcp: Capture golden output for mockpubsub/testdata/topic/crud"
-
 For example, if I just created a script mockstorage/testdata/topic/bucket/script.yaml, then I should run
 
 `WRITE_GOLDEN_OUTPUT=1 E2E_GCP_TARGET=real go test ./mockgcptests -run TestScripts/mockstorage/testdata/bucket/crud`

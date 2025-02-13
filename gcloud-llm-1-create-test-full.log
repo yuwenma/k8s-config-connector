@@ -1,0 +1,18 @@
+vmware private-clouds
+vmware private-clouds dns-forwarding
+vmware private-clouds external-addresses
+vmware private-clouds hcx activationkeys
+vmware private-clouds logging-servers
+vmware private-clouds management-dns-zone-bindings
+vmware private-clouds nsx credentials
+vmware private-clouds subnets
+vmware private-clouds vcenter credentials
+vmware private-connections
+workbench instances
+workflows
+workflows executions
+workspace-add-ons deployments
+workstations clusters
+workstations configs
+Error: [workstations] jq parsing failed, or path_to_created_test not found.
+workstations

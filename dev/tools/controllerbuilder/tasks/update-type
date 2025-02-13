@@ -38,6 +38,7 @@ go run . prompt --src-dir="${REPO_ROOT}" --proto-dir="${REPO_ROOT}/dev/tools/pro
 // +kcc:proto=${PROTO}
 EOF
 
+
 # output=$(go run . prompt --src-dir="${REPO_ROOT}" --proto-dir="${REPO_ROOT}/dev/tools/proto-to-mapper/third_party/googleapis/" --output=${OUTPUT} <<EOF
 # // +kcc:proto=${PROTO}
 # EOF

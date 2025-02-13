@@ -1,6 +1,11 @@
-I'm working on a test.  I have captured the golden output from `${GCLOUD_COMMAND} --project ${PROJECT}` running against real GCP.  Now I need to verify that the golden output from the test is identical when run against my mocks.
+I need to create a pull request to github repo https://github.com/yuwenma/k8s-config-connector/
 
-For example, if I am working on a script mockpubsub/testdata/topic/crud/script.yaml, then I should run the tests against the mocks by executing this shell command:
+To push to git, you can run `git push origin ${branch}` 
+
+
+I'm working on a test for my project.  I have captured the golden output from gcloud running against real GCP.  Now I need to verify that the golden output from the test is identical when run against my mocks.
+
+For example, if I am working on a script testdata/topic/crud/script.yaml, then I should run the tests against the mocks by executing this shell command:
 
 `WRITE_GOLDEN_OUTPUT=1 E2E_GCP_TARGET=mock go test ./mockgcptests -run TestScripts/mockpubsub/testdata/topic/crud`
 
@@ -19,7 +24,8 @@ When fixing differences:
 * If a method or whole service needs to be implemented, create a subtask with CreateSubtask.
 * If there are other differences you don't know how to handle, call the "CreateSubtask" function with a description of the differences that you think should be fixed along with any suggestions on how to fix them.
 
-Please try to run the tests with the mocks for the script I just created. You can read `mock${SERVICE}/metadata.yaml` to get the test name, proto message name, and other information that might be helpful. If you don't find `mock${SERVICE}/metadata.yaml`, skip.
+Please try to run the tests with the mocks for the script I just created, called `mockfilestore/testdata/backup/crud/script.yaml`.  I think the relevant implementation code is in `mockfilestore/backup.go`
+
 
 When you are done, please output a JSON result like this:
 
