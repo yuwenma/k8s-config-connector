@@ -43,28 +43,48 @@ CB_DIR=dev/tools/controllerbuilder
 # TODO: remove once the code is merged
 UNCOMMIT_ROOT="/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector"
 
-INS_CREATE_CRUD_TEST=cmd/codebot/examples/mockgcp-test-case/1-create-test.md
-# INS_RECORD_REAL_LOG=cmd/codebot/examples/mockgcp-test-case/2-record-realgcp-output.md
-INS_CREATE_MOCK_SERVER=cmd/codebot/examples/mockgcp-test-case/3a-implement-mock.md
-INS_COMPARE_MOCK_AND_REAL=cmd/codebot/examples/mockgcp-test-case/3b-compare-mock-output.md
+INS_ADD_TYPE=cmd/codebot/examples/reconciler-case/1-type.txt
+INS_ADD_CONTROLLER=cmd/codebot/examples/reconciler-case/2-controller.txt
+# VERIFY=cmd/codebot/examples/reconciler-case/verify.md
 
-FEATURE_BRANCH_PREFIX="mock-llm-"
+FEATURE_BRANCH_PREFIX="resource-"
 BRANCH=$(git branch --show)
 
 # This script should be run under the mock feature branch.
 # Verify the git repo right resource
-if [[ "$BRANCH" != ${FEATURE_BRANCH_PREFIX}* ]]; then
-    echo "[ERROR] git HEAD is not in a feature branch"
-    exit 1
-fi 
+# if [[ "$BRANCH" != ${FEATURE_BRANCH_PREFIX}* ]]; then
+#     echo "[ERROR] git HEAD is not in a feature branch"
+#     exit 1
+# fi 
+
+# SERVICE="${RESOURCE%-*}"
 
 RESOURCE=${BRANCH#"${FEATURE_BRANCH_PREFIX}"}
-echo "LLM to add mock test for resource ${RESOURCE}"
+echo "LLM to add reconciler for resource ${RESOURCE}"
+PASS_LOG="${REPO_ROOT}/llm_reconciler_${RESOURCE}-pass.log" 
+FAIL_LOG="${REPO_ROOT}/llm_reconciler_${RESOURCE}-failure.log"
+LLM_LOG="${REPO_ROOT}/llm_reconciler_${RESOURCE}-codebot.log"
 
-PASS_LOG="${REPO_ROOT}/llm_mock_${RESOURCE}-pass.log" 
-FAIL_LOG="${REPO_ROOT}/llm_mock_${RESOURCE}-failure.log"
-LLM_LOG="${REPO_ROOT}/llm_mock_${RESOURCE}-codebot.log"
+# if [[ -z "${SERVICE:-}" ]]; then
+#   echo "SERVICE must be set. e.g. Table"
+#   exit 1
+# fi
 
+# if [[ -z "${PROTO:-}" ]]; then
+#   echo "PROTO must be set. e.g. Table"
+#   exit 1
+# fi
+
+# if [[ -z "${KIND:-}" ]]; then
+#   echo "KIND must be set. e.g. BigtableTable"
+#   exit 1
+# fi
+
+
+# if [[ -z "${PACKAGE:-}" ]]; then
+#   echo "PACKAGE must be set. e.g. google.bigtable.admin.v2"
+#   exit 1
+# fi
 
 function codebot() {
     instruction_path=${REPO_ROOT}/${CB_DIR}/$1
@@ -101,55 +121,13 @@ function codebot() {
     return 0
 }
 
-function record_real_log() {
-    # 1. Build crud path based on gcloud convention. mockSERVICE
-    local service="${RESOURCE%-*}"
-    local possible_subs="${RESOURCE#*-}"
-    possible_subs=$(echo "${possible_subs}"| tr '-' '/')
-    test_crud_path=mock${service}/testdata/${possible_subs}/crud
-
-    if [[ ! -d ${test_crud_path} ]]; then
-        # 2. get from last git-commit
-        test_file_name=$(git show --pretty="format:" --name-only HEAD | tail -1)
-        if [[ $? -ne 0 ]]; then
-            # 3. TODO from LLM for metadata 
-            echo "[go test] fail to get crud name: ${test_file_name}" >> "${FAIL_LOG}"
-            exit 1
-        else 
-            test_crud_path=$(dirname "${test_file_name}")
-        fi 
-    fi
-
-    test_crud_path=${test_crud_path#mockgcp/}
-    
-    result=$(WRITE_GOLDEN_OUTPUT=1 E2E_GCP_TARGET=real go test "${REPO_ROOT}"/mockgcp/mockgcptests -run TestScripts/"${test_crud_path}")
-    if [[ $? -ne 0 ]]; then
-        echo "[go test] fail to run test: ${result}" >> "${FAIL_LOG}"
+function generate_crds() {
+    if dev/tasks/generate-crds
+    then
+        echo "[generate crd] failed" >> "${FAIL_LOG}"
         exit 1
-    fi 
-    # TODO check if test failed
-    echo "${result}"
-    return 0
-}
-
-function project_name() {
-    # Project has 6-30 characater limit, starting with a lower case char
-    resource="$(basename "${REPO_ROOT}")"
-    project_name=${resource}-$(date --date=yesterday +%d) # e.g. yuwenma-02-10-spanner-instance
-    while true; do
-        if [[ ${#project_name} -ge 30 ]]; then
-            echo "[project validation] ${project_name} too long" >> "${PASS_LOG}"
-            project_name="${project_name#*-}"
-        else
-            break
-        fi
-    done
-    echo "${project_name}"
-}
-
-function push_pr() {
-    return 0
-}
+    fi
+}   
 
 retries=1
 
@@ -159,42 +137,46 @@ function run_worker() {
     
     for ((i=retries; i>0; i--)); do
 
-        # Verify mock server
-        # if ! codebot ${INS_COMPARE_MOCK_AND_REAL}
+        # Verify reconciler
+        # if ! codebot ${VERIFY}
         # then
         #     echo "[llm codebot] Verified" >> "${PASS_LOG}"
         #     return 0
         # fi
 
         # Step 1. Use LLM to create test example in testdata/<resource>/crud/script.yaml
-        # if codebot ${INS_CREATE_CRUD_TEST}
-        # then
-        #     continue
-        # fi
-        # echo "[llm codebot] $(basename $INS_CREATE_CRUD_TEST)" >> "${PASS_LOG}"
-
-        # Step 2. Record real GCP log
-        # This can be also be done by codebot. 
-        # codebot ${INS_RECORD_REAL_LOG}
-        # if record_real_log
-        # then
-        #     continue
-        # fi
-        # echo "[go test] record_real_log" >> "${PASS_LOG}"
-
-        # Step 3. Use LLM to create mock server
-        if codebot ${INS_CREATE_MOCK_SERVER} true
+        if codebot "${INS_ADD_TYPE}" true
         then
             continue
         fi
-        echo "[llm codebot] $(basename $INS_CREATE_MOCK_SERVER)" >> "${PASS_LOG}"
+        echo "[llm codebot] $(basename "$INS_ADD_TYPE")" >> "${PASS_LOG}"
+
+        # Step 2. Generate CRD
+        if generate_crds
+        then
+            continue
+        fi
+        echo "[kcc task] generate CRDS" >> "${PASS_LOG}"
+
+        # Step 3. Add controller
+        This can be also be done by codebot. 
+        codebot ${INS_ADD_CONTROLLER}
+        if record_real_log
+        then
+            continue
+        fi
+        echo "[llm codebot] improve controller " >> "${PASS_LOG}"
 
     done
 
     return 1
 }
 
-# Call LLM codebot to generate mock code
+function push_pr() {
+    return 0
+}
+
+# Call LLM codebot to generate reconciler code
 git fetch --depth=2
 if ! run_worker
 then

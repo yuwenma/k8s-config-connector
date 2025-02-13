@@ -1,8 +1,0 @@
-# Generate the proto list from https://github.com/GoogleCloudPlatform/k8s-config-connector/pull/3609
-proto-list.yaml (no alpha protos)
-remove services ads, shopping, maps, chromeos, home, actions
-
-# Generate the gcloud list from 644f580d00224064eb17e225c2d2c4990827e805
-gcloud-list.yaml
-
-

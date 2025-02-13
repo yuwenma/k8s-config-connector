@@ -1,0 +1,12 @@
+I'm writing go code to define go structure. You should help me.
+
+
+Run the go command 
+`go run . prompt --src-dir . --proto-dir dev/tools/proto-to-mapper/third_party/googleapis/" <<EOF
+// +kcc:proto=${PROTO}
+// kind: ${KIND}
+EOF
+`
+Parse the go code from the go command result, and write the go code to ./apis/${SERVICE}/v1alpha1/${PROTO}_type_llm.go
+
+

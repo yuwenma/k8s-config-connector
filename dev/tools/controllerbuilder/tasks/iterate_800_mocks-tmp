@@ -118,7 +118,7 @@ function project_name() {
 }
 
 
-# Set up GCP project and git repo 
+# Set up GCP project and git repo 
 function setup_git_repo() {
     # setup git
     
@@ -141,18 +141,22 @@ function workaround_to_use_uncommit_code() {
     cp ${UNCOMMIT_ROOT}/${llm_worker_path} "${repo_path}"/${llm_worker_path}
     cp -rf ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/cmd/codebot/main.go "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/main.go
     cp -rf ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/pkg/llm/vertexai.go "${repo_path}"/dev/tools/controllerbuilder/pkg/llm/vertexai.go
-    cp -rf ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/cmd/codebot/examples/* "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/
-    cp ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/pkg/codebot/tool_create_file.go "${repo_path}"/dev/tools/controllerbuilder/pkg/codebot/tool_create_file.go
-    cp ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/pkg/codebot/tool_run_cmd.go "${repo_path}"/dev/tools/controllerbuilder/pkg/codebot/tool_run_cmd.go
+    cp -rf ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/cmd/codebot/examples/reconciler-case "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/
+    # cp ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/pkg/codebot/tool_create_file.go "${repo_path}"/dev/tools/controllerbuilder/pkg/codebot/tool_create_file.go
+    # cp ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/pkg/codebot/tool_run_cmd.go "${repo_path}"/dev/tools/controllerbuilder/pkg/codebot/tool_run_cmd.go
     cp ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/pkg/codebot/chat.go "${repo_path}"/dev/tools/controllerbuilder/pkg/codebot/chat.go
-    cp ${UNCOMMIT_ROOT}/mockgcp/mockgcptests/proxy.go "${repo_path}"/mockgcp/mockgcptests/proxy.go
+    # cp ${UNCOMMIT_ROOT}/mockgcp/mockgcptests/proxy.go "${repo_path}"/mockgcp/mockgcptests/proxy.go
     mkdir -p  "${repo_path}"/.build/third_party/googleapis
     cp -r ${UNCOMMIT_ROOT}/.build/third_party/googleapis/ "${repo_path}"/.build/third_party/
 
-    sed -i "s/\${PROJECT}/${project_name}/g"            "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/mockgcp-test-case/*
-    sed -i "s/\${GCLOUD_COMMAND}/${gcloud_line}/g"      "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/mockgcp-test-case/*
-    sed -i "s/\${SERVICE}/${service}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/mockgcp-test-case/*
-    sed -i "s/\${RESOURCE}/${possible_resource_name}/g" "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/mockgcp-test-case/*
+    # sed -i "s/\${PROJECT}/${project_name}/g"            "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/mockgcp-test-case/*
+    # sed -i "s/\${GCLOUD_COMMAND}/${gcloud_line}/g"      "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/mockgcp-test-case/*
+    # sed -i "s/\${SERVICE}/${service}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/mockgcp-test-case/*
+    # sed -i "s/\${RESOURCE}/${possible_resource_name}/g" "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/mockgcp-test-case/*
+    sed -i "s/\${KIND}/${KIND}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/*
+    sed -i "s/\${SERVICE}/${SERVICE}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/mockgcp-test-case/*
+    sed -i "s/\${PROTO}/${PROTO}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/mockgcp-test-case/*
+    sed -i "s/\${PACKAGE}/${PACKAGE}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/mockgcp-test-case/*
     cd "${repo_path}" || return 1
 
 }
@@ -191,20 +195,21 @@ while IFS= read -r gcloud_line || [[ -n $gcloud_line ]] ; do
     #     continue
     # fi
 
+    repo_path="/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/resource-datastream-Stream"
     # TODO: temporary workaround. Safe to remove once the code is merged. 
-    llm_worker_path="dev/tools/controllerbuilder/tasks/llm-mock-worker"
+    llm_worker_path="dev/tools/controllerbuilder/tasks/llm-reconciler-worker"
     workaround_to_use_uncommit_code
     if [[ $? -eq 1 ]]; then
         echo "switch git dir failed"
         continue
     fi 
 
-
     # TODO maybe not use env var
     "${repo_path}"/${llm_worker_path}    
     if [[ $? -eq 1 ]]; then
         continue
     fi 
+    break
 
     # TODO cleanup
 

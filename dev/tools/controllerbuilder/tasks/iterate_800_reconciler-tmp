@@ -36,11 +36,11 @@
 #!/bin/bash
 set -x
 
-FEATURE_DIR=${HOME}/go/scr/github.com/GoogleCloudPlatform
+FEATURE_DIR=${HOME}/go/src/github.com/GoogleCloudPlatform
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-PASS_LOG="${REPO_ROOT}/iterate_800_mock-pass.log" 
-FAIL_LOG="${REPO_ROOT}/iterate_800_mock-failure.log"
-RESOURCE_LIST="${REPO_ROOT}/gcloud-list-final.txt"
+PASS_LOG="${REPO_ROOT}/iterate_800_mock-pass-tmp.log" 
+FAIL_LOG="${REPO_ROOT}/iterate_800_mock-failure-tmp.log"
+RESOURCE_LIST="${REPO_ROOT}/gcloud-list-test.txt"
 SERVICE_LIST="${REPO_ROOT}/gservice-list.txt"
 
 # TODO: remove once the code is merged
@@ -117,7 +117,8 @@ function project_name() {
     echo "${project_name}"
 }
 
-# Set up GCP project and git repo 
+
+# Set up GCP project and git repo 
 function setup_git_repo() {
     # setup git
     
@@ -136,6 +137,23 @@ function setup_git_repo() {
     return 0
 }
 
+function workaround_to_use_uncommit_code() {
+    cp ${UNCOMMIT_ROOT}/${llm_worker_path} "${repo_path}"/${llm_worker_path}
+    cp -rf ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/cmd/codebot/main.go "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/main.go
+    cp -rf ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/pkg/llm/vertexai.go "${repo_path}"/dev/tools/controllerbuilder/pkg/llm/vertexai.go
+    cp -rf ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/cmd/codebot/examples/reconciler-case "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/
+    cp ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/pkg/codebot/chat.go "${repo_path}"/dev/tools/controllerbuilder/pkg/codebot/chat.go
+    mkdir -p  "${repo_path}"/.build/third_party/googleapis
+    cp -r ${UNCOMMIT_ROOT}/.build/third_party/googleapis/ "${repo_path}"/.build/third_party/
+
+    sed -i "s/\${KIND}/${KIND}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/reconciler-case/*
+    sed -i "s/\${SERVICE}/${SERVICE}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/reconciler-case/*
+    sed -i "s/\${PROTO}/${PROTO}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/reconciler-case/*
+    sed -i "s/\${PACKAGE}/${PACKAGE}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/reconciler-case/*
+    cd "${repo_path}" || return 1
+
+}
+
 while IFS= read -r gcloud_line || [[ -n $gcloud_line ]] ; do
 
     if [[ "$gcloud_line" == "gcloud alpha "* ]]; then
@@ -146,10 +164,12 @@ while IFS= read -r gcloud_line || [[ -n $gcloud_line ]] ; do
 
     name="${gcloud_line#gcloud }"
     resource=$(echo "${name}"| tr ' ' '-')
-    
+    service="${resource%-*}"
+    possible_resource_name=$(echo "${resource#*-}" | tr '-' '')
+
     branch=mock-llm-${resource} # e.g. "gcloud spanner instance" uses branch "mock-llm-spanner-instance" 
     repo_path=${FEATURE_DIR}/${resource}
-    
+
     project_name=$(project_name "${resource}")
     # setup_gcp
     # if [[ $? -eq 1 ]]; then
@@ -168,15 +188,21 @@ while IFS= read -r gcloud_line || [[ -n $gcloud_line ]] ; do
     #     continue
     # fi
 
-    # TODO: workaround until the code is merged. 
-    llm_worker_path="dev/tools/controllerbuilder/tasks/llm-mock-worker"
-    cp ${UNCOMMIT_ROOT}/${llm_worker_path} "${repo_path}"/${llm_worker_path}
-    break
+    repo_path="/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/resource-datastream-Stream"
+    # TODO: temporary workaround. Safe to remove once the code is merged. 
+    llm_worker_path="dev/tools/controllerbuilder/tasks/llm-reconciler-worker"
+    workaround_to_use_uncommit_code
+    if [[ $? -eq 1 ]]; then
+        echo "switch git dir failed"
+        continue
+    fi 
 
+    # TODO maybe not use env var
     "${repo_path}"/${llm_worker_path}    
     if [[ $? -eq 1 ]]; then
         continue
     fi 
+    break
 
     # TODO cleanup
 

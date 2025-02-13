@@ -1,0 +1,17 @@
+I'm writing go code to improve existing functions. You should help me to fix the imports if possible.
+
+
+The go file I want you to fix is `pkg/controller/direct/${SERVICE}/${PROTO}_controller.go`
+
+Some hints:
+- The import package that is named `${SERVICE}pb` is the proto API, it should come from "cloud.google.com/go" that matches ${PROTO}.
+- The import that has a shortname `gcp` is the proto server, it should come from  "cloud.google.com/go" that matches ${PROTO} that matches ${PACKAGE}.
+
+Once you are done, print the message in Json format
+
+{"status": "success"}
+
+
+If you print {"status": "success"}, you can move forward, otherwise stop. 
+I want you to run `go build pkg/controller/direct/${SERVICE}/`, if it gives `go build` error. Try to fix it. 
+
