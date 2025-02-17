@@ -1,0 +1,2539 @@
+gcloud access-context-manager authorized-orgs
+gcloud access-context-manager cloud-bindings
+gcloud access-context-manager levels
+gcloud access-context-manager perimeters
+gcloud access-context-manager perimeters dry-run
+gcloud access-context-manager policies
+gcloud access-context-manager supported-services
+gcloud active-directory domains backups
+gcloud active-directory domains
+gcloud active-directory operations
+gcloud active-directory peerings
+gcloud ai custom-jobs
+gcloud ai endpoints
+gcloud ai hp-tuning-jobs
+gcloud ai index-endpoints
+gcloud ai indexes
+gcloud ai model-monitoring-jobs
+gcloud ai models
+gcloud ai operations
+gcloud ai persistent-resources
+gcloud ai tensorboards
+gcloud ai-platform jobs
+gcloud ai-platform models
+gcloud ai-platform operations
+gcloud ai-platform versions
+gcloud alloydb backups
+gcloud alloydb clusters
+gcloud alloydb instances
+gcloud alloydb operations
+gcloud anthos config controller
+gcloud anthos config operations
+gcloud api-gateway api-configs
+gcloud api-gateway apis
+gcloud api-gateway gateways
+gcloud api-gateway operations
+gcloud apigee apis
+gcloud apigee applications
+gcloud apigee deployments
+gcloud apigee developers
+gcloud apigee products
+gcloud app
+gcloud app domain-mappings
+gcloud app firewall-rules
+gcloud app instances
+gcloud app operations
+gcloud app services
+gcloud app ssl-certificates
+gcloud app versions
+gcloud apphub applications
+gcloud apphub applications services
+gcloud apphub applications workloads
+gcloud apphub discovered-services
+gcloud apphub discovered-workloads
+gcloud apphub locations
+gcloud apphub operations
+gcloud apphub service-projects
+gcloud artifacts docker images
+gcloud artifacts files
+gcloud artifacts operations
+gcloud artifacts packages
+gcloud artifacts repositories
+gcloud artifacts rules
+gcloud artifacts settings
+gcloud artifacts versions
+gcloud artifacts vpcsc-config
+gcloud asset feeds
+gcloud asset operations
+gcloud asset saved-queries
+gcloud assured operations
+gcloud assured workloads
+gcloud assured workloads violations
+gcloud audit-manager operations
+gcloud backup-dr backup-plan-associations
+gcloud backup-dr backup-plans
+gcloud backup-dr backup-vaults
+gcloud backup-dr backups
+gcloud backup-dr data-sources
+gcloud backup-dr management-servers
+gcloud backup-dr operations
+gcloud batch jobs
+gcloud batch tasks
+gcloud bigtable app-profiles
+gcloud bigtable authorized-views
+gcloud bigtable backups
+gcloud bigtable clusters
+gcloud bigtable instances
+gcloud bigtable instances tables
+gcloud bigtable operations
+gcloud bigtable tables
+gcloud billing accounts
+gcloud billing budgets
+gcloud billing projects
+gcloud bms instances
+gcloud bms networks
+gcloud bms nfs-shares
+gcloud bms operations
+gcloud bms os-images
+gcloud bms volumes
+gcloud bms volumes luns
+gcloud bms volumes snapshots
+gcloud builds connections
+gcloud builds
+gcloud builds repositories
+gcloud builds triggers
+gcloud builds worker-pools
+gcloud certificate-manager certificates
+gcloud certificate-manager dns-authorizations
+gcloud certificate-manager issuance-configs
+gcloud certificate-manager maps
+gcloud certificate-manager maps entries
+gcloud certificate-manager operations
+gcloud certificate-manager trust-configs
+gcloud colab executions
+gcloud colab runtime-templates
+gcloud colab runtimes
+gcloud colab schedules
+gcloud composer environments
+gcloud composer environments user-workloads-config-maps
+gcloud composer environments user-workloads-secrets
+gcloud composer operations
+gcloud compute accelerator-types
+gcloud compute addresses
+gcloud compute backend-buckets
+gcloud compute backend-services
+gcloud compute commitments
+gcloud compute disk-types
+gcloud compute disks
+gcloud compute external-vpn-gateways
+gcloud compute firewall-policies
+gcloud compute firewall-policies rules
+gcloud compute firewall-rules
+gcloud compute forwarding-rules
+gcloud compute health-checks
+gcloud compute http-health-checks
+gcloud compute https-health-checks
+gcloud compute images
+gcloud compute instance-groups
+gcloud compute instance-groups managed
+gcloud compute instance-groups managed resize-requests
+gcloud compute instance-groups unmanaged
+gcloud compute instance-templates
+gcloud compute instances
+gcloud compute instances ops-agents policies
+gcloud compute instances os-inventory
+gcloud compute instant-snapshots
+gcloud compute interconnects attachments
+gcloud compute interconnects
+gcloud compute interconnects locations
+gcloud compute interconnects remote-locations
+gcloud compute machine-images
+gcloud compute machine-types
+gcloud compute network-attachments
+gcloud compute network-edge-security-services
+gcloud compute network-endpoint-groups
+gcloud compute network-firewall-policies
+gcloud compute network-firewall-policies rules
+gcloud compute network-profiles
+gcloud compute networks
+gcloud compute networks subnets
+gcloud compute networks vpc-access connectors
+gcloud compute networks vpc-access operations
+gcloud compute operations
+gcloud compute os-config inventories
+gcloud compute os-config os-policy-assignment-reports
+gcloud compute os-config os-policy-assignments
+gcloud compute os-config os-policy-assignments operations
+gcloud compute os-config patch-deployments
+gcloud compute os-config patch-jobs
+gcloud compute os-config project-feature-settings
+gcloud compute os-config vulnerability-reports
+gcloud compute os-login ssh-keys
+gcloud compute packet-mirrorings
+gcloud compute project-info
+gcloud compute project-zonal-metadata
+gcloud compute public-advertised-prefixes
+gcloud compute public-delegated-prefixes
+gcloud compute regions
+gcloud compute reservations
+gcloud compute resource-policies
+gcloud compute routers
+gcloud compute routers nats
+gcloud compute routers nats rules
+gcloud compute routes
+gcloud compute security-policies
+gcloud compute security-policies rules
+gcloud compute service-attachments
+gcloud compute snapshot-settings
+gcloud compute snapshots
+gcloud compute sole-tenancy node-groups
+gcloud compute sole-tenancy node-templates
+gcloud compute sole-tenancy node-types
+gcloud compute ssl-certificates
+gcloud compute ssl-policies
+gcloud compute storage-pool-types
+gcloud compute storage-pools
+gcloud compute target-grpc-proxies
+gcloud compute target-http-proxies
+gcloud compute target-https-proxies
+gcloud compute target-instances
+gcloud compute target-pools
+gcloud compute target-ssl-proxies
+gcloud compute target-tcp-proxies
+gcloud compute target-vpn-gateways
+gcloud compute tpus accelerator-types
+gcloud compute tpus
+gcloud compute tpus execution-groups
+gcloud compute tpus locations
+gcloud compute tpus queued-resources
+gcloud compute tpus tpu-vm accelerator-types
+gcloud compute tpus tpu-vm
+gcloud compute tpus tpu-vm versions
+gcloud compute tpus versions
+gcloud compute url-maps
+gcloud compute vpn-gateways
+gcloud compute vpn-tunnels
+gcloud compute zones
+gcloud config configurations
+gcloud container attached clusters
+gcloud container attached operations
+gcloud container aws clusters
+gcloud container aws node-pools
+gcloud container aws operations
+gcloud container azure clients
+gcloud container azure clusters
+gcloud container azure node-pools
+gcloud container azure operations
+gcloud container bare-metal admin-clusters
+gcloud container bare-metal clusters
+gcloud container bare-metal node-pools
+gcloud container bare-metal operations
+gcloud container binauthz attestors
+gcloud container clusters
+gcloud container fleet cloudrun
+gcloud container fleet clusterupgrade
+gcloud container fleet dataplane-v2-encryption
+gcloud container fleet
+gcloud container fleet fleetobservability
+gcloud container fleet identity-service
+gcloud container fleet ingress
+gcloud container fleet memberships bindings
+gcloud container fleet memberships
+gcloud container fleet memberships support-access
+gcloud container fleet mesh
+gcloud container fleet multi-cluster-services
+gcloud container fleet operations
+gcloud container fleet policycontroller
+gcloud container fleet scopes
+gcloud container fleet scopes namespaces
+gcloud container fleet scopes rbacrolebindings
+gcloud container hub cloudrun
+gcloud container hub clusterupgrade
+gcloud container hub dataplane-v2-encryption
+gcloud container hub
+gcloud container hub fleetobservability
+gcloud container hub identity-service
+gcloud container hub ingress
+gcloud container hub memberships bindings
+gcloud container hub memberships
+gcloud container hub memberships support-access
+gcloud container hub mesh
+gcloud container hub multi-cluster-services
+gcloud container hub operations
+gcloud container hub policycontroller
+gcloud container hub scopes
+gcloud container hub scopes namespaces
+gcloud container hub scopes rbacrolebindings
+gcloud container images
+gcloud container node-pools
+gcloud container operations
+gcloud container vmware admin-clusters
+gcloud container vmware clusters
+gcloud container vmware node-pools
+gcloud container vmware operations
+gcloud data-catalog entries
+gcloud data-catalog entry-groups
+gcloud data-catalog tag-templates
+gcloud data-catalog taxonomies
+gcloud data-catalog taxonomies policy-tags
+gcloud database-migration connection-profiles
+gcloud database-migration conversion-workspaces
+gcloud database-migration migration-jobs
+gcloud database-migration operations
+gcloud database-migration private-connections
+gcloud dataflow jobs
+gcloud dataflow snapshots
+gcloud dataplex aspect-types
+gcloud dataplex assets
+gcloud dataplex content
+gcloud dataplex datascans
+gcloud dataplex datascans jobs
+gcloud dataplex entries
+gcloud dataplex entry-groups
+gcloud dataplex entry-types
+gcloud dataplex environments
+gcloud dataplex lakes
+gcloud dataplex tasks
+gcloud dataplex tasks jobs
+gcloud dataplex zones
+gcloud dataproc autoscaling-policies
+gcloud dataproc batches
+gcloud dataproc clusters
+gcloud dataproc jobs
+gcloud dataproc node-groups
+gcloud dataproc operations
+gcloud dataproc workflow-templates
+gcloud datastore indexes
+gcloud datastore operations
+gcloud datastream connection-profiles
+gcloud datastream locations
+gcloud datastream objects
+gcloud datastream operations
+gcloud datastream private-connections
+gcloud datastream routes
+gcloud datastream streams
+gcloud deploy automation-runs
+gcloud deploy automations
+gcloud deploy custom-target-types
+gcloud deploy delivery-pipelines
+gcloud deploy deploy-policies
+gcloud deploy job-runs
+gcloud deploy releases
+gcloud deploy rollouts
+gcloud deploy targets
+gcloud deployment-manager deployments
+gcloud deployment-manager manifests
+gcloud deployment-manager operations
+gcloud deployment-manager resources
+gcloud developer-connect connections
+gcloud developer-connect connections git-repository-links
+gcloud developer-connect operations
+gcloud dns dns-keys
+gcloud dns managed-zones
+gcloud dns operations
+gcloud dns policies
+gcloud dns project-info
+gcloud dns record-sets changes
+gcloud dns record-sets
+gcloud dns record-sets transaction
+gcloud dns response-policies
+gcloud dns response-policies rules
+gcloud domains registrations
+gcloud domains registrations operations
+gcloud edge-cache keysets
+gcloud edge-cache operations
+gcloud edge-cache origins
+gcloud edge-cache services
+gcloud edge-cloud container clusters
+gcloud edge-cloud container clusters node-pools
+gcloud edge-cloud container machines
+gcloud edge-cloud container operations
+gcloud edge-cloud container regions
+gcloud edge-cloud container vpn-connections
+gcloud edge-cloud container zones
+gcloud edge-cloud networking interconnects attachments
+gcloud edge-cloud networking interconnects
+gcloud edge-cloud networking networks
+gcloud edge-cloud networking operations
+gcloud edge-cloud networking routers
+gcloud edge-cloud networking subnets
+gcloud endpoints configs
+gcloud endpoints operations
+gcloud endpoints services
+gcloud essential-contacts
+gcloud eventarc channel-connections
+gcloud eventarc channels
+gcloud eventarc google-channels
+gcloud eventarc providers
+gcloud eventarc triggers
+gcloud filestore backups
+gcloud filestore instances
+gcloud filestore instances snapshots
+gcloud filestore locations
+gcloud filestore operations
+gcloud firebase test android locales
+gcloud firebase test android models
+gcloud firebase test android versions
+gcloud firebase test ios locales
+gcloud firebase test ios models
+gcloud firebase test ios versions
+gcloud firebase test network-profiles
+gcloud firestore backups
+gcloud firestore backups schedules
+gcloud firestore databases
+gcloud firestore indexes composite
+gcloud firestore indexes fields
+gcloud firestore operations
+gcloud functions
+gcloud gemini code-repository-indexes
+gcloud gemini code-repository-indexes repository-groups
+gcloud gemini operations
+gcloud healthcare consent-stores
+gcloud healthcare datasets
+gcloud healthcare dicom-stores
+gcloud healthcare fhir-stores
+gcloud healthcare hl7v2-stores
+gcloud healthcare operations
+gcloud iam oauth-clients credentials
+gcloud iam oauth-clients
+gcloud iam policy-bindings
+gcloud iam principal-access-boundary-policies
+gcloud iam roles
+gcloud iam service-accounts
+gcloud iam workforce-pools
+gcloud iam workforce-pools operations
+gcloud iam workforce-pools providers
+gcloud iam workforce-pools providers keys
+gcloud iam workforce-pools providers keys operations
+gcloud iam workforce-pools providers operations
+gcloud iam workforce-pools subjects operations
+gcloud iam workload-identity-pools
+gcloud iam workload-identity-pools operations
+gcloud iam workload-identity-pools providers
+gcloud iam workload-identity-pools providers keys
+gcloud iam workload-identity-pools providers keys operations
+gcloud iam workload-identity-pools providers operations
+gcloud iap oauth-brands
+gcloud iap oauth-clients
+gcloud iap tcp dest-groups
+gcloud identity groups
+gcloud identity groups memberships
+gcloud ids endpoints
+gcloud immersive-stream xr contents
+gcloud immersive-stream xr instances
+gcloud immersive-stream xr operations
+gcloud infra-manager deployments
+gcloud infra-manager previews
+gcloud infra-manager resources
+gcloud infra-manager revisions
+gcloud infra-manager terraform-versions
+gcloud kms ekm-config
+gcloud kms ekm-connections
+gcloud kms import-jobs
+gcloud kms keyrings
+gcloud kms keys
+gcloud kms keys versions
+gcloud logging buckets
+gcloud logging links
+gcloud logging locations
+gcloud logging metrics
+gcloud logging operations
+gcloud logging scopes
+gcloud logging settings
+gcloud logging sinks
+gcloud logging views
+gcloud looker instances
+gcloud looker operations
+gcloud managed-kafka clusters
+gcloud managed-kafka consumer-groups
+gcloud managed-kafka topics
+gcloud memcache instances
+gcloud memcache operations
+gcloud memcache regions
+gcloud memorystore instances
+gcloud memorystore operations
+gcloud metastore federations
+gcloud metastore locations
+gcloud metastore operations
+gcloud metastore services backups
+gcloud metastore services
+gcloud migration vms image-imports
+gcloud migration vms machine-image-imports
+gcloud ml speech operations
+gcloud ml video operations
+gcloud ml-engine jobs
+gcloud ml-engine models
+gcloud ml-engine operations
+gcloud ml-engine versions
+gcloud monitoring dashboards
+gcloud monitoring snoozes
+gcloud monitoring uptime
+gcloud netapp active-directories
+gcloud netapp backup-policies
+gcloud netapp backup-vaults backups
+gcloud netapp backup-vaults
+gcloud netapp kms-configs
+gcloud netapp locations
+gcloud netapp operations
+gcloud netapp storage-pools
+gcloud netapp volumes
+gcloud netapp volumes quota-rules
+gcloud netapp volumes replications
+gcloud netapp volumes snapshots
+gcloud network-connectivity hubs
+gcloud network-connectivity hubs groups
+gcloud network-connectivity hubs route-tables
+gcloud network-connectivity hubs route-tables routes
+gcloud network-connectivity internal-ranges
+gcloud network-connectivity locations
+gcloud network-connectivity operations
+gcloud network-connectivity policy-based-routes
+gcloud network-connectivity regional-endpoints
+gcloud network-connectivity service-connection-policies
+gcloud network-connectivity spokes
+gcloud network-management connectivity-tests
+gcloud network-management operations
+gcloud network-management vpc-flow-logs-configs
+gcloud network-security address-groups
+gcloud network-security firewall-endpoint-associations
+gcloud network-security firewall-endpoints
+gcloud network-security org-address-groups
+gcloud network-security security-profile-groups
+gcloud network-security server-tls-policies
+gcloud network-services endpoint-policies
+gcloud network-services gateways
+gcloud network-services grpc-routes
+gcloud network-services http-routes
+gcloud network-services meshes
+gcloud network-services route-views
+gcloud network-services service-bindings
+gcloud network-services service-lb-policies
+gcloud network-services tcp-routes
+gcloud network-services tls-routes
+gcloud notebooks environments
+gcloud notebooks instances
+gcloud notebooks runtimes
+gcloud oracle-database autonomous-databases
+gcloud oracle-database cloud-exadata-infrastructures
+gcloud oracle-database cloud-vm-clusters
+gcloud oracle-database operations
+gcloud org-policies
+gcloud organizations
+gcloud pam entitlements
+gcloud pam grants
+gcloud pam operations
+gcloud preview config configurations
+gcloud privateca certificates
+gcloud privateca pools
+gcloud privateca roots
+gcloud privateca subordinates
+gcloud privateca templates
+gcloud projects
+gcloud pubsub lite-operations
+gcloud pubsub lite-reservations
+gcloud pubsub lite-subscriptions
+gcloud pubsub lite-topics
+gcloud pubsub schemas
+gcloud pubsub snapshots
+gcloud pubsub subscriptions
+gcloud pubsub topics
+gcloud recaptcha firewall-policies
+gcloud recaptcha keys
+gcloud recommender insight-type-config
+gcloud recommender insights
+gcloud recommender recommendations
+gcloud recommender recommender-config
+gcloud redis clusters
+gcloud redis instances
+gcloud redis operations
+gcloud redis regions
+gcloud resource-manager folders
+gcloud resource-manager org-policies
+gcloud resource-manager tags keys
+gcloud resource-manager tags values
+gcloud run domain-mappings
+gcloud run jobs
+gcloud run jobs executions
+gcloud run jobs executions tasks
+gcloud run revisions
+gcloud run services
+gcloud scc assets
+gcloud scc iac-validation-reports
+gcloud scc manage custom-modules etd
+gcloud scc manage custom-modules sha
+gcloud scc manage services
+gcloud scc notifications
+gcloud scc operations
+gcloud scc posture-deployments
+gcloud scc posture-operations
+gcloud scc posture-templates
+gcloud scc postures
+gcloud scc sources
+gcloud scheduler jobs
+gcloud scheduler locations
+gcloud secrets
+gcloud secrets locations
+gcloud secrets versions
+gcloud service-directory endpoints
+gcloud service-directory locations
+gcloud service-directory namespaces
+gcloud service-directory services
+gcloud service-extensions lb-route-extensions
+gcloud service-extensions lb-traffic-extensions
+gcloud services api-keys
+gcloud services operations
+gcloud services vpc-peerings operations
+gcloud source project-configs
+gcloud source repos
+gcloud spanner backup-schedules
+gcloud spanner backups
+gcloud spanner databases ddl
+gcloud spanner databases
+gcloud spanner instance-configs
+gcloud spanner instances
+gcloud spanner operations
+gcloud sql backups
+gcloud sql databases
+gcloud sql instances
+gcloud sql operations
+gcloud sql ssl client-certs
+gcloud sql ssl-certs
+gcloud sql users
+gcloud storage buckets
+gcloud storage buckets notifications
+gcloud storage folders
+gcloud storage hmac
+gcloud storage insights inventory-reports
+gcloud storage insights inventory-reports details
+gcloud storage managed-folders
+gcloud storage objects
+gcloud storage operations
+gcloud tasks cmek-config
+gcloud tasks
+gcloud tasks locations
+gcloud tasks queues
+gcloud telco-automation operations
+gcloud telco-automation orchestration-cluster
+gcloud transcoder jobs
+gcloud transcoder templates
+gcloud transfer agent-pools
+gcloud transfer jobs
+gcloud transfer operations
+gcloud vmware dns-bind-permission
+gcloud vmware network-peerings
+gcloud vmware network-policies
+gcloud vmware network-policies external-access-rules
+gcloud vmware networks
+gcloud vmware node-types
+gcloud vmware operations
+gcloud vmware private-clouds clusters
+gcloud vmware private-clouds clusters nodes
+gcloud vmware private-clouds
+gcloud vmware private-clouds dns-forwarding
+gcloud vmware private-clouds external-addresses
+gcloud vmware private-clouds hcx activationkeys
+gcloud vmware private-clouds logging-servers
+gcloud vmware private-clouds management-dns-zone-bindings
+gcloud vmware private-clouds nsx credentials
+gcloud vmware private-clouds subnets
+gcloud vmware private-clouds vcenter credentials
+gcloud vmware private-connections
+gcloud workbench instances
+gcloud workflows
+gcloud workflows executions
+gcloud workspace-add-ons deployments
+gcloud workstations clusters
+gcloud workstations configs
+gcloud workstations
+gcloud access-context-manager authorized-orgs
+gcloud access-context-manager cloud-bindings
+gcloud access-context-manager levels
+gcloud access-context-manager perimeters
+gcloud access-context-manager perimeters dry-run
+gcloud access-context-manager policies
+gcloud access-context-manager supported-services
+gcloud active-directory domains backups
+gcloud active-directory domains
+gcloud active-directory operations
+gcloud active-directory peerings
+gcloud ai custom-jobs
+gcloud ai endpoints
+gcloud ai hp-tuning-jobs
+gcloud ai index-endpoints
+gcloud ai indexes
+gcloud ai model-monitoring-jobs
+gcloud ai models
+gcloud ai operations
+gcloud ai persistent-resources
+gcloud ai tensorboards
+gcloud ai-platform jobs
+gcloud ai-platform models
+gcloud ai-platform operations
+gcloud ai-platform versions
+gcloud alloydb backups
+gcloud alloydb clusters
+gcloud alloydb instances
+gcloud alloydb operations
+gcloud alpha access-context-manager authorized-orgs
+gcloud alpha access-context-manager cloud-bindings
+gcloud alpha access-context-manager levels
+gcloud alpha access-context-manager perimeters
+gcloud alpha access-context-manager perimeters dry-run
+gcloud alpha access-context-manager policies
+gcloud alpha access-context-manager supported-services
+gcloud alpha active-directory domains backups
+gcloud alpha active-directory domains
+gcloud alpha active-directory domains sql-integrations
+gcloud alpha active-directory operations
+gcloud alpha active-directory peerings
+gcloud alpha ai custom-jobs
+gcloud alpha ai endpoints
+gcloud alpha ai hp-tuning-jobs
+gcloud alpha ai index-endpoints
+gcloud alpha ai indexes
+gcloud alpha ai model-monitoring-jobs
+gcloud alpha ai models
+gcloud alpha ai operations
+gcloud alpha ai persistent-resources
+gcloud alpha ai tensorboard-experiments
+gcloud alpha ai tensorboard-runs
+gcloud alpha ai tensorboard-time-series
+gcloud alpha ai tensorboards
+gcloud alpha ai-platform jobs
+gcloud alpha ai-platform locations
+gcloud alpha ai-platform models
+gcloud alpha ai-platform operations
+gcloud alpha ai-platform versions
+gcloud alpha alloydb backups
+gcloud alpha alloydb clusters
+gcloud alpha alloydb instances
+gcloud alpha alloydb operations
+gcloud alpha anthos config controller
+gcloud alpha anthos config operations
+gcloud alpha anthos config sync repo
+gcloud alpha api-gateway api-configs
+gcloud alpha api-gateway apis
+gcloud alpha api-gateway gateways
+gcloud alpha api-gateway operations
+gcloud alpha apigee apis
+gcloud alpha apigee applications
+gcloud alpha apigee archives
+gcloud alpha apigee deployments
+gcloud alpha apigee developers
+gcloud alpha apigee environments
+gcloud alpha apigee operations
+gcloud alpha apigee products
+gcloud alpha app domain-mappings
+gcloud alpha app ssl-certificates
+gcloud alpha apphub applications
+gcloud alpha apphub applications services
+gcloud alpha apphub applications workloads
+gcloud alpha apphub discovered-services
+gcloud alpha apphub discovered-workloads
+gcloud alpha apphub locations
+gcloud alpha apphub operations
+gcloud alpha apphub service-projects
+gcloud alpha artifacts docker images
+gcloud alpha artifacts operations
+gcloud alpha artifacts repositories
+gcloud alpha artifacts settings
+gcloud alpha artifacts vpcsc-config
+gcloud alpha asset feeds
+gcloud alpha asset operations
+gcloud alpha asset saved-queries
+gcloud alpha assured operations
+gcloud alpha assured workloads
+gcloud alpha assured workloads violations
+gcloud alpha audit-manager operations
+gcloud alpha backup-dr backup-plan-associations
+gcloud alpha backup-dr backup-plans
+gcloud alpha backup-dr backup-vaults
+gcloud alpha backup-dr backups
+gcloud alpha backup-dr data-sources
+gcloud alpha backup-dr management-servers
+gcloud alpha backup-dr operations
+gcloud alpha batch jobs
+gcloud alpha batch resource-allowances
+gcloud alpha batch tasks
+gcloud alpha beyondcorp app connections
+gcloud alpha beyondcorp app connectors
+gcloud alpha beyondcorp app operations
+gcloud alpha bigtable app-profiles
+gcloud alpha bigtable authorized-views
+gcloud alpha bigtable backups
+gcloud alpha bigtable clusters
+gcloud alpha bigtable instances
+gcloud alpha bigtable instances tables
+gcloud alpha bigtable operations
+gcloud alpha bigtable tables
+gcloud alpha billing accounts
+gcloud alpha billing accounts projects
+gcloud alpha billing budgets
+gcloud alpha billing projects
+gcloud alpha blockchain-node-engine locations
+gcloud alpha blockchain-node-engine nodes
+gcloud alpha blockchain-node-engine operations
+gcloud alpha blockchain-validator blockchain-validator-configs
+gcloud alpha blockchain-validator operations
+gcloud alpha bms instances
+gcloud alpha bms networks
+gcloud alpha bms nfs-shares
+gcloud alpha bms os-images
+gcloud alpha bms volumes
+gcloud alpha bms volumes luns
+gcloud alpha bms volumes snapshots
+gcloud alpha bq datasets
+gcloud alpha bq jobs
+gcloud alpha bq tables
+gcloud alpha builds connections
+gcloud alpha builds
+gcloud alpha builds enterprise-config bitbucketserver
+gcloud alpha builds enterprise-config github
+gcloud alpha builds enterprise-config gitlab
+gcloud alpha builds repositories
+gcloud alpha builds triggers
+gcloud alpha builds worker-pools
+gcloud alpha certificate-manager certificates
+gcloud alpha certificate-manager dns-authorizations
+gcloud alpha certificate-manager issuance-configs
+gcloud alpha certificate-manager maps
+gcloud alpha certificate-manager maps entries
+gcloud alpha certificate-manager operations
+gcloud alpha certificate-manager trust-configs
+gcloud alpha composer environments
+gcloud alpha composer environments user-workloads-config-maps
+gcloud alpha composer environments user-workloads-secrets
+gcloud alpha composer operations
+gcloud alpha compute accelerator-types
+gcloud alpha compute addresses
+gcloud alpha compute backend-buckets
+gcloud alpha compute backend-services
+gcloud alpha compute commitments
+gcloud alpha compute disk-types
+gcloud alpha compute disks
+gcloud alpha compute external-vpn-gateways
+gcloud alpha compute firewall-policies
+gcloud alpha compute firewall-policies mirroring-rules
+gcloud alpha compute firewall-policies rules
+gcloud alpha compute firewall-rules
+gcloud alpha compute forwarding-rules
+gcloud alpha compute future-reservations
+gcloud alpha compute health-checks
+gcloud alpha compute http-health-checks
+gcloud alpha compute https-health-checks
+gcloud alpha compute images
+gcloud alpha compute instance-groups
+gcloud alpha compute instance-groups managed
+gcloud alpha compute instance-groups managed resize-requests
+gcloud alpha compute instance-groups unmanaged
+gcloud alpha compute instance-templates
+gcloud alpha compute instances
+gcloud alpha compute instances ops-agents policies
+gcloud alpha compute instances os-inventory
+gcloud alpha compute instant-snapshots
+gcloud alpha compute interconnects attachments
+gcloud alpha compute interconnects attachments groups
+gcloud alpha compute interconnects cross-site-networks
+gcloud alpha compute interconnects
+gcloud alpha compute interconnects groups
+gcloud alpha compute interconnects locations
+gcloud alpha compute interconnects remote-locations
+gcloud alpha compute interconnects wire-groups
+gcloud alpha compute machine-images
+gcloud alpha compute machine-types
+gcloud alpha compute network-attachments
+gcloud alpha compute network-edge-security-services
+gcloud alpha compute network-endpoint-groups
+gcloud alpha compute network-firewall-policies
+gcloud alpha compute network-firewall-policies mirroring-rules
+gcloud alpha compute network-firewall-policies rules
+gcloud alpha compute network-profiles
+gcloud alpha compute networks
+gcloud alpha compute networks subnets
+gcloud alpha compute operations
+gcloud alpha compute org-security-policies
+gcloud alpha compute org-security-policies rules
+gcloud alpha compute os-config instance-os-policies-compliances
+gcloud alpha compute os-config inventories
+gcloud alpha compute os-config os-policy-assignment-reports
+gcloud alpha compute os-config os-policy-assignments
+gcloud alpha compute os-config os-policy-assignments operations
+gcloud alpha compute os-config policy-orchestrators
+gcloud alpha compute os-config vulnerability-reports
+gcloud alpha compute os-login ssh-keys
+gcloud alpha compute packet-mirrorings
+gcloud alpha compute project-info
+gcloud alpha compute project-zonal-metadata
+gcloud alpha compute public-advertised-prefixes
+gcloud alpha compute public-delegated-prefixes
+gcloud alpha compute queued-resources
+gcloud alpha compute regions
+gcloud alpha compute reservations blocks
+gcloud alpha compute reservations
+gcloud alpha compute resource-policies
+gcloud alpha compute routers
+gcloud alpha compute routers nats
+gcloud alpha compute routers nats rules
+gcloud alpha compute routes
+gcloud alpha compute security-policies
+gcloud alpha compute security-policies rules
+gcloud alpha compute service-attachments
+gcloud alpha compute snapshot-settings
+gcloud alpha compute snapshots
+gcloud alpha compute sole-tenancy node-groups
+gcloud alpha compute sole-tenancy node-templates
+gcloud alpha compute sole-tenancy node-types
+gcloud alpha compute ssl-certificates
+gcloud alpha compute ssl-policies
+gcloud alpha compute storage-pool-types
+gcloud alpha compute storage-pools
+gcloud alpha compute target-grpc-proxies
+gcloud alpha compute target-http-proxies
+gcloud alpha compute target-https-proxies
+gcloud alpha compute target-instances
+gcloud alpha compute target-pools
+gcloud alpha compute target-ssl-proxies
+gcloud alpha compute target-tcp-proxies
+gcloud alpha compute target-vpn-gateways
+gcloud alpha compute tpus accelerator-types
+gcloud alpha compute tpus
+gcloud alpha compute tpus execution-groups
+gcloud alpha compute tpus locations
+gcloud alpha compute tpus queued-resources
+gcloud alpha compute tpus tpu-vm accelerator-types
+gcloud alpha compute tpus tpu-vm
+gcloud alpha compute tpus tpu-vm versions
+gcloud alpha compute tpus versions
+gcloud alpha compute url-maps
+gcloud alpha compute vpn-gateways
+gcloud alpha compute vpn-tunnels
+gcloud alpha compute zones
+gcloud alpha config configurations
+gcloud alpha container attached clusters
+gcloud alpha container attached operations
+gcloud alpha container aws clusters
+gcloud alpha container aws node-pools
+gcloud alpha container aws operations
+gcloud alpha container azure clients
+gcloud alpha container azure clusters
+gcloud alpha container azure node-pools
+gcloud alpha container azure operations
+gcloud alpha container backup-restore backup-plans
+gcloud alpha container backup-restore backups
+gcloud alpha container backup-restore locations
+gcloud alpha container backup-restore restore-plans
+gcloud alpha container backup-restore restores
+gcloud alpha container backup-restore volume-backups
+gcloud alpha container backup-restore volume-restores
+gcloud alpha container bare-metal admin-clusters
+gcloud alpha container bare-metal clusters
+gcloud alpha container bare-metal node-pools
+gcloud alpha container bare-metal operations
+gcloud alpha container bare-metal standalone-clusters
+gcloud alpha container binauthz attestors
+gcloud alpha container binauthz continuous-validation
+gcloud alpha container binauthz policy
+gcloud alpha container clusters
+gcloud alpha container fleet cloudrun
+gcloud alpha container fleet clusterupgrade
+gcloud alpha container fleet dataplane-v2-encryption
+gcloud alpha container fleet
+gcloud alpha container fleet fleetobservability
+gcloud alpha container fleet identity-service
+gcloud alpha container fleet ingress
+gcloud alpha container fleet memberships bindings
+gcloud alpha container fleet memberships
+gcloud alpha container fleet memberships support-access
+gcloud alpha container fleet mesh
+gcloud alpha container fleet multi-cluster-services
+gcloud alpha container fleet namespaceactuation
+gcloud alpha container fleet operations
+gcloud alpha container fleet packages
+gcloud alpha container fleet packages resource-bundles
+gcloud alpha container fleet packages resource-bundles releases
+gcloud alpha container fleet packages rollouts
+gcloud alpha container fleet policycontroller
+gcloud alpha container fleet scopes
+gcloud alpha container fleet scopes namespaces
+gcloud alpha container fleet scopes rbacrolebindings
+gcloud alpha container fleet service-directory
+gcloud alpha container hub cloudrun
+gcloud alpha container hub clusterupgrade
+gcloud alpha container hub dataplane-v2-encryption
+gcloud alpha container hub
+gcloud alpha container hub fleetobservability
+gcloud alpha container hub identity-service
+gcloud alpha container hub ingress
+gcloud alpha container hub memberships bindings
+gcloud alpha container hub memberships
+gcloud alpha container hub memberships support-access
+gcloud alpha container hub mesh
+gcloud alpha container hub multi-cluster-services
+gcloud alpha container hub namespaceactuation
+gcloud alpha container hub operations
+gcloud alpha container hub packages
+gcloud alpha container hub packages resource-bundles
+gcloud alpha container hub packages resource-bundles releases
+gcloud alpha container hub packages rollouts
+gcloud alpha container hub policycontroller
+gcloud alpha container hub scopes
+gcloud alpha container hub scopes namespaces
+gcloud alpha container hub scopes rbacrolebindings
+gcloud alpha container hub service-directory
+gcloud alpha container images
+gcloud alpha container node-pools
+gcloud alpha container operations
+gcloud alpha container vmware admin-clusters
+gcloud alpha container vmware clusters
+gcloud alpha container vmware node-pools
+gcloud alpha container vmware operations
+gcloud alpha data-catalog crawler-runs
+gcloud alpha data-catalog crawlers
+gcloud alpha data-catalog entries
+gcloud alpha data-catalog entry-groups
+gcloud alpha data-catalog tag-templates
+gcloud alpha data-catalog taxonomies
+gcloud alpha data-catalog taxonomies policy-tags
+gcloud alpha database-migration connection-profiles
+gcloud alpha database-migration migration-jobs
+gcloud alpha database-migration operations
+gcloud alpha dataflow snapshots
+gcloud alpha dataplex aspect-types
+gcloud alpha dataplex assets
+gcloud alpha dataplex content
+gcloud alpha dataplex data-attribute-bindings
+gcloud alpha dataplex data-taxonomies attributes
+gcloud alpha dataplex data-taxonomies
+gcloud alpha dataplex datascans
+gcloud alpha dataplex datascans jobs
+gcloud alpha dataplex entries
+gcloud alpha dataplex entry-groups
+gcloud alpha dataplex entry-types
+gcloud alpha dataplex environments
+gcloud alpha dataplex lakes
+gcloud alpha dataplex tasks
+gcloud alpha dataplex tasks jobs
+gcloud alpha dataplex zones
+gcloud alpha dataproc autoscaling-policies
+gcloud alpha dataproc clusters
+gcloud alpha dataproc jobs
+gcloud alpha dataproc node-groups
+gcloud alpha dataproc operations
+gcloud alpha dataproc workflow-templates
+gcloud alpha datastore indexes
+gcloud alpha datastore operations
+gcloud alpha deploy automation-runs
+gcloud alpha deploy automations
+gcloud alpha deploy custom-target-types
+gcloud alpha deploy delivery-pipelines
+gcloud alpha deploy deploy-policies
+gcloud alpha deploy job-runs
+gcloud alpha deploy releases
+gcloud alpha deploy rollouts
+gcloud alpha deploy targets
+gcloud alpha deployment-manager deployments
+gcloud alpha deployment-manager manifests
+gcloud alpha deployment-manager operations
+gcloud alpha deployment-manager resources
+gcloud alpha deployment-manager type-providers
+gcloud alpha deployment-manager types
+gcloud alpha developer-connect connections
+gcloud alpha developer-connect connections git-repository-links
+gcloud alpha developer-connect operations
+gcloud alpha dialogflow agent
+gcloud alpha dialogflow entity-types
+gcloud alpha dialogflow intents
+gcloud alpha dlp job-triggers
+gcloud alpha dlp jobs
+gcloud alpha dns dns-keys
+gcloud alpha dns managed-zones
+gcloud alpha dns operations
+gcloud alpha dns policies
+gcloud alpha dns project-info
+gcloud alpha dns record-sets changes
+gcloud alpha dns record-sets
+gcloud alpha dns record-sets transaction
+gcloud alpha dns response-policies
+gcloud alpha dns response-policies rules
+gcloud alpha domains registrations
+gcloud alpha domains registrations operations
+gcloud alpha edge-cache keysets
+gcloud alpha edge-cache operations
+gcloud alpha edge-cache origins
+gcloud alpha edge-cache services
+gcloud alpha edge-cloud container clusters
+gcloud alpha edge-cloud container clusters node-pools
+gcloud alpha edge-cloud container machines
+gcloud alpha edge-cloud container operations
+gcloud alpha edge-cloud container regions
+gcloud alpha edge-cloud container vpn-connections
+gcloud alpha edge-cloud container zones
+gcloud alpha edge-cloud networking interconnects attachments
+gcloud alpha edge-cloud networking interconnects
+gcloud alpha edge-cloud networking networks
+gcloud alpha edge-cloud networking operations
+gcloud alpha edge-cloud networking routers
+gcloud alpha edge-cloud networking subnets
+gcloud alpha endpoints configs
+gcloud alpha endpoints operations
+gcloud alpha endpoints services
+gcloud alpha essential-contacts
+gcloud alpha filestore backups
+gcloud alpha filestore instances
+gcloud alpha filestore locations
+gcloud alpha filestore operations
+gcloud alpha filestore snapshots
+gcloud alpha firebase test android locales
+gcloud alpha firebase test android models
+gcloud alpha firebase test android versions
+gcloud alpha firebase test ios locales
+gcloud alpha firebase test ios models
+gcloud alpha firebase test ios versions
+gcloud alpha firebase test network-profiles
+gcloud alpha firestore backups
+gcloud alpha firestore backups schedules
+gcloud alpha firestore databases
+gcloud alpha firestore indexes composite
+gcloud alpha firestore indexes fields
+gcloud alpha firestore locations
+gcloud alpha firestore operations
+gcloud alpha functions
+gcloud alpha genomics operations
+gcloud alpha healthcare annotation-stores
+gcloud alpha healthcare consent-stores
+gcloud alpha healthcare datasets
+gcloud alpha healthcare dicom-stores
+gcloud alpha healthcare fhir-stores
+gcloud alpha healthcare hl7v2-stores
+gcloud alpha healthcare operations
+gcloud alpha iam oauth-clients credentials
+gcloud alpha iam oauth-clients
+gcloud alpha iam roles
+gcloud alpha iam service-accounts
+gcloud alpha iam workforce-pools
+gcloud alpha iam workforce-pools operations
+gcloud alpha iam workforce-pools providers
+gcloud alpha iam workforce-pools providers keys
+gcloud alpha iam workforce-pools providers keys operations
+gcloud alpha iam workforce-pools providers operations
+gcloud alpha iam workload-identity-pools
+gcloud alpha iam workload-identity-pools operations
+gcloud alpha iam workload-identity-pools providers
+gcloud alpha iam workload-identity-pools providers operations
+gcloud alpha iap oauth-brands
+gcloud alpha iap oauth-clients
+gcloud alpha iap tcp dest-groups
+gcloud alpha identity groups
+gcloud alpha identity groups memberships
+gcloud alpha ids endpoints
+gcloud alpha ids operations
+gcloud alpha immersive-stream xr contents
+gcloud alpha immersive-stream xr instances
+gcloud alpha immersive-stream xr operations
+gcloud alpha kms autokey-config
+gcloud alpha kms ekm-config
+gcloud alpha kms ekm-connections
+gcloud alpha kms import-jobs
+gcloud alpha kms key-handles
+gcloud alpha kms keyrings
+gcloud alpha kms keys
+gcloud alpha kms keys versions
+gcloud alpha lifesciences locations
+gcloud alpha lifesciences operations
+gcloud alpha logging buckets
+gcloud alpha logging links
+gcloud alpha logging locations
+gcloud alpha logging metrics
+gcloud alpha logging operations
+gcloud alpha logging settings
+gcloud alpha logging sinks
+gcloud alpha logging views
+gcloud alpha looker instances
+gcloud alpha looker operations
+gcloud alpha managed-flink deployments
+gcloud alpha managed-flink jobs
+gcloud alpha managed-kafka clusters
+gcloud alpha managed-kafka consumer-groups
+gcloud alpha managed-kafka topics
+gcloud alpha memcache instances
+gcloud alpha memcache operations
+gcloud alpha memcache regions
+gcloud alpha memorystore instances
+gcloud alpha memorystore operations
+gcloud alpha metastore federations
+gcloud alpha metastore locations
+gcloud alpha metastore operations
+gcloud alpha metastore services backups
+gcloud alpha metastore services
+gcloud alpha metastore services imports
+gcloud alpha metastore services migrations
+gcloud alpha migration vms image-imports
+gcloud alpha migration vms machine-image-imports
+gcloud alpha ml speech operations
+gcloud alpha ml speech recognizers
+gcloud alpha ml video operations
+gcloud alpha ml vision operations
+gcloud alpha ml vision product-search images
+gcloud alpha ml vision product-search product-sets
+gcloud alpha ml vision product-search products
+gcloud alpha ml-engine jobs
+gcloud alpha ml-engine locations
+gcloud alpha ml-engine models
+gcloud alpha ml-engine operations
+gcloud alpha ml-engine versions
+gcloud alpha monitoring channel-descriptors
+gcloud alpha monitoring channels
+gcloud alpha monitoring dashboards
+gcloud alpha monitoring metrics-scopes
+gcloud alpha monitoring policies conditions
+gcloud alpha monitoring policies
+gcloud alpha monitoring snoozes
+gcloud alpha monitoring uptime
+gcloud alpha netapp active-directories
+gcloud alpha netapp locations
+gcloud alpha netapp operations
+gcloud alpha netapp storage-pools
+gcloud alpha netapp volumes
+gcloud alpha netapp volumes snapshots
+gcloud alpha network-connectivity hubs
+gcloud alpha network-connectivity internal-ranges
+gcloud alpha network-connectivity policy-based-routes
+gcloud alpha network-connectivity spokes
+gcloud alpha network-security address-groups
+gcloud alpha network-security firewall-endpoint-associations
+gcloud alpha network-security firewall-endpoints
+gcloud alpha network-security intercept-deployment-groups
+gcloud alpha network-security intercept-deployments
+gcloud alpha network-security intercept-endpoint-group-associations
+gcloud alpha network-security intercept-endpoint-groups
+gcloud alpha network-security mirroring-deployment-groups
+gcloud alpha network-security mirroring-deployments
+gcloud alpha network-security mirroring-endpoint-group-associations
+gcloud alpha network-security mirroring-endpoint-groups
+gcloud alpha network-security org-address-groups
+gcloud alpha network-security security-profile-groups
+gcloud alpha network-security security-profiles custom-intercept
+gcloud alpha network-security security-profiles custom-mirroring
+gcloud alpha network-security security-profiles
+gcloud alpha network-security server-tls-policies
+gcloud alpha network-services endpoint-policies
+gcloud alpha network-services gateways
+gcloud alpha network-services grpc-routes
+gcloud alpha network-services http-filters
+gcloud alpha network-services http-routes
+gcloud alpha network-services meshes
+gcloud alpha network-services multicast-consumer-associations
+gcloud alpha network-services multicast-domain-activations
+gcloud alpha network-services multicast-domain-groups
+gcloud alpha network-services multicast-domains
+gcloud alpha network-services multicast-group-consumer-activations
+gcloud alpha network-services multicast-group-definitions
+gcloud alpha network-services multicast-group-producer-activations
+gcloud alpha network-services multicast-group-range-activations
+gcloud alpha network-services multicast-group-ranges
+gcloud alpha network-services multicast-groups
+gcloud alpha network-services multicast-producer-associations
+gcloud alpha network-services observability-policies
+gcloud alpha network-services route-views
+gcloud alpha network-services service-bindings
+gcloud alpha network-services service-lb-policies
+gcloud alpha network-services tcp-routes
+gcloud alpha network-services tls-routes
+gcloud alpha notebooks environments
+gcloud alpha notebooks instances
+gcloud alpha organizations
+gcloud alpha pam entitlements
+gcloud alpha pam grants
+gcloud alpha pam operations
+gcloud alpha projects
+gcloud alpha pubsub lite-operations
+gcloud alpha pubsub lite-reservations
+gcloud alpha pubsub lite-subscriptions
+gcloud alpha pubsub lite-topics
+gcloud alpha pubsub schemas
+gcloud alpha pubsub snapshots
+gcloud alpha pubsub subscriptions
+gcloud alpha pubsub topics
+gcloud alpha quotas info
+gcloud alpha quotas preferences
+gcloud alpha recaptcha firewall-policies
+gcloud alpha recaptcha keys
+gcloud alpha recommender insights
+gcloud alpha recommender recommendations
+gcloud alpha recommender recommender-configs
+gcloud alpha redis clusters backup-collections
+gcloud alpha redis clusters backups
+gcloud alpha redis clusters
+gcloud alpha redis instances
+gcloud alpha redis operations
+gcloud alpha redis regions
+gcloud alpha resource-manager folders
+gcloud alpha resource-manager operations
+gcloud alpha resource-manager org-policies
+gcloud alpha resource-manager tags keys
+gcloud alpha resource-manager tags values
+gcloud alpha run domain-mappings
+gcloud alpha run jobs
+gcloud alpha run jobs executions
+gcloud alpha run jobs executions tasks
+gcloud alpha run multi-region-services
+gcloud alpha run revisions
+gcloud alpha run services
+gcloud alpha run workers
+gcloud alpha run workers revisions
+gcloud alpha scc assets
+gcloud alpha scc iac-validation-reports
+gcloud alpha scc manage custom-modules etd
+gcloud alpha scc manage custom-modules sha
+gcloud alpha scc manage services
+gcloud alpha scc notifications
+gcloud alpha scc operations
+gcloud alpha scc posture-deployments
+gcloud alpha scc posture-operations
+gcloud alpha scc posture-templates
+gcloud alpha scc postures
+gcloud alpha scc remediation-intents
+gcloud alpha scc settings services
+gcloud alpha scc settings services modules
+gcloud alpha scc sources
+gcloud alpha scheduler jobs
+gcloud alpha scheduler locations
+gcloud alpha service-directory endpoints
+gcloud alpha service-directory locations
+gcloud alpha service-directory namespaces
+gcloud alpha service-directory services
+gcloud alpha service-extensions lb-route-extensions
+gcloud alpha service-extensions lb-traffic-extensions
+gcloud alpha service-extensions wasm-actions
+gcloud alpha service-extensions wasm-plugin-versions
+gcloud alpha service-extensions wasm-plugins
+gcloud alpha services api-keys
+gcloud alpha services operations
+gcloud alpha services vpc-peerings operations
+gcloud alpha source project-configs
+gcloud alpha source repos
+gcloud alpha source-manager instances
+gcloud alpha source-manager operations
+gcloud alpha source-manager repos
+gcloud alpha spanner backup-schedules
+gcloud alpha spanner backups
+gcloud alpha spanner databases ddl
+gcloud alpha spanner databases
+gcloud alpha spanner instance-configs
+gcloud alpha spanner instance-partitions
+gcloud alpha spanner instances
+gcloud alpha spanner operations
+gcloud alpha sql backups
+gcloud alpha sql databases
+gcloud alpha sql instances
+gcloud alpha sql operations
+gcloud alpha sql ssl client-certs
+gcloud alpha sql ssl-certs
+gcloud alpha sql users
+gcloud alpha storage batch-operations jobs
+gcloud alpha storage buckets anywhere-caches
+gcloud alpha storage buckets
+gcloud alpha storage buckets notifications
+gcloud alpha storage folders
+gcloud alpha storage hmac
+gcloud alpha storage insights dataset-configs
+gcloud alpha storage insights inventory-reports
+gcloud alpha storage insights inventory-reports details
+gcloud alpha storage insights operations
+gcloud alpha storage managed-folders
+gcloud alpha storage management-hub
+gcloud alpha storage objects
+gcloud alpha storage operations
+gcloud alpha tasks cmek-config
+gcloud alpha tasks
+gcloud alpha tasks locations
+gcloud alpha tasks queues
+gcloud alpha telco-automation operations
+gcloud alpha telco-automation orchestration-cluster
+gcloud alpha trace sinks
+gcloud alpha transfer agent-pools
+gcloud alpha transfer appliances
+gcloud alpha transfer appliances orders
+gcloud alpha transfer jobs
+gcloud alpha transfer operations
+gcloud alpha web-security-scanner scan-configs
+gcloud alpha web-security-scanner scan-runs
+gcloud alpha workstations clusters
+gcloud alpha workstations configs
+gcloud alpha workstations
+gcloud anthos config controller
+gcloud anthos config operations
+gcloud api-gateway api-configs
+gcloud api-gateway apis
+gcloud api-gateway gateways
+gcloud api-gateway operations
+gcloud apigee apis
+gcloud apigee applications
+gcloud apigee deployments
+gcloud apigee developers
+gcloud apigee products
+gcloud app
+gcloud app domain-mappings
+gcloud app firewall-rules
+gcloud app instances
+gcloud app operations
+gcloud app services
+gcloud app ssl-certificates
+gcloud app versions
+gcloud apphub applications
+gcloud apphub applications services
+gcloud apphub applications workloads
+gcloud apphub discovered-services
+gcloud apphub discovered-workloads
+gcloud apphub locations
+gcloud apphub operations
+gcloud apphub service-projects
+gcloud artifacts docker images
+gcloud artifacts files
+gcloud artifacts operations
+gcloud artifacts packages
+gcloud artifacts repositories
+gcloud artifacts rules
+gcloud artifacts settings
+gcloud artifacts versions
+gcloud artifacts vpcsc-config
+gcloud asset feeds
+gcloud asset operations
+gcloud asset saved-queries
+gcloud assured operations
+gcloud assured workloads
+gcloud assured workloads violations
+gcloud audit-manager operations
+gcloud backup-dr backup-plan-associations
+gcloud backup-dr backup-plans
+gcloud backup-dr backup-vaults
+gcloud backup-dr backups
+gcloud backup-dr data-sources
+gcloud backup-dr management-servers
+gcloud backup-dr operations
+gcloud batch jobs
+gcloud batch tasks
+gcloud beta access-context-manager levels
+gcloud beta access-context-manager perimeters
+gcloud beta access-context-manager perimeters dry-run
+gcloud beta access-context-manager policies
+gcloud beta access-context-manager supported-services
+gcloud beta active-directory domains backups
+gcloud beta active-directory domains
+gcloud beta active-directory domains sql-integrations
+gcloud beta active-directory operations
+gcloud beta active-directory peerings
+gcloud beta ai custom-jobs
+gcloud beta ai endpoints
+gcloud beta ai hp-tuning-jobs
+gcloud beta ai index-endpoints
+gcloud beta ai indexes
+gcloud beta ai model-monitoring-jobs
+gcloud beta ai models
+gcloud beta ai operations
+gcloud beta ai persistent-resources
+gcloud beta ai tensorboard-experiments
+gcloud beta ai tensorboard-runs
+gcloud beta ai tensorboard-time-series
+gcloud beta ai tensorboards
+gcloud beta ai-platform jobs
+gcloud beta ai-platform models
+gcloud beta ai-platform operations
+gcloud beta ai-platform versions
+gcloud beta alloydb backups
+gcloud beta alloydb clusters
+gcloud beta alloydb instances
+gcloud beta alloydb operations
+gcloud beta api-gateway api-configs
+gcloud beta api-gateway apis
+gcloud beta api-gateway gateways
+gcloud beta api-gateway operations
+gcloud beta apigee apis
+gcloud beta apigee applications
+gcloud beta apigee archives
+gcloud beta apigee deployments
+gcloud beta apigee developers
+gcloud beta apigee environments
+gcloud beta apigee operations
+gcloud beta apigee products
+gcloud beta app
+gcloud beta app domain-mappings
+gcloud beta app firewall-rules
+gcloud beta app instances
+gcloud beta app operations
+gcloud beta app services
+gcloud beta app ssl-certificates
+gcloud beta app versions
+gcloud beta artifacts docker images
+gcloud beta artifacts operations
+gcloud beta artifacts repositories
+gcloud beta artifacts settings
+gcloud beta artifacts vpcsc-config
+gcloud beta asset feeds
+gcloud beta asset operations
+gcloud beta asset saved-queries
+gcloud beta assured operations
+gcloud beta assured workloads
+gcloud beta assured workloads violations
+gcloud beta backup-dr management-servers
+gcloud beta backup-dr operations
+gcloud beta batch jobs
+gcloud beta batch tasks
+gcloud beta beyondcorp app connections
+gcloud beta beyondcorp app connectors
+gcloud beta beyondcorp app gateways
+gcloud beta beyondcorp app operations
+gcloud beta beyondcorp client-connector gateways
+gcloud beta beyondcorp client-connector operations
+gcloud beta beyondcorp client-connector services
+gcloud beta bigtable app-profiles
+gcloud beta bigtable authorized-views
+gcloud beta bigtable backups
+gcloud beta bigtable clusters
+gcloud beta bigtable instances
+gcloud beta bigtable instances tables
+gcloud beta bigtable operations
+gcloud beta bigtable tables
+gcloud beta billing accounts
+gcloud beta billing budgets
+gcloud beta billing projects
+gcloud beta builds connections
+gcloud beta builds
+gcloud beta builds repositories
+gcloud beta builds triggers
+gcloud beta builds worker-pools
+gcloud beta certificate-manager certificates
+gcloud beta certificate-manager dns-authorizations
+gcloud beta certificate-manager issuance-configs
+gcloud beta certificate-manager maps
+gcloud beta certificate-manager maps entries
+gcloud beta certificate-manager operations
+gcloud beta certificate-manager trust-configs
+gcloud beta colab executions
+gcloud beta colab runtime-templates
+gcloud beta colab runtimes
+gcloud beta colab schedules
+gcloud beta composer environments
+gcloud beta composer environments user-workloads-config-maps
+gcloud beta composer environments user-workloads-secrets
+gcloud beta composer operations
+gcloud beta compute accelerator-types
+gcloud beta compute addresses
+gcloud beta compute backend-buckets
+gcloud beta compute backend-services
+gcloud beta compute commitments
+gcloud beta compute disk-types
+gcloud beta compute disks
+gcloud beta compute external-vpn-gateways
+gcloud beta compute firewall-policies
+gcloud beta compute firewall-policies mirroring-rules
+gcloud beta compute firewall-policies rules
+gcloud beta compute firewall-rules
+gcloud beta compute forwarding-rules
+gcloud beta compute future-reservations
+gcloud beta compute health-checks
+gcloud beta compute http-health-checks
+gcloud beta compute https-health-checks
+gcloud beta compute images
+gcloud beta compute instance-groups
+gcloud beta compute instance-groups managed
+gcloud beta compute instance-groups managed resize-requests
+gcloud beta compute instance-groups unmanaged
+gcloud beta compute instance-templates
+gcloud beta compute instances
+gcloud beta compute instances ops-agents policies
+gcloud beta compute instances os-inventory
+gcloud beta compute instant-snapshots
+gcloud beta compute interconnects attachments
+gcloud beta compute interconnects
+gcloud beta compute interconnects locations
+gcloud beta compute interconnects remote-locations
+gcloud beta compute machine-images
+gcloud beta compute machine-types
+gcloud beta compute network-attachments
+gcloud beta compute network-edge-security-services
+gcloud beta compute network-endpoint-groups
+gcloud beta compute network-firewall-policies
+gcloud beta compute network-firewall-policies mirroring-rules
+gcloud beta compute network-firewall-policies rules
+gcloud beta compute network-profiles
+gcloud beta compute networks
+gcloud beta compute networks subnets
+gcloud beta compute networks vpc-access connectors
+gcloud beta compute networks vpc-access operations
+gcloud beta compute operations
+gcloud beta compute org-security-policies
+gcloud beta compute org-security-policies rules
+gcloud beta compute os-config guest-policies
+gcloud beta compute os-config patch-deployments
+gcloud beta compute os-config patch-jobs
+gcloud beta compute os-config policy-orchestrators
+gcloud beta compute os-login ssh-keys
+gcloud beta compute packet-mirrorings
+gcloud beta compute project-info
+gcloud beta compute project-zonal-metadata
+gcloud beta compute public-advertised-prefixes
+gcloud beta compute public-delegated-prefixes
+gcloud beta compute regions
+gcloud beta compute reservations blocks
+gcloud beta compute reservations
+gcloud beta compute resource-policies
+gcloud beta compute routers
+gcloud beta compute routers nats
+gcloud beta compute routers nats rules
+gcloud beta compute routes
+gcloud beta compute security-policies
+gcloud beta compute security-policies rules
+gcloud beta compute service-attachments
+gcloud beta compute snapshot-settings
+gcloud beta compute snapshots
+gcloud beta compute sole-tenancy node-groups
+gcloud beta compute sole-tenancy node-templates
+gcloud beta compute sole-tenancy node-types
+gcloud beta compute ssl-certificates
+gcloud beta compute ssl-policies
+gcloud beta compute storage-pool-types
+gcloud beta compute storage-pools
+gcloud beta compute target-grpc-proxies
+gcloud beta compute target-http-proxies
+gcloud beta compute target-https-proxies
+gcloud beta compute target-instances
+gcloud beta compute target-pools
+gcloud beta compute target-ssl-proxies
+gcloud beta compute target-tcp-proxies
+gcloud beta compute target-vpn-gateways
+gcloud beta compute tpus accelerator-types
+gcloud beta compute tpus
+gcloud beta compute tpus execution-groups
+gcloud beta compute tpus locations
+gcloud beta compute tpus versions
+gcloud beta compute url-maps
+gcloud beta compute vpn-gateways
+gcloud beta compute vpn-tunnels
+gcloud beta compute zones
+gcloud beta config configurations
+gcloud beta container backup-restore backup-plans
+gcloud beta container backup-restore backups
+gcloud beta container backup-restore locations
+gcloud beta container backup-restore restore-plans
+gcloud beta container backup-restore restores
+gcloud beta container backup-restore volume-backups
+gcloud beta container backup-restore volume-restores
+gcloud beta container bare-metal admin-clusters
+gcloud beta container bare-metal clusters
+gcloud beta container bare-metal node-pools
+gcloud beta container bare-metal operations
+gcloud beta container binauthz attestors
+gcloud beta container binauthz policy
+gcloud beta container clusters
+gcloud beta container fleet cloudrun
+gcloud beta container fleet clusterupgrade
+gcloud beta container fleet dataplane-v2-encryption
+gcloud beta container fleet
+gcloud beta container fleet fleetobservability
+gcloud beta container fleet identity-service
+gcloud beta container fleet ingress
+gcloud beta container fleet memberships bindings
+gcloud beta container fleet memberships
+gcloud beta container fleet memberships support-access
+gcloud beta container fleet mesh
+gcloud beta container fleet multi-cluster-services
+gcloud beta container fleet operations
+gcloud beta container fleet policycontroller
+gcloud beta container fleet scopes
+gcloud beta container fleet scopes namespaces
+gcloud beta container fleet scopes rbacrolebindings
+gcloud beta container hub cloudrun
+gcloud beta container hub clusterupgrade
+gcloud beta container hub dataplane-v2-encryption
+gcloud beta container hub
+gcloud beta container hub fleetobservability
+gcloud beta container hub identity-service
+gcloud beta container hub ingress
+gcloud beta container hub memberships bindings
+gcloud beta container hub memberships
+gcloud beta container hub memberships support-access
+gcloud beta container hub mesh
+gcloud beta container hub multi-cluster-services
+gcloud beta container hub operations
+gcloud beta container hub policycontroller
+gcloud beta container hub scopes
+gcloud beta container hub scopes namespaces
+gcloud beta container hub scopes rbacrolebindings
+gcloud beta container images
+gcloud beta container node-pools
+gcloud beta container operations
+gcloud beta container vmware admin-clusters
+gcloud beta container vmware clusters
+gcloud beta container vmware node-pools
+gcloud beta container vmware operations
+gcloud beta data-catalog entries
+gcloud beta data-catalog entry-groups
+gcloud beta data-catalog tag-templates
+gcloud beta data-catalog taxonomies
+gcloud beta data-catalog taxonomies policy-tags
+gcloud beta data-fusion instances
+gcloud beta dataflow jobs
+gcloud beta dataflow snapshots
+gcloud beta datapipelines pipeline
+gcloud beta dataproc autoscaling-policies
+gcloud beta dataproc batches
+gcloud beta dataproc clusters
+gcloud beta dataproc jobs
+gcloud beta dataproc node-groups
+gcloud beta dataproc operations
+gcloud beta dataproc session-templates
+gcloud beta dataproc sessions
+gcloud beta dataproc workflow-templates
+gcloud beta datastore indexes
+gcloud beta datastore operations
+gcloud beta datastream connection-profiles
+gcloud beta datastream locations
+gcloud beta datastream operations
+gcloud beta datastream private-connections
+gcloud beta datastream routes
+gcloud beta datastream streams
+gcloud beta deploy automation-runs
+gcloud beta deploy automations
+gcloud beta deploy custom-target-types
+gcloud beta deploy delivery-pipelines
+gcloud beta deploy deploy-policies
+gcloud beta deploy job-runs
+gcloud beta deploy releases
+gcloud beta deploy rollouts
+gcloud beta deploy targets
+gcloud beta deployment-manager deployments
+gcloud beta deployment-manager manifests
+gcloud beta deployment-manager operations
+gcloud beta deployment-manager resources
+gcloud beta deployment-manager type-providers
+gcloud beta deployment-manager types
+gcloud beta developer-connect connections
+gcloud beta developer-connect connections git-repository-links
+gcloud beta developer-connect operations
+gcloud beta dns dns-keys
+gcloud beta dns managed-zones
+gcloud beta dns operations
+gcloud beta dns policies
+gcloud beta dns project-info
+gcloud beta dns record-sets changes
+gcloud beta dns record-sets
+gcloud beta dns record-sets transaction
+gcloud beta dns response-policies
+gcloud beta dns response-policies rules
+gcloud beta domains registrations
+gcloud beta domains registrations operations
+gcloud beta endpoints configs
+gcloud beta endpoints operations
+gcloud beta endpoints services
+gcloud beta essential-contacts
+gcloud beta eventarc enrollments
+gcloud beta eventarc google-api-sources
+gcloud beta eventarc message-buses
+gcloud beta eventarc pipelines
+gcloud beta filestore backups
+gcloud beta filestore instances
+gcloud beta filestore instances snapshots
+gcloud beta filestore locations
+gcloud beta filestore operations
+gcloud beta firebase test android locales
+gcloud beta firebase test android models
+gcloud beta firebase test android versions
+gcloud beta firebase test ios locales
+gcloud beta firebase test ios models
+gcloud beta firebase test ios versions
+gcloud beta firebase test network-profiles
+gcloud beta firestore backups
+gcloud beta firestore backups schedules
+gcloud beta firestore databases
+gcloud beta firestore indexes composite
+gcloud beta firestore indexes fields
+gcloud beta firestore operations
+gcloud beta functions
+gcloud beta healthcare annotation-stores
+gcloud beta healthcare consent-stores
+gcloud beta healthcare datasets
+gcloud beta healthcare dicom-stores
+gcloud beta healthcare fhir-stores
+gcloud beta healthcare hl7v2-stores
+gcloud beta healthcare operations
+gcloud beta iam policy-bindings
+gcloud beta iam principal-access-boundary-policies
+gcloud beta iam roles
+gcloud beta iam service-accounts
+gcloud beta iam workforce-pools
+gcloud beta iam workforce-pools operations
+gcloud beta iam workforce-pools providers
+gcloud beta iam workforce-pools providers keys
+gcloud beta iam workforce-pools providers keys operations
+gcloud beta iam workforce-pools providers operations
+gcloud beta iam workload-identity-pools
+gcloud beta iam workload-identity-pools operations
+gcloud beta iam workload-identity-pools providers
+gcloud beta iam workload-identity-pools providers operations
+gcloud beta iap oauth-brands
+gcloud beta iap oauth-clients
+gcloud beta iap tcp dest-groups
+gcloud beta identity groups
+gcloud beta identity groups memberships
+gcloud beta ids endpoints
+gcloud beta kms autokey-config
+gcloud beta kms ekm-config
+gcloud beta kms ekm-connections
+gcloud beta kms import-jobs
+gcloud beta kms key-handles
+gcloud beta kms keyrings
+gcloud beta kms keys
+gcloud beta kms keys versions
+gcloud beta lifesciences locations
+gcloud beta lifesciences operations
+gcloud beta logging buckets
+gcloud beta logging links
+gcloud beta logging locations
+gcloud beta logging metrics
+gcloud beta logging operations
+gcloud beta logging settings
+gcloud beta logging sinks
+gcloud beta logging views
+gcloud beta managed-kafka clusters
+gcloud beta managed-kafka consumer-groups
+gcloud beta managed-kafka topics
+gcloud beta memcache instances
+gcloud beta memcache operations
+gcloud beta memcache regions
+gcloud beta memorystore instances
+gcloud beta memorystore operations
+gcloud beta metastore federations
+gcloud beta metastore locations
+gcloud beta metastore operations
+gcloud beta metastore services backups
+gcloud beta metastore services
+gcloud beta metastore services imports
+gcloud beta metastore services migrations
+gcloud beta ml speech operations
+gcloud beta ml video operations
+gcloud beta ml vision operations
+gcloud beta ml vision product-search images
+gcloud beta ml vision product-search product-sets
+gcloud beta ml vision product-search products
+gcloud beta ml-engine jobs
+gcloud beta ml-engine models
+gcloud beta ml-engine operations
+gcloud beta ml-engine versions
+gcloud beta monitoring channel-descriptors
+gcloud beta monitoring channels
+gcloud beta monitoring dashboards
+gcloud beta monitoring metrics-scopes
+gcloud beta monitoring snoozes
+gcloud beta monitoring uptime
+gcloud beta netapp active-directories
+gcloud beta netapp backup-policies
+gcloud beta netapp backup-vaults backups
+gcloud beta netapp backup-vaults
+gcloud beta netapp kms-configs
+gcloud beta netapp locations
+gcloud beta netapp operations
+gcloud beta netapp storage-pools
+gcloud beta netapp volumes
+gcloud beta netapp volumes quota-rules
+gcloud beta netapp volumes replications
+gcloud beta netapp volumes snapshots
+gcloud beta network-connectivity hubs
+gcloud beta network-connectivity hubs groups
+gcloud beta network-connectivity hubs route-tables
+gcloud beta network-connectivity hubs route-tables routes
+gcloud beta network-connectivity locations
+gcloud beta network-connectivity operations
+gcloud beta network-connectivity policy-based-routes
+gcloud beta network-connectivity regional-endpoints
+gcloud beta network-connectivity spokes
+gcloud beta network-management connectivity-tests
+gcloud beta network-management operations
+gcloud beta network-management vpc-flow-logs-configs
+gcloud beta network-security address-groups
+gcloud beta network-security authz-policies
+gcloud beta network-security firewall-endpoint-associations
+gcloud beta network-security firewall-endpoints
+gcloud beta network-security intercept-deployment-groups
+gcloud beta network-security intercept-deployments
+gcloud beta network-security intercept-endpoint-group-associations
+gcloud beta network-security intercept-endpoint-groups
+gcloud beta network-security mirroring-deployment-groups
+gcloud beta network-security mirroring-deployments
+gcloud beta network-security mirroring-endpoint-group-associations
+gcloud beta network-security mirroring-endpoint-groups
+gcloud beta network-security org-address-groups
+gcloud beta network-security security-profile-groups
+gcloud beta network-security security-profiles custom-intercept
+gcloud beta network-security security-profiles custom-mirroring
+gcloud beta network-security server-tls-policies
+gcloud beta network-services endpoint-policies
+gcloud beta network-services multicast-consumer-associations
+gcloud beta network-services multicast-domain-activations
+gcloud beta network-services multicast-domain-groups
+gcloud beta network-services multicast-domains
+gcloud beta network-services multicast-group-consumer-activations
+gcloud beta network-services multicast-group-producer-activations
+gcloud beta network-services multicast-group-range-activations
+gcloud beta network-services multicast-group-ranges
+gcloud beta network-services multicast-producer-associations
+gcloud beta network-services service-bindings
+gcloud beta network-services service-lb-policies
+gcloud beta notebooks environments
+gcloud beta notebooks instances
+gcloud beta organizations
+gcloud beta pam entitlements
+gcloud beta pam grants
+gcloud beta pam operations
+gcloud beta projects
+gcloud beta pubsub lite-operations
+gcloud beta pubsub lite-reservations
+gcloud beta pubsub lite-subscriptions
+gcloud beta pubsub lite-topics
+gcloud beta pubsub schemas
+gcloud beta pubsub snapshots
+gcloud beta pubsub subscriptions
+gcloud beta pubsub topics
+gcloud beta quotas adjuster settings
+gcloud beta quotas info
+gcloud beta quotas preferences
+gcloud beta recommender insight-type-config
+gcloud beta recommender insights
+gcloud beta recommender recommendations
+gcloud beta recommender recommender-config
+gcloud beta redis clusters backup-collections
+gcloud beta redis clusters backups
+gcloud beta redis clusters
+gcloud beta redis instances
+gcloud beta redis operations
+gcloud beta redis regions
+gcloud beta resource-manager folders
+gcloud beta resource-manager org-policies
+gcloud beta resource-manager tags keys
+gcloud beta resource-manager tags values
+gcloud beta run domain-mappings
+gcloud beta run jobs
+gcloud beta run jobs executions
+gcloud beta run jobs executions tasks
+gcloud beta run multi-region-services
+gcloud beta run revisions
+gcloud beta run services
+gcloud beta runtime-config configs
+gcloud beta runtime-config configs variables
+gcloud beta runtime-config configs waiters
+gcloud beta scc assets
+gcloud beta scc notifications
+gcloud beta scc operations
+gcloud beta scc sources
+gcloud beta scheduler jobs
+gcloud beta scheduler locations
+gcloud beta secrets
+gcloud beta secrets locations
+gcloud beta secrets versions
+gcloud beta service-directory endpoints
+gcloud beta service-directory locations
+gcloud beta service-directory namespaces
+gcloud beta service-directory services
+gcloud beta service-extensions authz-extensions
+gcloud beta service-extensions lb-route-extensions
+gcloud beta service-extensions lb-traffic-extensions
+gcloud beta service-extensions wasm-plugin-versions
+gcloud beta service-extensions wasm-plugins
+gcloud beta services api-keys
+gcloud beta services operations
+gcloud beta services vpc-peerings operations
+gcloud beta source project-configs
+gcloud beta source repos
+gcloud beta source-manager instances
+gcloud beta source-manager operations
+gcloud beta source-manager repos
+gcloud beta spanner backup-schedules
+gcloud beta spanner backups
+gcloud beta spanner databases ddl
+gcloud beta spanner databases
+gcloud beta spanner instance-configs
+gcloud beta spanner instance-partitions
+gcloud beta spanner instances
+gcloud beta spanner operations
+gcloud beta sql backups
+gcloud beta sql databases
+gcloud beta sql instances
+gcloud beta sql operations
+gcloud beta sql ssl client-certs
+gcloud beta sql ssl-certs
+gcloud beta sql users
+gcloud beta tasks cmek-config
+gcloud beta tasks
+gcloud beta tasks locations
+gcloud beta tasks queues
+gcloud beta workflows
+gcloud beta workflows executions
+gcloud beta workstations clusters
+gcloud beta workstations configs
+gcloud beta workstations
+gcloud bigtable app-profiles
+gcloud bigtable authorized-views
+gcloud bigtable backups
+gcloud bigtable clusters
+gcloud bigtable instances
+gcloud bigtable instances tables
+gcloud bigtable operations
+gcloud bigtable tables
+gcloud billing accounts
+gcloud billing budgets
+gcloud billing projects
+gcloud bms instances
+gcloud bms networks
+gcloud bms nfs-shares
+gcloud bms operations
+gcloud bms os-images
+gcloud bms volumes
+gcloud bms volumes luns
+gcloud bms volumes snapshots
+gcloud builds connections
+gcloud builds
+gcloud builds repositories
+gcloud builds triggers
+gcloud builds worker-pools
+gcloud certificate-manager certificates
+gcloud certificate-manager dns-authorizations
+gcloud certificate-manager issuance-configs
+gcloud certificate-manager maps
+gcloud certificate-manager maps entries
+gcloud certificate-manager operations
+gcloud certificate-manager trust-configs
+gcloud colab executions
+gcloud colab runtime-templates
+gcloud colab runtimes
+gcloud colab schedules
+gcloud composer environments
+gcloud composer environments user-workloads-config-maps
+gcloud composer environments user-workloads-secrets
+gcloud composer operations
+gcloud compute accelerator-types
+gcloud compute addresses
+gcloud compute backend-buckets
+gcloud compute backend-services
+gcloud compute commitments
+gcloud compute disk-types
+gcloud compute disks
+gcloud compute external-vpn-gateways
+gcloud compute firewall-policies
+gcloud compute firewall-policies rules
+gcloud compute firewall-rules
+gcloud compute forwarding-rules
+gcloud compute health-checks
+gcloud compute http-health-checks
+gcloud compute https-health-checks
+gcloud compute images
+gcloud compute instance-groups
+gcloud compute instance-groups managed
+gcloud compute instance-groups managed resize-requests
+gcloud compute instance-groups unmanaged
+gcloud compute instance-templates
+gcloud compute instances
+gcloud compute instances ops-agents policies
+gcloud compute instances os-inventory
+gcloud compute instant-snapshots
+gcloud compute interconnects attachments
+gcloud compute interconnects
+gcloud compute interconnects locations
+gcloud compute interconnects remote-locations
+gcloud compute machine-images
+gcloud compute machine-types
+gcloud compute network-attachments
+gcloud compute network-edge-security-services
+gcloud compute network-endpoint-groups
+gcloud compute network-firewall-policies
+gcloud compute network-firewall-policies rules
+gcloud compute network-profiles
+gcloud compute networks
+gcloud compute networks subnets
+gcloud compute networks vpc-access connectors
+gcloud compute networks vpc-access operations
+gcloud compute operations
+gcloud compute os-config inventories
+gcloud compute os-config os-policy-assignment-reports
+gcloud compute os-config os-policy-assignments
+gcloud compute os-config os-policy-assignments operations
+gcloud compute os-config patch-deployments
+gcloud compute os-config patch-jobs
+gcloud compute os-config project-feature-settings
+gcloud compute os-config vulnerability-reports
+gcloud compute os-login ssh-keys
+gcloud compute packet-mirrorings
+gcloud compute project-info
+gcloud compute project-zonal-metadata
+gcloud compute public-advertised-prefixes
+gcloud compute public-delegated-prefixes
+gcloud compute regions
+gcloud compute reservations
+gcloud compute resource-policies
+gcloud compute routers
+gcloud compute routers nats
+gcloud compute routers nats rules
+gcloud compute routes
+gcloud compute security-policies
+gcloud compute security-policies rules
+gcloud compute service-attachments
+gcloud compute snapshot-settings
+gcloud compute snapshots
+gcloud compute sole-tenancy node-groups
+gcloud compute sole-tenancy node-templates
+gcloud compute sole-tenancy node-types
+gcloud compute ssl-certificates
+gcloud compute ssl-policies
+gcloud compute storage-pool-types
+gcloud compute storage-pools
+gcloud compute target-grpc-proxies
+gcloud compute target-http-proxies
+gcloud compute target-https-proxies
+gcloud compute target-instances
+gcloud compute target-pools
+gcloud compute target-ssl-proxies
+gcloud compute target-tcp-proxies
+gcloud compute target-vpn-gateways
+gcloud compute tpus accelerator-types
+gcloud compute tpus
+gcloud compute tpus execution-groups
+gcloud compute tpus locations
+gcloud compute tpus queued-resources
+gcloud compute tpus tpu-vm accelerator-types
+gcloud compute tpus tpu-vm
+gcloud compute tpus tpu-vm versions
+gcloud compute tpus versions
+gcloud compute url-maps
+gcloud compute vpn-gateways
+gcloud compute vpn-tunnels
+gcloud compute zones
+gcloud config configurations
+gcloud container attached clusters
+gcloud container attached operations
+gcloud container aws clusters
+gcloud container aws node-pools
+gcloud container aws operations
+gcloud container azure clients
+gcloud container azure clusters
+gcloud container azure node-pools
+gcloud container azure operations
+gcloud container bare-metal admin-clusters
+gcloud container bare-metal clusters
+gcloud container bare-metal node-pools
+gcloud container bare-metal operations
+gcloud container binauthz attestors
+gcloud container clusters
+gcloud container fleet cloudrun
+gcloud container fleet clusterupgrade
+gcloud container fleet dataplane-v2-encryption
+gcloud container fleet
+gcloud container fleet fleetobservability
+gcloud container fleet identity-service
+gcloud container fleet ingress
+gcloud container fleet memberships bindings
+gcloud container fleet memberships
+gcloud container fleet memberships support-access
+gcloud container fleet mesh
+gcloud container fleet multi-cluster-services
+gcloud container fleet operations
+gcloud container fleet policycontroller
+gcloud container fleet scopes
+gcloud container fleet scopes namespaces
+gcloud container fleet scopes rbacrolebindings
+gcloud container hub cloudrun
+gcloud container hub clusterupgrade
+gcloud container hub dataplane-v2-encryption
+gcloud container hub
+gcloud container hub fleetobservability
+gcloud container hub identity-service
+gcloud container hub ingress
+gcloud container hub memberships bindings
+gcloud container hub memberships
+gcloud container hub memberships support-access
+gcloud container hub mesh
+gcloud container hub multi-cluster-services
+gcloud container hub operations
+gcloud container hub policycontroller
+gcloud container hub scopes
+gcloud container hub scopes namespaces
+gcloud container hub scopes rbacrolebindings
+gcloud container images
+gcloud container node-pools
+gcloud container operations
+gcloud container vmware admin-clusters
+gcloud container vmware clusters
+gcloud container vmware node-pools
+gcloud container vmware operations
+gcloud data-catalog entries
+gcloud data-catalog entry-groups
+gcloud data-catalog tag-templates
+gcloud data-catalog taxonomies
+gcloud data-catalog taxonomies policy-tags
+gcloud database-migration connection-profiles
+gcloud database-migration conversion-workspaces
+gcloud database-migration migration-jobs
+gcloud database-migration operations
+gcloud database-migration private-connections
+gcloud dataflow jobs
+gcloud dataflow snapshots
+gcloud dataplex aspect-types
+gcloud dataplex assets
+gcloud dataplex content
+gcloud dataplex datascans
+gcloud dataplex datascans jobs
+gcloud dataplex entries
+gcloud dataplex entry-groups
+gcloud dataplex entry-types
+gcloud dataplex environments
+gcloud dataplex lakes
+gcloud dataplex tasks
+gcloud dataplex tasks jobs
+gcloud dataplex zones
+gcloud dataproc autoscaling-policies
+gcloud dataproc batches
+gcloud dataproc clusters
+gcloud dataproc jobs
+gcloud dataproc node-groups
+gcloud dataproc operations
+gcloud dataproc workflow-templates
+gcloud datastore indexes
+gcloud datastore operations
+gcloud datastream connection-profiles
+gcloud datastream locations
+gcloud datastream objects
+gcloud datastream operations
+gcloud datastream private-connections
+gcloud datastream routes
+gcloud datastream streams
+gcloud deploy automation-runs
+gcloud deploy automations
+gcloud deploy custom-target-types
+gcloud deploy delivery-pipelines
+gcloud deploy deploy-policies
+gcloud deploy job-runs
+gcloud deploy releases
+gcloud deploy rollouts
+gcloud deploy targets
+gcloud deployment-manager deployments
+gcloud deployment-manager manifests
+gcloud deployment-manager operations
+gcloud deployment-manager resources
+gcloud developer-connect connections
+gcloud developer-connect connections git-repository-links
+gcloud developer-connect operations
+gcloud dns dns-keys
+gcloud dns managed-zones
+gcloud dns operations
+gcloud dns policies
+gcloud dns project-info
+gcloud dns record-sets changes
+gcloud dns record-sets
+gcloud dns record-sets transaction
+gcloud dns response-policies
+gcloud dns response-policies rules
+gcloud domains registrations
+gcloud domains registrations operations
+gcloud edge-cache keysets
+gcloud edge-cache operations
+gcloud edge-cache origins
+gcloud edge-cache services
+gcloud edge-cloud container clusters
+gcloud edge-cloud container clusters node-pools
+gcloud edge-cloud container machines
+gcloud edge-cloud container operations
+gcloud edge-cloud container regions
+gcloud edge-cloud container vpn-connections
+gcloud edge-cloud container zones
+gcloud edge-cloud networking interconnects attachments
+gcloud edge-cloud networking interconnects
+gcloud edge-cloud networking networks
+gcloud edge-cloud networking operations
+gcloud edge-cloud networking routers
+gcloud edge-cloud networking subnets
+gcloud endpoints configs
+gcloud endpoints operations
+gcloud endpoints services
+gcloud essential-contacts
+gcloud eventarc channel-connections
+gcloud eventarc channels
+gcloud eventarc google-channels
+gcloud eventarc providers
+gcloud eventarc triggers
+gcloud filestore backups
+gcloud filestore instances
+gcloud filestore instances snapshots
+gcloud filestore locations
+gcloud filestore operations
+gcloud firebase test android locales
+gcloud firebase test android models
+gcloud firebase test android versions
+gcloud firebase test ios locales
+gcloud firebase test ios models
+gcloud firebase test ios versions
+gcloud firebase test network-profiles
+gcloud firestore backups
+gcloud firestore backups schedules
+gcloud firestore databases
+gcloud firestore indexes composite
+gcloud firestore indexes fields
+gcloud firestore operations
+gcloud functions
+gcloud gemini code-repository-indexes
+gcloud gemini code-repository-indexes repository-groups
+gcloud gemini operations
+gcloud healthcare consent-stores
+gcloud healthcare datasets
+gcloud healthcare dicom-stores
+gcloud healthcare fhir-stores
+gcloud healthcare hl7v2-stores
+gcloud healthcare operations
+gcloud iam oauth-clients credentials
+gcloud iam oauth-clients
+gcloud iam policy-bindings
+gcloud iam principal-access-boundary-policies
+gcloud iam roles
+gcloud iam service-accounts
+gcloud iam workforce-pools
+gcloud iam workforce-pools operations
+gcloud iam workforce-pools providers
+gcloud iam workforce-pools providers keys
+gcloud iam workforce-pools providers keys operations
+gcloud iam workforce-pools providers operations
+gcloud iam workforce-pools subjects operations
+gcloud iam workload-identity-pools
+gcloud iam workload-identity-pools operations
+gcloud iam workload-identity-pools providers
+gcloud iam workload-identity-pools providers keys
+gcloud iam workload-identity-pools providers keys operations
+gcloud iam workload-identity-pools providers operations
+gcloud iap oauth-brands
+gcloud iap oauth-clients
+gcloud iap tcp dest-groups
+gcloud identity groups
+gcloud identity groups memberships
+gcloud ids endpoints
+gcloud immersive-stream xr contents
+gcloud immersive-stream xr instances
+gcloud immersive-stream xr operations
+gcloud infra-manager deployments
+gcloud infra-manager previews
+gcloud infra-manager resources
+gcloud infra-manager revisions
+gcloud infra-manager terraform-versions
+gcloud kms ekm-config
+gcloud kms ekm-connections
+gcloud kms import-jobs
+gcloud kms keyrings
+gcloud kms keys
+gcloud kms keys versions
+gcloud logging buckets
+gcloud logging links
+gcloud logging locations
+gcloud logging metrics
+gcloud logging operations
+gcloud logging scopes
+gcloud logging settings
+gcloud logging sinks
+gcloud logging views
+gcloud looker instances
+gcloud looker operations
+gcloud managed-kafka clusters
+gcloud managed-kafka consumer-groups
+gcloud managed-kafka topics
+gcloud memcache instances
+gcloud memcache operations
+gcloud memcache regions
+gcloud memorystore instances
+gcloud memorystore operations
+gcloud metastore federations
+gcloud metastore locations
+gcloud metastore operations
+gcloud metastore services backups
+gcloud metastore services
+gcloud migration vms image-imports
+gcloud migration vms machine-image-imports
+gcloud ml speech operations
+gcloud ml video operations
+gcloud ml-engine jobs
+gcloud ml-engine models
+gcloud ml-engine operations
+gcloud ml-engine versions
+gcloud monitoring dashboards
+gcloud monitoring snoozes
+gcloud monitoring uptime
+gcloud netapp active-directories
+gcloud netapp backup-policies
+gcloud netapp backup-vaults backups
+gcloud netapp backup-vaults
+gcloud netapp kms-configs
+gcloud netapp locations
+gcloud netapp operations
+gcloud netapp storage-pools
+gcloud netapp volumes
+gcloud netapp volumes quota-rules
+gcloud netapp volumes replications
+gcloud netapp volumes snapshots
+gcloud network-connectivity hubs
+gcloud network-connectivity hubs groups
+gcloud network-connectivity hubs route-tables
+gcloud network-connectivity hubs route-tables routes
+gcloud network-connectivity internal-ranges
+gcloud network-connectivity locations
+gcloud network-connectivity operations
+gcloud network-connectivity policy-based-routes
+gcloud network-connectivity regional-endpoints
+gcloud network-connectivity service-connection-policies
+gcloud network-connectivity spokes
+gcloud network-management connectivity-tests
+gcloud network-management operations
+gcloud network-management vpc-flow-logs-configs
+gcloud network-security address-groups
+gcloud network-security firewall-endpoint-associations
+gcloud network-security firewall-endpoints
+gcloud network-security org-address-groups
+gcloud network-security security-profile-groups
+gcloud network-security server-tls-policies
+gcloud network-services endpoint-policies
+gcloud network-services gateways
+gcloud network-services grpc-routes
+gcloud network-services http-routes
+gcloud network-services meshes
+gcloud network-services route-views
+gcloud network-services service-bindings
+gcloud network-services service-lb-policies
+gcloud network-services tcp-routes
+gcloud network-services tls-routes
+gcloud notebooks environments
+gcloud notebooks instances
+gcloud notebooks runtimes
+gcloud oracle-database autonomous-databases
+gcloud oracle-database cloud-exadata-infrastructures
+gcloud oracle-database cloud-vm-clusters
+gcloud oracle-database operations
+gcloud org-policies
+gcloud organizations
+gcloud pam entitlements
+gcloud pam grants
+gcloud pam operations
+gcloud preview config configurations
+gcloud privateca certificates
+gcloud privateca pools
+gcloud privateca roots
+gcloud privateca subordinates
+gcloud privateca templates
+gcloud projects
+gcloud pubsub lite-operations
+gcloud pubsub lite-reservations
+gcloud pubsub lite-subscriptions
+gcloud pubsub lite-topics
+gcloud pubsub schemas
+gcloud pubsub snapshots
+gcloud pubsub subscriptions
+gcloud pubsub topics
+gcloud recaptcha firewall-policies
+gcloud recaptcha keys
+gcloud recommender insight-type-config
+gcloud recommender insights
+gcloud recommender recommendations
+gcloud recommender recommender-config
+gcloud redis clusters
+gcloud redis instances
+gcloud redis operations
+gcloud redis regions
+gcloud resource-manager folders
+gcloud resource-manager org-policies
+gcloud resource-manager tags keys
+gcloud resource-manager tags values
+gcloud run domain-mappings
+gcloud run jobs
+gcloud run jobs executions
+gcloud run jobs executions tasks
+gcloud run revisions
+gcloud run services
+gcloud scc assets
+gcloud scc iac-validation-reports
+gcloud scc manage custom-modules etd
+gcloud scc manage custom-modules sha
+gcloud scc manage services
+gcloud scc notifications
+gcloud scc operations
+gcloud scc posture-deployments
+gcloud scc posture-operations
+gcloud scc posture-templates
+gcloud scc postures
+gcloud scc sources
+gcloud scheduler jobs
+gcloud scheduler locations
+gcloud secrets
+gcloud secrets locations
+gcloud secrets versions
+gcloud service-directory endpoints
+gcloud service-directory locations
+gcloud service-directory namespaces
+gcloud service-directory services
+gcloud service-extensions lb-route-extensions
+gcloud service-extensions lb-traffic-extensions
+gcloud services api-keys
+gcloud services operations
+gcloud services vpc-peerings operations
+gcloud source project-configs
+gcloud source repos
+gcloud spanner backup-schedules
+gcloud spanner backups
+gcloud spanner databases ddl
+gcloud spanner databases
+gcloud spanner instance-configs
+gcloud spanner instances
+gcloud spanner operations
+gcloud sql backups
+gcloud sql databases
+gcloud sql instances
+gcloud sql operations
+gcloud sql ssl client-certs
+gcloud sql ssl-certs
+gcloud sql users
+gcloud storage buckets
+gcloud storage buckets notifications
+gcloud storage folders
+gcloud storage hmac
+gcloud storage insights inventory-reports
+gcloud storage insights inventory-reports details
+gcloud storage managed-folders
+gcloud storage objects
+gcloud storage operations
+gcloud tasks cmek-config
+gcloud tasks
+gcloud tasks locations
+gcloud tasks queues
+gcloud telco-automation operations
+gcloud telco-automation orchestration-cluster
+gcloud transcoder jobs
+gcloud transcoder templates
+gcloud transfer agent-pools
+gcloud transfer jobs
+gcloud transfer operations
+gcloud vmware dns-bind-permission
+gcloud vmware network-peerings
+gcloud vmware network-policies
+gcloud vmware network-policies external-access-rules
+gcloud vmware networks
+gcloud vmware node-types
+gcloud vmware operations
+gcloud vmware private-clouds clusters
+gcloud vmware private-clouds clusters nodes
+gcloud vmware private-clouds
+gcloud vmware private-clouds dns-forwarding
+gcloud vmware private-clouds external-addresses
+gcloud vmware private-clouds hcx activationkeys
+gcloud vmware private-clouds logging-servers
+gcloud vmware private-clouds management-dns-zone-bindings
+gcloud vmware private-clouds nsx credentials
+gcloud vmware private-clouds subnets
+gcloud vmware private-clouds vcenter credentials
+gcloud vmware private-connections
+gcloud workbench instances
+gcloud workflows
+gcloud workflows executions
+gcloud workspace-add-ons deployments
+gcloud workstations clusters
+gcloud workstations configs
+gcloud workstations

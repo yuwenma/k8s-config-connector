@@ -1,0 +1,153 @@
+This is a great start to a complex code generation task! You've successfully parsed a significant amount of Protobuf and generated corresponding Go structs. Here's a breakdown of what you've done well, areas for improvement, and a roadmap for completing the generation:
+
+**Strengths:**
+
+*   **Accurate Parsing:** You've correctly interpreted most of the Protobuf message definitions and created corresponding Go structs.  You handle `oneof`, `repeated`, `map`, enums, and nested messages well.
+*   **Field Tagging:** You've included the `kcc:proto:field` tags, which are essential for Config Connector integration. You're also correctly using `json:"fieldname,omitempty"` for optional fields.
+*   **Reference Handling:** You've started to incorporate `refs.XXXRef` for fields that reference other GCP resources, which is crucial.
+*   **Observed State Structs:** You've created `ObservedState` structs, indicating you understand the need to track the actual state in GCP.
+*   **Spec/Status Split:** You've correctly identified fields that should be part of the resource spec (user-configurable) and status (observed from GCP). You've marked fields as `REQUIRED`, `OPTIONAL`, `OUTPUT_ONLY`, and `IMMUTABLE` as specified in the protobuf definitions, demonstrating good attention to detail.
+*   **Comments:** You've retained many of the original comments from the Protobuf definitions, which is essential for documentation.  You've also added helpful TODOs and NOTYETs.
+
+**Areas for Improvement and Next Steps:**
+
+1.  **Complete Field Type Mapping:** You've made a good start, but there are several places where the Go type needs to be refined:
+    *   `google.protobuf.Timestamp`: Map this to `*string` with a format annotation: `// +kubebuilder:validation:Format=date-time`.
+    *   `google.protobuf.Duration`: Map this to `*string`.
+    *   `google.protobuf.Struct`: This needs special handling. You can use `map[string]interface{}` or often, it is more appropriate to map this to `runtime.RawExtension`.
+    *   `google.protobuf.BoolValue`, `google.protobuf.StringValue`, `google.protobuf.Int64Value`, `google.protobuf.Int32Value`, `google.protobuf.DoubleValue`, `google.protobuf.FloatValue`, `google.protobuf.BytesValue`: All of the wrapper types in protobuf are used for different purposes. Some of them are optional, and some of them are used to provide default values when they are unset. To be specific, for wrapper types that are optional, their corresponding Go type is a pointer (e.g. `*string`, `*bool`, or `*int64`) while for wrapper types that are not optional, their corresponding Go type is a primitive type (e.g. `string`, `bool`, or `int64`) For example, for a field with type `google.protobuf.StringValue` and marked as `OPTIONAL`, its corresponding Go type should be `*string`. For a field with type `google.protobuf.StringValue` and marked as `REQUIRED` or no marker, its corresponding Go type should be `string`.
+
+2.  **`oneof` Handling:** You've recognized `oneof` fields, but the Go representation needs to be a struct with multiple pointer fields, one for each option. You should also have a `oneof` field in the parent struct as a placeholder. For example, for the `source` field in `Cluster`:
+
+    ```go
+    type Cluster struct {
+    	// ... other fields ...
+
+    	// In case of an imported cluster, this field contains information about the
+    	// source this cluster was imported from.
+    	Source *ClusterSource `json:"source,omitempty"`
+    }
+
+    type ClusterSource struct {
+    	// Output only. Cluster created from backup.
+    	BackupSource *BackupSource `json:"backupSource,omitempty"`
+
+    	// Output only. Cluster created via DMS migration.
+    	MigrationSource *MigrationSource `json:"migrationSource,omitempty"`
+
+    	// Output only. Cluster created from CloudSQL snapshot.
+    	CloudsqlBackupRunSource *CloudSQLBackupRunSource `json:"cloudsqlBackupRunSource,omitempty"`
+    }
+    ```
+    Only one of the `oneof` field can be set at a time, otherwise, an error should be returned.
+
+3.  **Resource References:** You've started using `refs.XXXRef` types, which is good. Now, consistently apply this:
+    *   Wherever you see `(google.api.resource_reference)`, create a corresponding `*refs.XXXRef` field. The `type` annotation in the Protobuf tells you which `XXX` to use (e.g., `compute.googleapis.com/Network` becomes `ComputeNetworkRef`).
+
+4.  **Resource ID:** The `ResourceID *string` field should be added only when a resource supports user-provided IDs. You need to check for `google.api.resource.pattern` to include `ResourceID`. If the `pattern` shows only `{project}/{location}/{resource_name}`, it means the user can't provide the id. If there are multiple `{resource_name}`s, then `ResourceID` is necessary. Also, add validation markers `// +kubebuilder:validation:XValidation:rule="self == oldSelf",message="ResourceID field is immutable"` to the resource ID field to prevent modification on the resource ID.
+
+5.  **Package:** You've started handling package, but you must remove the `mockgcp` part. i.e. `in.proto.message: mockgcp.cloud.apigee.v1` should have `out: package v1alpha1`.
+
+6.  **`map[string]string`:** You are mostly handling these correctly.
+
+7.  **Enums:** You're mapping enums to Go `*string` types, which is a good start.  You also need to:
+    *   Add a `// +kubebuilder:validation:Enum=...` marker with all the allowed enum values.  This is *very important* for validation.
+    *   Create a Go `const` block for the enum values, so they can be referenced symbolically in Go code.
+
+    ```go
+    // Cluster State
+    type ClusterState string
+
+    const (
+    	ClusterStateUnspecified ClusterState = "STATE_UNSPECIFIED"
+    	ClusterStateReady       ClusterState = "READY"
+    	ClusterStateStopped     ClusterState = "STOPPED"
+    	// ... other states ...
+    )
+
+    // In the Cluster struct:
+    State *ClusterState `json:"state,omitempty"`  // Use the named type
+    ```
+
+8.  **Complete `NOTYET` and `TODO` comments:** Address all of your "NOTYET" and "TODO" comments.
+
+9. **Conditions:** You have the `Conditions` field in `AlloyDBInstanceStatus`, you need to add it to `AlloyDBClusterStatus` as well. Also, you need to include the `ObservedGeneration *int64` for each of the `Status` struct.
+
+10. **Status struct:** Change the `Status` struct name to a unique name, such as `AlloyDBInstanceStatus`.
+
+**Roadmap:**
+
+1.  **Type Mapping:** Systematically go through each Protobuf message and field, ensuring the Go type is correct. Pay close attention to the `oneof` fields, references, and enums.
+2.  **Enum Constants:** Generate Go constants for all enum values.
+3.  **Resource References:** Ensure all `google.api.resource_reference` annotations are correctly converted to `refs.XXXRef` fields.
+4.  **Resource ID:** Add the `ResourceID` field only when supported, i.e., the pattern includes more than 1 resource name.
+5.  **Complete TODOs:** Address all "TODO" and "NOTYET" comments.
+6.  **Package Names:** Fix the incorrect package names.
+7.  **Validation Markers:** Add validation markers (e.g., `// +kubebuilder:validation:MinLength=1`) wherever appropriate, based on the Protobuf field annotations and constraints.
+8. **Conditions and Observed Generation:** Make sure the `Conditions` and `ObservedGeneration` fields are present for `Status` struct.
+9. **Testing:** Add thorough unit tests to verify the generated code behaves as expected, especially around `oneof` fields and resource references. Use the example values in the comments as test cases.
+10. **Code Generation Tool (Future):** Consider creating a simple script (Python, Go, etc.) to automate this process.  You could read the Protobuf file and generate the Go structs programmatically. This would make it easier to keep the Go code in sync with any changes to the Protobuf definitions.
+
+**Example of improved `oneof` handling (for `google.cloud.alloydb.v1beta.Cluster`):**
+
+```go
+type AlloyDBClusterSpec struct {
+	// ... other fields ...
+
+	// Input only. Initial user to setup during cluster creation. Required.
+	//  If used in `RestoreCluster` this is ignored.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.initial_user
+	InitialUser *UserPassword `json:"initialUser,omitempty"`
+
+        // ... other fields
+
+        // Immutable. The source when restoring from a backup or another cluster.
+	// +optional
+	Source *Source `json:"source,omitempty"`
+
+        // ...
+}
+
+
+type Source struct {
+	// Output only. Cluster created from backup.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.backup_source
+	BackupSource *BackupSource `json:"backupSource,omitempty"`
+
+	// Output only. Cluster created via DMS migration.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.migration_source
+	MigrationSource *MigrationSource `json:"migrationSource,omitempty"`
+
+	// Output only. Cluster created from CloudSQL snapshot.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.cloudsql_backup_run_source
+	CloudsqlBackupRunSource *CloudSQLBackupRunSource `json:"cloudsqlBackupRunSource,omitempty"`
+}
+
+```
+
+**Example of improved enum handling (for `google.cloud.alloydb.v1beta.Cluster.ClusterType`):**
+
+```go
+// Type of Cluster
+// +kubebuilder:validation:Enum=CLUSTER_TYPE_UNSPECIFIED;PRIMARY;SECONDARY
+type ClusterType string
+
+const (
+	ClusterTypeUnspecified ClusterType = "CLUSTER_TYPE_UNSPECIFIED"
+	ClusterTypePrimary     ClusterType = "PRIMARY"
+	ClusterTypeSecondary   ClusterType = "SECONDARY"
+)
+
+
+type AlloyDBClusterSpec struct {
+    // ...
+    // +kcc:proto:field=google.cloud.alloydb.v1beta.Cluster.cluster_type
+    ClusterType *ClusterType `json:"clusterType,omitempty"`
+
+    // ...
+}
+
+```
+
+By systematically addressing these points, you'll create robust and accurate Go structs that are ready for use with Config Connector. Good job on the progress so far!
+

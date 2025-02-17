@@ -96,6 +96,26 @@ type AlloyDBInstanceSpec struct {
 	ReadPoolConfig *Instance_ReadPoolConfig `json:"readPoolConfig,omitempty"`
 }
 
+// +kcc:proto=google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+type Instance_InstanceNetworkConfig struct {
+	// Optional. A list of external network authorized to
+	// access this instance. This field is only allowed to be set when
+	// 'enablePublicIp' is set to true.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.authorized_external_networks
+	AuthorizedExternalNetworks []Instance_InstanceNetworkConfig_AuthorizedNetwork `json:"authorizedExternalNetworks,omitempty"`
+
+	// Optional. Enabling public ip for the instance. If
+	// a user wishes to disable this, please also clear the list of
+	// the authorized external networks set on the same instance.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.enable_public_ip
+	EnablePublicIP *bool `json:"enablePublicIp,omitempty"`
+
+	// Optional. Enabling an outbound public IP address to support a database
+	//  server sending requests out into the internet.
+	// +kcc:proto:field=google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.enable_outbound_public_ip
+	EnableOutboundPublicIP *bool `json:"enableOutboundPublicIp,omitempty"`
+}
+
 // AlloyDBInstanceStatus defines the config connector machine state of AlloyDBInstance
 type AlloyDBInstanceStatus struct {
 	/* Conditions represent the latest available observations of the
@@ -161,7 +181,7 @@ type AlloyDBInstanceObservedState struct {
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 // +kubebuilder:resource:categories=gcp,shortName=gcpalloydbinstance;gcpalloydbinstances
 // +kubebuilder:subresource:status
-// +kubebuilder:metadata:labels="cnrm.cloud.google.com/tf2crd=true";"cnrm.cloud.google.com/managed-by-kcc=true";"cnrm.cloud.google.com/stability-level=stable";"cnrm.cloud.google.com/system=true"
+// +kubebuilder:metadata:labels="cnrm.cloud.google.com/managed-by-kcc=true";"cnrm.cloud.google.com/stability-level=stable";"cnrm.cloud.google.com/system=true"
 // +kubebuilder:printcolumn:name="Age",JSONPath=".metadata.creationTimestamp",type="date"
 // +kubebuilder:printcolumn:name="Ready",JSONPath=".status.conditions[?(@.type=='Ready')].status",type="string",description="When 'True', the most recent reconcile of the resource succeeded"
 // +kubebuilder:printcolumn:name="Status",JSONPath=".status.conditions[?(@.type=='Ready')].reason",type="string",description="The reason for the value in 'Ready'"

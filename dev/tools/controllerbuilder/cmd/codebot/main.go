@@ -23,7 +23,7 @@ import (
 	"strings"
 
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/codebot"
-	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/codebot/ui"
+	codbotui "github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/codebot/ui"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/llm"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/toolbot"
 	"k8s.io/klog/v2"
@@ -42,6 +42,9 @@ type Options struct {
 	ProtoDir string
 	// BaseDir is the base directory for the project code
 	BaseDir string
+
+	UIType      string
+	Instruction string
 }
 
 func run(ctx context.Context) error {
@@ -51,6 +54,8 @@ func run(ctx context.Context) error {
 
 	flag.StringVar(&o.ProtoDir, "proto-dir", o.ProtoDir, "base directory for checkout of proto API definitions")
 	flag.StringVar(&o.BaseDir, "base-dir", o.BaseDir, "base directory for the project code")
+	flag.StringVar(&o.UIType, "ui-type", o.UIType, "")
+	flag.StringVar(&o.Instruction, "instruction", o.Instruction, "")
 	flag.Parse()
 
 	if o.ProtoDir == "" {
@@ -101,8 +106,17 @@ func run(ctx context.Context) error {
 
 	var chatSession *codebot.Chat
 
-	// ui := ui.NewTViewUI()
-	ui := ui.NewTerminalUI()
+	var ui codbotui.UI
+	switch o.UIType {
+	case "terminal":
+		ui = codbotui.NewTerminalUI()
+	case "tview":
+		ui = codbotui.NewTViewUI()
+	case "bash":
+		ui = codbotui.NewBashUI(o.Instruction)
+	default:
+		ui = codbotui.NewTerminalUI()
+	}
 
 	ui.SetCallback(func(text string) error {
 		var userParts []string
