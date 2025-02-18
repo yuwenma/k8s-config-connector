@@ -20,6 +20,7 @@ import (
 	"fmt"
 	"os/exec"
 	"strings"
+	"time"
 
 	"cloud.google.com/go/vertexai/genai"
 	"golang.org/x/oauth2/google"
@@ -27,8 +28,13 @@ import (
 	"k8s.io/klog/v2"
 )
 
+type GCPOptions interface {
+	GetProject() string
+	GetLocation() string
+}
+
 // BuildVertexAIClient builds a client for the VertexAI API.
-func BuildVertexAIClient(ctx context.Context) (*VertexAIClient, error) {
+func BuildVertexAIClient(ctx context.Context, options ...GCPOptions) (*VertexAIClient, error) {
 	log := klog.FromContext(ctx)
 
 	var opts []option.ClientOption
@@ -42,6 +48,12 @@ func BuildVertexAIClient(ctx context.Context) (*VertexAIClient, error) {
 	projectID := ""
 	location := ""
 
+	for _, o := range options {
+		if o != nil {
+			projectID = o.GetProject()
+			location = o.GetLocation()
+		}
+	}
 	if projectID == "" {
 		cmd := exec.CommandContext(ctx, "gcloud", "config", "get", "project")
 		var stdout bytes.Buffer
@@ -223,6 +235,8 @@ func (c *VertexAIChat) SendMessage(ctx context.Context, parts ...string) (Respon
 	if err != nil {
 		return nil, err
 	}
+	time.Sleep(7 * time.Second)
+
 	return &VertexAIResponse{vertexaiResponse: vertexaiResponse}, nil
 }
 
@@ -239,6 +253,8 @@ func (c *VertexAIChat) SendFunctionResults(ctx context.Context, functionResults 
 	if err != nil {
 		return nil, err
 	}
+	time.Sleep(7 * time.Second)
+
 	return &VertexAIResponse{vertexaiResponse: vertexaiResponse}, nil
 }
 

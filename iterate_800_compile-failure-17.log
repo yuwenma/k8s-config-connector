@@ -1,0 +1,214 @@
+[create project] analytics-GoogleAdsLink: ERROR: (gcloud.projects.create) INVALID_ARGUMENT: field [project_id] has issue [project_id contains prohibited words]
+https://cloud.google.com/resource-manager/reference/rest/v1/projects
+- '@type': type.googleapis.com/google.rpc.BadRequest
+  fieldViolations:
+  - description: project_id contains prohibited words
+    field: project_id
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: "[ORIGINAL ERROR] generic::invalid_argument: com.google.apps.framework.request.StatusException:\
+    \ <eye3 title='INVALID_ARGUMENT'/> generic::INVALID_ARGUMENT: field [project_id]\
+    \ has issue [project_id contains prohibited words] [google.rpc.error_details_ext]\
+    \ { code: 3 message: \"field [project_id] has issue [project_id contains prohibited\
+    \ words]\" details { [type.googleapis.com/google.rpc.BadRequest] { field_violations\
+    \ { field: \"project_id\" description: \"project_id contains prohibited words\"\
+    \ } } } details { [type.googleapis.com/google.rpc.Help] { links { url: \"https://cloud.google.com/resource-manager/reference/rest/v1/projects\"\
+    \ } } } }"
+[create project] appengine-Instance: ERROR: (gcloud.projects.create) INVALID_ARGUMENT: field [project_id] has issue [project_id contains prohibited words]
+https://cloud.google.com/resource-manager/reference/rest/v1/projects
+- '@type': type.googleapis.com/google.rpc.BadRequest
+  fieldViolations:
+  - description: project_id contains prohibited words
+    field: project_id
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: "[ORIGINAL ERROR] generic::invalid_argument: com.google.apps.framework.request.StatusException:\
+    \ <eye3 title='INVALID_ARGUMENT'/> generic::INVALID_ARGUMENT: field [project_id]\
+    \ has issue [project_id contains prohibited words] [google.rpc.error_details_ext]\
+    \ { code: 3 message: \"field [project_id] has issue [project_id contains prohibited\
+    \ words]\" details { [type.googleapis.com/google.rpc.BadRequest] { field_violations\
+    \ { field: \"project_id\" description: \"project_id contains prohibited words\"\
+    \ } } } details { [type.googleapis.com/google.rpc.Help] { links { url: \"https://cloud.google.com/resource-manager/reference/rest/v1/projects\"\
+    \ } } } }"
+[create project] appengine-Instance: ERROR: (gcloud.projects.create) INVALID_ARGUMENT: field [project_id] has issue [project_id contains prohibited words]
+https://cloud.google.com/resource-manager/reference/rest/v1/projects
+- '@type': type.googleapis.com/google.rpc.BadRequest
+  fieldViolations:
+  - description: project_id contains prohibited words
+    field: project_id
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: "[ORIGINAL ERROR] generic::invalid_argument: com.google.apps.framework.request.StatusException:\
+    \ <eye3 title='INVALID_ARGUMENT'/> generic::INVALID_ARGUMENT: field [project_id]\
+    \ has issue [project_id contains prohibited words] [google.rpc.error_details_ext]\
+    \ { code: 3 message: \"field [project_id] has issue [project_id contains prohibited\
+    \ words]\" details { [type.googleapis.com/google.rpc.BadRequest] { field_violations\
+    \ { field: \"project_id\" description: \"project_id contains prohibited words\"\
+    \ } } } details { [type.googleapis.com/google.rpc.Help] { links { url: \"https://cloud.google.com/resource-manager/reference/rest/v1/projects\"\
+    \ } } } }"
+[create project] accessapproval-AccessApprovalServiceAccount: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [17]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] advisorynotifications-Notification: ERROR: (gcloud.projects.create) Project creation failed. The project ID you specified is already in use by another project. Please try an alternative ID.
+[checkout branch] alloydb-Instance resource-alloydb-Instance 
+[checkout branch] billing-Budget resource-billing-Budget 
+[create project] channel-ChannelPartnerRepricingConfig: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [17]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] confidentialcomputing-Challenge: ERROR: (gcloud.projects.create) Project creation failed. The project ID you specified is already in use by another project. Please try an alternative ID.
+[checkout branch] datafusion-Instance resource-datafusion-Instance 
+[create project] dialogflow-ConversationModelEvaluation: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] eventarc-GoogleApiSource: ERROR: (gcloud.projects.create) INVALID_ARGUMENT: field [project_id] has issue [project_id contains prohibited words]
+https://cloud.google.com/resource-manager/reference/rest/v1/projects
+- '@type': type.googleapis.com/google.rpc.BadRequest
+  fieldViolations:
+  - description: project_id contains prohibited words
+    field: project_id
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: "[ORIGINAL ERROR] generic::invalid_argument: com.google.apps.framework.request.StatusException:\
+    \ <eye3 title='INVALID_ARGUMENT'/> generic::INVALID_ARGUMENT: field [project_id]\
+    \ has issue [project_id contains prohibited words] [google.rpc.error_details_ext]\
+    \ { code: 3 message: \"field [project_id] has issue [project_id contains prohibited\
+    \ words]\" details { [type.googleapis.com/google.rpc.BadRequest] { field_violations\
+    \ { field: \"project_id\" description: \"project_id contains prohibited words\"\
+    \ } } } details { [type.googleapis.com/google.rpc.Help] { links { url: \"https://cloud.google.com/resource-manager/reference/rest/v1/projects\"\
+    \ } } } }"
+[create project] eventarc-GoogleChannelConfig: ERROR: (gcloud.projects.create) INVALID_ARGUMENT: field [project_id] has issue [project_id contains prohibited words]
+https://cloud.google.com/resource-manager/reference/rest/v1/projects
+- '@type': type.googleapis.com/google.rpc.BadRequest
+  fieldViolations:
+  - description: project_id contains prohibited words
+    field: project_id
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: "[ORIGINAL ERROR] generic::invalid_argument: com.google.apps.framework.request.StatusException:\
+    \ <eye3 title='INVALID_ARGUMENT'/> generic::INVALID_ARGUMENT: field [project_id]\
+    \ has issue [project_id contains prohibited words] [google.rpc.error_details_ext]\
+    \ { code: 3 message: \"field [project_id] has issue [project_id contains prohibited\
+    \ words]\" details { [type.googleapis.com/google.rpc.BadRequest] { field_violations\
+    \ { field: \"project_id\" description: \"project_id contains prohibited words\"\
+    \ } } } details { [type.googleapis.com/google.rpc.Help] { links { url: \"https://cloud.google.com/resource-manager/reference/rest/v1/projects\"\
+    \ } } } }"
+[checkout branch] functions-Function resource-functions-Function 
+[create project] oracledatabase-AutonomousDatabaseCharacterSet: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] recaptchaenterprise-RelatedAccountGroupMembership: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[checkout branch] redis-Cluster resource-redis-Cluster 
+[create project] resourcemanager-Organization: ERROR: (gcloud.projects.create) Project creation failed. The project ID you specified is already in use by another project. Please try an alternative ID.
+[create project] securitycenter-ServiceAccount: ERROR: (gcloud.projects.create) Project creation failed. The project ID you specified is already in use by another project. Please try an alternative ID.
+[create project] securitycenter-EffectiveEventThreatDetectionCustomModule: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] securitycenter-EffectiveSecurityHealthAnalyticsCustomModule: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] securitycenter-EventThreatDetectionCustomModule: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] securitycenter-SecurityHealthAnalyticsCustomModule: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] securitycentermanagement-EffectiveSecurityHealthAnalyticsCustomModule: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] securitycentermanagement-SecurityHealthAnalyticsCustomModule: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] securitycentermanagement-EffectiveEventThreatDetectionCustomModule: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] securitycentermanagement-EventThreatDetectionCustomModule: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[checkout branch] tasks-Task resource-tasks-Task 
+[create project] video-Clip: ERROR: (gcloud.projects.create) Project creation failed. The project ID you specified is already in use by another project. Please try an alternative ID.
+[checkout branch] workflows-Workflow resource-workflows-Workflow 
+[create project] iam-WorkloadIdentityPoolProvider: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] iam-PrincipalAccessBoundaryPolicy: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] iam-PrincipalAccessBoundaryPolicy: ERROR: (gcloud.projects.create) argument PROJECT_ID: Bad value [18]: Project IDs are immutable and can be set only during project creation. They must start with a lowercase letter and can have lowercase ASCII letters, digits or hyphens. Project IDs must be between 6 and 30 characters.
+Usage: gcloud projects create [PROJECT_ID] [optional flags]
+  optional flags may be  --enable-cloud-apis | --folder | --help | --labels |
+                         --name | --organization | --set-as-default | --tags
+
+For detailed information on this command and its flags, run:
+  gcloud projects create --help
+[create project] identity-AccessLevel: ERROR: (gcloud.projects.create) INVALID_ARGUMENT: field [project_id] has issue [project_id contains prohibited words]
+https://cloud.google.com/resource-manager/reference/rest/v1/projects
+- '@type': type.googleapis.com/google.rpc.BadRequest
+  fieldViolations:
+  - description: project_id contains prohibited words
+    field: project_id
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: "[ORIGINAL ERROR] generic::invalid_argument: com.google.apps.framework.request.StatusException:\
+    \ <eye3 title='INVALID_ARGUMENT'/> generic::INVALID_ARGUMENT: field [project_id]\
+    \ has issue [project_id contains prohibited words] [google.rpc.error_details_ext]\
+    \ { code: 3 message: \"field [project_id] has issue [project_id contains prohibited\
+    \ words]\" details { [type.googleapis.com/google.rpc.BadRequest] { field_violations\
+    \ { field: \"project_id\" description: \"project_id contains prohibited words\"\
+    \ } } } details { [type.googleapis.com/google.rpc.Help] { links { url: \"https://cloud.google.com/resource-manager/reference/rest/v1/projects\"\
+    \ } } } }"

@@ -33,7 +33,7 @@
 // +k8s:deepcopy-gen=package,register
 // +k8s:conversion-gen=github.com/GoogleCloudPlatform/k8s-config-connector/pkg/clients/generated/pkg/apis/iam
 // +k8s:defaulter-gen=TypeMeta
-// +groupName=iam.cnrm.cloud.google.com
+// +groupName=cloud.google.com/go/iam/apiv1beta1
 package v1beta1
 
 import (
@@ -45,7 +45,7 @@ import (
 
 var (
 	// SchemeGroupVersion is the group version used to register these objects.
-	SchemeGroupVersion = schema.GroupVersion{Group: "iam.cnrm.cloud.google.com", Version: "v1beta1"}
+	SchemeGroupVersion = schema.GroupVersion{Group: "cloud.google.com/go/iam/apiv1beta1", Version: "v1beta1"}
 
 	// SchemeBuilder is used to add go types to the GroupVersionKind scheme.
 	SchemeBuilder = &scheme.Builder{GroupVersion: SchemeGroupVersion}

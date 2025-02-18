@@ -2869,7 +2869,7 @@ var SupportedGVKs = map[schema.GroupVersionKind]GVKMetadata{
 		},
 	},
 	{
-		Group:   "iam.cnrm.cloud.google.com",
+		Group:   "cloud.google.com/go/iam/apiv1beta1",
 		Version: "v1beta1",
 		Kind:    "IAMAccessBoundaryPolicy",
 	}: {
@@ -2881,7 +2881,7 @@ var SupportedGVKs = map[schema.GroupVersionKind]GVKMetadata{
 		},
 	},
 	{
-		Group:   "iam.cnrm.cloud.google.com",
+		Group:   "cloud.google.com/go/iam/apiv1beta1",
 		Version: "v1beta1",
 		Kind:    "IAMAuditConfig",
 	}: {

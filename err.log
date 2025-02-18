@@ -1,0 +1,771 @@
++ cd /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector
++ /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/dev/tasks/generate-crds
+++ git rev-parse --show-toplevel
++ REPO_ROOT=/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector
++ cd /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector
++ cd /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/apis
++ go run sigs.k8s.io/controller-tools/cmd/controller-gen@v0.16.3 object:headerFile=/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/hack/boilerplate.go.txt crd:crdVersions=v1,allowDangerousTypes=true,ignoreUnexportedFields=true output:crd:artifacts:config=config/crd/ paths=./...
++ cd /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector
++ go run ./scripts/add-validation-to-crds --dir apis/config/crd/
++ cd /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector
++ go run ./scripts/crd-tools set-field spec.preserveUnknownFields=false --dir apis/config/crd/
++ go run ./scripts/crd-tools delete-field status --dir apis/config/crd/
++ go run ./scripts/crd-tools set-annotation cnrm.cloud.google.com/version=0.0.0-dev --dir apis/config/crd/
++ go run ./scripts/crd-tools delete-annotation controller-gen.kubebuilder.io/version --dir apis/config/crd/
++ go run ./scripts/crd-tools reflow-descriptions --dir apis/config/crd/
++ excluded_resources=()
++ cd /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector
++ cd apis/config/crd/
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo alloydb.cnrm.cloud.google.com_alloydbclusters.yaml
+++ sed 's/.yaml$//g'
++ base_name=alloydb.cnrm.cloud.google.com_alloydbclusters
+++ echo alloydb.cnrm.cloud.google.com_alloydbclusters
+++ cut -d_ -f1
++ domain=alloydb.cnrm.cloud.google.com
+++ echo alloydb.cnrm.cloud.google.com_alloydbclusters
+++ cut -d_ -f2
++ resource=alloydbclusters
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_alloydbclusters.alloydb.cnrm.cloud.google.com.yaml
++ cp alloydb.cnrm.cloud.google.com_alloydbclusters.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_alloydbclusters.alloydb.cnrm.cloud.google.com.yaml
++ echo 'Renamed alloydb.cnrm.cloud.google.com_alloydbclusters.yaml to apiextensions.k8s.io_v1_customresourcedefinition_alloydbclusters.alloydb.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo alloydb.cnrm.cloud.google.com_alloydbinstances.yaml
+++ sed 's/.yaml$//g'
++ base_name=alloydb.cnrm.cloud.google.com_alloydbinstances
+++ echo alloydb.cnrm.cloud.google.com_alloydbinstances
+++ cut -d_ -f1
++ domain=alloydb.cnrm.cloud.google.com
+++ echo alloydb.cnrm.cloud.google.com_alloydbinstances
+++ cut -d_ -f2
++ resource=alloydbinstances
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_alloydbinstances.alloydb.cnrm.cloud.google.com.yaml
++ cp alloydb.cnrm.cloud.google.com_alloydbinstances.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_alloydbinstances.alloydb.cnrm.cloud.google.com.yaml
++ echo 'Renamed alloydb.cnrm.cloud.google.com_alloydbinstances.yaml to apiextensions.k8s.io_v1_customresourcedefinition_alloydbinstances.alloydb.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo apigee.cnrm.cloud.google.com_apigeeenvgroupattachments.yaml
+++ sed 's/.yaml$//g'
++ base_name=apigee.cnrm.cloud.google.com_apigeeenvgroupattachments
+++ echo apigee.cnrm.cloud.google.com_apigeeenvgroupattachments
+++ cut -d_ -f1
++ domain=apigee.cnrm.cloud.google.com
+++ echo apigee.cnrm.cloud.google.com_apigeeenvgroupattachments
+++ cut -d_ -f2
++ resource=apigeeenvgroupattachments
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_apigeeenvgroupattachments.apigee.cnrm.cloud.google.com.yaml
++ cp apigee.cnrm.cloud.google.com_apigeeenvgroupattachments.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_apigeeenvgroupattachments.apigee.cnrm.cloud.google.com.yaml
++ echo 'Renamed apigee.cnrm.cloud.google.com_apigeeenvgroupattachments.yaml to apiextensions.k8s.io_v1_customresourcedefinition_apigeeenvgroupattachments.apigee.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo apigee.cnrm.cloud.google.com_apigeeenvgroups.yaml
+++ sed 's/.yaml$//g'
++ base_name=apigee.cnrm.cloud.google.com_apigeeenvgroups
+++ echo apigee.cnrm.cloud.google.com_apigeeenvgroups
+++ cut -d_ -f1
++ domain=apigee.cnrm.cloud.google.com
+++ echo apigee.cnrm.cloud.google.com_apigeeenvgroups
+++ cut -d_ -f2
++ resource=apigeeenvgroups
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_apigeeenvgroups.apigee.cnrm.cloud.google.com.yaml
++ cp apigee.cnrm.cloud.google.com_apigeeenvgroups.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_apigeeenvgroups.apigee.cnrm.cloud.google.com.yaml
++ echo 'Renamed apigee.cnrm.cloud.google.com_apigeeenvgroups.yaml to apiextensions.k8s.io_v1_customresourcedefinition_apigeeenvgroups.apigee.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo apigee.cnrm.cloud.google.com_apigeeenvironments.yaml
+++ sed 's/.yaml$//g'
++ base_name=apigee.cnrm.cloud.google.com_apigeeenvironments
+++ echo apigee.cnrm.cloud.google.com_apigeeenvironments
+++ cut -d_ -f1
++ domain=apigee.cnrm.cloud.google.com
+++ echo apigee.cnrm.cloud.google.com_apigeeenvironments
+++ cut -d_ -f2
++ resource=apigeeenvironments
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_apigeeenvironments.apigee.cnrm.cloud.google.com.yaml
++ cp apigee.cnrm.cloud.google.com_apigeeenvironments.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_apigeeenvironments.apigee.cnrm.cloud.google.com.yaml
++ echo 'Renamed apigee.cnrm.cloud.google.com_apigeeenvironments.yaml to apiextensions.k8s.io_v1_customresourcedefinition_apigeeenvironments.apigee.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo apigee.cnrm.cloud.google.com_apigeeinstances.yaml
+++ sed 's/.yaml$//g'
++ base_name=apigee.cnrm.cloud.google.com_apigeeinstances
+++ echo apigee.cnrm.cloud.google.com_apigeeinstances
+++ cut -d_ -f1
++ domain=apigee.cnrm.cloud.google.com
+++ echo apigee.cnrm.cloud.google.com_apigeeinstances
+++ cut -d_ -f2
++ resource=apigeeinstances
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_apigeeinstances.apigee.cnrm.cloud.google.com.yaml
++ cp apigee.cnrm.cloud.google.com_apigeeinstances.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_apigeeinstances.apigee.cnrm.cloud.google.com.yaml
++ echo 'Renamed apigee.cnrm.cloud.google.com_apigeeinstances.yaml to apiextensions.k8s.io_v1_customresourcedefinition_apigeeinstances.apigee.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo apigee.cnrm.cloud.google.com_apigeeorganizations.yaml
+++ sed 's/.yaml$//g'
++ base_name=apigee.cnrm.cloud.google.com_apigeeorganizations
+++ echo apigee.cnrm.cloud.google.com_apigeeorganizations
+++ cut -d_ -f1
++ domain=apigee.cnrm.cloud.google.com
+++ echo apigee.cnrm.cloud.google.com_apigeeorganizations
+++ cut -d_ -f2
++ resource=apigeeorganizations
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_apigeeorganizations.apigee.cnrm.cloud.google.com.yaml
++ cp apigee.cnrm.cloud.google.com_apigeeorganizations.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_apigeeorganizations.apigee.cnrm.cloud.google.com.yaml
++ echo 'Renamed apigee.cnrm.cloud.google.com_apigeeorganizations.yaml to apiextensions.k8s.io_v1_customresourcedefinition_apigeeorganizations.apigee.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo apikeys.cnrm.cloud.google.com_apikeyskeys.yaml
+++ sed 's/.yaml$//g'
++ base_name=apikeys.cnrm.cloud.google.com_apikeyskeys
+++ echo apikeys.cnrm.cloud.google.com_apikeyskeys
+++ cut -d_ -f1
++ domain=apikeys.cnrm.cloud.google.com
+++ echo apikeys.cnrm.cloud.google.com_apikeyskeys
+++ cut -d_ -f2
++ resource=apikeyskeys
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_apikeyskeys.apikeys.cnrm.cloud.google.com.yaml
++ cp apikeys.cnrm.cloud.google.com_apikeyskeys.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_apikeyskeys.apikeys.cnrm.cloud.google.com.yaml
++ echo 'Renamed apikeys.cnrm.cloud.google.com_apikeyskeys.yaml to apiextensions.k8s.io_v1_customresourcedefinition_apikeyskeys.apikeys.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo bigqueryanalyticshub.cnrm.cloud.google.com_bigqueryanalyticshubdataexchanges.yaml
+++ sed 's/.yaml$//g'
++ base_name=bigqueryanalyticshub.cnrm.cloud.google.com_bigqueryanalyticshubdataexchanges
+++ echo bigqueryanalyticshub.cnrm.cloud.google.com_bigqueryanalyticshubdataexchanges
+++ cut -d_ -f1
++ domain=bigqueryanalyticshub.cnrm.cloud.google.com
+++ echo bigqueryanalyticshub.cnrm.cloud.google.com_bigqueryanalyticshubdataexchanges
+++ cut -d_ -f2
++ resource=bigqueryanalyticshubdataexchanges
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_bigqueryanalyticshubdataexchanges.bigqueryanalyticshub.cnrm.cloud.google.com.yaml
++ cp bigqueryanalyticshub.cnrm.cloud.google.com_bigqueryanalyticshubdataexchanges.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_bigqueryanalyticshubdataexchanges.bigqueryanalyticshub.cnrm.cloud.google.com.yaml
++ echo 'Renamed bigqueryanalyticshub.cnrm.cloud.google.com_bigqueryanalyticshubdataexchanges.yaml to apiextensions.k8s.io_v1_customresourcedefinition_bigqueryanalyticshubdataexchanges.bigqueryanalyticshub.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo bigqueryanalyticshub.cnrm.cloud.google.com_bigqueryanalyticshublistings.yaml
+++ sed 's/.yaml$//g'
++ base_name=bigqueryanalyticshub.cnrm.cloud.google.com_bigqueryanalyticshublistings
+++ echo bigqueryanalyticshub.cnrm.cloud.google.com_bigqueryanalyticshublistings
+++ cut -d_ -f1
++ domain=bigqueryanalyticshub.cnrm.cloud.google.com
+++ echo bigqueryanalyticshub.cnrm.cloud.google.com_bigqueryanalyticshublistings
+++ cut -d_ -f2
++ resource=bigqueryanalyticshublistings
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_bigqueryanalyticshublistings.bigqueryanalyticshub.cnrm.cloud.google.com.yaml
++ cp bigqueryanalyticshub.cnrm.cloud.google.com_bigqueryanalyticshublistings.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_bigqueryanalyticshublistings.bigqueryanalyticshub.cnrm.cloud.google.com.yaml
++ echo 'Renamed bigqueryanalyticshub.cnrm.cloud.google.com_bigqueryanalyticshublistings.yaml to apiextensions.k8s.io_v1_customresourcedefinition_bigqueryanalyticshublistings.bigqueryanalyticshub.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ sed 's/.yaml$//g'
+++ echo bigquery.cnrm.cloud.google.com_bigquerydatasets.yaml
++ base_name=bigquery.cnrm.cloud.google.com_bigquerydatasets
+++ echo bigquery.cnrm.cloud.google.com_bigquerydatasets
+++ cut -d_ -f1
++ domain=bigquery.cnrm.cloud.google.com
+++ echo bigquery.cnrm.cloud.google.com_bigquerydatasets
+++ cut -d_ -f2
++ resource=bigquerydatasets
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_bigquerydatasets.bigquery.cnrm.cloud.google.com.yaml
++ cp bigquery.cnrm.cloud.google.com_bigquerydatasets.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_bigquerydatasets.bigquery.cnrm.cloud.google.com.yaml
++ echo 'Renamed bigquery.cnrm.cloud.google.com_bigquerydatasets.yaml to apiextensions.k8s.io_v1_customresourcedefinition_bigquerydatasets.bigquery.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo bigqueryconnection.cnrm.cloud.google.com_bigqueryconnectionconnections.yaml
+++ sed 's/.yaml$//g'
++ base_name=bigqueryconnection.cnrm.cloud.google.com_bigqueryconnectionconnections
+++ echo bigqueryconnection.cnrm.cloud.google.com_bigqueryconnectionconnections
+++ cut -d_ -f1
++ domain=bigqueryconnection.cnrm.cloud.google.com
+++ echo bigqueryconnection.cnrm.cloud.google.com_bigqueryconnectionconnections
+++ cut -d_ -f2
++ resource=bigqueryconnectionconnections
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_bigqueryconnectionconnections.bigqueryconnection.cnrm.cloud.google.com.yaml
++ cp bigqueryconnection.cnrm.cloud.google.com_bigqueryconnectionconnections.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_bigqueryconnectionconnections.bigqueryconnection.cnrm.cloud.google.com.yaml
++ echo 'Renamed bigqueryconnection.cnrm.cloud.google.com_bigqueryconnectionconnections.yaml to apiextensions.k8s.io_v1_customresourcedefinition_bigqueryconnectionconnections.bigqueryconnection.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo bigquerydatatransfer.cnrm.cloud.google.com_bigquerydatatransferconfigs.yaml
+++ sed 's/.yaml$//g'
++ base_name=bigquerydatatransfer.cnrm.cloud.google.com_bigquerydatatransferconfigs
+++ echo bigquerydatatransfer.cnrm.cloud.google.com_bigquerydatatransferconfigs
+++ cut -d_ -f1
++ domain=bigquerydatatransfer.cnrm.cloud.google.com
+++ echo bigquerydatatransfer.cnrm.cloud.google.com_bigquerydatatransferconfigs
+++ cut -d_ -f2
++ resource=bigquerydatatransferconfigs
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_bigquerydatatransferconfigs.bigquerydatatransfer.cnrm.cloud.google.com.yaml
++ cp bigquerydatatransfer.cnrm.cloud.google.com_bigquerydatatransferconfigs.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_bigquerydatatransferconfigs.bigquerydatatransfer.cnrm.cloud.google.com.yaml
++ echo 'Renamed bigquerydatatransfer.cnrm.cloud.google.com_bigquerydatatransferconfigs.yaml to apiextensions.k8s.io_v1_customresourcedefinition_bigquerydatatransferconfigs.bigquerydatatransfer.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo bigtable.cnrm.cloud.google.com_bigtableinstances.yaml
+++ sed 's/.yaml$//g'
++ base_name=bigtable.cnrm.cloud.google.com_bigtableinstances
+++ echo bigtable.cnrm.cloud.google.com_bigtableinstances
+++ cut -d_ -f1
++ domain=bigtable.cnrm.cloud.google.com
+++ echo bigtable.cnrm.cloud.google.com_bigtableinstances
+++ cut -d_ -f2
++ resource=bigtableinstances
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_bigtableinstances.bigtable.cnrm.cloud.google.com.yaml
++ cp bigtable.cnrm.cloud.google.com_bigtableinstances.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_bigtableinstances.bigtable.cnrm.cloud.google.com.yaml
++ echo 'Renamed bigtable.cnrm.cloud.google.com_bigtableinstances.yaml to apiextensions.k8s.io_v1_customresourcedefinition_bigtableinstances.bigtable.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo certificatemanager.cnrm.cloud.google.com_certificatemanagerdnsauthorizations.yaml
+++ sed 's/.yaml$//g'
++ base_name=certificatemanager.cnrm.cloud.google.com_certificatemanagerdnsauthorizations
+++ echo certificatemanager.cnrm.cloud.google.com_certificatemanagerdnsauthorizations
+++ cut -d_ -f1
++ domain=certificatemanager.cnrm.cloud.google.com
+++ echo certificatemanager.cnrm.cloud.google.com_certificatemanagerdnsauthorizations
+++ cut -d_ -f2
++ resource=certificatemanagerdnsauthorizations
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_certificatemanagerdnsauthorizations.certificatemanager.cnrm.cloud.google.com.yaml
++ cp certificatemanager.cnrm.cloud.google.com_certificatemanagerdnsauthorizations.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_certificatemanagerdnsauthorizations.certificatemanager.cnrm.cloud.google.com.yaml
++ echo 'Renamed certificatemanager.cnrm.cloud.google.com_certificatemanagerdnsauthorizations.yaml to apiextensions.k8s.io_v1_customresourcedefinition_certificatemanagerdnsauthorizations.certificatemanager.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo cloudbuild.cnrm.cloud.google.com_cloudbuildworkerpools.yaml
+++ sed 's/.yaml$//g'
++ base_name=cloudbuild.cnrm.cloud.google.com_cloudbuildworkerpools
+++ echo cloudbuild.cnrm.cloud.google.com_cloudbuildworkerpools
+++ cut -d_ -f1
++ domain=cloudbuild.cnrm.cloud.google.com
+++ echo cloudbuild.cnrm.cloud.google.com_cloudbuildworkerpools
+++ cut -d_ -f2
++ resource=cloudbuildworkerpools
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_cloudbuildworkerpools.cloudbuild.cnrm.cloud.google.com.yaml
++ cp cloudbuild.cnrm.cloud.google.com_cloudbuildworkerpools.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_cloudbuildworkerpools.cloudbuild.cnrm.cloud.google.com.yaml
++ echo 'Renamed cloudbuild.cnrm.cloud.google.com_cloudbuildworkerpools.yaml to apiextensions.k8s.io_v1_customresourcedefinition_cloudbuildworkerpools.cloudbuild.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo cloudidentity.cnrm.cloud.google.com_cloudidentitygroups.yaml
+++ sed 's/.yaml$//g'
++ base_name=cloudidentity.cnrm.cloud.google.com_cloudidentitygroups
+++ echo cloudidentity.cnrm.cloud.google.com_cloudidentitygroups
+++ cut -d_ -f1
++ domain=cloudidentity.cnrm.cloud.google.com
+++ echo cloudidentity.cnrm.cloud.google.com_cloudidentitygroups
+++ cut -d_ -f2
++ resource=cloudidentitygroups
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_cloudidentitygroups.cloudidentity.cnrm.cloud.google.com.yaml
++ cp cloudidentity.cnrm.cloud.google.com_cloudidentitygroups.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_cloudidentitygroups.cloudidentity.cnrm.cloud.google.com.yaml
++ echo 'Renamed cloudidentity.cnrm.cloud.google.com_cloudidentitygroups.yaml to apiextensions.k8s.io_v1_customresourcedefinition_cloudidentitygroups.cloudidentity.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo compute.cnrm.cloud.google.com_computefirewallpolicyrules.yaml
+++ sed 's/.yaml$//g'
++ base_name=compute.cnrm.cloud.google.com_computefirewallpolicyrules
+++ echo compute.cnrm.cloud.google.com_computefirewallpolicyrules
+++ cut -d_ -f1
++ domain=compute.cnrm.cloud.google.com
+++ echo compute.cnrm.cloud.google.com_computefirewallpolicyrules
+++ cut -d_ -f2
++ resource=computefirewallpolicyrules
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_computefirewallpolicyrules.compute.cnrm.cloud.google.com.yaml
++ cp compute.cnrm.cloud.google.com_computefirewallpolicyrules.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_computefirewallpolicyrules.compute.cnrm.cloud.google.com.yaml
++ echo 'Renamed compute.cnrm.cloud.google.com_computefirewallpolicyrules.yaml to apiextensions.k8s.io_v1_customresourcedefinition_computefirewallpolicyrules.compute.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo compute.cnrm.cloud.google.com_computeforwardingrules.yaml
+++ sed 's/.yaml$//g'
++ base_name=compute.cnrm.cloud.google.com_computeforwardingrules
+++ echo compute.cnrm.cloud.google.com_computeforwardingrules
+++ cut -d_ -f1
++ domain=compute.cnrm.cloud.google.com
+++ echo compute.cnrm.cloud.google.com_computeforwardingrules
+++ cut -d_ -f2
++ resource=computeforwardingrules
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_computeforwardingrules.compute.cnrm.cloud.google.com.yaml
++ cp compute.cnrm.cloud.google.com_computeforwardingrules.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_computeforwardingrules.compute.cnrm.cloud.google.com.yaml
++ echo 'Renamed compute.cnrm.cloud.google.com_computeforwardingrules.yaml to apiextensions.k8s.io_v1_customresourcedefinition_computeforwardingrules.compute.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo compute.cnrm.cloud.google.com_computetargettcpproxies.yaml
+++ sed 's/.yaml$//g'
++ base_name=compute.cnrm.cloud.google.com_computetargettcpproxies
+++ echo compute.cnrm.cloud.google.com_computetargettcpproxies
+++ cut -d_ -f1
++ domain=compute.cnrm.cloud.google.com
+++ echo compute.cnrm.cloud.google.com_computetargettcpproxies
+++ cut -d_ -f2
++ resource=computetargettcpproxies
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_computetargettcpproxies.compute.cnrm.cloud.google.com.yaml
++ cp compute.cnrm.cloud.google.com_computetargettcpproxies.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_computetargettcpproxies.compute.cnrm.cloud.google.com.yaml
++ echo 'Renamed compute.cnrm.cloud.google.com_computetargettcpproxies.yaml to apiextensions.k8s.io_v1_customresourcedefinition_computetargettcpproxies.compute.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo config.cnrm.cloud.google.com_configresources.yaml
+++ sed 's/.yaml$//g'
++ base_name=config.cnrm.cloud.google.com_configresources
+++ echo config.cnrm.cloud.google.com_configresources
+++ cut -d_ -f1
++ domain=config.cnrm.cloud.google.com
+++ echo config.cnrm.cloud.google.com_configresources
+++ cut -d_ -f2
++ resource=configresources
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_configresources.config.cnrm.cloud.google.com.yaml
++ cp config.cnrm.cloud.google.com_configresources.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_configresources.config.cnrm.cloud.google.com.yaml
++ echo 'Renamed config.cnrm.cloud.google.com_configresources.yaml to apiextensions.k8s.io_v1_customresourcedefinition_configresources.config.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo containerattached.cnrm.cloud.google.com_containerattachedclusters.yaml
+++ sed 's/.yaml$//g'
++ base_name=containerattached.cnrm.cloud.google.com_containerattachedclusters
+++ echo containerattached.cnrm.cloud.google.com_containerattachedclusters
+++ cut -d_ -f1
++ domain=containerattached.cnrm.cloud.google.com
+++ echo containerattached.cnrm.cloud.google.com_containerattachedclusters
+++ cut -d_ -f2
++ resource=containerattachedclusters
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_containerattachedclusters.containerattached.cnrm.cloud.google.com.yaml
++ cp containerattached.cnrm.cloud.google.com_containerattachedclusters.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_containerattachedclusters.containerattached.cnrm.cloud.google.com.yaml
++ echo 'Renamed containerattached.cnrm.cloud.google.com_containerattachedclusters.yaml to apiextensions.k8s.io_v1_customresourcedefinition_containerattachedclusters.containerattached.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo dataflow.cnrm.cloud.google.com_dataflowflextemplatejobs.yaml
+++ sed 's/.yaml$//g'
++ base_name=dataflow.cnrm.cloud.google.com_dataflowflextemplatejobs
+++ echo dataflow.cnrm.cloud.google.com_dataflowflextemplatejobs
+++ cut -d_ -f1
++ domain=dataflow.cnrm.cloud.google.com
+++ echo dataflow.cnrm.cloud.google.com_dataflowflextemplatejobs
+++ cut -d_ -f2
++ resource=dataflowflextemplatejobs
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_dataflowflextemplatejobs.dataflow.cnrm.cloud.google.com.yaml
++ cp dataflow.cnrm.cloud.google.com_dataflowflextemplatejobs.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_dataflowflextemplatejobs.dataflow.cnrm.cloud.google.com.yaml
++ echo 'Renamed dataflow.cnrm.cloud.google.com_dataflowflextemplatejobs.yaml to apiextensions.k8s.io_v1_customresourcedefinition_dataflowflextemplatejobs.dataflow.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo dataform.cnrm.cloud.google.com_dataformrepositories.yaml
+++ sed 's/.yaml$//g'
++ base_name=dataform.cnrm.cloud.google.com_dataformrepositories
+++ echo dataform.cnrm.cloud.google.com_dataformrepositories
+++ cut -d_ -f1
++ domain=dataform.cnrm.cloud.google.com
+++ echo dataform.cnrm.cloud.google.com_dataformrepositories
+++ cut -d_ -f2
++ resource=dataformrepositories
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_dataformrepositories.dataform.cnrm.cloud.google.com.yaml
++ cp dataform.cnrm.cloud.google.com_dataformrepositories.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_dataformrepositories.dataform.cnrm.cloud.google.com.yaml
++ echo 'Renamed dataform.cnrm.cloud.google.com_dataformrepositories.yaml to apiextensions.k8s.io_v1_customresourcedefinition_dataformrepositories.dataform.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo discoveryengine.cnrm.cloud.google.com_discoveryenginedatastores.yaml
+++ sed 's/.yaml$//g'
++ base_name=discoveryengine.cnrm.cloud.google.com_discoveryenginedatastores
+++ echo discoveryengine.cnrm.cloud.google.com_discoveryenginedatastores
+++ cut -d_ -f1
++ domain=discoveryengine.cnrm.cloud.google.com
+++ echo discoveryengine.cnrm.cloud.google.com_discoveryenginedatastores
+++ cut -d_ -f2
++ resource=discoveryenginedatastores
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_discoveryenginedatastores.discoveryengine.cnrm.cloud.google.com.yaml
++ cp discoveryengine.cnrm.cloud.google.com_discoveryenginedatastores.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_discoveryenginedatastores.discoveryengine.cnrm.cloud.google.com.yaml
++ echo 'Renamed discoveryengine.cnrm.cloud.google.com_discoveryenginedatastores.yaml to apiextensions.k8s.io_v1_customresourcedefinition_discoveryenginedatastores.discoveryengine.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo discoveryengine.cnrm.cloud.google.com_discoveryenginedatastoretargetsites.yaml
+++ sed 's/.yaml$//g'
++ base_name=discoveryengine.cnrm.cloud.google.com_discoveryenginedatastoretargetsites
+++ echo discoveryengine.cnrm.cloud.google.com_discoveryenginedatastoretargetsites
+++ cut -d_ -f1
++ domain=discoveryengine.cnrm.cloud.google.com
+++ echo discoveryengine.cnrm.cloud.google.com_discoveryenginedatastoretargetsites
+++ cut -d_ -f2
++ resource=discoveryenginedatastoretargetsites
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_discoveryenginedatastoretargetsites.discoveryengine.cnrm.cloud.google.com.yaml
++ cp discoveryengine.cnrm.cloud.google.com_discoveryenginedatastoretargetsites.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_discoveryenginedatastoretargetsites.discoveryengine.cnrm.cloud.google.com.yaml
++ echo 'Renamed discoveryengine.cnrm.cloud.google.com_discoveryenginedatastoretargetsites.yaml to apiextensions.k8s.io_v1_customresourcedefinition_discoveryenginedatastoretargetsites.discoveryengine.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo discoveryengine.cnrm.cloud.google.com_discoveryengineengines.yaml
+++ sed 's/.yaml$//g'
++ base_name=discoveryengine.cnrm.cloud.google.com_discoveryengineengines
+++ echo discoveryengine.cnrm.cloud.google.com_discoveryengineengines
+++ cut -d_ -f1
++ domain=discoveryengine.cnrm.cloud.google.com
+++ echo discoveryengine.cnrm.cloud.google.com_discoveryengineengines
+++ cut -d_ -f2
++ resource=discoveryengineengines
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_discoveryengineengines.discoveryengine.cnrm.cloud.google.com.yaml
++ cp discoveryengine.cnrm.cloud.google.com_discoveryengineengines.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_discoveryengineengines.discoveryengine.cnrm.cloud.google.com.yaml
++ echo 'Renamed discoveryengine.cnrm.cloud.google.com_discoveryengineengines.yaml to apiextensions.k8s.io_v1_customresourcedefinition_discoveryengineengines.discoveryengine.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo firestore.cnrm.cloud.google.com_firestoredatabases.yaml
+++ sed 's/.yaml$//g'
++ base_name=firestore.cnrm.cloud.google.com_firestoredatabases
+++ echo firestore.cnrm.cloud.google.com_firestoredatabases
+++ cut -d_ -f1
++ domain=firestore.cnrm.cloud.google.com
+++ echo firestore.cnrm.cloud.google.com_firestoredatabases
+++ cut -d_ -f2
++ resource=firestoredatabases
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_firestoredatabases.firestore.cnrm.cloud.google.com.yaml
++ cp firestore.cnrm.cloud.google.com_firestoredatabases.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_firestoredatabases.firestore.cnrm.cloud.google.com.yaml
++ echo 'Renamed firestore.cnrm.cloud.google.com_firestoredatabases.yaml to apiextensions.k8s.io_v1_customresourcedefinition_firestoredatabases.firestore.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo gkehub.cnrm.cloud.google.com_gkehubfeaturememberships.yaml
+++ sed 's/.yaml$//g'
++ base_name=gkehub.cnrm.cloud.google.com_gkehubfeaturememberships
+++ echo gkehub.cnrm.cloud.google.com_gkehubfeaturememberships
+++ cut -d_ -f1
++ domain=gkehub.cnrm.cloud.google.com
+++ echo gkehub.cnrm.cloud.google.com_gkehubfeaturememberships
+++ cut -d_ -f2
++ resource=gkehubfeaturememberships
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_gkehubfeaturememberships.gkehub.cnrm.cloud.google.com.yaml
++ cp gkehub.cnrm.cloud.google.com_gkehubfeaturememberships.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_gkehubfeaturememberships.gkehub.cnrm.cloud.google.com.yaml
++ echo 'Renamed gkehub.cnrm.cloud.google.com_gkehubfeaturememberships.yaml to apiextensions.k8s.io_v1_customresourcedefinition_gkehubfeaturememberships.gkehub.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo iap.cnrm.cloud.google.com_iapsettings.yaml
+++ sed 's/.yaml$//g'
++ base_name=iap.cnrm.cloud.google.com_iapsettings
+++ echo iap.cnrm.cloud.google.com_iapsettings
+++ cut -d_ -f1
++ domain=iap.cnrm.cloud.google.com
+++ echo iap.cnrm.cloud.google.com_iapsettings
+++ cut -d_ -f2
++ resource=iapsettings
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_iapsettings.iap.cnrm.cloud.google.com.yaml
++ cp iap.cnrm.cloud.google.com_iapsettings.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_iapsettings.iap.cnrm.cloud.google.com.yaml
++ echo 'Renamed iap.cnrm.cloud.google.com_iapsettings.yaml to apiextensions.k8s.io_v1_customresourcedefinition_iapsettings.iap.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo kms.cnrm.cloud.google.com_kmsautokeyconfigs.yaml
+++ sed 's/.yaml$//g'
++ base_name=kms.cnrm.cloud.google.com_kmsautokeyconfigs
+++ echo kms.cnrm.cloud.google.com_kmsautokeyconfigs
+++ cut -d_ -f1
++ domain=kms.cnrm.cloud.google.com
+++ echo kms.cnrm.cloud.google.com_kmsautokeyconfigs
+++ cut -d_ -f2
++ resource=kmsautokeyconfigs
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_kmsautokeyconfigs.kms.cnrm.cloud.google.com.yaml
++ cp kms.cnrm.cloud.google.com_kmsautokeyconfigs.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_kmsautokeyconfigs.kms.cnrm.cloud.google.com.yaml
++ echo 'Renamed kms.cnrm.cloud.google.com_kmsautokeyconfigs.yaml to apiextensions.k8s.io_v1_customresourcedefinition_kmsautokeyconfigs.kms.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo kms.cnrm.cloud.google.com_kmskeyhandles.yaml
+++ sed 's/.yaml$//g'
++ base_name=kms.cnrm.cloud.google.com_kmskeyhandles
+++ echo kms.cnrm.cloud.google.com_kmskeyhandles
+++ cut -d_ -f1
++ domain=kms.cnrm.cloud.google.com
+++ echo kms.cnrm.cloud.google.com_kmskeyhandles
+++ cut -d_ -f2
++ resource=kmskeyhandles
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_kmskeyhandles.kms.cnrm.cloud.google.com.yaml
++ cp kms.cnrm.cloud.google.com_kmskeyhandles.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_kmskeyhandles.kms.cnrm.cloud.google.com.yaml
++ echo 'Renamed kms.cnrm.cloud.google.com_kmskeyhandles.yaml to apiextensions.k8s.io_v1_customresourcedefinition_kmskeyhandles.kms.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo kms.cnrm.cloud.google.com_kmskeyrings.yaml
+++ sed 's/.yaml$//g'
++ base_name=kms.cnrm.cloud.google.com_kmskeyrings
+++ echo kms.cnrm.cloud.google.com_kmskeyrings
+++ cut -d_ -f1
++ domain=kms.cnrm.cloud.google.com
+++ echo kms.cnrm.cloud.google.com_kmskeyrings
+++ cut -d_ -f2
++ resource=kmskeyrings
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_kmskeyrings.kms.cnrm.cloud.google.com.yaml
++ cp kms.cnrm.cloud.google.com_kmskeyrings.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_kmskeyrings.kms.cnrm.cloud.google.com.yaml
++ echo 'Renamed kms.cnrm.cloud.google.com_kmskeyrings.yaml to apiextensions.k8s.io_v1_customresourcedefinition_kmskeyrings.kms.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo logging.cnrm.cloud.google.com_logginglogmetrics.yaml
+++ sed 's/.yaml$//g'
++ base_name=logging.cnrm.cloud.google.com_logginglogmetrics
+++ echo logging.cnrm.cloud.google.com_logginglogmetrics
+++ cut -d_ -f1
++ domain=logging.cnrm.cloud.google.com
+++ echo logging.cnrm.cloud.google.com_logginglogmetrics
+++ cut -d_ -f2
++ resource=logginglogmetrics
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_logginglogmetrics.logging.cnrm.cloud.google.com.yaml
++ cp logging.cnrm.cloud.google.com_logginglogmetrics.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_logginglogmetrics.logging.cnrm.cloud.google.com.yaml
++ echo 'Renamed logging.cnrm.cloud.google.com_logginglogmetrics.yaml to apiextensions.k8s.io_v1_customresourcedefinition_logginglogmetrics.logging.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo managedkafka.cnrm.cloud.google.com_managedkafkaclusters.yaml
+++ sed 's/.yaml$//g'
++ base_name=managedkafka.cnrm.cloud.google.com_managedkafkaclusters
+++ echo managedkafka.cnrm.cloud.google.com_managedkafkaclusters
+++ cut -d_ -f1
++ domain=managedkafka.cnrm.cloud.google.com
+++ echo managedkafka.cnrm.cloud.google.com_managedkafkaclusters
+++ cut -d_ -f2
++ resource=managedkafkaclusters
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_managedkafkaclusters.managedkafka.cnrm.cloud.google.com.yaml
++ cp managedkafka.cnrm.cloud.google.com_managedkafkaclusters.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_managedkafkaclusters.managedkafka.cnrm.cloud.google.com.yaml
++ echo 'Renamed managedkafka.cnrm.cloud.google.com_managedkafkaclusters.yaml to apiextensions.k8s.io_v1_customresourcedefinition_managedkafkaclusters.managedkafka.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo managedkafka.cnrm.cloud.google.com_managedkafkatopics.yaml
+++ sed 's/.yaml$//g'
++ base_name=managedkafka.cnrm.cloud.google.com_managedkafkatopics
+++ echo managedkafka.cnrm.cloud.google.com_managedkafkatopics
+++ cut -d_ -f1
++ domain=managedkafka.cnrm.cloud.google.com
+++ echo managedkafka.cnrm.cloud.google.com_managedkafkatopics
+++ cut -d_ -f2
++ resource=managedkafkatopics
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_managedkafkatopics.managedkafka.cnrm.cloud.google.com.yaml
++ cp managedkafka.cnrm.cloud.google.com_managedkafkatopics.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_managedkafkatopics.managedkafka.cnrm.cloud.google.com.yaml
++ echo 'Renamed managedkafka.cnrm.cloud.google.com_managedkafkatopics.yaml to apiextensions.k8s.io_v1_customresourcedefinition_managedkafkatopics.managedkafka.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo memorystore.cnrm.cloud.google.com_memorystoreinstances.yaml
+++ sed 's/.yaml$//g'
++ base_name=memorystore.cnrm.cloud.google.com_memorystoreinstances
+++ echo memorystore.cnrm.cloud.google.com_memorystoreinstances
+++ cut -d_ -f1
++ domain=memorystore.cnrm.cloud.google.com
+++ echo memorystore.cnrm.cloud.google.com_memorystoreinstances
+++ cut -d_ -f2
++ resource=memorystoreinstances
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_memorystoreinstances.memorystore.cnrm.cloud.google.com.yaml
++ cp memorystore.cnrm.cloud.google.com_memorystoreinstances.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_memorystoreinstances.memorystore.cnrm.cloud.google.com.yaml
++ echo 'Renamed memorystore.cnrm.cloud.google.com_memorystoreinstances.yaml to apiextensions.k8s.io_v1_customresourcedefinition_memorystoreinstances.memorystore.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo monitoring.cnrm.cloud.google.com_monitoringdashboards.yaml
+++ sed 's/.yaml$//g'
++ base_name=monitoring.cnrm.cloud.google.com_monitoringdashboards
+++ echo monitoring.cnrm.cloud.google.com_monitoringdashboards
+++ cut -d_ -f1
++ domain=monitoring.cnrm.cloud.google.com
+++ echo monitoring.cnrm.cloud.google.com_monitoringdashboards
+++ cut -d_ -f2
++ resource=monitoringdashboards
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_monitoringdashboards.monitoring.cnrm.cloud.google.com.yaml
++ cp monitoring.cnrm.cloud.google.com_monitoringdashboards.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_monitoringdashboards.monitoring.cnrm.cloud.google.com.yaml
++ echo 'Renamed monitoring.cnrm.cloud.google.com_monitoringdashboards.yaml to apiextensions.k8s.io_v1_customresourcedefinition_monitoringdashboards.monitoring.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo networkconnectivity.cnrm.cloud.google.com_networkconnectivityserviceconnectionpolicies.yaml
+++ sed 's/.yaml$//g'
++ base_name=networkconnectivity.cnrm.cloud.google.com_networkconnectivityserviceconnectionpolicies
+++ echo networkconnectivity.cnrm.cloud.google.com_networkconnectivityserviceconnectionpolicies
+++ cut -d_ -f1
++ domain=networkconnectivity.cnrm.cloud.google.com
+++ echo networkconnectivity.cnrm.cloud.google.com_networkconnectivityserviceconnectionpolicies
+++ cut -d_ -f2
++ resource=networkconnectivityserviceconnectionpolicies
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_networkconnectivityserviceconnectionpolicies.networkconnectivity.cnrm.cloud.google.com.yaml
++ cp networkconnectivity.cnrm.cloud.google.com_networkconnectivityserviceconnectionpolicies.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_networkconnectivityserviceconnectionpolicies.networkconnectivity.cnrm.cloud.google.com.yaml
++ echo 'Renamed networkconnectivity.cnrm.cloud.google.com_networkconnectivityserviceconnectionpolicies.yaml to apiextensions.k8s.io_v1_customresourcedefinition_networkconnectivityserviceconnectionpolicies.networkconnectivity.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo privilegedaccessmanager.cnrm.cloud.google.com_privilegedaccessmanagerentitlements.yaml
+++ sed 's/.yaml$//g'
++ base_name=privilegedaccessmanager.cnrm.cloud.google.com_privilegedaccessmanagerentitlements
+++ echo privilegedaccessmanager.cnrm.cloud.google.com_privilegedaccessmanagerentitlements
+++ cut -d_ -f1
++ domain=privilegedaccessmanager.cnrm.cloud.google.com
+++ echo privilegedaccessmanager.cnrm.cloud.google.com_privilegedaccessmanagerentitlements
+++ cut -d_ -f2
++ resource=privilegedaccessmanagerentitlements
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_privilegedaccessmanagerentitlements.privilegedaccessmanager.cnrm.cloud.google.com.yaml
++ cp privilegedaccessmanager.cnrm.cloud.google.com_privilegedaccessmanagerentitlements.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_privilegedaccessmanagerentitlements.privilegedaccessmanager.cnrm.cloud.google.com.yaml
++ echo 'Renamed privilegedaccessmanager.cnrm.cloud.google.com_privilegedaccessmanagerentitlements.yaml to apiextensions.k8s.io_v1_customresourcedefinition_privilegedaccessmanagerentitlements.privilegedaccessmanager.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo redis.cnrm.cloud.google.com_redisclusters.yaml
+++ sed 's/.yaml$//g'
++ base_name=redis.cnrm.cloud.google.com_redisclusters
+++ echo redis.cnrm.cloud.google.com_redisclusters
+++ cut -d_ -f1
++ domain=redis.cnrm.cloud.google.com
+++ echo redis.cnrm.cloud.google.com_redisclusters
+++ cut -d_ -f2
++ resource=redisclusters
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_redisclusters.redis.cnrm.cloud.google.com.yaml
++ cp redis.cnrm.cloud.google.com_redisclusters.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_redisclusters.redis.cnrm.cloud.google.com.yaml
++ echo 'Renamed redis.cnrm.cloud.google.com_redisclusters.yaml to apiextensions.k8s.io_v1_customresourcedefinition_redisclusters.redis.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo secretmanager.cnrm.cloud.google.com_secretmanagersecrets.yaml
+++ sed 's/.yaml$//g'
++ base_name=secretmanager.cnrm.cloud.google.com_secretmanagersecrets
+++ echo secretmanager.cnrm.cloud.google.com_secretmanagersecrets
+++ cut -d_ -f1
++ domain=secretmanager.cnrm.cloud.google.com
+++ echo secretmanager.cnrm.cloud.google.com_secretmanagersecrets
+++ cut -d_ -f2
++ resource=secretmanagersecrets
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_secretmanagersecrets.secretmanager.cnrm.cloud.google.com.yaml
++ cp secretmanager.cnrm.cloud.google.com_secretmanagersecrets.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_secretmanagersecrets.secretmanager.cnrm.cloud.google.com.yaml
++ echo 'Renamed secretmanager.cnrm.cloud.google.com_secretmanagersecrets.yaml to apiextensions.k8s.io_v1_customresourcedefinition_secretmanagersecrets.secretmanager.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo secretmanager.cnrm.cloud.google.com_secretmanagersecretversions.yaml
+++ sed 's/.yaml$//g'
++ base_name=secretmanager.cnrm.cloud.google.com_secretmanagersecretversions
+++ echo secretmanager.cnrm.cloud.google.com_secretmanagersecretversions
+++ cut -d_ -f1
++ domain=secretmanager.cnrm.cloud.google.com
+++ echo secretmanager.cnrm.cloud.google.com_secretmanagersecretversions
+++ cut -d_ -f2
++ resource=secretmanagersecretversions
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_secretmanagersecretversions.secretmanager.cnrm.cloud.google.com.yaml
++ cp secretmanager.cnrm.cloud.google.com_secretmanagersecretversions.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_secretmanagersecretversions.secretmanager.cnrm.cloud.google.com.yaml
++ echo 'Renamed secretmanager.cnrm.cloud.google.com_secretmanagersecretversions.yaml to apiextensions.k8s.io_v1_customresourcedefinition_secretmanagersecretversions.secretmanager.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo securesourcemanager.cnrm.cloud.google.com_securesourcemanagerinstances.yaml
+++ sed 's/.yaml$//g'
++ base_name=securesourcemanager.cnrm.cloud.google.com_securesourcemanagerinstances
+++ echo securesourcemanager.cnrm.cloud.google.com_securesourcemanagerinstances
+++ cut -d_ -f1
++ domain=securesourcemanager.cnrm.cloud.google.com
+++ echo securesourcemanager.cnrm.cloud.google.com_securesourcemanagerinstances
+++ cut -d_ -f2
++ resource=securesourcemanagerinstances
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_securesourcemanagerinstances.securesourcemanager.cnrm.cloud.google.com.yaml
++ cp securesourcemanager.cnrm.cloud.google.com_securesourcemanagerinstances.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_securesourcemanagerinstances.securesourcemanager.cnrm.cloud.google.com.yaml
++ echo 'Renamed securesourcemanager.cnrm.cloud.google.com_securesourcemanagerinstances.yaml to apiextensions.k8s.io_v1_customresourcedefinition_securesourcemanagerinstances.securesourcemanager.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo securesourcemanager.cnrm.cloud.google.com_securesourcemanagerrepositories.yaml
+++ sed 's/.yaml$//g'
++ base_name=securesourcemanager.cnrm.cloud.google.com_securesourcemanagerrepositories
+++ echo securesourcemanager.cnrm.cloud.google.com_securesourcemanagerrepositories
+++ cut -d_ -f1
++ domain=securesourcemanager.cnrm.cloud.google.com
+++ echo securesourcemanager.cnrm.cloud.google.com_securesourcemanagerrepositories
+++ cut -d_ -f2
++ resource=securesourcemanagerrepositories
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_securesourcemanagerrepositories.securesourcemanager.cnrm.cloud.google.com.yaml
++ cp securesourcemanager.cnrm.cloud.google.com_securesourcemanagerrepositories.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_securesourcemanagerrepositories.securesourcemanager.cnrm.cloud.google.com.yaml
++ echo 'Renamed securesourcemanager.cnrm.cloud.google.com_securesourcemanagerrepositories.yaml to apiextensions.k8s.io_v1_customresourcedefinition_securesourcemanagerrepositories.securesourcemanager.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo spanner.cnrm.cloud.google.com_spannerinstances.yaml
+++ sed 's/.yaml$//g'
++ base_name=spanner.cnrm.cloud.google.com_spannerinstances
+++ echo spanner.cnrm.cloud.google.com_spannerinstances
+++ cut -d_ -f1
++ domain=spanner.cnrm.cloud.google.com
+++ echo spanner.cnrm.cloud.google.com_spannerinstances
+++ cut -d_ -f2
++ resource=spannerinstances
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_spannerinstances.spanner.cnrm.cloud.google.com.yaml
++ cp spanner.cnrm.cloud.google.com_spannerinstances.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_spannerinstances.spanner.cnrm.cloud.google.com.yaml
++ echo 'Renamed spanner.cnrm.cloud.google.com_spannerinstances.yaml to apiextensions.k8s.io_v1_customresourcedefinition_spannerinstances.spanner.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo sql.cnrm.cloud.google.com_sqlinstances.yaml
+++ sed 's/.yaml$//g'
++ base_name=sql.cnrm.cloud.google.com_sqlinstances
+++ echo sql.cnrm.cloud.google.com_sqlinstances
+++ cut -d_ -f1
++ domain=sql.cnrm.cloud.google.com
+++ echo sql.cnrm.cloud.google.com_sqlinstances
+++ cut -d_ -f2
++ resource=sqlinstances
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_sqlinstances.sql.cnrm.cloud.google.com.yaml
++ cp sql.cnrm.cloud.google.com_sqlinstances.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_sqlinstances.sql.cnrm.cloud.google.com.yaml
++ echo 'Renamed sql.cnrm.cloud.google.com_sqlinstances.yaml to apiextensions.k8s.io_v1_customresourcedefinition_sqlinstances.sql.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo workstations.cnrm.cloud.google.com_workstationclusters.yaml
+++ sed 's/.yaml$//g'
++ base_name=workstations.cnrm.cloud.google.com_workstationclusters
+++ echo workstations.cnrm.cloud.google.com_workstationclusters
+++ cut -d_ -f1
++ domain=workstations.cnrm.cloud.google.com
+++ echo workstations.cnrm.cloud.google.com_workstationclusters
+++ cut -d_ -f2
++ resource=workstationclusters
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_workstationclusters.workstations.cnrm.cloud.google.com.yaml
++ cp workstations.cnrm.cloud.google.com_workstationclusters.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_workstationclusters.workstations.cnrm.cloud.google.com.yaml
++ echo 'Renamed workstations.cnrm.cloud.google.com_workstationclusters.yaml to apiextensions.k8s.io_v1_customresourcedefinition_workstationclusters.workstations.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo workstations.cnrm.cloud.google.com_workstationconfigs.yaml
+++ sed 's/.yaml$//g'
++ base_name=workstations.cnrm.cloud.google.com_workstationconfigs
+++ echo workstations.cnrm.cloud.google.com_workstationconfigs
+++ cut -d_ -f1
++ domain=workstations.cnrm.cloud.google.com
+++ echo workstations.cnrm.cloud.google.com_workstationconfigs
+++ cut -d_ -f2
++ resource=workstationconfigs
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_workstationconfigs.workstations.cnrm.cloud.google.com.yaml
++ cp workstations.cnrm.cloud.google.com_workstationconfigs.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_workstationconfigs.workstations.cnrm.cloud.google.com.yaml
++ echo 'Renamed workstations.cnrm.cloud.google.com_workstationconfigs.yaml to apiextensions.k8s.io_v1_customresourcedefinition_workstationconfigs.workstations.cnrm.cloud.google.com.yaml'
++ for file in *.yaml
++ excluded=false
++ '[' false = true ']'
+++ echo workstations.cnrm.cloud.google.com_workstations.yaml
+++ sed 's/.yaml$//g'
++ base_name=workstations.cnrm.cloud.google.com_workstations
+++ echo workstations.cnrm.cloud.google.com_workstations
+++ cut -d_ -f1
++ domain=workstations.cnrm.cloud.google.com
+++ echo workstations.cnrm.cloud.google.com_workstations
+++ cut -d_ -f2
++ resource=workstations
++ new_name=apiextensions.k8s.io_v1_customresourcedefinition_workstations.workstations.cnrm.cloud.google.com.yaml
++ cp workstations.cnrm.cloud.google.com_workstations.yaml /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector/config/crds/resources/apiextensions.k8s.io_v1_customresourcedefinition_workstations.workstations.cnrm.cloud.google.com.yaml
++ echo 'Renamed workstations.cnrm.cloud.google.com_workstations.yaml to apiextensions.k8s.io_v1_customresourcedefinition_workstations.workstations.cnrm.cloud.google.com.yaml'
++ cd /usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector
++ rm -rf apis/config/crd
++ go run -mod=readonly golang.org/x/tools/cmd/goimports@latest -w apis

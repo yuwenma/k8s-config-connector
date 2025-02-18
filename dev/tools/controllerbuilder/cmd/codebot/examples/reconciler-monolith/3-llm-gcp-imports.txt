@@ -1,0 +1,10 @@
+I'm editing go file \`${REPO_ROOT}/pkg/controller/direct/${SERVICE}/${PROTO,,}_controller.go\` and you should help me to fix the go imports if needed.
+
+Some hints:
+- You should only change the import path for \`${SERVICE}pb\` and \`gcp\`, and the functions from those package if needed.
+- Their import packages should be under "cloud.google.com/go".
+- You should search ${REPO_ROOT}/.build/third_party/googleapis/google to find the right package and functions. 
+
+Once you fixed the import error, print the message in Json format
+
+{"status": "success"}

@@ -815,10 +815,10 @@ func MaybeSkip(t *testing.T, name string, resources []*unstructured.Unstructured
 
 			case schema.GroupKind{Group: "discoveryengine.cnrm.cloud.google.com", Kind: "DiscoveryEngineDataStore"}:
 
-			case schema.GroupKind{Group: "iam.cnrm.cloud.google.com", Kind: "IAMPartialPolicy"}:
-			case schema.GroupKind{Group: "iam.cnrm.cloud.google.com", Kind: "IAMPolicy"}:
-			case schema.GroupKind{Group: "iam.cnrm.cloud.google.com", Kind: "IAMPolicyMember"}:
-			case schema.GroupKind{Group: "iam.cnrm.cloud.google.com", Kind: "IAMServiceAccount"}:
+			case schema.GroupKind{Group: "cloud.google.com/go/iam/apiv1beta1", Kind: "IAMPartialPolicy"}:
+			case schema.GroupKind{Group: "cloud.google.com/go/iam/apiv1beta1", Kind: "IAMPolicy"}:
+			case schema.GroupKind{Group: "cloud.google.com/go/iam/apiv1beta1", Kind: "IAMPolicyMember"}:
+			case schema.GroupKind{Group: "cloud.google.com/go/iam/apiv1beta1", Kind: "IAMServiceAccount"}:
 
 			case schema.GroupKind{Group: "edgecontainer.cnrm.cloud.google.com", Kind: "EdgeContainerCluster"}:
 			case schema.GroupKind{Group: "edgecontainer.cnrm.cloud.google.com", Kind: "EdgeContainerNodePool"}:

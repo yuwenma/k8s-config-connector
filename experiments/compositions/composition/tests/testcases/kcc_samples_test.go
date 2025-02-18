@@ -58,9 +58,9 @@ func getAppTeamOutputObjects(project string) []*unstructured.Unstructured {
 	gkvnns := []testclient.GVKNN{
 		{GroupVersionKind: gvk("composition.google.com", "v1alpha1", "Context"),
 			NamespacedName: types.NamespacedName{Name: "context", Namespace: project}},
-		{GroupVersionKind: gvk("iam.cnrm.cloud.google.com", "v1beta1", "IAMServiceAccount"),
+		{GroupVersionKind: gvk("cloud.google.com/go/iam/apiv1beta1", "v1beta1", "IAMServiceAccount"),
 			NamespacedName: types.NamespacedName{Name: "kcc-" + project, Namespace: "config-control"}},
-		{GroupVersionKind: gvk("iam.cnrm.cloud.google.com", "v1beta1", "IAMPartialPolicy"),
+		{GroupVersionKind: gvk("cloud.google.com/go/iam/apiv1beta1", "v1beta1", "IAMPartialPolicy"),
 			NamespacedName: types.NamespacedName{Name: project + "-sa-workload-identity-binding", Namespace: "config-control"}},
 		{GroupVersionKind: gvk("iam.cnrm.cloud.google.com", "v1beta1", "IAMPartialPolicy"),
 			NamespacedName: types.NamespacedName{Name: "kcc-owners-permissions-" + project, Namespace: "config-control"}},

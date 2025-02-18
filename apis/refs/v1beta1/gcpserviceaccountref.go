@@ -100,7 +100,7 @@ func resolveServiceAccount(ctx context.Context, reader client.Reader, src client
 
 	computenetwork := &unstructured.Unstructured{}
 	computenetwork.SetGroupVersionKind(schema.GroupVersionKind{
-		Group:   "iam.cnrm.cloud.google.com",
+		Group:   "cloud.google.com/go/iam/apiv1beta1",
 		Version: "v1beta1",
 		Kind:    "IAMServiceAccount",
 	})

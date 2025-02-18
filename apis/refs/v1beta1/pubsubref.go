@@ -68,7 +68,7 @@ func ResolvePubSubTopic(ctx context.Context, reader client.Reader, src client.Ob
 	// Fetch PubSubTopic object to construct the external form.
 	pubSubTopic := &unstructured.Unstructured{}
 	pubSubTopic.SetGroupVersionKind(schema.GroupVersionKind{
-		Group:   "pubsub.cnrm.cloud.google.com",
+		Group:   "cloud.google.com/go/pubsub/apiv1beta1",
 		Version: "v1beta1",
 		Kind:    "PubSubTopic",
 	})
@@ -145,7 +145,7 @@ func ResolvePubSubSubscription(ctx context.Context, reader client.Reader, src cl
 	// Fetch PubSubSubscription object to construct the external form.
 	u := &unstructured.Unstructured{}
 	u.SetGroupVersionKind(schema.GroupVersionKind{
-		Group:   "pubsub.cnrm.cloud.google.com",
+		Group:   "cloud.google.com/go/pubsub/apiv1",
 		Version: "v1beta1",
 		Kind:    "PubSubSubscription",
 	})

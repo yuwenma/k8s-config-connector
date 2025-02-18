@@ -1,0 +1,9 @@
+run "go build ${REPO_ROOT}/pkg/controller/direct/${SERVICE}/..." and fix the go build error.
+
+run "go build ${REPO_ROOT}/apis/${SERVICE}/v1alpha1/...", and fix the go build error.
+
+Retry max to 5 times. 
+
+Once you fixed the go build errors, print the message in Json format
+
+{"status": "success"}

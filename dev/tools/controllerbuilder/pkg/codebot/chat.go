@@ -107,6 +107,7 @@ func (c *Chat) SendMessage(ctx context.Context, userParts ...string) error {
 		klog.Infof("processing candidate %+v", candidate)
 
 		var functionResponses []llm.FunctionCallResult
+		allPass := true
 
 		for _, part := range candidate.Parts() {
 			if text, ok := part.AsText(); ok {
@@ -125,6 +126,7 @@ func (c *Chat) SendMessage(ctx context.Context, userParts ...string) error {
 					}
 					var response map[string]any
 					if result.Error != nil {
+						allPass = false
 						response = make(map[string]any)
 						response["result"] = "error"
 						response["error"] = fmt.Sprintf("%v", result.Error)
@@ -151,6 +153,9 @@ func (c *Chat) SendMessage(ctx context.Context, userParts ...string) error {
 		}
 
 		if len(functionResponses) == 0 {
+			return nil
+		}
+		if allPass {
 			return nil
 		}
 

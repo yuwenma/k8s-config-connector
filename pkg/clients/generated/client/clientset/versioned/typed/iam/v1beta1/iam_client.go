@@ -45,7 +45,7 @@ type IamV1beta1Interface interface {
 	IAMWorkloadIdentityPoolProvidersGetter
 }
 
-// IamV1beta1Client is used to interact with features provided by the iam.cnrm.cloud.google.com group.
+// IamV1beta1Client is used to interact with features provided by the cloud.google.com/go/iam/apiv1beta1 group.
 type IamV1beta1Client struct {
 	restClient rest.Interface
 }

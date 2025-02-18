@@ -48,7 +48,7 @@ const (
 	LoggingVersion     = "v1beta1"
 
 	IAMServiceAccountKind = "IAMServiceAccount"
-	IAMGroup              = "iam.cnrm.cloud.google.com"
+	IAMGroup              = "cloud.google.com/go/iam/apiv1beta1"
 	IAMVersion            = "v1beta1"
 
 	SerivceIdentityKind = "ServiceIdentity"

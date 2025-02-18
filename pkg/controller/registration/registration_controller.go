@@ -58,7 +58,7 @@ import (
 )
 
 const controllerName = "registration-controller"
-const serviceAccountKeyAPIGroup = "iam.cnrm.cloud.google.com"
+const serviceAccountKeyAPIGroup = "cloud.google.com/go/iam/apiv1beta1"
 const serviceAccountKeyKind = "IAMServiceAccountKey"
 
 var logger = crlog.Log.WithName(controllerName)

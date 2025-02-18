@@ -145,7 +145,7 @@ func (a *{{.ProtoResource}}Adapter) Find(ctx context.Context) (bool, error) {
 	log := klog.FromContext(ctx)
 	log.V(2).Info("getting {{.ProtoResource}}", "name", a.id)
 
-	req := &{{.KCCService}}pb.Get{{.ProtoResource}}Request{Name: a.id}
+	req := &{{.KCCService}}pb.Get{{.ProtoResource}}Request{Name: a.id.String()}
 	{{.ProtoResource | ToLower }}pb, err := a.gcpClient.Get{{.ProtoResource}}(ctx, req)
 	if err != nil {
 		if direct.IsNotFound(err) {
@@ -190,7 +190,7 @@ func (a *{{.ProtoResource}}Adapter) Create(ctx context.Context, createOp *direct
 	if mapCtx.Err() != nil {
 		return mapCtx.Err()
 	}
-	status.ExternalRef = &a.id.External
+	status.ExternalRef = direct.LazyPtr(a.id.String())
 	return createOp.UpdateStatus(ctx, status, nil)
 }
 
@@ -206,8 +206,6 @@ func (a *{{.ProtoResource}}Adapter) Update(ctx context.Context, updateOp *direct
 	}
 
 	paths := []string{}
-	// Option 1: This option is good for proto that has ` + "`" + `field_mask` + "`" + ` for output-only, immutable, required/optional.
-	// TODO(contributor): If choosing this option, remove the "Option 2" code.
 	{
 		var err error
 		paths, err = common.CompareProtoMessage(desiredPb, a.actual, common.BasicDiff)
@@ -215,18 +213,8 @@ func (a *{{.ProtoResource}}Adapter) Update(ctx context.Context, updateOp *direct
 			return err
 		}
 	}
-
-	// Option 2: manually add all mutable fields. 
-	// TODO(contributor): If choosing this option, remove the "Option 1" code.
-	{
-		if !reflect.DeepEqual(a.desired.Spec.DisplayName, a.actual.DisplayName) {
-			paths = append(paths, "display_name")
-		}
-	}
-
-
 	if len(paths) == 0 {
-		log.V(2).Info("no field needs update", "name", a.id.External)
+		log.V(2).Info("no field needs update", "name", a.id)
 		status := &krm.{{.Kind}}Status{}
 		status.ObservedState = {{.Kind}}ObservedState_FromProto(mapCtx, a.actual)
 		if mapCtx.Err() != nil {
@@ -239,19 +227,19 @@ func (a *{{.ProtoResource}}Adapter) Update(ctx context.Context, updateOp *direct
 
 	// TODO(contributor): Complete the gcp "UPDATE" or "PATCH" request.
 	req := &{{.KCCService}}pb.Update{{.ProtoResource}}Request{
-		Name:       			a.id.External,
+		Name:       			a.id,
 		UpdateMask:             updateMask,
 		{{.ProtoResource}}:     desiredPb,
 	}
 	op, err := a.gcpClient.Update{{.ProtoResource}}(ctx, req)
 	if err != nil {
-		return fmt.Errorf("updating {{.ProtoResource}} %s: %w", a.id.External, err)
+		return fmt.Errorf("updating {{.ProtoResource}} %s: %w", a.id, err)
 	}
 	updated, err := op.Wait(ctx)
 	if err != nil {
-		return fmt.Errorf("{{.ProtoResource}} %s waiting update: %w", a.id.External, err)
+		return fmt.Errorf("{{.ProtoResource}} %s waiting update: %w", a.id, err)
 	}
-	log.V(2).Info("successfully updated {{.ProtoResource}}", "name", a.id.External)
+	log.V(2).Info("successfully updated {{.ProtoResource}}", "name", a.id)
 
 	status := &krm.{{.Kind}}Status{}
 	status.ObservedState = {{.Kind}}ObservedState_FromProto(mapCtx, updated)

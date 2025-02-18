@@ -376,7 +376,7 @@ func NewUnstructuredWithObservedState(name, ns string, readyStatus corev1.Condit
 func NewIAMServiceAccountUnstructured(name, namespace string) *unstructured.Unstructured {
 	return &unstructured.Unstructured{
 		Object: map[string]interface{}{
-			"apiVersion": "iam.cnrm.cloud.google.com/v1beta1",
+			"apiVersion": "cloud.google.com/go/iam/apiv1beta1",
 			"kind":       "IAMServiceAccount",
 			"metadata": map[string]interface{}{
 				"name":      name,

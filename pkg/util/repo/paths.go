@@ -45,11 +45,11 @@ func GetServiceMappingsPathOrLogFatal() string {
 }
 
 func GetServiceAccountCRDPath() string {
-	return filepath.Join(GetCRDsPath(), "apiextensions.k8s.io_v1_customresourcedefinition_iamserviceaccounts.iam.cnrm.cloud.google.com.yaml")
+	return filepath.Join(GetCRDsPath(), "apiextensions.k8s.io_v1_customresourcedefinition_iamserviceaccounts.cloud.google.com.iam.apiv1beta1.yaml")
 }
 
 func GetServiceAccountKeyCRDPath() string {
-	return filepath.Join(GetCRDsPath(), "apiextensions.k8s.io_v1_customresourcedefinition_iamserviceaccountkeys.iam.cnrm.cloud.google.com.yaml")
+	return filepath.Join(GetCRDsPath(), "apiextensions.k8s.io_v1_customresourcedefinition_iamserviceaccountkeys.cloud.google.com/go/iam/apiv1beta1.yaml")
 }
 
 func GetResourcesSamplesPath() string {

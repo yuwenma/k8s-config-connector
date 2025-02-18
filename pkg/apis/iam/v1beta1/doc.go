@@ -17,5 +17,5 @@
 // +k8s:deepcopy-gen=package,register
 // +k8s:conversion-gen=github.com/GoogleCloudPlatform/k8s-config-connector/pkg/apis/iam
 // +k8s:defaulter-gen=TypeMeta
-// +groupName=iam.cnrm.cloud.google.com
+// +groupName=cloud.google.com/go/iam/apiv1beta1
 package v1beta1

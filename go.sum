@@ -50,6 +50,8 @@ cloud.google.com/go/compute v1.29.0 h1:Lph6d8oPi38NHkOr6S55Nus/Pbbcp37m/J0ohgKAe
 cloud.google.com/go/compute v1.29.0/go.mod h1:HFlsDurE5DpQZClAGf/cYh+gxssMhBxBovZDYkEn/Og=
 cloud.google.com/go/compute/metadata v0.6.0 h1:A6hENjEsCDtC1k8byVsgwvVcioamEHvZ4j01OwKxG9I=
 cloud.google.com/go/compute/metadata v0.6.0/go.mod h1:FjyFAW1MW0C203CEOMDTu3Dk1FlqW3Rga40jzHL4hfg=
+cloud.google.com/go/config v1.3.0 h1:+TeHKfpWVzaBXkwQNedaJWjxHAsjzt7tfCYgqzdfONk=
+cloud.google.com/go/config v1.3.0/go.mod h1:IXI5cDTIV7a/MIbvRIjiMjyBU1OQUodtRbS4ixxUZzI=
 cloud.google.com/go/dataflow v0.10.2 h1:o9P5/zR2mOYJmCnfp9/7RprKFZCwmSu3TvemQSmCaFM=
 cloud.google.com/go/dataflow v0.10.2/go.mod h1:+HIb4HJxDCZYuCqDGnBHZEglh5I0edi/mLgVbxDf0Ag=
 cloud.google.com/go/dataform v0.10.2 h1:t16DoejuOHoxJR88qrpdmFFlCXA9+x5PKrqI9qiDYz0=
@@ -102,6 +104,8 @@ cloud.google.com/go/storage v1.8.0/go.mod h1:Wv1Oy7z6Yz3DshWRJFhqM/UCfaWIRTdp0RX
 cloud.google.com/go/storage v1.10.0/go.mod h1:FLPqc6j+Ki4BU591ie1oL6qBQGu2Bl/tZ9ullr3+Kg0=
 cloud.google.com/go/storage v1.43.0 h1:CcxnSohZwizt4LCzQHWvBf1/kvtHUn7gk9QERXPyXFs=
 cloud.google.com/go/storage v1.43.0/go.mod h1:ajvxEa7WmZS1PxvKRq4bq0tFT3vMd502JwstCcYv0Q0=
+cloud.google.com/go/vertexai v0.13.3 h1:pbw1KfpdE8ZDrXxBKcIsS/j+EixyQRsyu6gxRkXq8/k=
+cloud.google.com/go/vertexai v0.13.3/go.mod h1:AxzUNrd36yhfOZedO+Y1v0ajVgGKOdv1njeQChL8IFY=
 cloud.google.com/go/workstations v1.1.1 h1:wIA5Pk4Z9xwdmltGQoAVP4vr441MGhOu9sGv0Sk4lnI=
 cloud.google.com/go/workstations v1.1.1/go.mod h1:ajqvxTXbkzcvuzSMDUyasKCgEl6ZioN5HBEkzkBb0i0=
 contrib.go.opencensus.io/exporter/prometheus v0.1.0 h1:SByaIoWwNgMdPSgl5sMqM2KDE5H/ukPWBRo314xiDvg=
