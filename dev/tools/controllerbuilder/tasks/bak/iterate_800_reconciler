@@ -34,7 +34,9 @@
 # Pass update PR, and assign Yuwen to review.
 
 #!/bin/bash
+set -e
 set -x
+set -o nounset
 
 FEATURE_DIR=${HOME}/go/src/github.com/GoogleCloudPlatform
 REPO_ROOT="$(git rev-parse --show-toplevel)"
@@ -105,7 +107,7 @@ function enable_service() {
 
 function project_name() {
     # Project has 6-30 characater limit, starting with a lower case char
-    project_name=${service}-${proto}-$(date +%d) # e.g. yuwenma-02-10-spanner-instance
+    project_name=${service,,}-${proto,,}-$(date +%d) # e.g. yuwenma-02-10-spanner-instance
     while true; do
         if [[ ${#project_name} -ge 30 ]]; then
             echo "[project validation] ${project_name} too long" >> "${PASS_LOG}"
@@ -166,19 +168,11 @@ while IFS= read -r -d "---" yaml_chunk; do
     fi
 
     json_str=$(yq <<< "$yaml_chunk")
+
+    service=$(echo "$json_str" | jq -r '.service')
     kind=$(echo "$json_str" | jq -r '.kind')
-    resource_list["${kind}"]=${json_str}
-done < "${RESOURCE_LIST}"
-
-
-# Iterate resource
-for kind in "${!resource_list[@]}"; do
-
-    resource_yaml=${resource_list["$kind"]}
-    service=$(echo "$resource_yaml" | jq -r '.service')
-    kind=$(echo "$resource_yaml" | jq -r '.kind')
-    package=$(echo "$resource_yaml" | jq -r '.package')
-    proto=$(echo "$resource_yaml" | jq -r '.proto')
+    package=$(echo "$json_str" | jq -r '.package')
+    proto=$(echo "$json_str" | jq -r '.proto')
 
     resource=${service}-${proto}
     branch=resource-${resource} # e.g. "gcloud spanner instance" uses branch "mock-llm-spanner-instance" 
@@ -186,11 +180,11 @@ for kind in "${!resource_list[@]}"; do
     # repo_path="/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/resource-datastream-Stream"
 
     project_name=$(project_name)
-    
-    if setup_gcp
-    then
-        continue
-    fi 
+
+    # if setup_gcp
+    # then
+    #     continue
+    # fi 
 
     # # Optional: enabling services take a long long time
     # if enable_service
@@ -204,19 +198,19 @@ for kind in "${!resource_list[@]}"; do
     # # fi
 
     # # TODO: temporary workaround. Safe to remove once the code is merged. 
-    # llm_worker_path="dev/tools/controllerbuilder/tasks/llm-reconciler-worker"
-    # if workaround_to_use_uncommit_code
-    # then
-    #     echo "switch git dir failed"
-    #     continue
-    # fi 
+    llm_worker_path="dev/tools/controllerbuilder/tasks/llm-reconciler-worker"
+    if workaround_to_use_uncommit_code
+    then
+        echo "switch git dir failed"
+        continue
+    fi 
 
-    # if "${repo_path}"/${llm_worker_path}    
-    # then
-    #     continue
-    # fi 
+    if "${repo_path}"/${llm_worker_path}    
+    then
+        continue
+    fi 
     # # TODO cleanup
 
-done
+done < "${RESOURCE_LIST}"
 
 echo Good job!
