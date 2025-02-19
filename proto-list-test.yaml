@@ -1,0 +1,42 @@
+---
+service: api
+package: google.api.cloudquotas.v1
+proto: QuotaInfo
+kind: ApiQuotaInfo
+protopath: google.api.cloudquotas.v1.QuotaInfo
+validated: null
+---
+service: api
+package: google.api.cloudquotas.v1
+proto: QuotaPreference
+kind: ApiQuotaPreference
+protopath: google.api.cloudquotas.v1.QuotaPreference
+validated: null
+---
+service: api
+package: google.api.cloudquotas.v1beta
+proto: QuotaAdjusterSettings
+kind: ApiQuotaAdjusterSettings
+protopath: google.api.cloudquotas.v1beta.QuotaAdjusterSettings
+validated: null
+---
+service: api
+package: google.api.cloudquotas.v1beta
+proto: QuotaInfo
+kind: ApiQuotaInfo
+protopath: google.api.cloudquotas.v1beta.QuotaInfo
+validated: null
+---
+service: api
+package: google.api.cloudquotas.v1beta
+proto: QuotaPreference
+kind: ApiQuotaPreference
+protopath: google.api.cloudquotas.v1beta.QuotaPreference
+validated: null
+---
+service: api
+package: google.api.serviceusage.v1
+proto: Service
+kind: ApiService
+protopath: google.api.serviceusage.v1.Service
+validated: null

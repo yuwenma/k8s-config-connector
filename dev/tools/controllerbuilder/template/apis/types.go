@@ -28,10 +28,23 @@ package {{ .Version }}
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	refv1beta1 "github.com/GoogleCloudPlatform/k8s-config-connector/apis/refs/v1beta1"
+	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/apis/k8s/v1alpha1"
 )
 
 var {{ .Kind }}GVK = GroupVersion.WithKind("{{ .Kind }}")
 
+
+type Parent struct {
+	// +required
+	ProjectRef *refv1beta1.ProjectRef ` + "`" + `json:"projectRef"` + "`" + `
+
+	// +kubebuilder:validation:XValidation:rule="self == oldSelf",message="Location field is immutable"
+	// Immutable.
+	// +required
+	Location string ` + "`" + `json:"location"` + "`" + `
+}
+	
 // {{ .Kind }}Spec defines the desired state of {{ .Kind }}
 {{- if .KindProtoTag }}
 // +kcc:proto={{ .KindProtoTag }}
@@ -39,6 +52,9 @@ var {{ .Kind }}GVK = GroupVersion.WithKind("{{ .Kind }}")
 type {{ .Kind }}Spec struct {
 	// The {{ .Kind }} name. If not given, the metadata.name will be used.
 	ResourceID *string ` + "`" + `json:"resourceID,omitempty"` + "`" + `
+
+	Parent ` + "`" + `json:",inline"` + "`" + `
+
 }
 
 // {{ .Kind }}Status defines the config connector machine state of {{ .Kind }}

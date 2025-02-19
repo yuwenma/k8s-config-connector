@@ -1,0 +1,151 @@
+
+#!/bin/bash
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Iterate 800 feature branch
+
+# for each feature branch
+
+# OPTIONAL: User add some tests (simple, general ones, such as linter, or compiler)
+# Run gemini-script-1 to improve api and mapper
+# Run gemini-script-2 to add fuzz test
+# Run fuzz test to verify api and mapper
+# Pass create PR, fail record result in file
+
+# Run gemini-script-3 to improve controller
+# Run gemini-script-4 to generate test data
+# Run real-gcp test to verify controller
+# Pass update PR, fail record result in file
+
+# Run gemini-script-5 to create mockgcp
+# Run mock-gcp test to verify mock
+# Pass update PR, and assign Yuwen to review.
+
+#!/bin/bash
+set -e
+set -x
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+TASK_DIR=${REPO_ROOT}/dev/tools/controllerbuilder/tasks
+
+# List the resource from a YAML file with delimiter "---"
+yaml_list="${REPO_ROOT}/proto-list-test.yaml" 
+
+
+# TODO: It is cleaner and saver to use different repos for tooling code and resource code.
+DEST_REPO=$REPO_ROOT
+
+# A list of resources, containing the metadata.
+declare -A resource_list
+
+log_debug() {
+  local message="$1"
+  # new resource Config  
+    # +++++ echo '{
+    #   "service": "config",
+    #   "package": "google.cloud.config.v1",
+    #   "proto": "Resource",
+    #   "kind": "ConfigResource",
+    #   "protopath": "google.cloud.config.v1.Resource",
+    #   "validated": null
+  # echo "[DEBUG] $(date): $message" >> iterate-800-debug.log
+
+
+  echo "[DEBUG] $(date): $message" >> iterate-800--benchmark-debug.log
+}
+
+function llm_improve_apis() {
+    task="1-llm_improve_apis"
+
+    retries=1
+    while [[ $retries -ge 0 ]]; do
+        feedback=$(verify_apis $1 2>&1)
+        if [[ $? -eq 0 ]]; then
+            return 0
+        fi
+
+        # todo: pass feedback to llm
+        log=$(${TASK_DIR}/${task} ${DEST_REPO} "${resource_list["$1"]}" "$feedback" 2>&1)
+
+        if [[ $? -ne 0 ]]; then
+            return 1
+        else
+            log_debug  "${task}: ${log}"
+        fi
+        ((retries--))
+    done
+
+    return 1
+}
+
+function verify_apis() {
+    task="2-verify_apis"
+    feedback=$(${TASK_DIR}/${task} "${resource_list["$1"]}" ${DEST_REPO} 2>&1)
+    if [[ $? -ne 0 ]]; then
+        echo $feedback
+        return 1
+    fi 
+    return 0
+}
+
+function llm_improve_controller() {
+    echo improve_controller
+
+}
+
+function llm_improve_mock() {
+    echo improve_mock
+
+}
+
+function ready_to_review() {
+    echo ready_to_review
+
+}
+
+while IFS= read -r -d "---" yaml_chunk; do
+  if [[ -z "$yaml_chunk" ]]; then
+    continue
+  fi
+
+  # yaml_chunk=$(echo "$yaml_chunk" | xargs)
+  yml_str=$(yq <<< "$yaml_chunk")
+  kind=$(echo "$yml_str" | jq -r '.kind')
+  resource_list["${kind}"]=${yml_str}
+  
+done < "$yaml_list"
+
+# Iterate resource
+for kind in "${!resource_list[@]}"; do
+
+    shouldCommit=0
+
+    echo "1. Use LLM to Improve the API"
+    
+    if llm_improve_apis ${kind}; then 
+        echo "API Improved"
+        shouldCommit=1
+    else
+        echo "no luck"
+    fi 
+
+    echo "2. Use LLM to Improve the controller"
+    llm_improve_controller ${kind}
+
+    echo "3. Use LLM to Improve the mock"
+    llm_improve_mock ${kind}
+
+    break
+done
