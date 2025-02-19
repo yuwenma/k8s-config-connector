@@ -1,0 +1,33 @@
+[create project] analytics-Account already exist
+[link billing account] analytics-Account 
+[AnalyticsAccount] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/analytics-account-17/billingInfo
+projectId: analytics-account-17
+[create project] analytics-Property already exist
+[link billing account] analytics-Property 
+[AnalyticsProperty] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/analytics-property-17/billingInfo
+projectId: analytics-property-17
+[create project] analytics-DataStream already exist
+[link billing account] analytics-DataStream 
+[AnalyticsDataStream] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/analytics-datastream-17/billingInfo
+projectId: analytics-datastream-17
+[create project] analytics-FirebaseLink already exist
+[link billing account] analytics-FirebaseLink 
+[AnalyticsFirebaseLink] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/analytics-firebaselink-17/billingInfo
+projectId: analytics-firebaselink-17
+[project validation] analytics-datasharingsettings-17 too long
+[create project] analytics-DataSharingSettings already exist
+[link billing account] analytics-DataSharingSettings 
+[AnalyticsDataSharingSettings] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/datasharingsettings-17/billingInfo
+projectId: datasharingsettings-17
+[create project] analytics-AccountSummary already exist
+[link billing account] analytics-AccountSummary 

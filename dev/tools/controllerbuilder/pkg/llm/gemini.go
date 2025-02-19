@@ -18,6 +18,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"time"
 
 	"github.com/google/generative-ai-go/genai"
 	"google.golang.org/api/option"
@@ -161,6 +162,7 @@ func (c *GeminiChat) SendMessage(ctx context.Context, parts ...string) (Response
 	if err != nil {
 		return nil, err
 	}
+	time.Sleep(7 * time.Second)
 	return &GeminiResponse{geminiResponse: geminiResponse}, nil
 }
 
@@ -177,6 +179,8 @@ func (c *GeminiChat) SendFunctionResults(ctx context.Context, functionResults []
 	if err != nil {
 		return nil, err
 	}
+	time.Sleep(7 * time.Second)
+
 	return &GeminiResponse{geminiResponse: geminiResponse}, nil
 }
 

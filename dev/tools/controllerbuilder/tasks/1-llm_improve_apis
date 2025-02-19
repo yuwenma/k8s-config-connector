@@ -1,0 +1,127 @@
+
+#!/bin/bash
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+set -o errexit
+set -o nounset
+set -o pipefail
+set -e
+set -x
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+CMD=${REPO_ROOT}/dev/tools/controllerbuilder
+
+# It is cleaner and saver to use different repos for tooling code and resource code.
+dest_repo="${1:-}"
+if [[ -z "$dest_repo:-" ]]; then
+  dest_repo=${HOME}/src/github.com/GoogleCloudPlatform/k8s-config-connector
+fi
+dest_cmd=${dest_repo}/dev/tools/controllerbuilder
+
+metadata="${2:-}"
+if [[ -n "$metadata" ]]; then
+  metadata=$2
+  package=$(echo "$metadata" | jq -r '.package')
+  kind=$(echo "$metadata" | jq -r '.kind')
+  proto=$(echo "$metadata" | jq -r '.proto')
+  service=$(echo "$metadata" | jq -r '.service')
+else 
+  if [[ -n "${PACKAGE:-}" ]]; then
+    package=${PACKGE}
+  else 
+    echo "PACKAGE must be set"
+    exit 1
+  fi
+
+  if [[ -n "${KIND:-}" ]]; then
+    kind=${KIND}
+  else 
+    echo "KIND must be set"
+    exit 1
+  fi
+
+  if [[ -n "${PROTO:-}" ]]; then
+    proto=${PROTO}
+  else
+    echo "PROTO must be set"
+    exit 1
+  fi
+
+  if [[ -n "${SERVICE:-}" ]]; then
+    service=${SERVICE}
+  else
+    echo "SERVICE must be set"
+    exit 1
+  fi
+fi
+
+feedback="${3:-}"
+
+# Only if this is a new resource
+# TODO: find out the answer
+  # cd ${dest_repo}
+  # go run ${dest_cmd} generate-types \
+  #     --service ${package} 
+  #     --api-version ${service}.cnrm.cloud.google.com/v1alpha1 \
+  #     --resource ${kind}:${proto}
+
+  # go run ${dest_cmd} generate-mapper \
+  #     --service ${package}  \
+  #     --api-version ${service}.cnrm.cloud.google.com/v1alpha1 \
+  # cd ${REPO_ROOT}
+
+
+  # if [[ -z "${OUTPUT:-}" ]]; then
+  #   OUTPUT="${REPO_ROOT}/.generate"
+  # fi
+
+instruction=""
+
+if [[ -n ${feedback} ]]; then
+  instruction=$(cat <<EOF
+${instruction}
+
+
+Remember the requirements: ${feedback}
+EOF
+)
+fi
+
+instruction=$(cat <<EOF
+$instruction
+
+
+You should run a prompt script to get a suggestion about how to edit the file under ${REPO_ROOT}/apis/${service}/v1alpha1/${proto,,}_types.go. Make sure to fulfill the requirements.
+EOF
+)
+
+instruction=$(cat <<EOF
+$instruction
+
+
+The prompt script is 'go run $dest_cmd prompt --src-dir $dest_repo --proto-dir ${dest_repo}/.build/third_party/googleapis/ <<EOF
+// +kcc:proto=${package}.${proto}
+// kind: ${kind}
+EOF'
+EOF
+)
+
+output=$($dest_cmd/tasks/codebot ${instruction} 2>&1)
+if [[ $? -ne 0 ]]; then
+  echo  "run codebot failed: $output"
+  exit 1
+fi
+
+echo $output
