@@ -1,0 +1,1142 @@
+---
+service: visionai
+package: google.cloud.visionai.v1
+proto: Series
+kind: VisionAISeries
+protopath: google.cloud.visionai.v1.Series
+validated: null
+---
+service: visionai
+package: google.cloud.visionai.v1
+proto: Channel
+kind: VisionAIChannel
+protopath: google.cloud.visionai.v1.Channel
+validated: null
+---
+service: visionai
+package: google.cloud.visionai.v1
+proto: Asset
+kind: VisionAIAsset
+protopath: google.cloud.visionai.v1.Asset
+validated: null
+---
+service: visionai
+package: google.cloud.visionai.v1
+proto: Collection
+kind: VisionAICollection
+protopath: google.cloud.visionai.v1.Collection
+validated: null
+---
+service: visionai
+package: google.cloud.visionai.v1
+proto: Index
+kind: VisionAIIndex
+protopath: google.cloud.visionai.v1.Index
+validated: null
+---
+service: visionai
+package: google.cloud.visionai.v1
+proto: Corpus
+kind: VisionAICorpus
+protopath: google.cloud.visionai.v1.Corpus
+validated: null
+---
+service: visionai
+package: google.cloud.visionai.v1
+proto: DataSchema
+kind: VisionAIDataSchema
+protopath: google.cloud.visionai.v1.DataSchema
+validated: null
+---
+service: visionai
+package: google.cloud.visionai.v1
+proto: Annotation
+kind: VisionAIAnnotation
+protopath: google.cloud.visionai.v1.Annotation
+validated: null
+---
+service: visionai
+package: google.cloud.visionai.v1
+proto: SearchConfig
+kind: VisionAISearchConfig
+protopath: google.cloud.visionai.v1.SearchConfig
+validated: null
+---
+service: visionai
+package: google.cloud.visionai.v1
+proto: IndexEndpoint
+kind: VisionAIIndexEndpoint
+protopath: google.cloud.visionai.v1.IndexEndpoint
+validated: null
+---
+service: visionai
+package: google.cloud.visionai.v1
+proto: SearchHypernym
+kind: VisionAISearchHypernym
+protopath: google.cloud.visionai.v1.SearchHypernym
+validated: null
+---
+service: vmmigration
+package: google.cloud.vmmigration.v1
+proto: ReplicationCycle
+kind: VMMigrationReplicationCycle
+protopath: google.cloud.vmmigration.v1.ReplicationCycle
+validated: null
+---
+service: vmmigration
+package: google.cloud.vmmigration.v1
+proto: MigratingVm
+kind: VMMigrationMigratingVm
+protopath: google.cloud.vmmigration.v1.MigratingVm
+validated: null
+---
+service: vmmigration
+package: google.cloud.vmmigration.v1
+proto: CloneJob
+kind: VMMigrationCloneJob
+protopath: google.cloud.vmmigration.v1.CloneJob
+validated: null
+---
+service: vmmigration
+package: google.cloud.vmmigration.v1
+proto: CutoverJob
+kind: VMMigrationCutoverJob
+protopath: google.cloud.vmmigration.v1.CutoverJob
+validated: null
+---
+service: vmmigration
+package: google.cloud.vmmigration.v1
+proto: Source
+kind: VMMigrationSource
+protopath: google.cloud.vmmigration.v1.Source
+validated: null
+---
+service: vmmigration
+package: google.cloud.vmmigration.v1
+proto: DatacenterConnector
+kind: VMMigrationDatacenterConnector
+protopath: google.cloud.vmmigration.v1.DatacenterConnector
+validated: null
+---
+service: vmmigration
+package: google.cloud.vmmigration.v1
+proto: UtilizationReport
+kind: VMMigrationUtilizationReport
+protopath: google.cloud.vmmigration.v1.UtilizationReport
+validated: null
+---
+service: vmmigration
+package: google.cloud.vmmigration.v1
+proto: TargetProject
+kind: VMMigrationTargetProject
+protopath: google.cloud.vmmigration.v1.TargetProject
+validated: null
+---
+service: vmmigration
+package: google.cloud.vmmigration.v1
+proto: Group
+kind: VMMigrationGroup
+protopath: google.cloud.vmmigration.v1.Group
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: PrivateCloud
+kind: VMwareEnginePrivateCloud
+protopath: google.cloud.vmwareengine.v1.PrivateCloud
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: Cluster
+kind: VMwareEngineCluster
+protopath: google.cloud.vmwareengine.v1.Cluster
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: Node
+kind: VMwareEngineNode
+protopath: google.cloud.vmwareengine.v1.Node
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: ExternalAddress
+kind: VMwareEngineExternalAddress
+protopath: google.cloud.vmwareengine.v1.ExternalAddress
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: Subnet
+kind: VMwareEngineSubnet
+protopath: google.cloud.vmwareengine.v1.Subnet
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: ExternalAccessRule
+kind: VMwareEngineExternalAccessRule
+protopath: google.cloud.vmwareengine.v1.ExternalAccessRule
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: LoggingServer
+kind: VMwareEngineLoggingServer
+protopath: google.cloud.vmwareengine.v1.LoggingServer
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: NodeType
+kind: VMwareEngineNodeType
+protopath: google.cloud.vmwareengine.v1.NodeType
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: HcxActivationKey
+kind: VMwareEngineHcxActivationKey
+protopath: google.cloud.vmwareengine.v1.HcxActivationKey
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: DnsForwarding
+kind: VMwareEngineDNSForwarding
+protopath: google.cloud.vmwareengine.v1.DnsForwarding
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: NetworkPeering
+kind: VMwareEngineNetworkPeering
+protopath: google.cloud.vmwareengine.v1.NetworkPeering
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: NetworkPolicy
+kind: VMwareEngineNetworkPolicy
+protopath: google.cloud.vmwareengine.v1.NetworkPolicy
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: ManagementDnsZoneBinding
+kind: VMwareEngineManagementDnsZoneBinding
+protopath: google.cloud.vmwareengine.v1.ManagementDnsZoneBinding
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: VmwareEngineNetwork
+kind: VMwareEngineVmwareEngineNetwork
+protopath: google.cloud.vmwareengine.v1.VmwareEngineNetwork
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: PrivateConnection
+kind: VMwareEnginePrivateConnection
+protopath: google.cloud.vmwareengine.v1.PrivateConnection
+validated: null
+---
+service: vmwareengine
+package: google.cloud.vmwareengine.v1
+proto: DnsBindPermission
+kind: VMwareEngineDnsBindPermission
+protopath: google.cloud.vmwareengine.v1.DnsBindPermission
+validated: null
+---
+service: vpcaccess
+package: google.cloud.vpcaccess.v1
+proto: Connector
+kind: VPCAccessConnector
+protopath: google.cloud.vpcaccess.v1.Connector
+validated: null
+---
+service: websecurityscanner
+package: google.cloud.websecurityscanner.v1
+proto: Finding
+kind: WebSecurityScannerFinding
+protopath: google.cloud.websecurityscanner.v1.Finding
+validated: null
+---
+service: websecurityscanner
+package: google.cloud.websecurityscanner.v1beta
+proto: Finding
+kind: WebSecurityScannerFinding
+protopath: google.cloud.websecurityscanner.v1beta.Finding
+validated: null
+---
+service: websecurityscanner
+package: google.cloud.websecurityscanner.v1beta
+proto: ScanConfig
+kind: WebSecurityScannerScanConfig
+protopath: google.cloud.websecurityscanner.v1beta.ScanConfig
+validated: null
+---
+service: websecurityscanner
+package: google.cloud.websecurityscanner.v1beta
+proto: ScanRun
+kind: WebSecurityScannerScanRun
+protopath: google.cloud.websecurityscanner.v1beta.ScanRun
+validated: null
+---
+service: workflows
+package: google.cloud.workflows.executions.v1
+proto: Execution
+kind: WorkflowsExecution
+protopath: google.cloud.workflows.executions.v1.Execution
+validated: null
+---
+service: workflows
+package: google.cloud.workflows.executions.v1beta
+proto: Execution
+kind: WorkflowsExecution
+protopath: google.cloud.workflows.executions.v1beta.Execution
+validated: null
+---
+service: workflows
+package: google.cloud.workflows.v1
+proto: Workflow
+kind: WorkflowsWorkflow
+protopath: google.cloud.workflows.v1.Workflow
+validated: null
+---
+service: workflows
+package: google.cloud.workflows.v1beta
+proto: Workflow
+kind: WorkflowsWorkflow
+protopath: google.cloud.workflows.v1beta.Workflow
+validated: null
+---
+service: workstations
+package: google.cloud.workstations.v1
+proto: WorkstationCluster
+kind: WorkstationsWorkstationCluster
+protopath: google.cloud.workstations.v1.WorkstationCluster
+validated: null
+---
+service: workstations
+package: google.cloud.workstations.v1
+proto: WorkstationConfig
+kind: WorkstationsWorkstationConfig
+protopath: google.cloud.workstations.v1.WorkstationConfig
+validated: null
+---
+service: workstations
+package: google.cloud.workstations.v1
+proto: Workstation
+kind: WorkstationsWorkstation
+protopath: google.cloud.workstations.v1.Workstation
+validated: null
+---
+service: workstations
+package: google.cloud.workstations.v1beta
+proto: WorkstationCluster
+kind: WorkstationsWorkstationCluster
+protopath: google.cloud.workstations.v1beta.WorkstationCluster
+validated: null
+---
+service: workstations
+package: google.cloud.workstations.v1beta
+proto: WorkstationConfig
+kind: WorkstationsWorkstationConfig
+protopath: google.cloud.workstations.v1beta.WorkstationConfig
+validated: null
+---
+service: workstations
+package: google.cloud.workstations.v1beta
+proto: Workstation
+kind: WorkstationsWorkstation
+protopath: google.cloud.workstations.v1beta.Workstation
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: AptArtifact
+kind: ArtifactRegistryAptArtifact
+protopath: google.devtools.artifactregistry.v1.AptArtifact
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: DockerImage
+kind: ArtifactRegistryDockerImage
+protopath: google.devtools.artifactregistry.v1.DockerImage
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: MavenArtifact
+kind: ArtifactRegistryMavenArtifact
+protopath: google.devtools.artifactregistry.v1.MavenArtifact
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: NpmPackage
+kind: ArtifactRegistryNpmPackage
+protopath: google.devtools.artifactregistry.v1.NpmPackage
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: PythonPackage
+kind: ArtifactRegistryPythonPackage
+protopath: google.devtools.artifactregistry.v1.PythonPackage
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: Attachment
+kind: ArtifactRegistryAttachment
+protopath: google.devtools.artifactregistry.v1.Attachment
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: File
+kind: ArtifactRegistryFile
+protopath: google.devtools.artifactregistry.v1.File
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: GenericArtifact
+kind: ArtifactRegistryGenericArtifact
+protopath: google.devtools.artifactregistry.v1.GenericArtifact
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: Package
+kind: ArtifactRegistryPackage
+protopath: google.devtools.artifactregistry.v1.Package
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: Repository
+kind: ArtifactRegistryRepository
+protopath: google.devtools.artifactregistry.v1.Repository
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: Rule
+kind: ArtifactRegistryRule
+protopath: google.devtools.artifactregistry.v1.Rule
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: ProjectSettings
+kind: ArtifactRegistryProjectSettings
+protopath: google.devtools.artifactregistry.v1.ProjectSettings
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: Tag
+kind: ArtifactRegistryTag
+protopath: google.devtools.artifactregistry.v1.Tag
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: Version
+kind: ArtifactRegistryVersion
+protopath: google.devtools.artifactregistry.v1.Version
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: VPCSCConfig
+kind: ArtifactRegistryVPCSCConfig
+protopath: google.devtools.artifactregistry.v1.VPCSCConfig
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1
+proto: YumArtifact
+kind: ArtifactRegistryYumArtifact
+protopath: google.devtools.artifactregistry.v1.YumArtifact
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1beta2
+proto: AptArtifact
+kind: ArtifactRegistryAptArtifact
+protopath: google.devtools.artifactregistry.v1beta2.AptArtifact
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1beta2
+proto: File
+kind: ArtifactRegistryFile
+protopath: google.devtools.artifactregistry.v1beta2.File
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1beta2
+proto: Repository
+kind: ArtifactRegistryRepository
+protopath: google.devtools.artifactregistry.v1beta2.Repository
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1beta2
+proto: ProjectSettings
+kind: ArtifactRegistryProjectSettings
+protopath: google.devtools.artifactregistry.v1beta2.ProjectSettings
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1beta2
+proto: Tag
+kind: ArtifactRegistryTag
+protopath: google.devtools.artifactregistry.v1beta2.Tag
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1beta2
+proto: Version
+kind: ArtifactRegistryVersion
+protopath: google.devtools.artifactregistry.v1beta2.Version
+validated: null
+---
+service: artifactregistry
+package: google.devtools.artifactregistry.v1beta2
+proto: YumArtifact
+kind: ArtifactRegistryYumArtifact
+protopath: google.devtools.artifactregistry.v1beta2.YumArtifact
+validated: null
+---
+service: cloudbuild
+package: google.devtools.cloudbuild.v1
+proto: Build
+kind: CloudBuildBuild
+protopath: google.devtools.cloudbuild.v1.Build
+validated: null
+---
+service: cloudbuild
+package: google.devtools.cloudbuild.v1
+proto: BuildTrigger
+kind: CloudBuildBuildTrigger
+protopath: google.devtools.cloudbuild.v1.BuildTrigger
+validated: null
+---
+service: cloudbuild
+package: google.devtools.cloudbuild.v1
+proto: GitHubEnterpriseConfig
+kind: CloudBuildGitHubEnterpriseConfig
+protopath: google.devtools.cloudbuild.v1.GitHubEnterpriseConfig
+validated: null
+---
+service: cloudbuild
+package: google.devtools.cloudbuild.v1
+proto: WorkerPool
+kind: CloudBuildWorkerPool
+protopath: google.devtools.cloudbuild.v1.WorkerPool
+validated: null
+---
+service: cloudbuild
+package: google.devtools.cloudbuild.v2
+proto: Connection
+kind: CloudBuildConnection
+protopath: google.devtools.cloudbuild.v2.Connection
+validated: null
+---
+service: cloudbuild
+package: google.devtools.cloudbuild.v2
+proto: Repository
+kind: CloudBuildRepository
+protopath: google.devtools.cloudbuild.v2.Repository
+validated: null
+---
+service: clouderrorreporting
+package: google.devtools.clouderrorreporting.v1beta1
+proto: ErrorGroup
+kind: CloudErrorReportingErrorGroup
+protopath: google.devtools.clouderrorreporting.v1beta1.ErrorGroup
+validated: null
+---
+service: cloudprofiler
+package: google.devtools.cloudprofiler.v2
+proto: Profile
+kind: CloudProfilerProfile
+protopath: google.devtools.cloudprofiler.v2.Profile
+validated: null
+---
+service: cloudtrace
+package: google.devtools.cloudtrace.v2
+proto: Span
+kind: CloudTraceSpan
+protopath: google.devtools.cloudtrace.v2.Span
+validated: null
+---
+service: remoteworkers
+package: google.devtools.remoteworkers.v1test2
+proto: BotSession
+kind: RemoteWorkersBotSession
+protopath: google.devtools.remoteworkers.v1test2.BotSession
+validated: null
+---
+service: resultstore
+package: google.devtools.resultstore.v2
+proto: Action
+kind: ResultStoreAction
+protopath: google.devtools.resultstore.v2.Action
+validated: null
+---
+service: resultstore
+package: google.devtools.resultstore.v2
+proto: Configuration
+kind: ResultStoreConfiguration
+protopath: google.devtools.resultstore.v2.Configuration
+validated: null
+---
+service: resultstore
+package: google.devtools.resultstore.v2
+proto: ConfiguredTarget
+kind: ResultStoreConfiguredTarget
+protopath: google.devtools.resultstore.v2.ConfiguredTarget
+validated: null
+---
+service: resultstore
+package: google.devtools.resultstore.v2
+proto: DownloadMetadata
+kind: ResultStoreDownloadMetadata
+protopath: google.devtools.resultstore.v2.DownloadMetadata
+validated: null
+---
+service: resultstore
+package: google.devtools.resultstore.v2
+proto: FileSet
+kind: ResultStoreFileSet
+protopath: google.devtools.resultstore.v2.FileSet
+validated: null
+---
+service: resultstore
+package: google.devtools.resultstore.v2
+proto: Invocation
+kind: ResultStoreInvocation
+protopath: google.devtools.resultstore.v2.Invocation
+validated: null
+---
+service: resultstore
+package: google.devtools.resultstore.v2
+proto: Target
+kind: ResultStoreTarget
+protopath: google.devtools.resultstore.v2.Target
+validated: null
+---
+service: resultstore
+package: google.devtools.resultstore.v2
+proto: UploadMetadata
+kind: ResultStoreUploadMetadata
+protopath: google.devtools.resultstore.v2.UploadMetadata
+validated: null
+---
+service: testing
+package: google.devtools.testing.v1
+proto: DeviceSession
+kind: TestingDeviceSession
+protopath: google.devtools.testing.v1.DeviceSession
+validated: null
+---
+service: example
+package: google.example.library.v1
+proto: Book
+kind: ExampleBook
+protopath: google.example.library.v1.Book
+validated: null
+---
+service: example
+package: google.example.library.v1
+proto: Shelf
+kind: ExampleShelf
+protopath: google.example.library.v1.Shelf
+validated: null
+---
+service: firestore
+package: google.firestore.admin.v1
+proto: Backup
+kind: FirestoreBackup
+protopath: google.firestore.admin.v1.Backup
+validated: null
+---
+service: firestore
+package: google.firestore.admin.v1
+proto: Database
+kind: FirestoreDatabase
+protopath: google.firestore.admin.v1.Database
+validated: null
+---
+service: firestore
+package: google.firestore.admin.v1
+proto: Field
+kind: FirestoreField
+protopath: google.firestore.admin.v1.Field
+validated: null
+---
+service: firestore
+package: google.firestore.admin.v1
+proto: Index
+kind: FirestoreIndex
+protopath: google.firestore.admin.v1.Index
+validated: null
+---
+service: firestore
+package: google.firestore.admin.v1
+proto: BackupSchedule
+kind: FirestoreBackupSchedule
+protopath: google.firestore.admin.v1.BackupSchedule
+validated: null
+---
+service: iam
+package: google.iam.admin.v1
+proto: ServiceAccount
+kind: IAMServiceAccount
+protopath: google.iam.admin.v1.ServiceAccount
+validated: null
+---
+service: iam
+package: google.iam.admin.v1
+proto: ServiceAccountKey
+kind: IAMServiceAccountKey
+protopath: google.iam.admin.v1.ServiceAccountKey
+validated: null
+---
+service: iam
+package: google.iam.v1beta
+proto: WorkloadIdentityPool
+kind: IAMWorkloadIdentityPool
+protopath: google.iam.v1beta.WorkloadIdentityPool
+validated: null
+---
+service: iam
+package: google.iam.v1beta
+proto: WorkloadIdentityPoolProvider
+kind: IAMWorkloadIdentityPoolProvider
+protopath: google.iam.v1beta.WorkloadIdentityPoolProvider
+validated: null
+---
+service: iam
+package: google.iam.v3
+proto: PolicyBinding
+kind: IAMPolicyBinding
+protopath: google.iam.v3.PolicyBinding
+validated: null
+---
+service: iam
+package: google.iam.v3
+proto: PrincipalAccessBoundaryPolicy
+kind: IAMPrincipalAccessBoundaryPolicy
+protopath: google.iam.v3.PrincipalAccessBoundaryPolicy
+validated: null
+---
+service: iam
+package: google.iam.v3beta
+proto: PolicyBinding
+kind: IAMPolicyBinding
+protopath: google.iam.v3beta.PolicyBinding
+validated: null
+---
+service: iam
+package: google.iam.v3beta
+proto: PrincipalAccessBoundaryPolicy
+kind: IAMPrincipalAccessBoundaryPolicy
+protopath: google.iam.v3beta.PrincipalAccessBoundaryPolicy
+validated: null
+---
+service: identity
+package: google.identity.accesscontextmanager.v1
+proto: AccessLevel
+kind: IdentityAccessLevel
+protopath: google.identity.accesscontextmanager.v1.AccessLevel
+validated: null
+---
+service: identity
+package: google.identity.accesscontextmanager.v1
+proto: AccessPolicy
+kind: IdentityAccessPolicy
+protopath: google.identity.accesscontextmanager.v1.AccessPolicy
+validated: null
+---
+service: identity
+package: google.identity.accesscontextmanager.v1
+proto: GcpUserAccessBinding
+kind: IdentityGcpUserAccessBinding
+protopath: google.identity.accesscontextmanager.v1.GcpUserAccessBinding
+validated: null
+---
+service: identity
+package: google.identity.accesscontextmanager.v1
+proto: ServicePerimeter
+kind: IdentityServicePerimeter
+protopath: google.identity.accesscontextmanager.v1.ServicePerimeter
+validated: null
+---
+service: logging
+package: google.logging.v2
+proto: LogEntry
+kind: LoggingLogEntry
+protopath: google.logging.v2.LogEntry
+validated: null
+---
+service: logging
+package: google.logging.v2
+proto: LogBucket
+kind: LoggingLogBucket
+protopath: google.logging.v2.LogBucket
+validated: null
+---
+service: logging
+package: google.logging.v2
+proto: LogView
+kind: LoggingLogView
+protopath: google.logging.v2.LogView
+validated: null
+---
+service: logging
+package: google.logging.v2
+proto: LogSink
+kind: LoggingLogSink
+protopath: google.logging.v2.LogSink
+validated: null
+---
+service: logging
+package: google.logging.v2
+proto: Link
+kind: LoggingLink
+protopath: google.logging.v2.Link
+validated: null
+---
+service: logging
+package: google.logging.v2
+proto: LogExclusion
+kind: LoggingLogExclusion
+protopath: google.logging.v2.LogExclusion
+validated: null
+---
+service: logging
+package: google.logging.v2
+proto: CmekSettings
+kind: LoggingCmekSettings
+protopath: google.logging.v2.CmekSettings
+validated: null
+---
+service: logging
+package: google.logging.v2
+proto: Settings
+kind: LoggingSettings
+protopath: google.logging.v2.Settings
+validated: null
+---
+service: logging
+package: google.logging.v2
+proto: LogMetric
+kind: LoggingLogMetric
+protopath: google.logging.v2.LogMetric
+validated: null
+---
+service: monitoring
+package: google.monitoring.dashboard.v1
+proto: AlertChart
+kind: MonitoringAlertChart
+protopath: google.monitoring.dashboard.v1.AlertChart
+validated: null
+---
+service: monitoring
+package: google.monitoring.dashboard.v1
+proto: Dashboard
+kind: MonitoringDashboard
+protopath: google.monitoring.dashboard.v1.Dashboard
+validated: null
+---
+service: monitoring
+package: google.monitoring.metricsscope.v1
+proto: MetricsScope
+kind: MonitoringMetricsScope
+protopath: google.monitoring.metricsscope.v1.MetricsScope
+validated: null
+---
+service: monitoring
+package: google.monitoring.metricsscope.v1
+proto: MonitoredProject
+kind: MonitoringMonitoredProject
+protopath: google.monitoring.metricsscope.v1.MonitoredProject
+validated: null
+---
+service: monitoring
+package: google.monitoring.v3
+proto: AlertPolicy
+kind: MonitoringAlertPolicy
+protopath: google.monitoring.v3.AlertPolicy
+validated: null
+---
+service: monitoring
+package: google.monitoring.v3
+proto: AlertPolicy
+kind: MonitoringAlertPolicy
+protopath: google.monitoring.v3.AlertPolicy
+validated: null
+---
+service: monitoring
+package: google.monitoring.v3
+proto: Group
+kind: MonitoringGroup
+protopath: google.monitoring.v3.Group
+validated: null
+---
+service: monitoring
+package: google.monitoring.v3
+proto: NotificationChannelDescriptor
+kind: MonitoringNotificationChannelDescriptor
+protopath: google.monitoring.v3.NotificationChannelDescriptor
+validated: null
+---
+service: monitoring
+package: google.monitoring.v3
+proto: NotificationChannel
+kind: MonitoringNotificationChannel
+protopath: google.monitoring.v3.NotificationChannel
+validated: null
+---
+service: monitoring
+package: google.monitoring.v3
+proto: Service
+kind: MonitoringService
+protopath: google.monitoring.v3.Service
+validated: null
+---
+service: monitoring
+package: google.monitoring.v3
+proto: ServiceLevelObjective
+kind: MonitoringServiceLevelObjective
+protopath: google.monitoring.v3.ServiceLevelObjective
+validated: null
+---
+service: monitoring
+package: google.monitoring.v3
+proto: Snooze
+kind: MonitoringSnooze
+protopath: google.monitoring.v3.Snooze
+validated: null
+---
+service: monitoring
+package: google.monitoring.v3
+proto: UptimeCheckConfig
+kind: MonitoringUptimeCheckConfig
+protopath: google.monitoring.v3.UptimeCheckConfig
+validated: null
+---
+service: privacy
+package: google.privacy.dlp.v2
+proto: Finding
+kind: PrivacyFinding
+protopath: google.privacy.dlp.v2.Finding
+validated: null
+---
+service: privacy
+package: google.privacy.dlp.v2
+proto: InspectTemplate
+kind: PrivacyInspectTemplate
+protopath: google.privacy.dlp.v2.InspectTemplate
+validated: null
+---
+service: privacy
+package: google.privacy.dlp.v2
+proto: DeidentifyTemplate
+kind: PrivacyDeidentifyTemplate
+protopath: google.privacy.dlp.v2.DeidentifyTemplate
+validated: null
+---
+service: privacy
+package: google.privacy.dlp.v2
+proto: JobTrigger
+kind: PrivacyJobTrigger
+protopath: google.privacy.dlp.v2.JobTrigger
+validated: null
+---
+service: privacy
+package: google.privacy.dlp.v2
+proto: DiscoveryConfig
+kind: PrivacyDiscoveryConfig
+protopath: google.privacy.dlp.v2.DiscoveryConfig
+validated: null
+---
+service: privacy
+package: google.privacy.dlp.v2
+proto: DlpJob
+kind: PrivacyDlpJob
+protopath: google.privacy.dlp.v2.DlpJob
+validated: null
+---
+service: privacy
+package: google.privacy.dlp.v2
+proto: StoredInfoType
+kind: PrivacyStoredInfoType
+protopath: google.privacy.dlp.v2.StoredInfoType
+validated: null
+---
+service: privacy
+package: google.privacy.dlp.v2
+proto: ProjectDataProfile
+kind: PrivacyProjectDataProfile
+protopath: google.privacy.dlp.v2.ProjectDataProfile
+validated: null
+---
+service: privacy
+package: google.privacy.dlp.v2
+proto: TableDataProfile
+kind: PrivacyTableDataProfile
+protopath: google.privacy.dlp.v2.TableDataProfile
+validated: null
+---
+service: privacy
+package: google.privacy.dlp.v2
+proto: ColumnDataProfile
+kind: PrivacyColumnDataProfile
+protopath: google.privacy.dlp.v2.ColumnDataProfile
+validated: null
+---
+service: privacy
+package: google.privacy.dlp.v2
+proto: FileStoreDataProfile
+kind: PrivacyFileStoreDataProfile
+protopath: google.privacy.dlp.v2.FileStoreDataProfile
+validated: null
+---
+service: privacy
+package: google.privacy.dlp.v2
+proto: Connection
+kind: PrivacyConnection
+protopath: google.privacy.dlp.v2.Connection
+validated: null
+---
+service: pubsub
+package: google.pubsub.v1
+proto: Topic
+kind: PubSubTopic
+protopath: google.pubsub.v1.Topic
+validated: null
+---
+service: pubsub
+package: google.pubsub.v1
+proto: Subscription
+kind: PubSubSubscription
+protopath: google.pubsub.v1.Subscription
+validated: null
+---
+service: pubsub
+package: google.pubsub.v1
+proto: Snapshot
+kind: PubSubSnapshot
+protopath: google.pubsub.v1.Snapshot
+validated: null
+---
+service: pubsub
+package: google.pubsub.v1
+proto: Schema
+kind: PubSubSchema
+protopath: google.pubsub.v1.Schema
+validated: null
+
+service: spanner
+package: google.spanner.admin.database.v1
+proto: Backup
+kind: SpannerBackup
+protopath: google.spanner.admin.database.v1.Backup
+validated: null
+---
+service: spanner
+package: google.spanner.admin.database.v1
+proto: BackupSchedule
+kind: SpannerBackupSchedule
+protopath: google.spanner.admin.database.v1.BackupSchedule
+validated: null
+---
+service: spanner
+package: google.spanner.admin.database.v1
+proto: Database
+kind: SpannerDatabase
+protopath: google.spanner.admin.database.v1.Database
+validated: null
+---
+service: spanner
+package: google.spanner.admin.database.v1
+proto: DatabaseRole
+kind: SpannerDatabaseRole
+protopath: google.spanner.admin.database.v1.DatabaseRole
+validated: null
+---
+service: spanner
+package: google.spanner.admin.instance.v1
+proto: InstanceConfig
+kind: SpannerInstanceConfig
+protopath: google.spanner.admin.instance.v1.InstanceConfig
+validated: null
+---
+service: spanner
+package: google.spanner.admin.instance.v1
+proto: Instance
+kind: SpannerInstance
+protopath: google.spanner.admin.instance.v1.Instance
+validated: null
+---
+service: spanner
+package: google.spanner.admin.instance.v1
+proto: InstancePartition
+kind: SpannerInstancePartition
+protopath: google.spanner.admin.instance.v1.InstancePartition
+validated: null
+---
+service: spanner
+package: google.spanner.v1
+proto: Session
+kind: SpannerSession
+protopath: google.spanner.v1.Session
+validated: null
+---
+service: storage
+package: google.storage.control.v2
+proto: Folder
+kind: StorageFolder
+protopath: google.storage.control.v2.Folder
+validated: null
+---
+service: storage
+package: google.storage.control.v2
+proto: StorageLayout
+kind: StorageStorageLayout
+protopath: google.storage.control.v2.StorageLayout
+validated: null
+---
+service: storage
+package: google.storage.control.v2
+proto: ManagedFolder
+kind: StorageManagedFolder
+protopath: google.storage.control.v2.ManagedFolder
+validated: null
+---
+service: storage
+package: google.storage.v2
+proto: Bucket
+kind: StorageBucket
+protopath: google.storage.v2.Bucket
+validated: null
+---
+service: storagetransfer
+package: google.storagetransfer.v1
+proto: AgentPool
+kind: StorageTransferAgentPool
+protopath: google.storagetransfer.v1.AgentPool
+validated: null
+---

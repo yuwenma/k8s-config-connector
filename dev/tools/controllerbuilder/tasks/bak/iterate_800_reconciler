@@ -1,0 +1,216 @@
+
+#!/bin/bash
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Iterate 800 feature branch
+
+# for each feature branch
+
+# OPTIONAL: User add some tests (simple, general ones, such as linter, or compiler)
+# Run gemini-script-1 to improve api and mapper
+# Run gemini-script-2 to add fuzz test
+# Run fuzz test to verify api and mapper
+# Pass create PR, fail record result in file
+
+# Run gemini-script-3 to improve controller
+# Run gemini-script-4 to generate test data
+# Run real-gcp test to verify controller
+# Pass update PR, fail record result in file
+
+# Run gemini-script-5 to create mockgcp
+# Run mock-gcp test to verify mock
+# Pass update PR, and assign Yuwen to review.
+
+#!/bin/bash
+set -e
+set -x
+set -o nounset
+
+FEATURE_DIR=${HOME}/go/src/github.com/GoogleCloudPlatform
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+PASS_LOG="${REPO_ROOT}/iterate_800_reconciler-pass-tmp.log" 
+FAIL_LOG="${REPO_ROOT}/iterate_800_reconciler-failure-tmp.log"
+RESOURCE_LIST="${REPO_ROOT}/proto-list.yaml"
+SERVICE_LIST="${REPO_ROOT}/gservice-list.txt"
+
+# TODO: remove once the code is merged
+UNCOMMIT_ROOT="/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector"
+
+function setup_gcp() {
+    # TODO change to env var before uploading
+    billing_account="012914-9E95D1-A1EEE8"
+    # TODO change to env var before uploading
+    org_name="406172723981"
+
+    gcloud projects describe "${project_name}"
+    if [[ $? -eq 0 ]]; then
+        echo "[create project] ${resource} already exist" >> "${PASS_LOG}"
+        return 0
+    fi
+
+    # create if not exist        
+    result=$(gcloud projects create "${project_name}" --organization=${org_name} 2>&1)
+    if [[ $? -eq 0 ]]; then
+        echo "[create project] ${resource}" >> "${PASS_LOG}"
+    else
+        echo "[create project] ${resource}: ${result}" >> "${FAIL_LOG}"
+        return 1
+    fi
+
+    # wait until project is ready        
+    while true; do
+        result=$(gcloud projects describe "${project_name}" 2>&1)
+        if [[ $? -eq 0 ]]; then
+            echo "[create project] ${resource} created" >> "${PASS_LOG}"
+            break
+        else 
+            echo "[create project] ${resource} creating..." >> "${PASS_LOG}"
+            sleep 5
+        fi
+    done
+    
+    result=$(gcloud billing projects link "${project_name}" --billing-account=${billing_account} 2>&1)
+    if [[ $? -eq 0 ]]; then
+        echo "[link billing account] ${resource} " >> "${PASS_LOG}"
+    else
+        echo "[link billing account] ${resource}: ${result} " >> "${FAIL_LOG}"
+        return 1
+    fi
+
+    return 0
+}
+
+function enable_service() {
+    while IFS= read -r service || [[ -n $service ]] ; do
+        service_full_name="${service}.googleapis.com"
+        result=$(gcloud services enable "${service_full_name}" --project "${project_name}" --quiet 2>&1)
+        if [[ $? -eq 0 ]]; then
+            echo "[enable service] ${project_name} ${service_full_name}" >> "${PASS_LOG}"
+        else 
+            echo "[enable service] ${project_name} ${service_full_name}: ${result} " >> "${FAIL_LOG}"
+        fi
+    done < "${SERVICE_LIST}"
+    return 0
+}
+
+function project_name() {
+    # Project has 6-30 characater limit, starting with a lower case char
+    project_name=${service,,}-${proto,,}-$(date +%d) # e.g. yuwenma-02-10-spanner-instance
+    while true; do
+        if [[ ${#project_name} -ge 30 ]]; then
+            echo "[project validation] ${project_name} too long" >> "${PASS_LOG}"
+            project_name="${project_name#*-}"
+        else
+            break
+        fi
+    done
+    echo "${project_name}"
+}
+
+
+# Set up GCP project and git repo 
+function setup_git_repo() {
+    # setup git
+    
+    if [[ -d "$repo_path" ]]; then
+        echo "[clone repo] already exist ${repo_path}" >> "${PASS_LOG}"
+        return 0
+    fi 
+
+    result=$(git clone git@github.com:GoogleCloudPlatform/k8s-config-connector.git -b "${branch}" "${repo_path}" --depth=1 2>&1)
+    if [[ $? -eq 0 ]]; then
+        echo "[checkout branch] ${resource} ${branch}" >> "${PASS_LOG}"
+    else
+        echo "[checkout branch] ${resource} ${branch}: ${result} " >> "${FAIL_LOG}"
+        return 1
+    fi
+    return 0
+}
+
+# function workaround_to_use_uncommit_code() {
+#     cp ${UNCOMMIT_ROOT}/${llm_worker_path} "${repo_path}"/${llm_worker_path}
+#     cp -rf ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/cmd/codebot/main.go "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/main.go
+#     cp -rf ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/pkg/llm/vertexai.go "${repo_path}"/dev/tools/controllerbuilder/pkg/llm/vertexai.go
+#     cp -rf ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/cmd/codebot/examples/reconciler-case "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/
+#     cp ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/pkg/codebot/chat.go "${repo_path}"/dev/tools/controllerbuilder/pkg/codebot/chat.go
+#     mkdir -p  "${repo_path}"/.build/third_party/googleapis
+#     cp -rf ${UNCOMMIT_ROOT}/.build/third_party/googleapis/* "${repo_path}"/.build/third_party/googleapis
+#     cp -rf ${UNCOMMIT_ROOT}/.build/googleapis.pb "${repo_path}"/.build/googleapis.pb
+    
+#     cp -r ${UNCOMMIT_ROOT}/dev/tools/controllerbuilder/pkg/codebot/tool_run_cmd.go  "${repo_path}"/dev/tools/controllerbuilder/pkg/codebot/tool_run_cmd.go
+
+#     sed -i "s/\${KIND}/${KIND}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/reconciler-case/*
+#     sed -i "s/\${SERVICE}/${SERVICE}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/reconciler-case/*
+#     sed -i "s/\${PROTO}/${PROTO}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/reconciler-case/*
+#     sed -i "s/\${PACKAGE}/${PACKAGE}/g"                 "${repo_path}"/dev/tools/controllerbuilder/cmd/codebot/examples/reconciler-case/*
+#     cd "${repo_path}" || return 1
+
+#     cp controllerbuilder "${repo_path}"/controllerbuilder
+
+#     rm -rf "${repo_path}"/dev/tools/controllerbuilder/template/apis
+# }
+
+while IFS= read -r -d "---" yaml_chunk; do
+    if [[ -z "$yaml_chunk" ]]; then
+        continue
+    fi
+
+    json_str=$(yq <<< "$yaml_chunk")
+
+    service=$(echo "$json_str" | jq -r '.service')
+    kind=$(echo "$json_str" | jq -r '.kind')
+    package=$(echo "$json_str" | jq -r '.package')
+    proto=$(echo "$json_str" | jq -r '.proto')
+
+    resource=${service}-${proto}
+    branch=resource-${resource} # e.g. "gcloud spanner instance" uses branch "mock-llm-spanner-instance" 
+    repo_path=${FEATURE_DIR}/${resource}
+    # repo_path="/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/resource-datastream-Stream"
+
+    project_name=$(project_name)
+
+    # if setup_gcp
+    # then
+    #     continue
+    # fi 
+
+    # # Optional: enabling services take a long long time
+    # if enable_service
+    # then
+    #     continue
+    # fi
+
+    # # if setup_git_repo 
+    # # then
+    # #     continue
+    # # fi
+
+    # # TODO: temporary workaround. Safe to remove once the code is merged. 
+    llm_worker_path="dev/tools/controllerbuilder/tasks/llm-reconciler-worker"
+    if workaround_to_use_uncommit_code
+    then
+        echo "switch git dir failed"
+        continue
+    fi 
+
+    if "${repo_path}"/${llm_worker_path}    
+    then
+        continue
+    fi 
+    # # TODO cleanup
+
+done < "${RESOURCE_LIST}"
+
+echo Good job!

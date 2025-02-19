@@ -1,0 +1,991 @@
+[AnalyticsDataSharingSettings] git-commit [llm] fix gcp imports for AnalyticsDataSharingSettings
+[AnalyticsFirebaseLink] git-commit [llm] fix gcp imports for AnalyticsFirebaseLink
+[AnalyticsAccountSummary] git-commit [llm] fix gcp imports for AnalyticsAccountSummary
+[AnalyticsAccount] git-commit [llm] fix gcp imports for AnalyticsAccount
+[AnalyticsDataStream] git-commit [llm] fix gcp imports for AnalyticsDataStream
+[AnalyticsMeasurementProtocolSecret] git-commit [llm] fix gcp imports for AnalyticsMeasurementProtocolSecret
+[AnalyticsProperty] git-commit [llm] fix gcp imports for AnalyticsProperty
+[AnalyticsConversionEvent] git-commit [llm] fix gcp imports for AnalyticsConversionEvent
+[AnalyticsConversionEvent] git-commit [llm] fix gcp imports for AnalyticsConversionEvent
+[AnalyticsKeyEvent] git-commit [llm] fix gcp imports for AnalyticsKeyEvent
+[AnalyticsKeyEvent] git-commit [llm] fix gcp imports for AnalyticsKeyEvent
+[AnalyticsCustomDimension] git-commit [llm] fix gcp imports for AnalyticsCustomDimension
+[AnalyticsConversionEvent] git-commit [llm] fix gobuilds for AnalyticsConversionEvent
+[AnalyticsCustomMetric] git-commit [llm] fix gcp imports for AnalyticsCustomMetric
+[AnalyticsConversionEvent] git-commit add basic AnalyticsConversionEvent reconciler
+[AnalyticsDataRetentionSettings] git-commit [llm] fix gcp imports for AnalyticsDataRetentionSettings
+[AnalyticsKeyEvent] git-commit [llm] fix gobuilds for AnalyticsKeyEvent
+[AnalyticsAccount] git-commit [llm] fix gobuilds for AnalyticsAccount
+[AnalyticsCustomDimension] git-commit [llm] fix gobuilds for AnalyticsCustomDimension
+[AnalyticsDataStream] git-commit [llm] fix gobuilds for AnalyticsDataStream
+[AnalyticsDataStream] git-commit [llm] fix gcp imports for AnalyticsDataStream
+[AnalyticsMetadata] git-commit [llm] fix gcp imports for AnalyticsMetadata
+[AnalyticsCustomDimension] git-commit add basic AnalyticsCustomDimension reconciler
+[AnalyticsAccount] git-commit add basic AnalyticsAccount reconciler
+[ApiQuotaPreference] git-commit [llm] fix gcp imports for ApiQuotaPreference
+[ApiQuotaInfo] git-commit [llm] fix gcp imports for ApiQuotaInfo
+[ApiQuotaAdjusterSettings] git-commit [llm] fix gcp imports for ApiQuotaAdjusterSettings
+[AnalyticsAudienceExport] git-commit [llm] fix gcp imports for AnalyticsAudienceExport
+[ApiService] git-commit [llm] fix gcp imports for ApiService
+[BigtableInstance] git-commit [llm] fix gcp imports for BigtableInstance
+[AnalyticsConversionEvent] git-commit [llm] fix gobuilds for AnalyticsConversionEvent
+[AnalyticsDataRetentionSettings] git-commit [llm] fix gobuilds for AnalyticsDataRetentionSettings
+[AnalyticsMetadata] git-commit [llm] fix gcp imports for AnalyticsMetadata
+[AnalyticsFirebaseLink] git-commit [llm] fix gobuilds for AnalyticsFirebaseLink
+[AnalyticsConversionEvent] git-commit [llm] fix gcp imports for AnalyticsConversionEvent
+[AnalyticsDataRetentionSettings] git-commit add basic AnalyticsDataRetentionSettings reconciler
+[AnalyticsFirebaseLink] git-commit add basic AnalyticsFirebaseLink reconciler
+[AnalyticsDataStream] git-commit [llm] fix gobuilds for AnalyticsDataStream
+[AnalyticsAccountSummary] git-commit [llm] fix gobuilds for AnalyticsAccountSummary
+[AnalyticsCustomMetric] git-commit [llm] fix gobuilds for AnalyticsCustomMetric
+[AnalyticsDataStream] git-commit add basic AnalyticsDataStream reconciler
+[AnalyticsAccountSummary] git-commit add basic AnalyticsAccountSummary reconciler
+[BigtableCluster] git-commit [llm] fix gcp imports for BigtableCluster
+[AnalyticsDataSharingSettings] git-commit [llm] fix gobuilds for AnalyticsDataSharingSettings
+[BigtableCluster] git-commit [llm] fix gcp imports for BigtableCluster
+[ApiQuotaAdjusterSettings] git-commit [llm] fix gobuilds for ApiQuotaAdjusterSettings
+[AnalyticsProperty] git-commit [llm] fix gobuilds for AnalyticsProperty
+[ApiQuotaInfo] git-commit [llm] fix gobuilds for ApiQuotaInfo
+[AnalyticsMetadata] git-commit [llm] fix gobuilds for AnalyticsMetadata
+[AnalyticsMeasurementProtocolSecret] git-commit [llm] fix gobuilds for AnalyticsMeasurementProtocolSecret
+[AnalyticsAccount] git-commit [llm] fix gcp imports for AnalyticsAccount
+[AnalyticsMetadata] git-commit [llm] fix gcp imports for AnalyticsMetadata
+[BigtableTable] git-commit [llm] fix gcp imports for BigtableTable
+[BigtableHotTablet] git-commit [llm] fix gcp imports for BigtableHotTablet
+[AnalyticsCustomDimension] git-commit [llm] fix gobuilds for AnalyticsCustomDimension
+[AnalyticsMeasurementProtocolSecret] git-commit add basic AnalyticsMeasurementProtocolSecret reconciler
+[BigtableAppProfile] git-commit [llm] fix gcp imports for BigtableAppProfile
+[ApiQuotaAdjusterSettings] git-commit [llm] fix gcp imports for ApiQuotaAdjusterSettings
+[AnalyticsProperty] git-commit [llm] fix gcp imports for AnalyticsProperty
+[ApiQuotaInfo] git-commit [llm] fix gcp imports for ApiQuotaInfo
+[ApiQuotaPreference] git-commit [llm] fix gobuilds for ApiQuotaPreference
+[AnalyticsMetadata] git-commit [llm] fix gobuilds for AnalyticsMetadata
+[AnalyticsDataSharingSettings] git-commit add basic AnalyticsDataSharingSettings reconciler
+[AnalyticsProperty] git-commit add basic AnalyticsProperty reconciler
+[ApiService] git-commit [llm] fix gobuilds for ApiService
+[ApiQuotaPreference] git-commit add basic ApiQuotaPreference reconciler
+[AnalyticsMetadata] git-commit add basic AnalyticsMetadata reconciler
+[ApiService] git-commit add basic ApiService reconciler
+[BigtableSnapshot] git-commit [llm] fix gcp imports for BigtableSnapshot
+[BigtableAuthorizedView] git-commit [llm] fix gcp imports for BigtableAuthorizedView
+[BigtableBackup] git-commit [llm] fix gcp imports for BigtableBackup
+[AnalyticsAudienceExport] git-commit [llm] fix gobuilds for AnalyticsAudienceExport
+[BigtableAuthorizedView] git-commit [llm] fix gobuilds for BigtableAuthorizedView
+[BigtableCluster] git-commit [llm] fix gobuilds for BigtableCluster
+[AnalyticsAudienceExport] git-commit [llm] fix gcp imports for AnalyticsAudienceExport
+[AccessapprovalApprovalRequest] git-commit [llm] fix gcp imports for AccessapprovalApprovalRequest
+[BigtableInstance] git-commit [llm] fix gobuilds for BigtableInstance
+[AnalyticsAccountSummary] git-commit [llm] fix gobuilds for AnalyticsAccountSummary
+[ApiQuotaAdjusterSettings] git-commit [llm] fix gobuilds for ApiQuotaAdjusterSettings
+[ApiQuotaPreference] git-commit [llm] fix gobuilds for ApiQuotaPreference
+[BigtableHotTablet] git-commit [llm] fix gobuilds for BigtableHotTablet
+[BigtableTable] git-commit [llm] fix gobuilds for BigtableTable
+[AnalyticsAccountSummary] git-commit [llm] fix gcp imports for AnalyticsAccountSummary
+[BigtableHotTablet] git-commit add basic BigtableHotTablet reconciler
+[ApiService] git-commit [llm] fix gobuilds for ApiService
+[BigtableTable] git-commit add basic BigtableTable reconciler
+[BigtableAuthorizedView] git-commit [llm] fix gcp imports for BigtableAuthorizedView
+[AccessapprovalAccessApprovalSettings] git-commit [llm] fix gcp imports for AccessapprovalAccessApprovalSettings
+[AdvisorynotificationsSettings] git-commit [llm] fix gcp imports for AdvisorynotificationsSettings
+[BigtableCluster] git-commit add basic BigtableCluster reconciler
+[BigtableSnapshot] git-commit [llm] fix gobuilds for BigtableSnapshot
+[AnalyticsAccountSummary] git-commit [llm] fix gobuilds for AnalyticsAccountSummary
+[ApiQuotaAdjusterSettings] git-commit add basic ApiQuotaAdjusterSettings reconciler
+[BigtableSnapshot] git-commit add basic BigtableSnapshot reconciler
+[BigtableBackup] git-commit [llm] fix gobuilds for BigtableBackup
+[BigtableBackup] git-commit [llm] fix gcp imports for BigtableBackup
+[AnalyticsMetadata] git-commit [llm] fix gobuilds for AnalyticsMetadata
+[BigtableAuthorizedView] git-commit [llm] fix gobuilds for BigtableAuthorizedView
+[BigtableAppProfile] git-commit [llm] fix gobuilds for BigtableAppProfile
+[AlloydbCluster] git-commit [llm] fix gcp imports for AlloydbCluster
+[AccessapprovalApprovalRequest] git-commit [llm] fix gcp imports for AccessapprovalApprovalRequest
+[AlloydbInstance] git-commit [llm] fix gcp imports for AlloydbInstance
+[AccessapprovalAccessApprovalSettings] git-commit [llm] fix gobuilds for AccessapprovalAccessApprovalSettings
+[BigtableAppProfile] git-commit add basic BigtableAppProfile reconciler
+[AnalyticsAudienceExport] git-commit [llm] fix gobuilds for AnalyticsAudienceExport
+[AlloydbConnectionInfo] git-commit [llm] fix gcp imports for AlloydbConnectionInfo
+[AnalyticsAudienceExport] git-commit [llm] fix gcp imports for AnalyticsAudienceExport
+[AccessapprovalAccessApprovalSettings] git-commit add basic AccessapprovalAccessApprovalSettings reconciler
+[AnalyticsProperty] git-commit [llm] fix gobuilds for AnalyticsProperty
+[BigtableTable] git-commit [llm] fix gobuilds for BigtableTable
+[BigtableAuthorizedView] git-commit [llm] fix gcp imports for BigtableAuthorizedView
+[AlloydbBackup] git-commit [llm] fix gcp imports for AlloydbBackup
+[AlloydbCluster] git-commit [llm] fix gobuilds for AlloydbCluster
+[BigtableInstance] git-commit [llm] fix gobuilds for BigtableInstance
+[AlloydbBackup] git-commit [llm] fix gobuilds for AlloydbBackup
+[AlloydbBackup] git-commit [llm] fix gcp imports for AlloydbBackup
+[AdvisorynotificationsSettings] git-commit [llm] fix gobuilds for AdvisorynotificationsSettings
+[AlloydbConnectionInfo] git-commit [llm] fix gobuilds for AlloydbConnectionInfo
+[AdvisorynotificationsSettings] git-commit add basic AdvisorynotificationsSettings reconciler
+[BigtableHotTablet] git-commit [llm] fix gobuilds for BigtableHotTablet
+[BigtableAppProfile] git-commit [llm] fix gobuilds for BigtableAppProfile
+[AnalyticsAccountSummary] git-commit [llm] fix gobuilds for AnalyticsAccountSummary
+[BigtableSnapshot] git-commit [llm] fix gobuilds for BigtableSnapshot
+[BigtableBackup] git-commit [llm] fix gobuilds for BigtableBackup
+[BigtableHotTablet] git-commit add basic BigtableHotTablet reconciler
+[AlloydbSupportedDatabaseFlag] git-commit [llm] fix gcp imports for AlloydbSupportedDatabaseFlag
+[ApiService] git-commit [llm] fix gobuilds for ApiService
+[BigtableSnapshot] git-commit add basic BigtableSnapshot reconciler
+[BigtableAuthorizedView] git-commit add basic BigtableAuthorizedView reconciler
+[BigtableBackup] git-commit add basic BigtableBackup reconciler
+[AdvisorynotificationsSettings] passed after 2 attempts
+[ApiQuotaPreference] git-commit [llm] fix gobuilds for ApiQuotaPreference
+[AlloydbUser] git-commit [llm] fix gcp imports for AlloydbUser
+[ApiQuotaAdjusterSettings] git-commit [llm] fix gobuilds for ApiQuotaAdjusterSettings
+[AlloydbCluster] git-commit [llm] fix gcp imports for AlloydbCluster
+[AlloydbInstance] git-commit [llm] fix gcp imports for AlloydbInstance
+[ApiQuotaPreference] git-commit add basic ApiQuotaPreference reconciler
+[AlloydbDatabase] git-commit [llm] fix gcp imports for AlloydbDatabase
+[BigtableTable] git-commit [llm] fix gobuilds for BigtableTable
+[AlloydbConnectionInfo] git-commit [llm] fix gobuilds for AlloydbConnectionInfo
+[AlloydbBackup] git-commit [llm] fix gobuilds for AlloydbBackup
+[AlloydbDatabase] git-commit [llm] fix gobuilds for AlloydbDatabase
+[AlloydbConnectionInfo] git-commit [llm] fix gcp imports for AlloydbConnectionInfo
+[AlloydbBackup] git-commit [llm] fix gcp imports for AlloydbBackup
+[AlloydbSupportedDatabaseFlag] git-commit [llm] fix gobuilds for AlloydbSupportedDatabaseFlag
+[BigtableHotTablet] git-commit [llm] fix gobuilds for BigtableHotTablet
+[BigtableHotTablet] git-commit add basic BigtableHotTablet reconciler
+[AlloydbSupportedDatabaseFlag] git-commit [llm] fix gcp imports for AlloydbSupportedDatabaseFlag
+[AlloydbUser] git-commit [llm] fix gcp imports for AlloydbUser
+[BigtableAppProfile] git-commit [llm] fix gobuilds for BigtableAppProfile
+[AlloydbSupportedDatabaseFlag] git-commit [llm] fix gcp imports for AlloydbSupportedDatabaseFlag
+[AlloydbDatabase] git-commit [llm] fix gcp imports for AlloydbDatabase
+[AdvisorynotificationsSettings] git-commit make read-pr
+[AdvisorynotificationsSettings] created PR: Warning: 1 uncommitted change
+https://github.com/GoogleCloudPlatform/k8s-config-connector/pull/3708
+[AdvisorynotificationsSettings] ALL PASS
+[BigtableAppProfile] git-commit [llm] fix gobuilds for BigtableAppProfile
+[ApigatewayApi] git-commit [llm] fix gcp imports for ApigatewayApi
+[ApigatewayApiConfig] git-commit [llm] fix gcp imports for ApigatewayApiConfig
+[AlloydbCluster] git-commit [llm] fix gobuilds for AlloydbCluster
+[AlloydbBackup] git-commit [llm] fix gobuilds for AlloydbBackup
+[ApigatewayApiConfig] git-commit [llm] fix gcp imports for ApigatewayApiConfig
+[AlloydbInstance] git-commit [llm] fix gobuilds for AlloydbInstance
+[AlloydbBackup] git-commit [llm] fix gcp imports for AlloydbBackup
+[AlloydbCluster] git-commit add basic AlloydbCluster reconciler
+[AlloydbSupportedDatabaseFlag] git-commit [llm] fix gobuilds for AlloydbSupportedDatabaseFlag
+[AccessapprovalApprovalRequest] git-commit [llm] fix gobuilds for AccessapprovalApprovalRequest
+[AccessapprovalAccessApprovalSettings] git-commit [llm] fix gobuilds for AccessapprovalAccessApprovalSettings
+[AlloydbInstance] git-commit [llm] fix gcp imports for AlloydbInstance
+[ApigatewayApiConfig] git-commit [llm] fix gobuilds for ApigatewayApiConfig
+[AccessapprovalApprovalRequest] git-commit add basic AccessapprovalApprovalRequest reconciler
+[ApigatewayGateway] git-commit [llm] fix gcp imports for ApigatewayGateway
+[AlloydbConnectionInfo] git-commit [llm] fix gobuilds for AlloydbConnectionInfo
+[BigtableBackup] git-commit [llm] fix gobuilds for BigtableBackup
+[ApiQuotaInfo] git-commit [llm] fix gobuilds for ApiQuotaInfo
+[ApigatewayApi] git-commit [llm] fix gobuilds for ApigatewayApi
+[AlloydbUser] git-commit [llm] fix gobuilds for AlloydbUser
+[AlloydbInstance] git-commit [llm] fix gobuilds for AlloydbInstance
+[ApiQuotaInfo] git-commit add basic ApiQuotaInfo reconciler
+[ApigatewayApi] git-commit add basic ApigatewayApi reconciler
+[AlloydbCluster] git-commit [llm] fix gobuilds for AlloydbCluster
+[BigtableHotTablet] git-commit [llm] fix gobuilds for BigtableHotTablet
+[AlloydbCluster] git-commit add basic AlloydbCluster reconciler
+[AlloydbInstance] git-commit [llm] fix gobuilds for AlloydbInstance
+[ApigeeregistryInstance] git-commit [llm] fix gcp imports for ApigeeregistryInstance
+[ApigeeregistryApi] git-commit [llm] fix gcp imports for ApigeeregistryApi
+[ApigeeregistryApiVersion] git-commit [llm] fix gcp imports for ApigeeregistryApiVersion
+[ApigeeregistryApiSpec] git-commit [llm] fix gcp imports for ApigeeregistryApiSpec
+[ApigeeregistryApi] git-commit [llm] fix gobuilds for ApigeeregistryApi
+[ApigeeregistryApiDeployment] git-commit [llm] fix gcp imports for ApigeeregistryApiDeployment
+[ApigeeregistryApi] git-commit add basic ApigeeregistryApi reconciler
+[ApigatewayApiConfig] git-commit [llm] fix gobuilds for ApigatewayApiConfig
+[ApigeeregistryArtifact] git-commit [llm] fix gcp imports for ApigeeregistryArtifact
+[ApigatewayApiConfig] git-commit add basic ApigatewayApiConfig reconciler
+[BigtableAuthorizedView] git-commit [llm] fix gobuilds for BigtableAuthorizedView
+[AlloydbConnectionInfo] git-commit [llm] fix gobuilds for AlloydbConnectionInfo
+[ApihubApi] git-commit [llm] fix gcp imports for ApihubApi
+[ApigatewayApiConfig] passed after 4 attempts
+[ApigeeregistryInstance] git-commit [llm] fix gobuilds for ApigeeregistryInstance
+[ApigeeregistryInstance] git-commit add basic ApigeeregistryInstance reconciler
+[ApigeeregistryApiSpec] git-commit [llm] fix gobuilds for ApigeeregistryApiSpec
+[ApigeeregistryApi] git-commit [llm] fix gobuilds for ApigeeregistryApi
+[ApigeeregistryApiSpec] git-commit add basic ApigeeregistryApiSpec reconciler
+[ApigatewayApi] git-commit [llm] fix gobuilds for ApigatewayApi
+[ApigeeregistryApiDeployment] git-commit [llm] fix gobuilds for ApigeeregistryApiDeployment
+[ApigatewayApi] passed after 4 attempts
+[AlloydbUser] git-commit [llm] fix gobuilds for AlloydbUser
+[ApigeeregistryApiSpec] git-commit [llm] fix gobuilds for ApigeeregistryApiSpec
+[AlloydbUser] git-commit [llm] fix gcp imports for AlloydbUser
+[AccessapprovalApprovalRequest] git-commit [llm] fix gobuilds for AccessapprovalApprovalRequest
+[AlloydbCluster] git-commit [llm] fix gobuilds for AlloydbCluster
+[AccessapprovalApprovalRequest] git-commit add basic AccessapprovalApprovalRequest reconciler
+[AlloydbBackup] git-commit [llm] fix gobuilds for AlloydbBackup
+[ApigatewayGateway] git-commit [llm] fix gobuilds for ApigatewayGateway
+[AlloydbConnectionInfo] git-commit [llm] fix gobuilds for AlloydbConnectionInfo
+[BigtableBackup] git-commit [llm] fix gcp imports for BigtableBackup
+[ApigeeregistryArtifact] git-commit [llm] fix gobuilds for ApigeeregistryArtifact
+[AlloydbBackup] git-commit add basic AlloydbBackup reconciler
+[ApigeeregistryInstance] git-commit [llm] fix gobuilds for ApigeeregistryInstance
+[AlloydbCluster] git-commit [llm] fix gobuilds for AlloydbCluster
+[AlloydbUser] git-commit [llm] fix gobuilds for AlloydbUser
+[BigtableBackup] git-commit [llm] fix gobuilds for BigtableBackup
+[ApihubApi] git-commit [llm] fix gobuilds for ApihubApi
+[ApigatewayGateway] git-commit add basic ApigatewayGateway reconciler
+[ApigeeregistryArtifact] git-commit add basic ApigeeregistryArtifact reconciler
+[AlloydbDatabase] git-commit [llm] fix gobuilds for AlloydbDatabase
+[ApigeeregistryApi] git-commit [llm] fix gobuilds for ApigeeregistryApi
+[ApihubApi] git-commit add basic ApihubApi reconciler
+[ApigeeregistryApiSpec] git-commit [llm] fix gobuilds for ApigeeregistryApiSpec
+[ApihubVersion] git-commit [llm] fix gcp imports for ApihubVersion
+[AccessapprovalApprovalRequest] git-commit [llm] fix gobuilds for AccessapprovalApprovalRequest
+[ApigeeregistryApiDeployment] git-commit [llm] fix gobuilds for ApigeeregistryApiDeployment
+[ApigeeregistryApiVersion] git-commit [llm] fix gobuilds for ApigeeregistryApiVersion
+[ApihubSpec] git-commit [llm] fix gcp imports for ApihubSpec
+[ApigeeregistryApiDeployment] git-commit add basic ApigeeregistryApiDeployment reconciler
+[ApigeeregistryApiVersion] git-commit add basic ApigeeregistryApiVersion reconciler
+[ApihubDeployment] git-commit [llm] fix gcp imports for ApihubDeployment
+[AlloydbSupportedDatabaseFlag] git-commit [llm] fix gobuilds for AlloydbSupportedDatabaseFlag
+[ApigeeregistryApiDeployment] passed after 3 attempts
+[ApigeeregistryApiVersion] passed after 2 attempts
+[AlloydbBackup] git-commit [llm] fix gobuilds for AlloydbBackup
+[ApihubVersion] git-commit [llm] fix gobuilds for ApihubVersion
+[ApihubApiOperation] git-commit [llm] fix gcp imports for ApihubApiOperation
+[AlloydbBackup] git-commit add basic AlloydbBackup reconciler
+[ApihubVersion] git-commit add basic ApihubVersion reconciler
+[ApihubApiOperation] git-commit [llm] fix gcp imports for ApihubApiOperation
+[ApigatewayGateway] git-commit [llm] fix gobuilds for ApigatewayGateway
+[ApigeeregistryInstance] git-commit [llm] fix gobuilds for ApigeeregistryInstance
+[ApihubDefinition] git-commit [llm] fix gcp imports for ApihubDefinition
+[ApihubDeployment] git-commit [llm] fix gobuilds for ApihubDeployment
+[ApigatewayApiConfig] git-commit make read-pr
+[ApigatewayApiConfig] created PR: Warning: 1 uncommitted change
+https://github.com/GoogleCloudPlatform/k8s-config-connector/pull/3712
+[ApigatewayApiConfig] ALL PASS
+[ApigeeregistryApi] git-commit [llm] fix gobuilds for ApigeeregistryApi
+[ApihubAttribute] git-commit [llm] fix gcp imports for ApihubAttribute
+[ApihubDeployment] git-commit add basic ApihubDeployment reconciler
+[ApigeeregistryArtifact] git-commit [llm] fix gobuilds for ApigeeregistryArtifact
+[ApihubApi] passed after 3 attempts
+[ApihubHostProjectRegistration] git-commit [llm] fix gcp imports for ApihubHostProjectRegistration
+[ApihubExternalApi] git-commit [llm] fix gcp imports for ApihubExternalApi
+[ApihubDependency] git-commit [llm] fix gcp imports for ApihubDependency
+[ApihubApiHubInstance] git-commit [llm] fix gcp imports for ApihubApiHubInstance
+[ApigatewayGateway] git-commit [llm] fix gobuilds for ApigatewayGateway
+[ApigeeregistryApiSpec] git-commit [llm] fix gobuilds for ApigeeregistryApiSpec
+[AlloydbBackup] git-commit [llm] fix gobuilds for AlloydbBackup
+[ApihubSpec] git-commit [llm] fix gobuilds for ApihubSpec
+[ApihubVersion] git-commit [llm] fix gobuilds for ApihubVersion
+[ApihubSpec] git-commit add basic ApihubSpec reconciler
+[ApihubHostProjectRegistration] git-commit [llm] fix gobuilds for ApihubHostProjectRegistration
+[ApihubAttribute] git-commit [llm] fix gobuilds for ApihubAttribute
+[ApihubHostProjectRegistration] git-commit add basic ApihubHostProjectRegistration reconciler
+[ApihubAttribute] git-commit add basic ApihubAttribute reconciler
+[ApihubStyleGuide] git-commit [llm] fix gcp imports for ApihubStyleGuide
+[ApihubPlugin] git-commit [llm] fix gcp imports for ApihubPlugin
+[ApigeeregistryArtifact] git-commit [llm] fix gobuilds for ApigeeregistryArtifact
+[ApihubRuntimeProjectAttachment] git-commit [llm] fix gcp imports for ApihubRuntimeProjectAttachment
+[ApphubApplication] git-commit [llm] fix gcp imports for ApphubApplication
+[ApigeeregistryApiDeployment] git-commit make read-pr
+[ApigeeregistryApiVersion] git-commit make read-pr
+[ApigeeregistryApiDeployment] created PR: Warning: 1 uncommitted change
+https://github.com/GoogleCloudPlatform/k8s-config-connector/pull/3714
+[ApigeeregistryApiDeployment] ALL PASS
+[ApigeeregistryApiVersion] created PR: Warning: 1 uncommitted change
+https://github.com/GoogleCloudPlatform/k8s-config-connector/pull/3715
+[ApigeeregistryApiVersion] ALL PASS
+[ApiQuotaInfo] git-commit [llm] fix gobuilds for ApiQuotaInfo
+[ApihubDeployment] git-commit [llm] fix gobuilds for ApihubDeployment
+[ApihubApiOperation] git-commit [llm] fix gobuilds for ApihubApiOperation
+[ApihubApi] git-commit make read-pr
+[ApphubService] git-commit [llm] fix gcp imports for ApphubService
+[ApphubApplication] git-commit [llm] fix gobuilds for ApphubApplication
+[ApihubApi] created PR: Warning: 2 uncommitted changes
+https://github.com/GoogleCloudPlatform/k8s-config-connector/pull/3716
+[ApihubApi] ALL PASS
+[ApihubRuntimeProjectAttachment] git-commit [llm] fix gobuilds for ApihubRuntimeProjectAttachment
+[ApphubService] git-commit [llm] fix gcp imports for ApphubService
+[ApihubApiOperation] git-commit add basic ApihubApiOperation reconciler
+[ApphubApplication] git-commit add basic ApphubApplication reconciler
+[ApihubVersion] git-commit [llm] fix gobuilds for ApihubVersion
+[ApihubRuntimeProjectAttachment] git-commit add basic ApihubRuntimeProjectAttachment reconciler
+[ApphubDiscoveredService] git-commit [llm] fix gcp imports for ApphubDiscoveredService
+[ApphubServiceProjectAttachment] git-commit [llm] fix gcp imports for ApphubServiceProjectAttachment
+[ApihubPlugin] git-commit [llm] fix gobuilds for ApihubPlugin
+[ApihubPlugin] git-commit add basic ApihubPlugin reconciler
+[ApihubAttribute] git-commit [llm] fix gobuilds for ApihubAttribute
+[ApiQuotaInfo] git-commit [llm] fix gobuilds for ApiQuotaInfo
+[ApphubWorkload] git-commit [llm] fix gcp imports for ApphubWorkload
+[ApihubAttribute] passed after 3 attempts
+[ApphubWorkload] git-commit [llm] fix gcp imports for ApphubWorkload
+[ApphubDiscoveredService] git-commit [llm] fix gobuilds for ApphubDiscoveredService
+[ApihubVersion] git-commit [llm] fix gobuilds for ApihubVersion
+[ApihubDefinition] git-commit [llm] fix gobuilds for ApihubDefinition
+[ApphubDiscoveredService] git-commit add basic ApphubDiscoveredService reconciler
+[ApihubExternalApi] git-commit [llm] fix gobuilds for ApihubExternalApi
+[ApihubRuntimeProjectAttachment] git-commit [llm] fix gobuilds for ApihubRuntimeProjectAttachment
+[ApihubDefinition] git-commit add basic ApihubDefinition reconciler
+[ApihubStyleGuide] git-commit [llm] fix gobuilds for ApihubStyleGuide
+[ApihubExternalApi] git-commit add basic ApihubExternalApi reconciler
+[AlloydbDatabase] git-commit [llm] fix gobuilds for AlloydbDatabase
+[ApphubDiscoveredWorkload] git-commit [llm] fix gcp imports for ApphubDiscoveredWorkload
+[ApihubApiHubInstance] git-commit [llm] fix gobuilds for ApihubApiHubInstance
+[ApihubDependency] git-commit [llm] fix gobuilds for ApihubDependency
+[ApihubStyleGuide] git-commit add basic ApihubStyleGuide reconciler
+[ApphubService] git-commit [llm] fix gobuilds for ApphubService
+[AlloydbDatabase] git-commit [llm] fix gcp imports for AlloydbDatabase
+[ApihubApiHubInstance] git-commit add basic ApihubApiHubInstance reconciler
+[AssetFeed] git-commit [llm] fix gcp imports for AssetFeed
+[ApihubDependency] git-commit add basic ApihubDependency reconciler
+[ApphubService] git-commit add basic ApphubService reconciler
+[ApphubDiscoveredWorkload] git-commit [llm] fix gcp imports for ApphubDiscoveredWorkload
+[ApphubServiceProjectAttachment] git-commit [llm] fix gobuilds for ApphubServiceProjectAttachment
+[ApphubService] passed after 3 attempts
+[ApphubServiceProjectAttachment] git-commit add basic ApphubServiceProjectAttachment reconciler
+[ApihubSpec] git-commit [llm] fix gobuilds for ApihubSpec
+[ApihubDeployment] git-commit [llm] fix gobuilds for ApihubDeployment
+[ApihubHostProjectRegistration] git-commit [llm] fix gobuilds for ApihubHostProjectRegistration
+[ApihubDeployment] git-commit add basic ApihubDeployment reconciler
+[ApphubApplication] git-commit [llm] fix gobuilds for ApphubApplication
+[AssetSavedQuery] git-commit [llm] fix gcp imports for AssetSavedQuery
+[ApphubDiscoveredWorkload] git-commit [llm] fix gobuilds for ApphubDiscoveredWorkload
+[ApihubRuntimeProjectAttachment] git-commit add basic ApihubRuntimeProjectAttachment reconciler
+[ApihubExternalApi] git-commit [llm] fix gobuilds for ApihubExternalApi
+[ApihubPlugin] git-commit [llm] fix gobuilds for ApihubPlugin
+[ApihubExternalApi] git-commit add basic ApihubExternalApi reconciler
+[AssetAsset] git-commit [llm] fix gcp imports for AssetAsset
+[AssetAsset] git-commit [llm] fix gcp imports for AssetAsset
+[ApphubServiceProjectAttachment] git-commit [llm] fix gobuilds for ApphubServiceProjectAttachment
+[AssetFeed] git-commit [llm] fix gcp imports for AssetFeed
+[ApihubRuntimeProjectAttachment] git-commit [llm] fix gobuilds for ApihubRuntimeProjectAttachment
+[ApihubDefinition] git-commit [llm] fix gobuilds for ApihubDefinition
+[AssetFeed] git-commit [llm] fix gcp imports for AssetFeed
+[ApphubWorkload] git-commit [llm] fix gobuilds for ApphubWorkload
+[ApphubDiscoveredService] git-commit [llm] fix gobuilds for ApphubDiscoveredService
+[AssetSavedQuery] git-commit [llm] fix gobuilds for AssetSavedQuery
+[ApihubDefinition] git-commit [llm] fix gcp imports for ApihubDefinition
+[ApihubSpec] git-commit [llm] fix gobuilds for ApihubSpec
+[ApihubAttribute] git-commit make read-pr
+[ApphubWorkload] git-commit add basic ApphubWorkload reconciler
+[ApihubAttribute] created PR: Warning: 1 uncommitted change
+https://github.com/GoogleCloudPlatform/k8s-config-connector/pull/3717
+[ApihubAttribute] ALL PASS
+[AssetSavedQuery] git-commit add basic AssetSavedQuery reconciler
+[ApphubWorkload] passed after 4 attempts
+[AssetAsset] git-commit [llm] fix gcp imports for AssetAsset
+[AssetAsset] git-commit [llm] fix gcp imports for AssetAsset
+[AssuredworkloadsWorkload] git-commit [llm] fix gcp imports for AssuredworkloadsWorkload
+[AssuredworkloadsWorkload] git-commit [llm] fix gcp imports for AssuredworkloadsWorkload
+[AssuredworkloadsViolation] git-commit [llm] fix gcp imports for AssuredworkloadsViolation
+[ApphubService] git-commit make read-pr
+[AssuredworkloadsViolation] git-commit [llm] fix gcp imports for AssuredworkloadsViolation
+[ApphubService] created PR: Warning: 1 uncommitted change
+https://github.com/GoogleCloudPlatform/k8s-config-connector/pull/3718
+[ApphubService] ALL PASS
+[BackupdrManagementServer] git-commit [llm] fix gcp imports for BackupdrManagementServer
+[BackupdrManagementServer] git-commit [llm] fix gcp imports for BackupdrManagementServer
+[BackupdrBackupPlan] git-commit [llm] fix gcp imports for BackupdrBackupPlan
+[BackupdrBackupPlan] git-commit [llm] fix gcp imports for BackupdrBackupPlan
+[BackupdrBackupPlanAssociation] git-commit [llm] fix gcp imports for BackupdrBackupPlanAssociation
+[BackupdrBackupPlanAssociation] git-commit [llm] fix gcp imports for BackupdrBackupPlanAssociation
+[AccessapprovalAccessApprovalSettings] git-commit [llm] fix gobuilds for AccessapprovalAccessApprovalSettings
+[BackupdrBackupVault] git-commit [llm] fix gcp imports for BackupdrBackupVault
+[ApphubServiceProjectAttachment] git-commit [llm] fix gobuilds for ApphubServiceProjectAttachment
+[AssuredworkloadsViolation] git-commit [llm] fix gobuilds for AssuredworkloadsViolation
+[BackupdrDataSource] git-commit [llm] fix gcp imports for BackupdrDataSource
+[BackupdrDataSource] git-commit [llm] fix gcp imports for BackupdrDataSource
+[BackupdrBackup] git-commit [llm] fix gcp imports for BackupdrBackup
+[ApphubWorkload] git-commit make read-pr
+[BackupdrManagementServer] git-commit [llm] fix gobuilds for BackupdrManagementServer
+[ApphubWorkload] created PR: Warning: 1 uncommitted change
+https://github.com/GoogleCloudPlatform/k8s-config-connector/pull/3719
+[ApphubWorkload] ALL PASS
+[BackupdrBackup] git-commit [llm] fix gcp imports for BackupdrBackup
+[BackupdrManagementServer] git-commit add basic BackupdrManagementServer reconciler
+[BaremetalsolutionInstance] git-commit [llm] fix gcp imports for BaremetalsolutionInstance
+[ApihubHostProjectRegistration] git-commit [llm] fix gobuilds for ApihubHostProjectRegistration
+[ApihubApiHubInstance] git-commit [llm] fix gobuilds for ApihubApiHubInstance
+[BaremetalsolutionInstance] git-commit [llm] fix gcp imports for BaremetalsolutionInstance
+[BaremetalsolutionServerNetworkTemplate] git-commit [llm] fix gcp imports for BaremetalsolutionServerNetworkTemplate
+[BaremetalsolutionServerNetworkTemplate] git-commit [llm] fix gcp imports for BaremetalsolutionServerNetworkTemplate
+[BackupdrBackupPlan] git-commit [llm] fix gobuilds for BackupdrBackupPlan
+[BaremetalsolutionLun] git-commit [llm] fix gcp imports for BaremetalsolutionLun
+[BaremetalsolutionNetwork] git-commit [llm] fix gcp imports for BaremetalsolutionNetwork
+[BaremetalsolutionNetwork] git-commit [llm] fix gcp imports for BaremetalsolutionNetwork
+[BaremetalsolutionNfsShare] git-commit [llm] fix gcp imports for BaremetalsolutionNfsShare
+[BaremetalsolutionNfsShare] git-commit [llm] fix gcp imports for BaremetalsolutionNfsShare
+[BaremetalsolutionOSImage] git-commit [llm] fix gcp imports for BaremetalsolutionOSImage
+[BaremetalsolutionProvisioningConfig] git-commit [llm] fix gcp imports for BaremetalsolutionProvisioningConfig
+[BaremetalsolutionProvisioningConfig] git-commit [llm] fix gcp imports for BaremetalsolutionProvisioningConfig
+[BaremetalsolutionProvisioningQuota] git-commit [llm] fix gcp imports for BaremetalsolutionProvisioningQuota
+[BaremetalsolutionProvisioningQuota] git-commit [llm] fix gcp imports for BaremetalsolutionProvisioningQuota
+[BaremetalsolutionInstanceConfig] git-commit [llm] fix gcp imports for BaremetalsolutionInstanceConfig
+[BaremetalsolutionInstanceConfig] git-commit [llm] fix gcp imports for BaremetalsolutionInstanceConfig
+[BaremetalsolutionVolumeConfig] git-commit [llm] fix gcp imports for BaremetalsolutionVolumeConfig
+[BaremetalsolutionVolumeConfig] git-commit [llm] fix gcp imports for BaremetalsolutionVolumeConfig
+[BaremetalsolutionNetworkConfig] git-commit [llm] fix gcp imports for BaremetalsolutionNetworkConfig
+[BaremetalsolutionNetworkConfig] git-commit [llm] fix gcp imports for BaremetalsolutionNetworkConfig
+[BaremetalsolutionInstanceQuota] git-commit [llm] fix gcp imports for BaremetalsolutionInstanceQuota
+[BaremetalsolutionSSHKey] git-commit [llm] fix gcp imports for BaremetalsolutionSSHKey
+[BaremetalsolutionVolumeConfig] git-commit [llm] fix gobuilds for BaremetalsolutionVolumeConfig
+[BaremetalsolutionVolume] git-commit [llm] fix gcp imports for BaremetalsolutionVolume
+[BaremetalsolutionVolumeConfig] git-commit add basic BaremetalsolutionVolumeConfig reconciler
+[BaremetalsolutionVolume] git-commit [llm] fix gcp imports for BaremetalsolutionVolume
+[BaremetalsolutionProvisioningQuota] git-commit [llm] fix gobuilds for BaremetalsolutionProvisioningQuota
+[BaremetalsolutionInstanceQuota] git-commit [llm] fix gobuilds for BaremetalsolutionInstanceQuota
+[BaremetalsolutionInstanceQuota] git-commit add basic BaremetalsolutionInstanceQuota reconciler
+[BaremetalsolutionVolumeSnapshot] git-commit [llm] fix gcp imports for BaremetalsolutionVolumeSnapshot
+[BatchJob] git-commit [llm] fix gcp imports for BatchJob
+[BatchJob] git-commit [llm] fix gcp imports for BatchJob
+[BatchTaskGroup] git-commit [llm] fix gcp imports for BatchTaskGroup
+[BatchTaskGroup] git-commit [llm] fix gcp imports for BatchTaskGroup
+[BatchTask] git-commit [llm] fix gcp imports for BatchTask
+[BatchTask] git-commit [llm] fix gcp imports for BatchTask
+[BeyondcorpAppConnection] git-commit [llm] fix gcp imports for BeyondcorpAppConnection
+[BeyondcorpAppConnection] git-commit [llm] fix gcp imports for BeyondcorpAppConnection
+[BatchTaskGroup] git-commit [llm] fix gobuilds for BatchTaskGroup
+[BaremetalsolutionVolume] git-commit [llm] fix gobuilds for BaremetalsolutionVolume
+[BigqueryDataExchange] git-commit [llm] fix gcp imports for BigqueryDataExchange
+[BeyondcorpAppConnection] git-commit [llm] fix gcp imports for BeyondcorpAppConnection
+[BeyondcorpAppConnector] git-commit [llm] fix gcp imports for BeyondcorpAppConnector
+[BigqueryConnection] git-commit [llm] fix gcp imports for BigqueryConnection
+[BigqueryListing] git-commit [llm] fix gcp imports for BigqueryListing
+[BeyondcorpClientConnectorService] git-commit [llm] fix gcp imports for BeyondcorpClientConnectorService
+[BigqueryTable] git-commit [llm] fix gcp imports for BigqueryTable
+[BeyondcorpClientGateway] git-commit [llm] fix gcp imports for BeyondcorpClientGateway
+[BigqueryCatalog] git-commit [llm] fix gcp imports for BigqueryCatalog
+[BeyondcorpAppGateway] git-commit [llm] fix gcp imports for BeyondcorpAppGateway
+[BigqueryDatabase] git-commit [llm] fix gcp imports for BigqueryDatabase
+[BigquerySubscription] git-commit [llm] fix gcp imports for BigquerySubscription
+[BigqueryListing] git-commit [llm] fix gcp imports for BigqueryListing
+[BigqueryDatabase] git-commit [llm] fix gcp imports for BigqueryDatabase
+[BigquerySubscription] git-commit [llm] fix gcp imports for BigquerySubscription
+[BatchJob] git-commit [llm] fix gobuilds for BatchJob
+[BigqueryDataExchange] git-commit [llm] fix gobuilds for BigqueryDataExchange
+[BigqueryConnection] git-commit [llm] fix gobuilds for BigqueryConnection
+[BatchJob] git-commit add basic BatchJob reconciler
+[BigqueryConnection] git-commit add basic BigqueryConnection reconciler
+[BigqueryDataExchange] passed after 2 attempts
+[BeyondcorpAppGateway] git-commit [llm] fix gobuilds for BeyondcorpAppGateway
+[BeyondcorpAppGateway] git-commit add basic BeyondcorpAppGateway reconciler
+[BaremetalsolutionVolumeSnapshot] git-commit [llm] fix gobuilds for BaremetalsolutionVolumeSnapshot
+[BaremetalsolutionVolumeConfig] git-commit [llm] fix gobuilds for BaremetalsolutionVolumeConfig
+[BigqueryConnection] git-commit [llm] fix gcp imports for BigqueryConnection
+[BatchJob] git-commit [llm] fix gobuilds for BatchJob
+[BaremetalsolutionInstanceConfig] git-commit [llm] fix gobuilds for BaremetalsolutionInstanceConfig
+[BeyondcorpClientGateway] git-commit [llm] fix gobuilds for BeyondcorpClientGateway
+[BigqueryDataExchange] git-commit [llm] fix gcp imports for BigqueryDataExchange
+[BaremetalsolutionInstanceConfig] git-commit add basic BaremetalsolutionInstanceConfig reconciler
+[BigqueryListing] git-commit [llm] fix gcp imports for BigqueryListing
+[BeyondcorpAppConnection] git-commit [llm] fix gobuilds for BeyondcorpAppConnection
+[BeyondcorpAppConnection] git-commit add basic BeyondcorpAppConnection reconciler
+[BaremetalsolutionVolumeConfig] git-commit [llm] fix gobuilds for BaremetalsolutionVolumeConfig
+[BigqueryDataExchange] git-commit [llm] fix gobuilds for BigqueryDataExchange
+[BeyondcorpClientConnectorService] git-commit [llm] fix gcp imports for BeyondcorpClientConnectorService
+[BigqueryDataExchange] git-commit [llm] fix gcp imports for BigqueryDataExchange
+[BeyondcorpAppConnector] git-commit [llm] fix gobuilds for BeyondcorpAppConnector
+[BigqueryDataPolicy] git-commit [llm] fix gcp imports for BigqueryDataPolicy
+[BeyondcorpAppConnector] git-commit [llm] fix gcp imports for BeyondcorpAppConnector
+[BigqueryListing] git-commit [llm] fix gobuilds for BigqueryListing
+[BigqueryDataSource] git-commit [llm] fix gcp imports for BigqueryDataSource
+[BigqueryListing] git-commit add basic BigqueryListing reconciler
+[BigqueryDataSource] git-commit [llm] fix gcp imports for BigqueryDataSource
+[BeyondcorpClientGateway] git-commit [llm] fix gobuilds for BeyondcorpClientGateway
+[BigqueryTransferConfig] git-commit [llm] fix gcp imports for BigqueryTransferConfig
+[BigqueryTransferConfig] git-commit [llm] fix gcp imports for BigqueryTransferConfig
+[BeyondcorpClientGateway] git-commit add basic BeyondcorpClientGateway reconciler
+[BigqueryDataPolicy] git-commit [llm] fix gobuilds for BigqueryDataPolicy
+[BigqueryDataSource] git-commit [llm] fix gobuilds for BigqueryDataSource
+[BaremetalsolutionInstanceConfig] git-commit [llm] fix gobuilds for BaremetalsolutionInstanceConfig
+[BaremetalsolutionSSHKey] git-commit [llm] fix gobuilds for BaremetalsolutionSSHKey
+[BeyondcorpClientConnectorService] git-commit [llm] fix gobuilds for BeyondcorpClientConnectorService
+[BigqueryDataPolicy] git-commit [llm] fix gcp imports for BigqueryDataPolicy
+[BigqueryTransferRun] git-commit [llm] fix gcp imports for BigqueryTransferRun
+[BigqueryTransferConfig] git-commit [llm] fix gobuilds for BigqueryTransferConfig
+[BigqueryMigrationWorkflow] git-commit [llm] fix gcp imports for BigqueryMigrationWorkflow
+[BigqueryDataSource] git-commit [llm] fix gobuilds for BigqueryDataSource
+[BigqueryTransferConfig] git-commit [llm] fix gobuilds for BigqueryTransferConfig
+[BigqueryMigrationWorkflow] git-commit [llm] fix gcp imports for BigqueryMigrationWorkflow
+[BeyondcorpAppGateway] git-commit [llm] fix gobuilds for BeyondcorpAppGateway
+[BaremetalsolutionNetworkConfig] git-commit [llm] fix gobuilds for BaremetalsolutionNetworkConfig
+[BigqueryTransferRun] git-commit [llm] fix gobuilds for BigqueryTransferRun
+[BeyondcorpAppConnector] git-commit [llm] fix gobuilds for BeyondcorpAppConnector
+[BigqueryTransferRun] git-commit [llm] fix gcp imports for BigqueryTransferRun
+[BigqueryTransferConfig] git-commit [llm] fix gcp imports for BigqueryTransferConfig
+[BaremetalsolutionNetworkConfig] git-commit add basic BaremetalsolutionNetworkConfig reconciler
+[BigqueryMigrationSubtask] git-commit [llm] fix gcp imports for BigqueryMigrationSubtask
+[BeyondcorpAppGateway] git-commit [llm] fix gcp imports for BeyondcorpAppGateway
+[BeyondcorpAppGateway] git-commit add basic BeyondcorpAppGateway reconciler
+[BigqueryMigrationSubtask] git-commit [llm] fix gobuilds for BigqueryMigrationSubtask
+[BigqueryMigrationSubtask] git-commit [llm] fix gcp imports for BigqueryMigrationSubtask
+[BigqueryTransferConfig] git-commit [llm] fix gobuilds for BigqueryTransferConfig
+[BigqueryReservation] git-commit [llm] fix gcp imports for BigqueryReservation
+[BigqueryMigrationSubtask] git-commit add basic BigqueryMigrationSubtask reconciler
+[BeyondcorpAppConnector] git-commit [llm] fix gobuilds for BeyondcorpAppConnector
+[BaremetalsolutionNetworkConfig] git-commit [llm] fix gobuilds for BaremetalsolutionNetworkConfig
+[BigqueryCapacityCommitment] git-commit [llm] fix gcp imports for BigqueryCapacityCommitment
+[BaremetalsolutionNetworkConfig] git-commit [llm] fix gobuilds for BaremetalsolutionNetworkConfig
+[BigqueryCapacityCommitment] git-commit [llm] fix gobuilds for BigqueryCapacityCommitment
+[BigqueryDataExchange] git-commit [llm] fix gobuilds for BigqueryDataExchange
+[BigqueryCapacityCommitment] git-commit add basic BigqueryCapacityCommitment reconciler
+[BigqueryDataExchange] git-commit add basic BigqueryDataExchange reconciler
+[BigqueryAssignment] git-commit [llm] fix gcp imports for BigqueryAssignment
+[BigqueryDatabase] git-commit [llm] fix gobuilds for BigqueryDatabase
+[BigqueryTable] git-commit [llm] fix gobuilds for BigqueryTable
+[BigqueryReservation] git-commit [llm] fix gobuilds for BigqueryReservation
+[BigqueryTable] git-commit add basic BigqueryTable reconciler
+[BigqueryDatabase] git-commit add basic BigqueryDatabase reconciler
+[BigqueryReservation] git-commit add basic BigqueryReservation reconciler
+[BigqueryDataExchange] passed after 4 attempts
+[BigqueryCapacityCommitment] git-commit [llm] fix gobuilds for BigqueryCapacityCommitment
+[BaremetalsolutionInstanceQuota] git-commit [llm] fix gobuilds for BaremetalsolutionInstanceQuota
+[BigqueryDataPolicy] git-commit [llm] fix gobuilds for BigqueryDataPolicy
+[BigqueryCatalog] git-commit [llm] fix gobuilds for BigqueryCatalog
+[BigqueryDataSource] git-commit [llm] fix gobuilds for BigqueryDataSource
+[BigqueryTable] git-commit [llm] fix gobuilds for BigqueryTable
+[BigqueryMigrationWorkflow] git-commit [llm] fix gobuilds for BigqueryMigrationWorkflow
+[BigqueryConnection] git-commit [llm] fix gobuilds for BigqueryConnection
+[BeyondcorpClientGateway] git-commit [llm] fix gobuilds for BeyondcorpClientGateway
+[BigqueryDataPolicy] git-commit add basic BigqueryDataPolicy reconciler
+[BigqueryCatalog] git-commit add basic BigqueryCatalog reconciler
+[BigqueryBiReservation] git-commit [llm] fix gcp imports for BigqueryBiReservation
+[BigqueryMigrationWorkflow] git-commit add basic BigqueryMigrationWorkflow reconciler
+[BigqueryConnection] git-commit add basic BigqueryConnection reconciler
+[BigqueryCapacityCommitment] git-commit [llm] fix gcp imports for BigqueryCapacityCommitment
+[BigqueryReadStream] git-commit [llm] fix gcp imports for BigqueryReadStream
+[BigqueryDatabase] git-commit [llm] fix gobuilds for BigqueryDatabase
+[BigqueryReadSession] git-commit [llm] fix gcp imports for BigqueryReadSession
+[BigqueryWriteStream] git-commit [llm] fix gcp imports for BigqueryWriteStream
+[BigqueryConnection] git-commit [llm] fix gobuilds for BigqueryConnection
+[BigqueryConnection] git-commit add basic BigqueryConnection reconciler
+[BigqueryTable] git-commit [llm] fix gobuilds for BigqueryTable
+[BigqueryReservation] git-commit [llm] fix gobuilds for BigqueryReservation
+[BigqueryTable] git-commit add basic BigqueryTable reconciler
+[BigqueryDataPolicy] git-commit [llm] fix gobuilds for BigqueryDataPolicy
+[BigqueryTable] git-commit [llm] fix gobuilds for BigqueryTable
+[BigqueryStream] git-commit [llm] fix gcp imports for BigqueryStream
+[BigqueryReadSession] git-commit [llm] fix gcp imports for BigqueryReadSession
+[BigqueryMigrationWorkflow] git-commit [llm] fix gobuilds for BigqueryMigrationWorkflow
+[BigqueryReadSession] git-commit [llm] fix gcp imports for BigqueryReadSession
+[BaremetalsolutionInstanceConfig] git-commit [llm] fix gobuilds for BaremetalsolutionInstanceConfig
+[BigqueryReadSession] git-commit [llm] fix gcp imports for BigqueryReadSession
+[BigqueryMigrationSubtask] git-commit [llm] fix gobuilds for BigqueryMigrationSubtask
+[BigqueryReadSession] git-commit [llm] fix gobuilds for BigqueryReadSession
+[BigqueryReadSession] git-commit add basic BigqueryReadSession reconciler
+[BigqueryReadStream] git-commit [llm] fix gcp imports for BigqueryReadStream
+[BigquerySubscription] git-commit [llm] fix gobuilds for BigquerySubscription
+[BigqueryReadSession] git-commit [llm] fix gobuilds for BigqueryReadSession
+[BigqueryReadSession] git-commit [llm] fix gcp imports for BigqueryReadSession
+[BigqueryTransferRun] git-commit [llm] fix gobuilds for BigqueryTransferRun
+[BigqueryTransferRun] git-commit [llm] fix gcp imports for BigqueryTransferRun
+[BigqueryAssignment] git-commit [llm] fix gobuilds for BigqueryAssignment
+[BigqueryListing] git-commit [llm] fix gobuilds for BigqueryListing
+[BigqueryConnection] git-commit [llm] fix gobuilds for BigqueryConnection
+[BigqueryReadSession] git-commit [llm] fix gobuilds for BigqueryReadSession
+[BigqueryBiReservation] git-commit [llm] fix gobuilds for BigqueryBiReservation
+[BigqueryBiReservation] git-commit [llm] fix gcp imports for BigqueryBiReservation
+[BigqueryWriteStream] git-commit add basic BigqueryWriteStream reconciler
+[BatchTask] git-commit [llm] fix gobuilds for BatchTask
+[BigqueryReadStream] git-commit [llm] fix gobuilds for BigqueryReadStream
+[BigqueryDataPolicy] git-commit [llm] fix gobuilds for BigqueryDataPolicy
+[BillingBillingAccount] git-commit add basic BillingBillingAccount reconciler
+[BigqueryDatabase] git-commit [llm] fix gobuilds for BigqueryDatabase
+[BigqueryCapacityCommitment] git-commit [llm] fix gobuilds for BigqueryCapacityCommitment
+[BillingProjectBillingInfo] git-commit add basic BillingProjectBillingInfo reconciler
+[BigqueryCatalog] git-commit [llm] fix gobuilds for BigqueryCatalog
+[BigqueryMigrationWorkflow] git-commit [llm] fix gobuilds for BigqueryMigrationWorkflow
+[BillingService] git-commit add basic BillingService reconciler
+[BigquerySubscription] git-commit [llm] fix gobuilds for BigquerySubscription
+[BigqueryStream] git-commit [llm] fix gobuilds for BigqueryStream
+[BigqueryReservation] git-commit [llm] fix gcp imports for BigqueryReservation
+[BigqueryStream] git-commit [llm] fix gcp imports for BigqueryStream
+[BinaryauthorizationAttestor] git-commit add basic BinaryauthorizationAttestor reconciler
+[CertificatemanagerCertificateIssuanceConfig] git-commit add basic CertificatemanagerCertificateIssuanceConfig reconciler
+[CertificatemanagerCertificate] git-commit add basic CertificatemanagerCertificate reconciler
+[BlockchainnodeengineBlockchainNode] git-commit add basic BlockchainnodeengineBlockchainNode reconciler
+[BinaryauthorizationPolicy] git-commit add basic BinaryauthorizationPolicy reconciler
+[BillingSku] git-commit add basic BillingSku reconciler
+[BlockchainnodeengineBlockchainNode] git-commit add basic BlockchainnodeengineBlockchainNode reconciler
+[BillingSku] git-commit add basic BillingSku reconciler
+[BillingProjectBillingInfo] git-commit [llm] fix gobuilds for BillingProjectBillingInfo
+[BigqueryConnection] git-commit [llm] fix gobuilds for BigqueryConnection
+[CertificatemanagerCertificate] git-commit add basic CertificatemanagerCertificate reconciler
+[BigqueryWriteStream] git-commit [llm] fix gobuilds for BigqueryWriteStream
+[CertificatemanagerCertificateMap] git-commit add basic CertificatemanagerCertificateMap reconciler
+[BigqueryWriteStream] git-commit add basic BigqueryWriteStream reconciler
+[BillingService] git-commit [llm] fix gobuilds for BillingService
+[CertificatemanagerCertificateMapEntry] git-commit add basic CertificatemanagerCertificateMapEntry reconciler
+[CertificatemanagerDnsAuthorization] git-commit add basic CertificatemanagerDnsAuthorization reconciler
+[BigqueryStream] git-commit [llm] fix gobuilds for BigqueryStream
+[CertificatemanagerTrustConfig] git-commit add basic CertificatemanagerTrustConfig reconciler
+[CertificatemanagerTrustConfig] git-commit add basic CertificatemanagerTrustConfig reconciler
+[CertificatemanagerCertificateMap] git-commit [llm] fix gobuilds for CertificatemanagerCertificateMap
+[CertificatemanagerCertificateMap] git-commit add basic CertificatemanagerCertificateMap reconciler
+[ChannelBillingAccount] git-commit add basic ChannelBillingAccount reconciler
+[ChannelChannelPartnerLink] git-commit add basic ChannelChannelPartnerLink reconciler
+[BigqueryWriteStream] git-commit [llm] fix gobuilds for BigqueryWriteStream
+[ChannelChannelPartnerLink] git-commit add basic ChannelChannelPartnerLink reconciler
+[ChannelCustomer] git-commit add basic ChannelCustomer reconciler
+[BigqueryBiReservation] git-commit [llm] fix gobuilds for BigqueryBiReservation
+[BigqueryBiReservation] git-commit [llm] fix gcp imports for BigqueryBiReservation
+[BinaryauthorizationAttestor] git-commit [llm] fix gobuilds for BinaryauthorizationAttestor
+[CertificatemanagerCertificateMapEntry] git-commit [llm] fix gobuilds for CertificatemanagerCertificateMapEntry
+[CertificatemanagerTrustConfig] git-commit [llm] fix gobuilds for CertificatemanagerTrustConfig
+[BinaryauthorizationAttestor] git-commit add basic BinaryauthorizationAttestor reconciler
+[BigquerySubscription] git-commit [llm] fix gobuilds for BigquerySubscription
+[CertificatemanagerCertificateMapEntry] git-commit add basic CertificatemanagerCertificateMapEntry reconciler
+[BillingBillingAccount] git-commit [llm] fix gobuilds for BillingBillingAccount
+[BillingProjectBillingInfo] git-commit [llm] fix gobuilds for BillingProjectBillingInfo
+[ChannelEntitlement] git-commit add basic ChannelEntitlement reconciler
+[ChannelOffer] git-commit add basic ChannelOffer reconciler
+[ChannelProduct] git-commit add basic ChannelProduct reconciler
+[ChannelSku] git-commit add basic ChannelSku reconciler
+[CertificatemanagerCertificateIssuanceConfig] git-commit [llm] fix gobuilds for CertificatemanagerCertificateIssuanceConfig
+[ChannelEntitlement] git-commit [llm] fix gobuilds for ChannelEntitlement
+[ChannelSku] git-commit add basic ChannelSku reconciler
+[CertificatemanagerCertificateIssuanceConfig] git-commit add basic CertificatemanagerCertificateIssuanceConfig reconciler
+[ChannelEntitlement] git-commit add basic ChannelEntitlement reconciler
+[ChannelOffer] git-commit [llm] fix gobuilds for ChannelOffer
+[CertificatemanagerCertificate] git-commit [llm] fix gobuilds for CertificatemanagerCertificate
+[ChannelOffer] git-commit add basic ChannelOffer reconciler
+[CertificatemanagerCertificate] git-commit add basic CertificatemanagerCertificate reconciler
+[BigqueryWriteStream] git-commit [llm] fix gobuilds for BigqueryWriteStream
+[BigqueryWriteStream] git-commit add basic BigqueryWriteStream reconciler
+[CertificatemanagerCertificateMap] git-commit [llm] fix gobuilds for CertificatemanagerCertificateMap
+[CertificatemanagerCertificateMapEntry] git-commit [llm] fix gobuilds for CertificatemanagerCertificateMapEntry
+[CertificatemanagerCertificateMapEntry] git-commit add basic CertificatemanagerCertificateMapEntry reconciler
+[BillingService] git-commit [llm] fix gobuilds for BillingService
+[CertificatemanagerCertificateIssuanceConfig] git-commit [llm] fix gobuilds for CertificatemanagerCertificateIssuanceConfig
+[ChannelEntitlement] git-commit [llm] fix gobuilds for ChannelEntitlement
+[CertificatemanagerCertificate] git-commit [llm] fix gobuilds for CertificatemanagerCertificate
+[CertificatemanagerCertificateIssuanceConfig] git-commit add basic CertificatemanagerCertificateIssuanceConfig reconciler
+[CertificatemanagerCertificateMap] git-commit [llm] fix gobuilds for CertificatemanagerCertificateMap
+[CertificatemanagerDnsAuthorization] git-commit [llm] fix gobuilds for CertificatemanagerDnsAuthorization
+[CertificatemanagerDnsAuthorization] git-commit add basic CertificatemanagerDnsAuthorization reconciler
+[ChannelProduct] git-commit [llm] fix gobuilds for ChannelProduct
+[ChannelProduct] git-commit add basic ChannelProduct reconciler
+[CertificatemanagerCertificateMapEntry] git-commit [llm] fix gobuilds for CertificatemanagerCertificateMapEntry
+[BinaryauthorizationAttestor] git-commit [llm] fix gobuilds for BinaryauthorizationAttestor
+[ChannelOffer] git-commit [llm] fix gobuilds for ChannelOffer
+[ChannelChannelPartnerLink] git-commit [llm] fix gobuilds for ChannelChannelPartnerLink
+[ChannelBillingAccount] git-commit [llm] fix gobuilds for ChannelBillingAccount
+[BigqueryWriteStream] git-commit [llm] fix gobuilds for BigqueryWriteStream
+[BillingProjectBillingInfo] git-commit [llm] fix gobuilds for BillingProjectBillingInfo
+[CertificatemanagerCertificateIssuanceConfig] git-commit [llm] fix gobuilds for CertificatemanagerCertificateIssuanceConfig
+[CertificatemanagerDnsAuthorization] git-commit [llm] fix gobuilds for CertificatemanagerDnsAuthorization
+[CertificatemanagerDnsAuthorization] git-commit add basic CertificatemanagerDnsAuthorization reconciler
+[ChannelProduct] git-commit [llm] fix gobuilds for ChannelProduct
+[CertificatemanagerDnsAuthorization] git-commit [llm] fix gobuilds for CertificatemanagerDnsAuthorization
+[ChannelCustomer] git-commit [llm] fix gobuilds for ChannelCustomer
+[CertificatemanagerTrustConfig] git-commit [llm] fix gobuilds for CertificatemanagerTrustConfig
+[ChannelCustomer] git-commit add basic ChannelCustomer reconciler
+[BillingBillingAccount] git-commit [llm] fix gobuilds for BillingBillingAccount
+[ChannelCustomer] git-commit [llm] fix gobuilds for ChannelCustomer
+[BinaryauthorizationPolicy] git-commit [llm] fix gobuilds for BinaryauthorizationPolicy
+[BinaryauthorizationPolicy] git-commit add basic BinaryauthorizationPolicy reconciler
+[BillingService] git-commit [llm] fix gobuilds for BillingService
+[BillingSku] git-commit [llm] fix gobuilds for BillingSku
+[ChannelOffer] git-commit [llm] fix gobuilds for ChannelOffer
+[ChannelProduct] git-commit [llm] fix gobuilds for ChannelProduct
+[ChannelBillingAccount] git-commit [llm] fix gobuilds for ChannelBillingAccount
+[BinaryauthorizationPolicy] git-commit [llm] fix gobuilds for BinaryauthorizationPolicy
+[BinaryauthorizationPolicy] git-commit add basic BinaryauthorizationPolicy reconciler
+[ChannelChannelPartnerLink] git-commit [llm] fix gobuilds for ChannelChannelPartnerLink
+[ChannelEntitlement] git-commit [llm] fix gobuilds for ChannelEntitlement
+[ChannelEntitlement] git-commit add basic ChannelEntitlement reconciler
+[ChannelCustomer] git-commit [llm] fix gobuilds for ChannelCustomer
+[CertificatemanagerTrustConfig] git-commit [llm] fix gobuilds for CertificatemanagerTrustConfig
+[ChannelBillingAccount] git-commit [llm] fix gobuilds for ChannelBillingAccount
+[BinaryauthorizationPolicy] git-commit [llm] fix gobuilds for BinaryauthorizationPolicy
+[BillingSku] git-commit [llm] fix gobuilds for BillingSku
+[ChannelOffer] git-commit [llm] fix gobuilds for ChannelOffer
+[ChannelSku] git-commit [llm] fix gobuilds for ChannelSku
+[ChannelProduct] git-commit [llm] fix gobuilds for ChannelProduct
+[ChannelSku] git-commit [llm] fix gobuilds for ChannelSku
+[BinaryauthorizationPolicy] git-commit [llm] fix gobuilds for BinaryauthorizationPolicy
+[ChannelEntitlement] git-commit [llm] fix gobuilds for ChannelEntitlement
+[ChannelSku] git-commit [llm] fix gobuilds for ChannelSku
+[AICachedContent] git-commit add basic AICachedContent reconciler
+[AIFile] git-commit add basic AIFile reconciler
+[AIModel] git-commit add basic AIModel reconciler
+[AIPermission] git-commit add basic AIPermission reconciler
+[AICorpus] git-commit add basic AICorpus reconciler
+[AIDocument] git-commit add basic AIDocument reconciler
+[AIModel] git-commit [llm] fix gobuilds for AIModel
+[AIChunk] git-commit add basic AIChunk reconciler
+[AITunedModel] git-commit add basic AITunedModel reconciler
+[AIPermission] git-commit add basic AIPermission reconciler
+[AITunedModel] git-commit add basic AITunedModel reconciler
+[AnalyticsAccount] git-commit add basic AnalyticsAccount reconciler
+[AIPermission] git-commit [llm] fix gobuilds for AIPermission
+[AnalyticsProperty] git-commit add basic AnalyticsProperty reconciler
+[AIPermission] git-commit add basic AIPermission reconciler
+[AnalyticsDataStream] git-commit add basic AnalyticsDataStream reconciler
+[AITunedModel] git-commit add basic AITunedModel reconciler
+[AnalyticsFirebaseLink] git-commit add basic AnalyticsFirebaseLink reconciler
+[AnalyticsGoogleAdsLink] git-commit add basic AnalyticsGoogleAdsLink reconciler
+[AIChunk] git-commit [llm] fix gobuilds for AIChunk
+[AIPermission] git-commit [llm] fix gobuilds for AIPermission
+[AnalyticsDataSharingSettings] git-commit add basic AnalyticsDataSharingSettings reconciler
+[AIChunk] git-commit add basic AIChunk reconciler
+[AnalyticsDataStream] git-commit [llm] fix gcp imports for AnalyticsDataStream
+[AnalyticsAccountSummary] git-commit add basic AnalyticsAccountSummary reconciler
+[AIDocument] git-commit [llm] fix gobuilds for AIDocument
+[AnalyticsMeasurementProtocolSecret] git-commit [llm] fix gcp imports for AnalyticsMeasurementProtocolSecret
+[AICorpus] git-commit [llm] fix gobuilds for AICorpus
+[AIDocument] git-commit [llm] fix gcp imports for AIDocument
+[AnalyticsAccount] git-commit [llm] fix gobuilds for AnalyticsAccount
+[AnalyticsMetadata] git-commit add basic AnalyticsMetadata reconciler
+[AnalyticsCustomDimension] git-commit add basic AnalyticsCustomDimension reconciler
+[AnalyticsKeyEvent] git-commit add basic AnalyticsKeyEvent reconciler
+[AnalyticsDataRetentionSettings] git-commit add basic AnalyticsDataRetentionSettings reconciler
+[AnalyticsCustomMetric] git-commit add basic AnalyticsCustomMetric reconciler
+[AnalyticsAudienceExport] git-commit add basic AnalyticsAudienceExport reconciler
+[AIDocument] git-commit [llm] fix gobuilds for AIDocument
+[AnalyticsFirebaseLink] git-commit [llm] fix gobuilds for AnalyticsFirebaseLink
+[AnalyticsProperty] git-commit [llm] fix gobuilds for AnalyticsProperty
+[AICachedContent] git-commit [llm] fix gobuilds for AICachedContent
+[AIFile] git-commit [llm] fix gobuilds for AIFile
+[AICachedContent] git-commit add basic AICachedContent reconciler
+[AIFile] git-commit add basic AIFile reconciler
+[AnalyticsConversionEvent] git-commit add basic AnalyticsConversionEvent reconciler
+[AIPermission] git-commit [llm] fix gobuilds for AIPermission
+[AnalyticsDataSharingSettings] git-commit [llm] fix gobuilds for AnalyticsDataSharingSettings
+[AIPermission] git-commit add basic AIPermission reconciler
+[AnalyticsCustomDimension] git-commit [llm] fix gcp imports for AnalyticsCustomDimension
+[AnalyticsMeasurementProtocolSecret] git-commit [llm] fix gcp imports for AnalyticsMeasurementProtocolSecret
+[AnalyticsDataSharingSettings] git-commit [llm] fix gcp imports for AnalyticsDataSharingSettings
+[AnalyticsAudienceExport] git-commit [llm] fix gcp imports for AnalyticsAudienceExport
+[AIDocument] git-commit [llm] fix gcp imports for AIDocument
+[AnalyticsAccount] git-commit [llm] fix gcp imports for AnalyticsAccount
+[AnalyticsProperty] git-commit [llm] fix gcp imports for AnalyticsProperty
+[AnalyticsKeyEvent] git-commit [llm] fix gobuilds for AnalyticsKeyEvent
+[AnalyticsAccountSummary] git-commit [llm] fix gobuilds for AnalyticsAccountSummary
+[AnalyticsMetadata] git-commit [llm] fix gobuilds for AnalyticsMetadata
+[AnalyticsProperty] git-commit add basic AnalyticsProperty reconciler
+[AnalyticsKeyEvent] git-commit add basic AnalyticsKeyEvent reconciler
+[AnalyticsAccountSummary] git-commit add basic AnalyticsAccountSummary reconciler
+[AnalyticsMetadata] git-commit add basic AnalyticsMetadata reconciler
+[AnalyticsKeyEvent] git-commit [llm] fix gobuilds for AnalyticsKeyEvent
+[AnalyticsDataSharingSettings] git-commit [llm] fix gobuilds for AnalyticsDataSharingSettings
+[AnalyticsDataSharingSettings] git-commit [llm] fix gcp imports for AnalyticsDataSharingSettings
+[AnalyticsProperty] git-commit [llm] fix gcp imports for AnalyticsProperty
+[APIKey] git-commit [llm] fix gcp imports for APIKey
+[APIKey] git-commit add basic APIKey reconciler
+[AnalyticsCustomMetric] git-commit [llm] fix gobuilds for AnalyticsCustomMetric
+[AnalyticsKeyEvent] git-commit [llm] fix gobuilds for AnalyticsKeyEvent
+[AnalyticsFirebaseLink] git-commit [llm] fix gobuilds for AnalyticsFirebaseLink
+[AnalyticsMetadata] git-commit [llm] fix gobuilds for AnalyticsMetadata
+[AIDocument] git-commit [llm] fix gobuilds for AIDocument
+[AnalyticsDataRetentionSettings] git-commit [llm] fix gobuilds for AnalyticsDataRetentionSettings
+[APIQuotaInfo] git-commit [llm] fix gcp imports for APIQuotaInfo
+[AICachedContent] git-commit [llm] fix gcp imports for AICachedContent
+[AnalyticsDataRetentionSettings] git-commit [llm] fix gcp imports for AnalyticsDataRetentionSettings
+[AnalyticsDataSharingSettings] git-commit [llm] fix gobuilds for AnalyticsDataSharingSettings
+[AIChunk] git-commit [llm] fix gobuilds for AIChunk
+[AnalyticsConversionEvent] git-commit [llm] fix gobuilds for AnalyticsConversionEvent
+[AnalyticsAudienceExport] git-commit [llm] fix gobuilds for AnalyticsAudienceExport
+[APIQuotaAdjusterSettings] git-commit add basic APIQuotaAdjusterSettings reconciler
+[APIQuotaPreference] git-commit add basic APIQuotaPreference reconciler
+[AnalyticsMeasurementProtocolSecret] git-commit add basic AnalyticsMeasurementProtocolSecret reconciler
+[AnalyticsCustomDimension] git-commit add basic AnalyticsCustomDimension reconciler
+[AnalyticsCustomMetric] git-commit [llm] fix gobuilds for AnalyticsCustomMetric
+[AnalyticsAccountSummary] git-commit [llm] fix gobuilds for AnalyticsAccountSummary
+[AIDocument] git-commit [llm] fix gcp imports for AIDocument
+[AnalyticsConversionEvent] git-commit add basic AnalyticsConversionEvent reconciler
+[AnalyticsProperty] git-commit [llm] fix gobuilds for AnalyticsProperty
+[APIQuotaInfo] git-commit add basic APIQuotaInfo reconciler
+[AnalyticsDataStream] git-commit [llm] fix gobuilds for AnalyticsDataStream
+[APIQuotaPreference] git-commit add basic APIQuotaPreference reconciler
+[AnalyticsMetadata] git-commit [llm] fix gcp imports for AnalyticsMetadata
+[APIService] git-commit add basic APIService reconciler
+[AIDocument] git-commit [llm] fix gobuilds for AIDocument
+[AIFile] git-commit [llm] fix gobuilds for AIFile
+[AIFile] git-commit add basic AIFile reconciler
+[BigtableAuthorizedView] git-commit add basic BigtableAuthorizedView reconciler
+[BigtableTable] git-commit add basic BigtableTable reconciler
+[BigtableAppProfile] git-commit add basic BigtableAppProfile reconciler
+[BigtableInstance] git-commit [llm] fix gcp imports for BigtableInstance
+[BigtableCluster] git-commit add basic BigtableCluster reconciler
+[BigtableHotTablet] git-commit add basic BigtableHotTablet reconciler
+[BigtableAppProfile] git-commit add basic BigtableAppProfile reconciler
+[AnalyticsDataRetentionSettings] git-commit [llm] fix gobuilds for AnalyticsDataRetentionSettings
+[AnalyticsDataRetentionSettings] git-commit [llm] fix gcp imports for AnalyticsDataRetentionSettings
+[BigtableSnapshot] git-commit add basic BigtableSnapshot reconciler
+[AnalyticsKeyEvent] git-commit [llm] fix gobuilds for AnalyticsKeyEvent
+[BigtableTable] git-commit [llm] fix gobuilds for BigtableTable
+[BigtableTable] git-commit add basic BigtableTable reconciler
+[BigtableBackup] git-commit add basic BigtableBackup reconciler
+[APIQuotaAdjusterSettings] git-commit [llm] fix gobuilds for APIQuotaAdjusterSettings
+[APIQuotaInfo] git-commit [llm] fix gobuilds for APIQuotaInfo
+[AnalyticsAudienceExport] git-commit [llm] fix gobuilds for AnalyticsAudienceExport
+[APIQuotaInfo] git-commit add basic APIQuotaInfo reconciler
+[AccessApprovalApprovalRequest] git-commit add basic AccessApprovalApprovalRequest reconciler
+[AccessApprovalAccessApprovalSettings] git-commit add basic AccessApprovalAccessApprovalSettings reconciler
+[AccessApprovalAccessApprovalSettings] git-commit [llm] fix gobuilds for AccessApprovalAccessApprovalSettings
+[AccessApprovalAccessApprovalSettings] git-commit add basic AccessApprovalAccessApprovalSettings reconciler
+[AccessApprovalApprovalRequest] git-commit [llm] fix gobuilds for AccessApprovalApprovalRequest
+[AccessApprovalApprovalRequest] git-commit add basic AccessApprovalApprovalRequest reconciler
+[APIService] git-commit [llm] fix gobuilds for APIService
+[AICachedContent] git-commit [llm] fix gobuilds for AICachedContent
+[APIService] git-commit add basic APIService reconciler
+[AccessApprovalApprovalRequest] git-commit [llm] fix gobuilds for AccessApprovalApprovalRequest
+[AnalyticsCustomDimension] git-commit [llm] fix gobuilds for AnalyticsCustomDimension
+[AccessApprovalAccessApprovalServiceAccount] git-commit add basic AccessApprovalAccessApprovalServiceAccount reconciler
+[APIQuotaInfo] git-commit [llm] fix gobuilds for APIQuotaInfo
+[BigtableAuthorizedView] git-commit [llm] fix gobuilds for BigtableAuthorizedView
+[AccessApprovalApprovalRequest] git-commit [llm] fix gobuilds for AccessApprovalApprovalRequest
+[APIQuotaPreference] git-commit [llm] fix gobuilds for APIQuotaPreference
+[BigtableAuthorizedView] git-commit add basic BigtableAuthorizedView reconciler
+[BigtableHotTablet] git-commit [llm] fix gobuilds for BigtableHotTablet
+[AnalyticsMetadata] git-commit [llm] fix gobuilds for AnalyticsMetadata
+[APIQuotaInfo] git-commit [llm] fix gobuilds for APIQuotaInfo
+[AdvisoryNotificationsNotification] git-commit add basic AdvisoryNotificationsNotification reconciler
+[BigtableHotTablet] git-commit [llm] fix gcp imports for BigtableHotTablet
+[APIQuotaPreference] git-commit add basic APIQuotaPreference reconciler
+[APIService] git-commit [llm] fix gobuilds for APIService
+[AnalyticsMetadata] git-commit add basic AnalyticsMetadata reconciler
+[AdvisoryNotificationsSettings] git-commit add basic AdvisoryNotificationsSettings reconciler
+[AdvisoryNotificationsNotification] git-commit add basic AdvisoryNotificationsNotification reconciler
+[BigtableInstance] git-commit [llm] fix gobuilds for BigtableInstance
+[BigtableInstance] git-commit [llm] fix gcp imports for BigtableInstance
+[BigtableAuthorizedView] git-commit [llm] fix gobuilds for BigtableAuthorizedView
+[AnalyticsConversionEvent] git-commit [llm] fix gobuilds for AnalyticsConversionEvent
+[AdvisoryNotificationsSettings] git-commit [llm] fix gcp imports for AdvisoryNotificationsSettings
+[BigtableAuthorizedView] git-commit [llm] fix gcp imports for BigtableAuthorizedView
+[AnalyticsConversionEvent] git-commit [llm] fix gcp imports for AnalyticsConversionEvent
+[AIPlatformAnnotation] git-commit add basic AIPlatformAnnotation reconciler
+[AnalyticsCustomDimension] git-commit [llm] fix gobuilds for AnalyticsCustomDimension
+[AIPlatformAnnotationSpec] git-commit add basic AIPlatformAnnotationSpec reconciler
+[AIPlatformArtifact] git-commit add basic AIPlatformArtifact reconciler
+[BigtableTable] git-commit [llm] fix gobuilds for BigtableTable
+[AIPlatformAnnotationSpec] git-commit [llm] fix gobuilds for AIPlatformAnnotationSpec
+[AnalyticsMetadata] git-commit [llm] fix gobuilds for AnalyticsMetadata
+[BigtableAppProfile] git-commit [llm] fix gobuilds for BigtableAppProfile
+[AccessApprovalAccessApprovalSettings] git-commit [llm] fix gobuilds for AccessApprovalAccessApprovalSettings
+[APIQuotaInfo] git-commit [llm] fix gobuilds for APIQuotaInfo
+[AnalyticsDataRetentionSettings] git-commit [llm] fix gobuilds for AnalyticsDataRetentionSettings
+[AnalyticsDataRetentionSettings] git-commit add basic AnalyticsDataRetentionSettings reconciler
+[BigtableCluster] git-commit [llm] fix gobuilds for BigtableCluster
+[AnalyticsMeasurementProtocolSecret] git-commit [llm] fix gobuilds for AnalyticsMeasurementProtocolSecret
+[AIPlatformAnnotationSpec] git-commit [llm] fix gcp imports for AIPlatformAnnotationSpec
+[AIPlatformCachedContent] git-commit add basic AIPlatformCachedContent reconciler
+[AIPlatformContext] git-commit add basic AIPlatformContext reconciler
+[BigtableBackup] git-commit [llm] fix gobuilds for BigtableBackup
+[BigtableHotTablet] git-commit [llm] fix gobuilds for BigtableHotTablet
+[AnalyticsMeasurementProtocolSecret] git-commit add basic AnalyticsMeasurementProtocolSecret reconciler
+[BigtableBackup] git-commit add basic BigtableBackup reconciler
+[AIPlatformArtifact] git-commit [llm] fix gobuilds for AIPlatformArtifact
+[BigtableSnapshot] git-commit [llm] fix gobuilds for BigtableSnapshot
+[BigtableSnapshot] git-commit add basic BigtableSnapshot reconciler
+[BigtableHotTablet] git-commit [llm] fix gobuilds for BigtableHotTablet
+[BigtableCluster] git-commit add basic BigtableCluster reconciler
+[AIPlatformBatchPredictionJob] git-commit add basic AIPlatformBatchPredictionJob reconciler
+[AnalyticsMeasurementProtocolSecret] git-commit [llm] fix gobuilds for AnalyticsMeasurementProtocolSecret
+[BigtableAuthorizedView] git-commit [llm] fix gobuilds for BigtableAuthorizedView
+[BigtableTable] git-commit [llm] fix gobuilds for BigtableTable
+[APIQuotaPreference] git-commit [llm] fix gobuilds for APIQuotaPreference
+[AdvisoryNotificationsSettings] git-commit [llm] fix gobuilds for AdvisoryNotificationsSettings
+[AIPlatformCachedContent] git-commit [llm] fix gobuilds for AIPlatformCachedContent
+[AIPlatformAnnotation] git-commit [llm] fix gobuilds for AIPlatformAnnotation
+[AnalyticsDataRetentionSettings] git-commit [llm] fix gobuilds for AnalyticsDataRetentionSettings
+[AccessApprovalAccessApprovalSettings] git-commit [llm] fix gcp imports for AccessApprovalAccessApprovalSettings
+[AIPlatformBatchPredictionJob] git-commit [llm] fix gobuilds for AIPlatformBatchPredictionJob
+[AdvisoryNotificationsSettings] git-commit [llm] fix gcp imports for AdvisoryNotificationsSettings
+[BigtableCluster] git-commit [llm] fix gobuilds for BigtableCluster
+[BigtableBackup] git-commit [llm] fix gobuilds for BigtableBackup
+[AIPlatformBatchPredictionJob] git-commit [llm] fix gcp imports for AIPlatformBatchPredictionJob
+[AdvisoryNotificationsSettings] git-commit add basic AdvisoryNotificationsSettings reconciler
+[AIPlatformContext] git-commit [llm] fix gobuilds for AIPlatformContext
+[AIPlatformCachedContent] git-commit [llm] fix gcp imports for AIPlatformCachedContent
+[AIPlatformDataItem] git-commit [llm] fix gcp imports for AIPlatformDataItem
+[AIPlatformDataset] git-commit [llm] fix gcp imports for AIPlatformDataset
+[AIPlatformDataLabelingJob] git-commit [llm] fix gcp imports for AIPlatformDataLabelingJob
+[APIQuotaPreference] git-commit [llm] fix gcp imports for APIQuotaPreference
+[AIPlatformCustomJob] git-commit [llm] fix gcp imports for AIPlatformCustomJob
+[AIPlatformAnnotation] git-commit [llm] fix gcp imports for AIPlatformAnnotation
+[AIPlatformDatasetVersion] git-commit add basic AIPlatformDatasetVersion reconciler
+[AnalyticsConversionEvent] git-commit [llm] fix gobuilds for AnalyticsConversionEvent
+[AIPlatformCachedContent] git-commit add basic AIPlatformCachedContent reconciler
+[AIPlatformDataLabelingJob] git-commit add basic AIPlatformDataLabelingJob reconciler
+[AnalyticsConversionEvent] git-commit add basic AnalyticsConversionEvent reconciler
+[AIPlatformDeploymentResourcePool] git-commit add basic AIPlatformDeploymentResourcePool reconciler
+[AIPlatformDatasetVersion] git-commit add basic AIPlatformDatasetVersion reconciler
+[AIPlatformDataset] git-commit [llm] fix gobuilds for AIPlatformDataset
+[AIPlatformDataset] git-commit [llm] fix gcp imports for AIPlatformDataset
+[AIPlatformDeploymentResourcePool] git-commit add basic AIPlatformDeploymentResourcePool reconciler
+[BigtableSnapshot] git-commit [llm] fix gobuilds for BigtableSnapshot
+[AIPlatformDataItem] git-commit add basic AIPlatformDataItem reconciler
+[AIPlatformEndpoint] git-commit add basic AIPlatformEndpoint reconciler
+[AIPlatformDataLabelingJob] git-commit [llm] fix gobuilds for AIPlatformDataLabelingJob
+[AIPlatformCustomJob] git-commit [llm] fix gobuilds for AIPlatformCustomJob
+[AIPlatformCachedContent] git-commit [llm] fix gobuilds for AIPlatformCachedContent
+[AIPlatformArtifact] git-commit [llm] fix gobuilds for AIPlatformArtifact
+[AIPlatformDatasetVersion] git-commit [llm] fix gobuilds for AIPlatformDatasetVersion
+[AIPlatformAnnotation] git-commit [llm] fix gobuilds for AIPlatformAnnotation
+[APIQuotaPreference] git-commit [llm] fix gobuilds for APIQuotaPreference
+[BigtableCluster] git-commit [llm] fix gobuilds for BigtableCluster
+[AIPlatformDeploymentResourcePool] git-commit [llm] fix gobuilds for AIPlatformDeploymentResourcePool
+[AIPlatformEntityType] git-commit add basic AIPlatformEntityType reconciler
+[AIPlatformEndpoint] git-commit add basic AIPlatformEndpoint reconciler
+[AIPlatformCustomJob] git-commit add basic AIPlatformCustomJob reconciler
+[AIPlatformDataset] git-commit add basic AIPlatformDataset reconciler
+[AIPlatformContext] git-commit [llm] fix gobuilds for AIPlatformContext
+[AIPlatformExecution] git-commit add basic AIPlatformExecution reconciler
+[AIPlatformEntityType] git-commit add basic AIPlatformEntityType reconciler
+[AIPlatformFeature] git-commit add basic AIPlatformFeature reconciler
+[AIPlatformFeatureGroup] git-commit add basic AIPlatformFeatureGroup reconciler
+[AIPlatformFeatureOnlineStore] git-commit add basic AIPlatformFeatureOnlineStore reconciler
+[AIPlatformFeatureView] git-commit add basic AIPlatformFeatureView reconciler
+[AIPlatformEntityType] git-commit [llm] fix gobuilds for AIPlatformEntityType
+[AIPlatformFeatureViewSync] git-commit add basic AIPlatformFeatureViewSync reconciler
+[AIPlatformEntityType] git-commit [llm] fix gcp imports for AIPlatformEntityType
+[AIPlatformFeaturestore] git-commit add basic AIPlatformFeaturestore reconciler
+[AIPlatformFeatureGroup] git-commit [llm] fix gobuilds for AIPlatformFeatureGroup
+[AIPlatformFeature] git-commit [llm] fix gobuilds for AIPlatformFeature
+[AIPlatformFeatureGroup] git-commit [llm] fix gcp imports for AIPlatformFeatureGroup
+[AIPlatformEndpoint] git-commit [llm] fix gobuilds for AIPlatformEndpoint
+[AIPlatformFeature] git-commit add basic AIPlatformFeature reconciler
+[AIPlatformHyperparameterTuningJob] git-commit add basic AIPlatformHyperparameterTuningJob reconciler
+[AIPlatformDataItem] git-commit [llm] fix gobuilds for AIPlatformDataItem
+[AIPlatformIndex] git-commit add basic AIPlatformIndex reconciler
+[AIPlatformEntityType] git-commit add basic AIPlatformEntityType reconciler
+[AIPlatformHyperparameterTuningJob] git-commit add basic AIPlatformHyperparameterTuningJob reconciler
+[AIPlatformIndexEndpoint] git-commit add basic AIPlatformIndexEndpoint reconciler
+[AIPlatformIndex] git-commit add basic AIPlatformIndex reconciler
+[AIPlatformFeatureViewSync] git-commit [llm] fix gobuilds for AIPlatformFeatureViewSync
+[AIPlatformIndexEndpoint] git-commit add basic AIPlatformIndexEndpoint reconciler
+[AIPlatformMetadataSchema] git-commit add basic AIPlatformMetadataSchema reconciler
+[AIPlatformFeatureOnlineStore] git-commit [llm] fix gobuilds for AIPlatformFeatureOnlineStore
+[AIPlatformFeatureViewSync] git-commit [llm] fix gcp imports for AIPlatformFeatureViewSync
+[AIPlatformMetadataStore] git-commit add basic AIPlatformMetadataStore reconciler
+[AIPlatformFeatureGroup] git-commit add basic AIPlatformFeatureGroup reconciler
+[AIPlatformModel] git-commit add basic AIPlatformModel reconciler
+[AIPlatformFeatureOnlineStore] git-commit add basic AIPlatformFeatureOnlineStore reconciler
+[AIPlatformBatchPredictionJob] git-commit [llm] fix gobuilds for AIPlatformBatchPredictionJob
+[AIPlatformModelDeploymentMonitoringJob] git-commit add basic AIPlatformModelDeploymentMonitoringJob reconciler
+[AIPlatformCustomJob] git-commit [llm] fix gobuilds for AIPlatformCustomJob
+[AIPlatformFeatureView] git-commit [llm] fix gobuilds for AIPlatformFeatureView
+[AIPlatformFeatureView] git-commit [llm] fix gcp imports for AIPlatformFeatureView
+[AIPlatformDatasetVersion] git-commit [llm] fix gobuilds for AIPlatformDatasetVersion
+[AIPlatformModel] git-commit [llm] fix gcp imports for AIPlatformModel
+[AIPlatformFeatureView] git-commit [llm] fix gobuilds for AIPlatformFeatureView
+[BigtableSnapshot] git-commit [llm] fix gobuilds for BigtableSnapshot
+[AIPlatformFeatureView] git-commit add basic AIPlatformFeatureView reconciler
+[AIPlatformModelDeploymentMonitoringJob] git-commit add basic AIPlatformModelDeploymentMonitoringJob reconciler
+[AIPlatformFeaturestore] git-commit [llm] fix gobuilds for AIPlatformFeaturestore
+[AIPlatformFeaturestore] git-commit add basic AIPlatformFeaturestore reconciler
+[AIPlatformModelEvaluation] git-commit [llm] fix gcp imports for AIPlatformModelEvaluation
+[AIPlatformModelEvaluationSlice] git-commit add basic AIPlatformModelEvaluationSlice reconciler
+[AIPlatformDatasetVersion] git-commit [llm] fix gobuilds for AIPlatformDatasetVersion
+[AIPlatformHyperparameterTuningJob] git-commit [llm] fix gobuilds for AIPlatformHyperparameterTuningJob
+[AIPlatformCustomJob] git-commit [llm] fix gobuilds for AIPlatformCustomJob
+[AIPlatformModelEvaluation] git-commit [llm] fix gobuilds for AIPlatformModelEvaluation
+[AIPlatformModel] git-commit [llm] fix gobuilds for AIPlatformModel
+[AIPlatformIndex] git-commit [llm] fix gobuilds for AIPlatformIndex
+[AIPlatformAnnotationSpec] git-commit [llm] fix gobuilds for AIPlatformAnnotationSpec
+[AIPlatformMetadataStore] git-commit [llm] fix gcp imports for AIPlatformMetadataStore
+[AIPlatformNasJob] git-commit [llm] fix gcp imports for AIPlatformNasJob
+[AIPlatformAnnotationSpec] git-commit add basic AIPlatformAnnotationSpec reconciler
+[AIPlatformModel] git-commit add basic AIPlatformModel reconciler
+[AIPlatformNotebookExecutionJob] git-commit add basic AIPlatformNotebookExecutionJob reconciler
+[AIPlatformNasTrialDetail] git-commit add basic AIPlatformNasTrialDetail reconciler
+[AIPlatformFeatureOnlineStore] git-commit [llm] fix gcp imports for AIPlatformFeatureOnlineStore
+[AIPlatformModelEvaluationSlice] git-commit add basic AIPlatformModelEvaluationSlice reconciler
+[AIPlatformModelEvaluation] git-commit add basic AIPlatformModelEvaluation reconciler
+[AIPlatformHyperparameterTuningJob] git-commit [llm] fix gcp imports for AIPlatformHyperparameterTuningJob
+[AIPlatformModel] git-commit [llm] fix gobuilds for AIPlatformModel
+[AIPlatformIndex] git-commit [llm] fix gobuilds for AIPlatformIndex
+[AIPlatformNotebookExecutionJob] git-commit [llm] fix gobuilds for AIPlatformNotebookExecutionJob
+[AIPlatformNasTrialDetail] git-commit [llm] fix gobuilds for AIPlatformNasTrialDetail
+[AIPlatformFeature] git-commit [llm] fix gobuilds for AIPlatformFeature

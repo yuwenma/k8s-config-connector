@@ -20,6 +20,7 @@ import (
 	"fmt"
 	"os/exec"
 	"strings"
+	"time"
 
 	"cloud.google.com/go/vertexai/genai"
 	"golang.org/x/oauth2/google"
@@ -239,6 +240,8 @@ func (c *VertexAIChat) SendMessage(ctx context.Context, parts ...string) (Respon
 	if err != nil {
 		return nil, err
 	}
+	time.Sleep(7 * time.Second)
+
 	return &VertexAIResponse{vertexaiResponse: vertexaiResponse}, nil
 }
 
@@ -255,6 +258,8 @@ func (c *VertexAIChat) SendFunctionResults(ctx context.Context, functionResults 
 	if err != nil {
 		return nil, err
 	}
+	time.Sleep(7 * time.Second)
+
 	return &VertexAIResponse{vertexaiResponse: vertexaiResponse}, nil
 }
 

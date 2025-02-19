@@ -1,0 +1,176 @@
+service: advisorynotifications
+package: google.cloud.advisorynotifications.v1
+proto: Notification
+kind: AdvisoryNotificationsNotification
+protopath: google.cloud.advisorynotifications.v1.Notification
+validated: null
+---
+service: advisorynotifications
+package: google.cloud.advisorynotifications.v1
+proto: Settings
+kind: AdvisoryNotificationsSettings
+protopath: google.cloud.advisorynotifications.v1.Settings
+validated: null
+---
+
+service: apihub
+package: google.cloud.apihub.v1
+proto: Api
+kind: APIHubApi
+protopath: google.cloud.apihub.v1.Api
+validated: null
+---
+service: apihub
+package: google.cloud.apihub.v1
+proto: Version
+kind: APIHubVersion
+protopath: google.cloud.apihub.v1.Version
+validated: null
+---
+service: apihub
+package: google.cloud.apihub.v1
+proto: Spec
+kind: APIHubSpec
+protopath: google.cloud.apihub.v1.Spec
+validated: null
+---
+service: apihub
+package: google.cloud.apihub.v1
+proto: Deployment
+kind: APIHubDeployment
+protopath: google.cloud.apihub.v1.Deployment
+validated: null
+---
+service: apihub
+package: google.cloud.apihub.v1
+proto: ApiOperation
+kind: APIHubAPIOperation
+protopath: google.cloud.apihub.v1.ApiOperation
+validated: null
+---
+service: apihub
+package: google.cloud.apihub.v1
+proto: Definition
+kind: APIHubDefinition
+protopath: google.cloud.apihub.v1.Definition
+validated: null
+---
+service: apihub
+package: google.cloud.apihub.v1
+proto: Attribute
+kind: APIHubAttribute
+protopath: google.cloud.apihub.v1.Attribute
+validated: null
+---
+service: apihub
+package: google.cloud.apihub.v1
+proto: Dependency
+kind: APIHubDependency
+protopath: google.cloud.apihub.v1.Dependency
+validated: null
+---
+service: apihub
+package: google.cloud.apihub.v1
+proto: ApiHubInstance
+kind: APIHubAPIHubInstance
+protopath: google.cloud.apihub.v1.ApiHubInstance
+validated: null
+---
+service: apihub
+package: google.cloud.apihub.v1
+proto: ExternalApi
+kind: APIHubExternalAPI
+protopath: google.cloud.apihub.v1.ExternalApi
+validated: null
+---
+service: apihub
+package: google.cloud.apihub.v1
+proto: HostProjectRegistration
+kind: APIHubHostProjectRegistration
+protopath: google.cloud.apihub.v1.HostProjectRegistration
+validated: null
+---
+service: apihub
+package: google.cloud.apihub.v1
+proto: StyleGuide
+kind: APIHubStyleGuide
+protopath: google.cloud.apihub.v1.StyleGuide
+validated: null
+---
+service: apihub
+package: google.cloud.apihub.v1
+proto: Plugin
+kind: APIHubPlugin
+protopath: google.cloud.apihub.v1.Plugin
+validated: null
+---
+service: apihub
+package: google.cloud.apihub.v1
+proto: RuntimeProjectAttachment
+kind: APIHubRuntimeProjectAttachment
+protopath: google.cloud.apihub.v1.RuntimeProjectAttachment
+validated: null
+---
+service: apphub
+package: google.cloud.apphub.v1
+proto: Application
+kind: AppHubApplication
+protopath: google.cloud.apphub.v1.Application
+validated: null
+---
+service: apphub
+package: google.cloud.apphub.v1
+proto: Service
+kind: AppHubService
+protopath: google.cloud.apphub.v1.Service
+validated: null
+---
+service: apphub
+package: google.cloud.apphub.v1
+proto: DiscoveredService
+kind: AppHubDiscoveredService
+protopath: google.cloud.apphub.v1.DiscoveredService
+validated: null
+---
+service: apphub
+package: google.cloud.apphub.v1
+proto: ServiceProjectAttachment
+kind: AppHubServiceProjectAttachment
+protopath: google.cloud.apphub.v1.ServiceProjectAttachment
+validated: null
+---
+service: apphub
+package: google.cloud.apphub.v1
+proto: Workload
+kind: AppHubWorkload
+protopath: google.cloud.apphub.v1.Workload
+validated: null
+---
+service: apphub
+package: google.cloud.apphub.v1
+proto: DiscoveredWorkload
+kind: AppHubDiscoveredWorkload
+protopath: google.cloud.apphub.v1.DiscoveredWorkload
+validated: null
+---
+service: apigateway
+package: google.cloud.apigateway.v1
+proto: Api
+kind: APIGatewayAPI
+protopath: google.cloud.apigateway.v1.Api
+validated: null
+---
+service: apigateway
+package: google.cloud.apigateway.v1
+proto: ApiConfig
+kind: APIGatewayAPIConfig
+protopath: google.cloud.apigateway.v1.ApiConfig
+validated: null
+---
+service: apigateway
+package: google.cloud.apigateway.v1
+proto: Gateway
+kind: APIGatewayGateway
+protopath: google.cloud.apigateway.v1.Gateway
+validated: null
+---

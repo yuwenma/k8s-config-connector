@@ -1,0 +1,415 @@
+[create project] ai-CachedContent already exist
+[create project] visionai-Series already exist
+[link billing account] visionai-Series 
+[create project] visionai-Channel
+[create project] visionai-Channel created
+[link billing account] visionai-Channel 
+[create project] visionai-Asset
+[create project] visionai-Asset created
+[link billing account] visionai-Asset 
+[create project] visionai-Collection
+[create project] visionai-Collection created
+[link billing account] visionai-Collection 
+[create project] visionai-Index
+[create project] visionai-Index created
+[link billing account] visionai-Index 
+[create project] visionai-Corpus
+[create project] visionai-Corpus created
+[link billing account] visionai-Corpus 
+[create project] visionai-DataSchema
+[create project] visionai-DataSchema created
+[link billing account] visionai-DataSchema 
+[create project] visionai-Annotation
+[create project] visionai-Annotation created
+[link billing account] visionai-Annotation 
+[create project] visionai-SearchConfig
+[create project] visionai-SearchConfig created
+[link billing account] visionai-SearchConfig 
+[create project] visionai-IndexEndpoint
+[create project] visionai-IndexEndpoint created
+[link billing account] visionai-IndexEndpoint 
+[create project] visionai-SearchHypernym
+[create project] visionai-SearchHypernym created
+[link billing account] visionai-SearchHypernym 
+[project validation] vmmigration-replicationcycle-19 too long
+[create project] vmmigration-ReplicationCycle
+[create project] vmmigration-ReplicationCycle created
+[link billing account] vmmigration-ReplicationCycle 
+[create project] vmmigration-MigratingVm
+[create project] vmmigration-MigratingVm created
+[link billing account] vmmigration-MigratingVm 
+[create project] vmmigration-CloneJob
+[create project] vmmigration-CloneJob created
+[link billing account] vmmigration-CloneJob 
+[create project] vmmigration-CutoverJob
+[create project] vmmigration-CutoverJob created
+[link billing account] vmmigration-CutoverJob 
+[create project] vmmigration-Source
+[create project] vmmigration-Source created
+[link billing account] vmmigration-Source 
+[project validation] vmmigration-datacenterconnector-19 too long
+[create project] vmmigration-DatacenterConnector
+[create project] vmmigration-DatacenterConnector created
+[link billing account] vmmigration-DatacenterConnector 
+[project validation] vmmigration-utilizationreport-19 too long
+[create project] vmmigration-UtilizationReport
+[create project] vmmigration-UtilizationReport created
+[link billing account] vmmigration-UtilizationReport 
+[create project] vmmigration-TargetProject
+[create project] vmmigration-TargetProject created
+[link billing account] vmmigration-TargetProject 
+[create project] vmmigration-Group
+[create project] vmmigration-Group created
+[link billing account] vmmigration-Group 
+[create project] vmwareengine-PrivateCloud
+[create project] vmwareengine-PrivateCloud created
+[link billing account] vmwareengine-PrivateCloud 
+[create project] vmwareengine-Cluster
+[create project] vmwareengine-Cluster created
+[link billing account] vmwareengine-Cluster 
+[create project] vmwareengine-Node
+[create project] vmwareengine-Node created
+[link billing account] vmwareengine-Node 
+[project validation] vmwareengine-externaladdress-19 too long
+[create project] vmwareengine-ExternalAddress
+[create project] vmwareengine-ExternalAddress created
+[link billing account] vmwareengine-ExternalAddress 
+[create project] vmwareengine-Subnet
+[create project] vmwareengine-Subnet created
+[link billing account] vmwareengine-Subnet 
+[project validation] vmwareengine-externalaccessrule-19 too long
+[create project] vmwareengine-ExternalAccessRule
+[create project] vmwareengine-ExternalAccessRule created
+[link billing account] vmwareengine-ExternalAccessRule 
+[create project] vmwareengine-LoggingServer
+[create project] vmwareengine-LoggingServer created
+[link billing account] vmwareengine-LoggingServer 
+[create project] vmwareengine-NodeType
+[create project] vmwareengine-NodeType created
+[link billing account] vmwareengine-NodeType 
+[project validation] vmwareengine-hcxactivationkey-19 too long
+[create project] vmwareengine-HcxActivationKey
+[create project] vmwareengine-HcxActivationKey created
+[link billing account] vmwareengine-HcxActivationKey 
+[create project] vmwareengine-DnsForwarding
+[create project] vmwareengine-DnsForwarding created
+[link billing account] vmwareengine-DnsForwarding 
+[project validation] vmwareengine-networkpeering-19 too long
+[create project] vmwareengine-NetworkPeering
+[create project] vmwareengine-NetworkPeering created
+[link billing account] vmwareengine-NetworkPeering 
+[create project] vmwareengine-NetworkPolicy
+[create project] vmwareengine-NetworkPolicy created
+[link billing account] vmwareengine-NetworkPolicy 
+[project validation] vmwareengine-managementdnszonebinding-19 too long
+[create project] vmwareengine-ManagementDnsZoneBinding
+[create project] vmwareengine-ManagementDnsZoneBinding created
+[link billing account] vmwareengine-ManagementDnsZoneBinding 
+[project validation] vmwareengine-vmwareenginenetwork-19 too long
+[create project] vmwareengine-VmwareEngineNetwork
+[create project] vmwareengine-VmwareEngineNetwork created
+[link billing account] vmwareengine-VmwareEngineNetwork 
+[project validation] vmwareengine-privateconnection-19 too long
+[create project] vmwareengine-PrivateConnection already exist
+[link billing account] vmwareengine-PrivateConnection 
+[project validation] vmwareengine-dnsbindpermission-19 too long
+[create project] vmwareengine-DnsBindPermission
+[create project] vmwareengine-DnsBindPermission created
+[link billing account] vmwareengine-DnsBindPermission 
+[create project] vpcaccess-Connector
+[create project] vpcaccess-Connector created
+[link billing account] vpcaccess-Connector 
+[create project] websecurityscanner-Finding
+[create project] websecurityscanner-Finding created
+[link billing account] websecurityscanner-Finding 
+[create project] websecurityscanner-Finding already exist
+[link billing account] websecurityscanner-Finding 
+[project validation] websecurityscanner-scanconfig-19 too long
+[create project] websecurityscanner-ScanConfig
+[create project] websecurityscanner-ScanConfig created
+[link billing account] websecurityscanner-ScanConfig 
+[create project] websecurityscanner-ScanRun
+[create project] websecurityscanner-ScanRun created
+[link billing account] websecurityscanner-ScanRun 
+[create project] workflows-Execution
+[create project] workflows-Execution created
+[link billing account] workflows-Execution 
+[create project] workflows-Execution already exist
+[link billing account] workflows-Execution 
+[create project] workflows-Workflow
+[create project] workflows-Workflow created
+[link billing account] workflows-Workflow 
+[create project] workflows-Workflow already exist
+[link billing account] workflows-Workflow 
+[project validation] workstations-workstationcluster-19 too long
+[create project] workstations-WorkstationCluster
+[create project] workstations-WorkstationCluster created
+[link billing account] workstations-WorkstationCluster 
+[project validation] workstations-workstationconfig-19 too long
+[create project] workstations-WorkstationConfig
+[create project] workstations-WorkstationConfig created
+[link billing account] workstations-WorkstationConfig 
+[create project] workstations-Workstation
+[create project] workstations-Workstation created
+[link billing account] workstations-Workstation 
+[project validation] workstations-workstationcluster-19 too long
+[create project] workstations-WorkstationCluster already exist
+[link billing account] workstations-WorkstationCluster 
+[project validation] workstations-workstationconfig-19 too long
+[create project] workstations-WorkstationConfig already exist
+[link billing account] workstations-WorkstationConfig 
+[create project] workstations-Workstation already exist
+[link billing account] workstations-Workstation 
+[project validation] artifactregistry-aptartifact-19 too long
+[create project] artifactregistry-AptArtifact
+[create project] artifactregistry-AptArtifact created
+[link billing account] artifactregistry-AptArtifact 
+[project validation] artifactregistry-dockerimage-19 too long
+[create project] artifactregistry-DockerImage
+[create project] artifactregistry-DockerImage created
+[link billing account] artifactregistry-DockerImage 
+[project validation] artifactregistry-mavenartifact-19 too long
+[create project] artifactregistry-MavenArtifact
+[create project] artifactregistry-MavenArtifact created
+[link billing account] artifactregistry-MavenArtifact 
+[project validation] artifactregistry-npmpackage-19 too long
+[create project] artifactregistry-NpmPackage
+[create project] artifactregistry-NpmPackage created
+[link billing account] artifactregistry-NpmPackage 
+[project validation] artifactregistry-pythonpackage-19 too long
+[create project] artifactregistry-PythonPackage
+[create project] artifactregistry-PythonPackage created
+[link billing account] artifactregistry-PythonPackage 
+[project validation] artifactregistry-attachment-19 too long
+[create project] artifactregistry-Attachment
+[create project] artifactregistry-Attachment created
+[link billing account] artifactregistry-Attachment 
+[create project] artifactregistry-File
+[create project] artifactregistry-File created
+[link billing account] artifactregistry-File 
+[project validation] artifactregistry-genericartifact-19 too long
+[create project] artifactregistry-GenericArtifact
+[create project] artifactregistry-GenericArtifact created
+[link billing account] artifactregistry-GenericArtifact 
+[create project] artifactregistry-Package
+[create project] artifactregistry-Package created
+[link billing account] artifactregistry-Package 
+[project validation] artifactregistry-repository-19 too long
+[create project] artifactregistry-Repository already exist
+[link billing account] artifactregistry-Repository 
+[create project] artifactregistry-Rule
+[create project] artifactregistry-Rule created
+[link billing account] artifactregistry-Rule 
+[project validation] artifactregistry-projectsettings-19 too long
+[create project] artifactregistry-ProjectSettings
+[create project] artifactregistry-ProjectSettings created
+[link billing account] artifactregistry-ProjectSettings 
+[create project] artifactregistry-Tag
+[create project] artifactregistry-Tag created
+[link billing account] artifactregistry-Tag 
+[create project] artifactregistry-Version
+[create project] artifactregistry-Version created
+[link billing account] artifactregistry-Version 
+[project validation] artifactregistry-vpcscconfig-19 too long
+[create project] artifactregistry-VPCSCConfig
+[create project] artifactregistry-VPCSCConfig created
+[link billing account] artifactregistry-VPCSCConfig 
+[project validation] artifactregistry-yumartifact-19 too long
+[create project] artifactregistry-YumArtifact
+[create project] artifactregistry-YumArtifact created
+[link billing account] artifactregistry-YumArtifact 
+[project validation] artifactregistry-aptartifact-19 too long
+[create project] artifactregistry-AptArtifact already exist
+[link billing account] artifactregistry-AptArtifact 
+[create project] artifactregistry-File already exist
+[link billing account] artifactregistry-File 
+[project validation] artifactregistry-repository-19 too long
+[create project] artifactregistry-Repository already exist
+[link billing account] artifactregistry-Repository 
+[project validation] artifactregistry-projectsettings-19 too long
+[create project] artifactregistry-ProjectSettings already exist
+[link billing account] artifactregistry-ProjectSettings 
+[create project] artifactregistry-Tag already exist
+[link billing account] artifactregistry-Tag 
+[create project] artifactregistry-Version already exist
+[link billing account] artifactregistry-Version 
+[project validation] artifactregistry-yumartifact-19 too long
+[create project] artifactregistry-YumArtifact already exist
+[link billing account] artifactregistry-YumArtifact 
+[create project] cloudbuild-Build
+[create project] cloudbuild-Build created
+[link billing account] cloudbuild-Build 
+[create project] cloudbuild-BuildTrigger
+[create project] cloudbuild-BuildTrigger created
+[link billing account] cloudbuild-BuildTrigger 
+[project validation] cloudbuild-githubenterpriseconfig-19 too long
+[create project] cloudbuild-GitHubEnterpriseConfig
+[create project] cloudbuild-GitHubEnterpriseConfig created
+[link billing account] cloudbuild-GitHubEnterpriseConfig 
+[create project] cloudbuild-WorkerPool
+[create project] cloudbuild-WorkerPool created
+[link billing account] cloudbuild-WorkerPool 
+[create project] cloudbuild-Connection
+[create project] cloudbuild-Connection created
+[link billing account] cloudbuild-Connection 
+[create project] cloudbuild-Repository
+[create project] cloudbuild-Repository created
+[link billing account] cloudbuild-Repository 
+[project validation] clouderrorreporting-errorgroup-19 too long
+[create project] clouderrorreporting-ErrorGroup
+[create project] clouderrorreporting-ErrorGroup created
+[link billing account] clouderrorreporting-ErrorGroup 
+[create project] cloudprofiler-Profile
+[create project] cloudprofiler-Profile created
+[link billing account] cloudprofiler-Profile 
+[create project] cloudtrace-Span
+[create project] cloudtrace-Span created
+[link billing account] cloudtrace-Span 
+[create project] remoteworkers-BotSession
+[create project] remoteworkers-BotSession created
+[link billing account] remoteworkers-BotSession 
+[create project] resultstore-Action
+[create project] resultstore-Action created
+[link billing account] resultstore-Action 
+[create project] resultstore-Configuration
+[create project] resultstore-Configuration created
+[link billing account] resultstore-Configuration 
+[project validation] resultstore-configuredtarget-19 too long
+[create project] resultstore-ConfiguredTarget
+[create project] resultstore-ConfiguredTarget created
+[link billing account] resultstore-ConfiguredTarget 
+[project validation] resultstore-downloadmetadata-19 too long
+[create project] resultstore-DownloadMetadata
+[create project] resultstore-DownloadMetadata created
+[link billing account] resultstore-DownloadMetadata 
+[create project] resultstore-FileSet
+[create project] resultstore-FileSet created
+[link billing account] resultstore-FileSet 
+[create project] resultstore-Invocation
+[create project] resultstore-Invocation created
+[link billing account] resultstore-Invocation 
+[create project] resultstore-Target
+[create project] resultstore-Target created
+[link billing account] resultstore-Target 
+[create project] resultstore-UploadMetadata
+[create project] resultstore-UploadMetadata created
+[link billing account] resultstore-UploadMetadata 
+[create project] testing-DeviceSession
+[create project] testing-DeviceSession created
+[link billing account] testing-DeviceSession 
+[create project] example-Book
+[create project] example-Book created
+[link billing account] example-Book 
+[create project] example-Shelf
+[create project] example-Shelf created
+[link billing account] example-Shelf 
+[create project] firestore-Backup
+[create project] firestore-Backup created
+[link billing account] firestore-Backup 
+[create project] firestore-Database
+[create project] firestore-Database created
+[link billing account] firestore-Database 
+[create project] firestore-Field
+[create project] firestore-Field created
+[link billing account] firestore-Field 
+[create project] firestore-Index
+[create project] firestore-Index created
+[link billing account] firestore-Index 
+[create project] firestore-BackupSchedule
+[create project] firestore-BackupSchedule created
+[link billing account] firestore-BackupSchedule 
+[create project] iam-ServiceAccount
+[create project] iam-ServiceAccount created
+[link billing account] iam-ServiceAccount 
+[create project] iam-ServiceAccountKey
+[create project] iam-ServiceAccountKey created
+[link billing account] iam-ServiceAccountKey 
+[create project] iam-WorkloadIdentityPool
+[create project] iam-WorkloadIdentityPool created
+[link billing account] iam-WorkloadIdentityPool 
+[project validation] iam-workloadidentitypoolprovider-19 too long
+[project validation] workloadidentitypoolprovider-19 too long
+[create project] iam-PolicyBinding
+[create project] iam-PolicyBinding created
+[link billing account] iam-PolicyBinding 
+[project validation] iam-principalaccessboundarypolicy-19 too long
+[project validation] principalaccessboundarypolicy-19 too long
+[create project] iam-PolicyBinding already exist
+[link billing account] iam-PolicyBinding 
+[project validation] iam-principalaccessboundarypolicy-19 too long
+[project validation] principalaccessboundarypolicy-19 too long
+[create project] identity-AccessPolicy
+[create project] identity-AccessPolicy created
+[link billing account] identity-AccessPolicy 
+[project validation] identity-gcpuseraccessbinding-19 too long
+[create project] identity-GcpUserAccessBinding
+[create project] identity-GcpUserAccessBinding created
+[link billing account] identity-GcpUserAccessBinding 
+[create project] identity-ServicePerimeter
+[create project] identity-ServicePerimeter created
+[link billing account] identity-ServicePerimeter 
+[create project] logging-LogEntry
+[create project] logging-LogEntry created
+[link billing account] logging-LogEntry 
+[create project] logging-LogBucket
+[create project] logging-LogBucket created
+[link billing account] logging-LogBucket 
+[create project] logging-LogView
+[create project] logging-LogView created
+[link billing account] logging-LogView 
+[create project] logging-LogSink
+[create project] logging-LogSink created
+[link billing account] logging-LogSink 
+[create project] logging-Link
+[create project] logging-Link created
+[link billing account] logging-Link 
+[create project] logging-LogExclusion
+[create project] logging-LogExclusion created
+[link billing account] logging-LogExclusion 
+[create project] logging-CmekSettings
+[create project] logging-CmekSettings created
+[link billing account] logging-CmekSettings 
+[create project] logging-Settings
+[create project] logging-Settings created
+[link billing account] logging-Settings 
+[create project] logging-LogMetric
+[create project] logging-LogMetric created
+[link billing account] logging-LogMetric 
+[create project] monitoring-AlertChart
+[create project] monitoring-AlertChart created
+[link billing account] monitoring-AlertChart 
+[create project] monitoring-Dashboard
+[create project] monitoring-Dashboard created
+[link billing account] monitoring-Dashboard 
+[create project] monitoring-MetricsScope
+[create project] monitoring-MetricsScope created
+[link billing account] monitoring-MetricsScope 
+[project validation] monitoring-monitoredproject-19 too long
+[create project] monitoring-MonitoredProject
+[create project] monitoring-MonitoredProject created
+[link billing account] monitoring-MonitoredProject 
+[create project] monitoring-AlertPolicy
+[create project] monitoring-AlertPolicy created
+[link billing account] monitoring-AlertPolicy 
+[create project] monitoring-AlertPolicy already exist
+[link billing account] monitoring-AlertPolicy 
+[create project] monitoring-Group
+[create project] monitoring-Group created
+[link billing account] monitoring-Group 
+[project validation] monitoring-notificationchanneldescriptor-19 too long
+[project validation] notificationchanneldescriptor-19 too long
+[project validation] monitoring-notificationchannel-19 too long
+[create project] monitoring-NotificationChannel
+[create project] monitoring-NotificationChannel created
+[link billing account] monitoring-NotificationChannel 
+[create project] monitoring-Service
+[create project] monitoring-Service created
+[link billing account] monitoring-Service 
+[project validation] monitoring-servicelevelobjective-19 too long
+[create project] monitoring-ServiceLevelObjective
+[create project] monitoring-ServiceLevelObjective created
+[link billing account] monitoring-ServiceLevelObjective 
+[create project] monitoring-Snooze
+[create project] monitoring-Snooze created
+[link billing account] monitoring-Snooze 
+[project validation] monitoring-uptimecheckconfig-19 too long

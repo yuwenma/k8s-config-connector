@@ -196,7 +196,7 @@ func run(ctx context.Context) error {
 	defer chatSession.Close()
 
 	if err := ui.Run(); err != nil {
-		return fmt.Errorf("running tview: %w", err)
+		return fmt.Errorf("running %T: %w", ui, err)
 	}
 
 	return nil
