@@ -1,0 +1,367 @@
+[create project] managedidentities-Domain already exist
+[link billing account] managedidentities-Domain 
+[ManagedidentitiesDomain] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/managedidentities-domain-19/billingInfo
+projectId: managedidentities-domain-19
+[create project] managedidentities-Domain already exist
+[link billing account] managedidentities-Domain 
+[ManagedidentitiesDomain] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/managedidentities-domain-19/billingInfo
+projectId: managedidentities-domain-19
+[create project] managedkafka-Cluster
+[create project] managedkafka-Cluster created
+[link billing account] managedkafka-Cluster 
+[ManagedkafkaCluster] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/managedkafka-cluster-19/billingInfo
+projectId: managedkafka-cluster-19
+[create project] managedkafka-Topic
+[create project] managedkafka-Topic created
+[link billing account] managedkafka-Topic 
+[ManagedkafkaTopic] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/managedkafka-topic-19/billingInfo
+projectId: managedkafka-topic-19
+[create project] managedkafka-ConsumerGroup
+[create project] managedkafka-ConsumerGroup created
+[link billing account] managedkafka-ConsumerGroup 
+[ManagedkafkaConsumerGroup] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/managedkafka-consumergroup-19/billingInfo
+projectId: managedkafka-consumergroup-19
+[create project] memcache-Instance
+[create project] memcache-Instance created
+[link billing account] memcache-Instance 
+[create project] managedidentities-Domain already exist
+[link billing account] managedidentities-Domain 
+[ManagedidentitiesDomain] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/managedidentities-domain-19/billingInfo
+projectId: managedidentities-domain-19
+[create project] managedidentities-Domain already exist
+[link billing account] managedidentities-Domain 
+[ManagedidentitiesDomain] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/managedidentities-domain-19/billingInfo
+projectId: managedidentities-domain-19
+[create project] managedkafka-Cluster already exist
+[link billing account] managedkafka-Cluster 
+[ManagedkafkaCluster] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/managedkafka-cluster-19/billingInfo
+projectId: managedkafka-cluster-19
+[create project] managedkafka-Topic already exist
+[link billing account] managedkafka-Topic 
+[ManagedkafkaTopic] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/managedkafka-topic-19/billingInfo
+projectId: managedkafka-topic-19
+[create project] managedkafka-ConsumerGroup already exist
+[link billing account] managedkafka-ConsumerGroup 
+[ManagedkafkaConsumerGroup] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/managedkafka-consumergroup-19/billingInfo
+projectId: managedkafka-consumergroup-19
+[create project] memcache-Instance already exist
+[link billing account] memcache-Instance 
+[MemcacheInstance] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/memcache-instance-19/billingInfo
+projectId: memcache-instance-19
+[create project] memcache-Instance already exist
+[link billing account] memcache-Instance 
+[MemcacheInstance] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/memcache-instance-19/billingInfo
+projectId: memcache-instance-19
+[create project] memorystore-Instance
+[create project] memorystore-Instance created
+[link billing account] memorystore-Instance 
+[MemorystoreInstance] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/memorystore-instance-19/billingInfo
+projectId: memorystore-instance-19
+[project validation] memorystore-certificateauthority-19 too long
+[create project] memorystore-CertificateAuthority
+[create project] memorystore-CertificateAuthority created
+[link billing account] memorystore-CertificateAuthority 
+[MemorystoreCertificateAuthority] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/certificateauthority-19/billingInfo
+projectId: certificateauthority-19
+[create project] memorystore-Instance already exist
+[link billing account] memorystore-Instance 
+[MemorystoreInstance] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/memorystore-instance-19/billingInfo
+projectId: memorystore-instance-19
+[project validation] memorystore-certificateauthority-19 too long
+[create project] memorystore-CertificateAuthority already exist
+[link billing account] memorystore-CertificateAuthority 
+[create project] metastore-Service
+[create project] metastore-Service created
+[link billing account] metastore-Service 
+[MetastoreService] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/metastore-service-19/billingInfo
+projectId: metastore-service-19
+[create project] metastore-MetadataImport
+[create project] metastore-MetadataImport created
+[link billing account] metastore-MetadataImport 
+[MetastoreMetadataImport] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/metastore-metadataimport-19/billingInfo
+projectId: metastore-metadataimport-19
+[create project] metastore-Backup
+[create project] metastore-Backup created
+[link billing account] metastore-Backup 
+[MetastoreBackup] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/metastore-backup-19/billingInfo
+projectId: metastore-backup-19
+[create project] metastore-Federation
+[create project] metastore-Federation created
+[link billing account] metastore-Federation 
+[MetastoreFederation] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/metastore-federation-19/billingInfo
+projectId: metastore-federation-19
+[create project] metastore-Service already exist
+[link billing account] metastore-Service 
+[MetastoreService] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/metastore-service-19/billingInfo
+projectId: metastore-service-19
+[create project] metastore-MetadataImport already exist
+[link billing account] metastore-MetadataImport 
+[MetastoreMetadataImport] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/metastore-metadataimport-19/billingInfo
+projectId: metastore-metadataimport-19
+[create project] metastore-Backup already exist
+[link billing account] metastore-Backup 
+[MetastoreBackup] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/metastore-backup-19/billingInfo
+projectId: metastore-backup-19
+[create project] metastore-Federation already exist
+[link billing account] metastore-Federation 
+[MetastoreFederation] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/metastore-federation-19/billingInfo
+projectId: metastore-federation-19
+[create project] migrationcenter-Asset
+[create project] migrationcenter-Asset created
+[link billing account] migrationcenter-Asset 
+[MigrationcenterAsset] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/migrationcenter-asset-19/billingInfo
+projectId: migrationcenter-asset-19
+[project validation] migrationcenter-preferenceset-19 too long
+[create project] migrationcenter-PreferenceSet
+[create project] migrationcenter-PreferenceSet created
+[link billing account] migrationcenter-PreferenceSet 
+[MigrationcenterPreferenceSet] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/preferenceset-19/billingInfo
+projectId: preferenceset-19
+[create project] migrationcenter-ImportJob
+[create project] migrationcenter-ImportJob created
+[link billing account] migrationcenter-ImportJob 
+[MigrationcenterImportJob] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/migrationcenter-importjob-19/billingInfo
+projectId: migrationcenter-importjob-19
+[project validation] migrationcenter-importdatafile-19 too long
+[create project] migrationcenter-ImportDataFile
+[create project] migrationcenter-ImportDataFile created
+[link billing account] migrationcenter-ImportDataFile 
+[MigrationcenterImportDataFile] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/importdatafile-19/billingInfo
+projectId: importdatafile-19
+[create project] migrationcenter-Group
+[create project] migrationcenter-Group created
+[link billing account] migrationcenter-Group 
+[MigrationcenterGroup] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/migrationcenter-group-19/billingInfo
+projectId: migrationcenter-group-19
+[create project] migrationcenter-ErrorFrame
+[create project] migrationcenter-ErrorFrame created
+[link billing account] migrationcenter-ErrorFrame 
+[MigrationcenterErrorFrame] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/migrationcenter-errorframe-19/billingInfo
+projectId: migrationcenter-errorframe-19
+[create project] migrationcenter-Source
+[create project] migrationcenter-Source created
+[link billing account] migrationcenter-Source 
+[MigrationcenterSource] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/migrationcenter-source-19/billingInfo
+projectId: migrationcenter-source-19
+[project validation] migrationcenter-reportconfig-19 too long
+[create project] migrationcenter-ReportConfig
+[create project] migrationcenter-ReportConfig created
+[link billing account] migrationcenter-ReportConfig 
+[MigrationcenterReportConfig] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/reportconfig-19/billingInfo
+projectId: reportconfig-19
+[create project] migrationcenter-Report
+[create project] migrationcenter-Report created
+[link billing account] migrationcenter-Report 
+[MigrationcenterReport] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/migrationcenter-report-19/billingInfo
+projectId: migrationcenter-report-19
+[create project] migrationcenter-Settings
+[create project] migrationcenter-Settings created
+[link billing account] migrationcenter-Settings 
+[MigrationcenterSettings] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/migrationcenter-settings-19/billingInfo
+projectId: migrationcenter-settings-19
+[create project] modelarmor-Template
+[create project] modelarmor-Template created
+[link billing account] modelarmor-Template 
+[ModelarmorTemplate] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/modelarmor-template-19/billingInfo
+projectId: modelarmor-template-19
+[create project] modelarmor-FloorSetting
+[create project] modelarmor-FloorSetting created
+[link billing account] modelarmor-FloorSetting 
+[ModelarmorFloorSetting] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/modelarmor-floorsetting-19/billingInfo
+projectId: modelarmor-floorsetting-19
+[create project] netapp-ActiveDirectory
+[create project] netapp-ActiveDirectory created
+[link billing account] netapp-ActiveDirectory 
+[NetappActiveDirectory] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/netapp-activedirectory-19/billingInfo
+projectId: netapp-activedirectory-19
+[create project] netapp-Backup
+[create project] netapp-Backup created
+[link billing account] netapp-Backup 
+[NetappBackup] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/netapp-backup-19/billingInfo
+projectId: netapp-backup-19
+[create project] netapp-BackupPolicy
+[create project] netapp-BackupPolicy created
+[link billing account] netapp-BackupPolicy 
+[NetappBackupPolicy] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/netapp-backuppolicy-19/billingInfo
+projectId: netapp-backuppolicy-19
+[create project] netapp-BackupVault
+[create project] netapp-BackupVault created
+[link billing account] netapp-BackupVault 
+[NetappBackupVault] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/netapp-backupvault-19/billingInfo
+projectId: netapp-backupvault-19
+[create project] netapp-KmsConfig
+[create project] netapp-KmsConfig created
+[link billing account] netapp-KmsConfig 
+[NetappKmsConfig] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/netapp-kmsconfig-19/billingInfo
+projectId: netapp-kmsconfig-19
+[create project] netapp-QuotaRule
+[create project] netapp-QuotaRule created
+[link billing account] netapp-QuotaRule 
+[NetappQuotaRule] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/netapp-quotarule-19/billingInfo
+projectId: netapp-quotarule-19
+[create project] netapp-Replication
+[create project] netapp-Replication created
+[link billing account] netapp-Replication 
+[NetappReplication] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/netapp-replication-19/billingInfo
+projectId: netapp-replication-19
+[create project] netapp-Snapshot
+[create project] netapp-Snapshot created
+[link billing account] netapp-Snapshot 
+[NetappSnapshot] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/netapp-snapshot-19/billingInfo
+projectId: netapp-snapshot-19
+[create project] netapp-StoragePool
+[create project] netapp-StoragePool created
+[link billing account] netapp-StoragePool 
+[NetappStoragePool] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/netapp-storagepool-19/billingInfo
+projectId: netapp-storagepool-19
+[create project] netapp-Volume
+[create project] netapp-Volume created
+[link billing account] netapp-Volume 
+[NetappVolume] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/netapp-volume-19/billingInfo
+projectId: netapp-volume-19
+[create project] networkconnectivity-Hub
+[create project] networkconnectivity-Hub created
+[link billing account] networkconnectivity-Hub 
+[NetworkconnectivityHub] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/networkconnectivity-hub-19/billingInfo
+projectId: networkconnectivity-hub-19
+[create project] networkconnectivity-Spoke
+[create project] networkconnectivity-Spoke created
+[link billing account] networkconnectivity-Spoke 
+[NetworkconnectivitySpoke] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/networkconnectivity-spoke-19/billingInfo
+projectId: networkconnectivity-spoke-19
+[project validation] networkconnectivity-routetable-19 too long
+[create project] networkconnectivity-RouteTable
+[create project] networkconnectivity-RouteTable created
+[link billing account] networkconnectivity-RouteTable 
+[NetworkconnectivityRouteTable] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/routetable-19/billingInfo
+projectId: routetable-19
+[create project] networkconnectivity-Route
+[create project] networkconnectivity-Route created
+[link billing account] networkconnectivity-Route 
+[NetworkconnectivityRoute] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/networkconnectivity-route-19/billingInfo
+projectId: networkconnectivity-route-19
+[create project] networkconnectivity-Group
+[create project] networkconnectivity-Group created
+[link billing account] networkconnectivity-Group 
+[NetworkconnectivityGroup] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/networkconnectivity-group-19/billingInfo
+projectId: networkconnectivity-group-19
+[project validation] networkconnectivity-policybasedroute-19 too long
+[create project] networkconnectivity-PolicyBasedRoute
+[create project] networkconnectivity-PolicyBasedRoute created
+[link billing account] networkconnectivity-PolicyBasedRoute 
+[NetworkconnectivityPolicyBasedRoute] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/policybasedroute-19/billingInfo
+projectId: policybasedroute-19
+[project validation] networkmanagement-connectivitytest-19 too long
+[create project] networkmanagement-ConnectivityTest
+[create project] networkmanagement-ConnectivityTest created
+[link billing account] networkmanagement-ConnectivityTest 
+[NetworkmanagementConnectivityTest] pipeline: billingAccountName: billingAccounts/012914-9E95D1-A1EEE8
+billingEnabled: true
+name: projects/connectivitytest-19/billingInfo
+projectId: connectivitytest-19
+[project validation] networkmanagement-vpcflowlogsconfig-19 too long
+[create project] networkmanagement-VpcFlowLogsConfig
+[create project] networkmanagement-VpcFlowLogsConfig created
+[link billing account] networkmanagement-VpcFlowLogsConfig 

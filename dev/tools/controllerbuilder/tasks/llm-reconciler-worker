@@ -1,0 +1,161 @@
+
+#!/bin/bash
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Iterate 800 feature branch
+
+# for each feature branch
+
+# OPTIONAL: User add some tests (simple, general ones, such as linter, or compiler)
+# Run gemini-script-1 to improve api and mapper
+# Run gemini-script-2 to add fuzz test
+# Run fuzz test to verify api and mapper
+# Pass create PR, fail record result in file
+
+# Run gemini-script-3 to improve controller
+# Run gemini-script-4 to generate test data
+# Run real-gcp test to verify controller
+# Pass update PR, fail record result in file
+
+# Run gemini-script-5 to create mockgcp
+# Run mock-gcp test to verify mock
+# Pass update PR, and assign Yuwen to review.
+
+#!/bin/bash
+set -e
+set -x
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+CB_DIR=dev/tools/controllerbuilder
+
+# TODO: remove once the code is merged
+UNCOMMIT_ROOT="/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector"
+
+INS_ADD_TYPE=cmd/codebot/examples/reconciler-case/1-type.txt
+INS_ADD_CONTROLLER=cmd/codebot/examples/reconciler-case/2-controller.txt
+VERIFY=cmd/codebot/examples/reconciler-case/verify.md
+
+FEATURE_BRANCH_PREFIX="resource-"
+BRANCH=$(git branch --show)
+
+# This script should be run under the mock feature branch.
+# Verify the git repo right resource
+# if [[ "$BRANCH" != ${FEATURE_BRANCH_PREFIX}* ]]; then
+#     echo "[ERROR] git HEAD is not in a feature branch"
+#     exit 1
+# fi 
+
+# SERVICE="${RESOURCE%-*}"
+
+RESOURCE=${BRANCH#"${FEATURE_BRANCH_PREFIX}"}
+echo "LLM to add reconciler for resource ${RESOURCE}"
+PASS_LOG="${REPO_ROOT}/llm_reconciler_${RESOURCE}-pass.log" 
+FAIL_LOG="${REPO_ROOT}/llm_reconciler_${RESOURCE}-failure.log"
+LLM_LOG="${REPO_ROOT}/llm_reconciler_${RESOURCE}-codebot.log"
+
+function codebot() {
+    instruction_path=${REPO_ROOT}/${CB_DIR}/$1
+    if [[ -d "$instruction_path" ]]; then
+        original_path=${UNCOMMIT_ROOT}/${CB_DIR}/$1
+        cp "${original_path}" "${instruction_path}"
+    fi
+
+    if [[ $? -ne 0 ]]; then
+        echo "[set metadata] failed on ${RESOURCE}" >> "${FAIL_LOG}"
+        exit 1
+    fi
+
+    if $2 ; then
+        go run "${REPO_ROOT}"/dev/tools/controllerbuilder/cmd/codebot  --proto-dir "${REPO_ROOT}"/.build/third_party/googleapis/ < "$instruction_path" | while IFS= read -r line; do
+            echo "$line"
+        done
+    
+    else
+        go run "${REPO_ROOT}"/dev/tools/controllerbuilder/cmd/codebot < "$instruction_path" | while IFS= read -r line; do
+            echo "$line"
+        done
+    fi 
+    
+    echo "[llm codebot] $(basename "$instruction_path"): ${output}" >> "${LLM_LOG}"
+    if [[ $? -ne 0 ]]; then
+        echo "[llm codebot] failed on $(basename "$instruction_path")" >> "${FAIL_LOG}"
+        exit 1
+    fi
+    return 0
+}
+
+function generate_crds() {
+    if dev/tasks/generate-crds
+    then
+        echo "[generate crd] failed" >> "${FAIL_LOG}"
+        exit 1
+    fi
+}   
+
+retries=1
+
+function run_worker() {
+    echo "[current directory] ${REPO_ROOT}/mockgcp" 
+    
+    for ((i=retries; i>0; i--)); do
+
+        # Verify reconciler
+        if ! codebot ${VERIFY}
+        then
+            echo "[llm codebot] Verified" >> "${PASS_LOG}"
+            return 0
+        fi
+
+        # Step 1. Use LLM to create test example in testdata/<resource>/crud/script.yaml
+        if codebot "${INS_ADD_TYPE}" true
+        then
+            continue
+        fi
+        echo "[llm codebot] $(basename "$INS_ADD_TYPE")" >> "${PASS_LOG}"
+
+        # Step 2. Generate CRD
+        if generate_crds
+        then
+            continue
+        fi
+        echo "[kcc task] generate CRDS" >> "${PASS_LOG}"
+
+        # Step 3. Add controller
+        This can be also be done by codebot. 
+        codebot ${INS_ADD_CONTROLLER}
+        if record_real_log
+        then
+            continue
+        fi
+        echo "[llm codebot] improve controller " >> "${PASS_LOG}"
+
+    done
+
+    return 1
+}
+
+function push_pr() {
+    return 0
+}
+
+# Call LLM codebot to generate reconciler code
+git fetch --depth=2
+if ! run_worker
+then
+    push_pr 
+else 
+    echo "Unfortunately, this run failed with ${retries} attempts." 
+    exit 1
+fi

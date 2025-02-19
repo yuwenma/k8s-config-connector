@@ -1,0 +1,132 @@
+[ManagedidentitiesDomain] git-commit add basic ManagedidentitiesDomain reconciler
+[ManagedkafkaCluster] git-commit add basic ManagedkafkaCluster reconciler
+[ManagedkafkaTopic] git-commit add basic ManagedkafkaTopic reconciler
+[ManagedkafkaConsumerGroup] git-commit [llm] fix gcp imports for ManagedkafkaConsumerGroup
+[ManagedidentitiesDomain] git-commit [llm] fix gobuilds for ManagedidentitiesDomain
+[MemcacheInstance] git-commit add basic MemcacheInstance reconciler
+[ManagedidentitiesDomain] git-commit add basic ManagedidentitiesDomain reconciler
+[MemorystoreInstance] git-commit [llm] fix gcp imports for MemorystoreInstance
+[MemorystoreCertificateAuthority] git-commit [llm] fix gcp imports for MemorystoreCertificateAuthority
+[MemcacheInstance] git-commit [llm] fix gobuilds for MemcacheInstance
+[MemorystoreCertificateAuthority] git-commit [llm] fix gcp imports for MemorystoreCertificateAuthority
+[MemcacheInstance] git-commit add basic MemcacheInstance reconciler
+[MemorystoreInstance] git-commit [llm] fix gcp imports for MemorystoreInstance
+[MetastoreService] git-commit add basic MetastoreService reconciler
+[MetastoreService] git-commit add basic MetastoreService reconciler
+[MetastoreMetadataImport] git-commit add basic MetastoreMetadataImport reconciler
+[MetastoreMetadataImport] git-commit add basic MetastoreMetadataImport reconciler
+[MetastoreBackup] git-commit add basic MetastoreBackup reconciler
+[MetastoreBackup] git-commit add basic MetastoreBackup reconciler
+[MetastoreFederation] git-commit add basic MetastoreFederation reconciler
+[MetastoreFederation] git-commit add basic MetastoreFederation reconciler
+[MetastoreService] git-commit add basic MetastoreService reconciler
+[MetastoreMetadataImport] git-commit add basic MetastoreMetadataImport reconciler
+[ManagedkafkaCluster] git-commit [llm] fix gobuilds for ManagedkafkaCluster
+[MetastoreBackup] git-commit add basic MetastoreBackup reconciler
+[MetastoreFederation] git-commit add basic MetastoreFederation reconciler
+[MemcacheInstance] git-commit [llm] fix gobuilds for MemcacheInstance
+[MemcacheInstance] git-commit add basic MemcacheInstance reconciler
+[MigrationcenterAsset] git-commit add basic MigrationcenterAsset reconciler
+[MigrationcenterAsset] git-commit add basic MigrationcenterAsset reconciler
+[ManagedkafkaTopic] git-commit [llm] fix gobuilds for ManagedkafkaTopic
+[ManagedkafkaTopic] git-commit add basic ManagedkafkaTopic reconciler
+[MetastoreFederation] git-commit [llm] fix gobuilds for MetastoreFederation
+[MigrationcenterPreferenceSet] git-commit add basic MigrationcenterPreferenceSet reconciler
+[MetastoreFederation] git-commit add basic MetastoreFederation reconciler
+[MemcacheInstance] git-commit [llm] fix gobuilds for MemcacheInstance
+[MigrationcenterPreferenceSet] git-commit add basic MigrationcenterPreferenceSet reconciler
+[MetastoreMetadataImport] git-commit [llm] fix gobuilds for MetastoreMetadataImport
+[MigrationcenterImportJob] git-commit add basic MigrationcenterImportJob reconciler
+[MemorystoreInstance] git-commit [llm] fix gobuilds for MemorystoreInstance
+[MigrationcenterAsset] git-commit [llm] fix gobuilds for MigrationcenterAsset
+[MetastoreMetadataImport] git-commit add basic MetastoreMetadataImport reconciler
+[MigrationcenterImportJob] git-commit add basic MigrationcenterImportJob reconciler
+[MigrationcenterImportDataFile] git-commit add basic MigrationcenterImportDataFile reconciler
+[MigrationcenterImportDataFile] git-commit add basic MigrationcenterImportDataFile reconciler
+[MemorystoreInstance] git-commit [llm] fix gcp imports for MemorystoreInstance
+[ManagedkafkaConsumerGroup] git-commit [llm] fix gobuilds for ManagedkafkaConsumerGroup
+[MigrationcenterGroup] git-commit add basic MigrationcenterGroup reconciler
+[ManagedkafkaConsumerGroup] git-commit add basic ManagedkafkaConsumerGroup reconciler
+[MemorystoreInstance] git-commit [llm] fix gobuilds for MemorystoreInstance
+[MigrationcenterErrorFrame] git-commit add basic MigrationcenterErrorFrame reconciler
+[MemorystoreInstance] git-commit [llm] fix gcp imports for MemorystoreInstance
+[MigrationcenterErrorFrame] git-commit add basic MigrationcenterErrorFrame reconciler
+[MigrationcenterSource] git-commit add basic MigrationcenterSource reconciler
+[ManagedkafkaCluster] git-commit [llm] fix gobuilds for ManagedkafkaCluster
+[MigrationcenterReportConfig] git-commit add basic MigrationcenterReportConfig reconciler
+[MigrationcenterImportJob] git-commit [llm] fix gobuilds for MigrationcenterImportJob
+[ManagedkafkaCluster] git-commit add basic ManagedkafkaCluster reconciler
+[MetastoreMetadataImport] git-commit [llm] fix gobuilds for MetastoreMetadataImport
+[MigrationcenterReportConfig] git-commit add basic MigrationcenterReportConfig reconciler
+[ManagedidentitiesDomain] git-commit [llm] fix gobuilds for ManagedidentitiesDomain
+[MigrationcenterReport] git-commit add basic MigrationcenterReport reconciler
+[MetastoreService] git-commit [llm] fix gobuilds for MetastoreService
+[MigrationcenterAsset] git-commit [llm] fix gobuilds for MigrationcenterAsset
+[ManagedidentitiesDomain] git-commit add basic ManagedidentitiesDomain reconciler
+[MetastoreService] git-commit add basic MetastoreService reconciler
+[MigrationcenterReport] git-commit add basic MigrationcenterReport reconciler
+[MigrationcenterSettings] git-commit add basic MigrationcenterSettings reconciler
+[MigrationcenterPreferenceSet] git-commit [llm] fix gobuilds for MigrationcenterPreferenceSet
+[MigrationcenterReportConfig] git-commit [llm] fix gobuilds for MigrationcenterReportConfig
+[MigrationcenterPreferenceSet] passed after 4 attempts
+[ModelarmorTemplate] git-commit add basic ModelarmorTemplate reconciler
+[ManagedkafkaCluster] git-commit [llm] fix gobuilds for ManagedkafkaCluster
+[ModelarmorTemplate] git-commit add basic ModelarmorTemplate reconciler
+[ModelarmorFloorSetting] git-commit add basic ModelarmorFloorSetting reconciler
+[ModelarmorFloorSetting] git-commit add basic ModelarmorFloorSetting reconciler
+[MetastoreBackup] git-commit [llm] fix gobuilds for MetastoreBackup
+[NetappActiveDirectory] git-commit add basic NetappActiveDirectory reconciler
+[MetastoreBackup] git-commit add basic MetastoreBackup reconciler
+[NetappBackup] git-commit add basic NetappBackup reconciler
+[MigrationcenterSource] git-commit [llm] fix gobuilds for MigrationcenterSource
+[MigrationcenterImportDataFile] git-commit [llm] fix gobuilds for MigrationcenterImportDataFile
+[NetappBackupPolicy] git-commit add basic NetappBackupPolicy reconciler
+[MigrationcenterImportDataFile] passed after 3 attempts
+[MigrationcenterSource] passed after 4 attempts
+[MigrationcenterReport] git-commit [llm] fix gobuilds for MigrationcenterReport
+[MetastoreBackup] git-commit [llm] fix gobuilds for MetastoreBackup
+[NetappBackupVault] git-commit add basic NetappBackupVault reconciler
+[NetappBackupVault] git-commit [llm] fix gcp imports for NetappBackupVault
+[NetappKmsConfig] git-commit add basic NetappKmsConfig reconciler
+[NetappBackupVault] git-commit add basic NetappBackupVault reconciler
+[ManagedidentitiesDomain] git-commit [llm] fix gobuilds for ManagedidentitiesDomain
+[ManagedidentitiesDomain] git-commit add basic ManagedidentitiesDomain reconciler
+[MigrationcenterAsset] git-commit [llm] fix gobuilds for MigrationcenterAsset
+[NetappQuotaRule] passed after 1 attempts
+[MigrationcenterGroup] git-commit [llm] fix gobuilds for MigrationcenterGroup
+[NetappReplication] git-commit add basic NetappReplication reconciler
+[NetappReplication] git-commit add basic NetappReplication reconciler
+[NetappKmsConfig] git-commit [llm] fix gobuilds for NetappKmsConfig
+[NetappSnapshot] git-commit add basic NetappSnapshot reconciler
+[MemorystoreInstance] git-commit [llm] fix gobuilds for MemorystoreInstance
+[MemorystoreInstance] git-commit [llm] fix gcp imports for MemorystoreInstance
+[NetappStoragePool] git-commit add basic NetappStoragePool reconciler
+[MigrationcenterGroup] git-commit [llm] fix gobuilds for MigrationcenterGroup
+[ManagedkafkaTopic] git-commit [llm] fix gobuilds for ManagedkafkaTopic
+[ManagedkafkaTopic] git-commit [llm] fix gcp imports for ManagedkafkaTopic
+[NetappVolume] git-commit add basic NetappVolume reconciler
+[NetappVolume] git-commit add basic NetappVolume reconciler
+[NetappBackup] git-commit [llm] fix gobuilds for NetappBackup
+[NetworkconnectivityHub] git-commit [llm] fix gcp imports for NetworkconnectivityHub
+[NetworkconnectivityHub] git-commit [llm] fix gcp imports for NetworkconnectivityHub
+[NetappVolume] git-commit [llm] fix gobuilds for NetappVolume
+[NetworkconnectivitySpoke] git-commit [llm] fix gcp imports for NetworkconnectivitySpoke
+[NetworkconnectivitySpoke] git-commit [llm] fix gcp imports for NetworkconnectivitySpoke
+[NetappBackup] passed after 4 attempts
+[NetworkconnectivityRouteTable] git-commit [llm] fix gcp imports for NetworkconnectivityRouteTable
+[NetworkconnectivityRoute] git-commit [llm] fix gcp imports for NetworkconnectivityRoute
+[MetastoreService] git-commit [llm] fix gobuilds for MetastoreService
+[NetworkconnectivityRoute] git-commit [llm] fix gcp imports for NetworkconnectivityRoute
+[NetworkconnectivityGroup] git-commit [llm] fix gcp imports for NetworkconnectivityGroup
+[NetworkconnectivityGroup] git-commit [llm] fix gcp imports for NetworkconnectivityGroup
+[NetappKmsConfig] git-commit [llm] fix gobuilds for NetappKmsConfig
+[MetastoreBackup] git-commit [llm] fix gobuilds for MetastoreBackup
+[NetworkconnectivityPolicyBasedRoute] git-commit [llm] fix gcp imports for NetworkconnectivityPolicyBasedRoute
+[NetworkconnectivityPolicyBasedRoute] git-commit [llm] fix gcp imports for NetworkconnectivityPolicyBasedRoute
+[MigrationcenterSettings] git-commit [llm] fix gobuilds for MigrationcenterSettings
+[NetworkmanagementConnectivityTest] git-commit add basic NetworkmanagementConnectivityTest reconciler
+[MigrationcenterPreferenceSet] git-commit make read-pr
+[MigrationcenterPreferenceSet] created PR: Warning: 1 uncommitted change
+a pull request for branch "resource-migrationcenter-PreferenceSet" into branch "master" already exists:
+https://github.com/GoogleCloudPlatform/k8s-config-connector/pull/3709
+[MigrationcenterPreferenceSet] ALL PASS

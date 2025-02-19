@@ -107,7 +107,6 @@ func (c *Chat) SendMessage(ctx context.Context, userParts ...string) error {
 		klog.Infof("processing candidate %+v", candidate)
 
 		var functionResponses []llm.FunctionCallResult
-
 		for _, part := range candidate.Parts() {
 			if text, ok := part.AsText(); ok {
 				s := string(text)

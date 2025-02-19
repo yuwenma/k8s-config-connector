@@ -1,0 +1,206 @@
+
+#!/bin/bash
+# Copyright 2024 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Iterate 800 feature branch
+
+# for each feature branch
+
+# OPTIONAL: User add some tests (simple, general ones, such as linter, or compiler)
+# Run gemini-script-1 to improve api and mapper
+# Run gemini-script-2 to add fuzz test
+# Run fuzz test to verify api and mapper
+# Pass create PR, fail record result in file
+
+# Run gemini-script-3 to improve controller
+# Run gemini-script-4 to generate test data
+# Run real-gcp test to verify controller
+# Pass update PR, fail record result in file
+
+# Run gemini-script-5 to create mockgcp
+# Run mock-gcp test to verify mock
+# Pass update PR, and assign Yuwen to review.
+
+#!/bin/bash
+set -e
+set -x
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+TASK_DIR=${REPO_ROOT}/dev/tools/controllerbuilder/tasks
+
+# List the resource from a YAML file with delimiter "---"
+# gcloud_list="${REPO_ROOT}/gcloud-list-test.txt" 
+gcloud_list="${REPO_ROOT}/gcloud-list.txt" 
+success_list="${REPO_ROOT}/gcloud-llm-1-create-test-pass.log" 
+failed_list="${REPO_ROOT}/gcloud-llm-1-create-test-full.log"
+
+
+# TODO: It is cleaner and saver to use different repos for tooling code and resource code.
+DEST_REPO="${HOME}/go/src/github.com/GoogleCloudPlatform/k8s-config-connector-back"
+
+log_debug() {
+  local message="$1"
+  echo "[DEBUG] $(date): $message" >> iterate-800-mock-debug.log
+}
+
+function verify_gcloud() {
+    return 0
+    feedback=$(${TASK_DIR}/mock-2-verify_gcloud "$1" "$2" ${REPO_ROOT} 2>&1)
+    if [[ $? -ne 0 ]]; then
+        echo $feedback
+        return 1
+    fi 
+    return 0
+}
+
+function llm_add_gcloud_sh() {
+
+    retries=1
+    while [[ $retries -ge 0 ]]; do
+        # TODO verify
+        
+        # verify_gcloud $1
+        # if [[ $? -eq 0 ]]; then
+        #     return 0
+        # fi
+        log=$(${TASK_DIR}/mock-1-llm_add_gcloud_sh ${REPO_ROOT} "${1}" 2>&1)
+        if [[ $? -ne 0 ]]; then
+            return 1
+        else
+            log_debug  "llm_add_gcloud_sh: ${log}"
+            echo  $log
+            return 0
+        fi
+        ((retries--))
+    done
+    return 1
+}
+
+function set_git() {
+    cd ${DEST_REPO}
+    # TODO check if current is clean
+    git checkout upstream/master
+    git checkout -B ${1}
+    cd ${REPO_ROOT}
+}
+
+function git_commit() {
+    branch=mock-llm-$(echo "$1"| tr ' ' '-') # "gcloud spanner instance" uses branch "mock-llm-spanner-instance" 
+    msg=${4:-}
+
+    if [[ -d "$string" ]]; then
+        mkdir -p "${DEST_REPO}/mockgcp/$2"
+    else
+        # Copy file from src repo to dest repo. because code bot cannot run in another dir.
+        mkdir -p "${DEST_REPO}/mockgcp/$(dirname $2)"
+        cp -rf ${REPO_ROOT}/mockgcp/${2}  ${DEST_REPO}/mockgcp/${2}
+    fi 
+
+    cd ${DEST_REPO}
+    git add mockgcp/${2}
+    git commit -m "${msg}"
+
+    if [[ ${3:-} -eq 1 ]]; then # push to remote
+        git push upstream ${branch}
+    fi
+
+    cd ${REPO_ROOT}
+}
+
+function capture_real_log() {
+    cd ${DEST_REPO}
+    branch=mock-llm-$(echo "$1"| tr ' ' '-') # "gcloud spanner instance" uses branch "mock-llm-spanner-instance" 
+    test_file_name=$(git show --pretty="format:" --name-only HEAD | tail -1)
+    
+    if [[ $? -ne 0 ]]; then
+        echo $1 git-commt does not have test file 1: ${branch} >> ${failed_list}
+    fi 
+
+    test_crud_path=$(dirname $test_file_name)
+    if [[ $test_crud_path != "*/crud" ]]; then
+        echo $1 git-commt does not have test file 2: ${branch} >> ${failed_list}
+    fi
+    
+    WRITE_GOLDEN_OUTPUT=1 E2E_GCP_TARGET=real go test ${DEST_REPO}/mockgcp/mockgcptests -run TestScripts/${test_crud_path}
+    cd ${REPO_ROOT}
+}
+
+while IFS= read -r line || [[ -n $line ]] ; do
+
+    if [[ "$line" == "gcloud alpha "* ]]; then
+        continue
+    elif  [[ "$line" == "gcloud beta "* ]]; then
+        continue
+    fi
+    
+    resource="${line#gcloud }"
+    branch=mock-llm-$(echo "${resource}"| tr ' ' '-') # "gcloud spanner instance" uses branch "mock-llm-spanner-instance" 
+    
+    set_git ${branch}
+
+    retries=0
+    while [[ $retries -ge 0 ]]; do
+
+        # Step 1. Add test
+        result=$(llm_add_gcloud_sh "${resource}" 2>&1)
+
+
+        if [[ $? -eq 0 ]]; then
+            json_result="${result##*'```json {'}"
+            json_result="${json_result%%\}*}"
+            json_result="{$json_result}"
+            created_file=$(echo $json_result | jq -r '.path_to_created_test' || echo "")
+
+            if [[ -z "$created_file" ]]; then
+                echo "Error: [${resource}] jq parsing failed, or path_to_created_test not found." >> ${failed_list}
+                # retry if LLM passed but the response is not the expected format.              
+                sleep 15
+                continue
+
+            fi 
+            
+            log=$(git_commit  "${resource}" "$created_file" "1" "llm created test for ${resource}" 2>&1)
+            if [[ $? -eq 0 ]]; then
+                echo "${resource} pushed to ${branch}" >> ${success_list}
+                break
+            else    
+                echo "${resource} failed to push: ${log}" >> ${failed_list}
+            fi 
+        fi
+        # gemini 2.0 has quota limits per_minute_per_project 
+
+
+        # # Step 2. capture real gcp log
+        # result=$(capture_real_log "${resource}")
+
+        # if [[ $? -eq 0 ]]; then
+        #     log=$(go_commit  "${resource}" "$created_file" "0" "record real gcp log for ${resource}" 2>&1)
+        #     if [[ $? -eq 0 ]]; then
+        #         echo "${resource} pushed to ${branch}" >> ${success_list}
+        #         break
+        #     else    
+        #         echo "${resource} failed to push: ${log}"  >&2 >> ${failed_list}
+        #     fi 
+        # fi 
+
+        ((retries--))
+    done
+    sleep 15
+
+    echo "${resource}" >> ${failed_list}
+
+done < "$gcloud_list"
+
+echo Good job!

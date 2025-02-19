@@ -1,0 +1,109 @@
+#!/bin/bash
+# Copyright 2025 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#!/bin/bash
+set -e
+set -x
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+CB_DIR=dev/tools/controllerbuilder
+UNCOMMIT_ROOT="/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector"
+
+PASS_LOG="${UNCOMMIT_ROOT}/compiled-resource-success-1.log" 
+CODEBOT_LOG="${UNCOMMIT_ROOT}/compiled-resource-codebot-1.log" 
+
+
+FEATURE_BRANCH_PREFIX="resource-"
+BRANCH=$(git branch --show)
+
+# # This script should be run under the mock feature branch.
+# # Verify the git repo right resource
+if [[ "$BRANCH" != ${FEATURE_BRANCH_PREFIX}* ]]; then
+    echo "[ERROR] git HEAD is not in a feature branch"
+    exit 1
+fi 
+
+
+RESOURCE=${BRANCH#"${FEATURE_BRANCH_PREFIX}"}
+echo "LLM to add reconciler for resource ${RESOURCE}"
+
+function generate_crds() {
+    if dev/tasks/generate-crds
+    then
+        echo "[generate crd] failed" >> "${FAIL_LOG}"
+        exit 1
+    fi
+}   
+
+function run_worker() {
+    echo "[current directory] ${REPO_ROOT}" 
+
+    "${REPO_ROOT}"/${CB_DIR}/cmd/codebot/examples/reconciler-monolith/pipeline.sh 2>&1 | tee ${CODEBOT_LOG}
+}
+
+function git_commit() {
+    git add apis/"${SERVICE}"/v1alpha1/
+    git add pkg/controller/direct/register/register.go 
+    git add pkg/controller/direct/"${SERVICE}"/
+    git add config/crds/resources/
+    git commit -m "$1"
+}
+
+
+function push_pr() {
+    echo "${KIND} pass"  >> "${PASS_LOG}"
+    make read-pr
+    git add apis/"${SERVICE}"/v1alpha1/
+    git add pkg/controller/direct/register/register.go 
+    git add pkg/controller/direct/"${SERVICE}"/
+    git add config/crds/resources/
+    git add go.mod
+    git add go.sum
+    git add go.work
+    
+    git commit -m "llm: compilable ${KIND} reconciler"
+    git push -f origin "${BRANCH}":"${BRANCH}"
+    gh pr create --reviewer yuwenma, --base master --title "llm: compilable ${KIND} reconciler" --fill --head "${BRANCH}"
+    echo "--- created PR"  >> "${PASS_LOG}"
+    return 0
+}
+
+function reset_branch() {
+    # rm -f "${REPO_ROOT}"/pkg/controller/direct/"${SERVICE}"/"${PROTO,,}"_controller.go
+    # echo "Deleted ${REPO_ROOT}/pkg/controller/direct/${SERVICE}/${PROTO,,}_controller.go" 
+    git remote add upstream git@github.com:GoogleCloudPlatform/k8s-config-connector.git | echo "failed to add git remote upstream"
+    git fetch upstream 
+        
+    git checkout upstream/master
+    git branch -D "${BRANCH}"
+    git checkout -b "${BRANCH}"
+}
+
+
+function stage() {
+    # Call LLM codebot to generate reconciler code
+    reset_branch
+
+    if run_worker
+    then
+        push_pr
+    else 
+        echo "Unfortunately, this run failed" 
+        exit 1
+    fi
+}
+
+
+push_to_remote
