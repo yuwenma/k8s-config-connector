@@ -140,3 +140,70 @@ https://github.com/GoogleCloudPlatform/k8s-config-connector/pull/3709
 
 
 
+[SpannerBackup] git-commit add basic SpannerBackup reconciler
+[SpannerBackupSchedule] git-commit add basic SpannerBackupSchedule reconciler
+[SpannerDatabase] git-commit add basic SpannerDatabase reconciler
+[SpannerDatabaseRole] git-commit add basic SpannerDatabaseRole reconciler
+[SpannerInstanceConfig] git-commit add basic SpannerInstanceConfig reconciler
+[SpannerDatabase] git-commit add basic SpannerDatabase reconciler
+[SpannerInstancePartition] git-commit add basic SpannerInstancePartition reconciler
+[SpannerInstance] git-commit [llm] fix gcp imports for SpannerInstance
+[SpannerInstanceConfig] git-commit add basic SpannerInstanceConfig reconciler
+[SpannerSession] git-commit add basic SpannerSession reconciler
+[StorageFolder] git-commit add basic StorageFolder reconciler
+[StorageStorageLayout] git-commit add basic StorageStorageLayout reconciler
+[SpannerBackup] git-commit [llm] fix gobuilds for SpannerBackup
+[StorageManagedFolder] git-commit add basic StorageManagedFolder reconciler
+[SpannerBackup] git-commit add basic SpannerBackup reconciler
+[StorageBucket] git-commit add basic StorageBucket reconciler
+[SpannerInstance] git-commit [llm] fix gcp imports for SpannerInstance
+[StorageTransferAgentPool] git-commit add basic StorageTransferAgentPool reconciler
+[StorageFolder] git-commit add basic StorageFolder reconciler
+[SpannerSession] git-commit [llm] fix gobuilds for SpannerSession
+[SpannerDatabaseRole] git-commit [llm] fix gobuilds for SpannerDatabaseRole
+[SpannerBackupSchedule] git-commit [llm] fix gobuilds for SpannerBackupSchedule
+[SpannerBackupSchedule] git-commit add basic SpannerBackupSchedule reconciler
+[StorageStorageLayout] git-commit [llm] fix gobuilds for StorageStorageLayout
+[StorageStorageLayout] git-commit add basic StorageStorageLayout reconciler
+[SpannerInstance] git-commit [llm] fix gobuilds for SpannerInstance
+[SpannerInstance] git-commit [llm] fix gcp imports for SpannerInstance
+[StorageTransferAgentPool] git-commit [llm] fix gobuilds for StorageTransferAgentPool
+[StorageTransferAgentPool] git-commit add basic StorageTransferAgentPool reconciler
+[SpannerBackup] git-commit [llm] fix gobuilds for SpannerBackup
+[SpannerBackup] git-commit add basic SpannerBackup reconciler
+[StorageTransferAgentPool] passed after 2 attempts
+[StorageFolder] git-commit [llm] fix gobuilds for StorageFolder
+[StorageManagedFolder] git-commit [llm] fix gobuilds for StorageManagedFolder
+[SpannerInstance] git-commit [llm] fix gobuilds for SpannerInstance
+[SpannerInstance] git-commit [llm] fix gcp imports for SpannerInstance
+[SpannerBackupSchedule] git-commit [llm] fix gobuilds for SpannerBackupSchedule
+[SpannerSession] git-commit [llm] fix gobuilds for SpannerSession
+[StorageTransferAgentPool] git-commit make read-pr
+[StorageTransferAgentPool] created PR: Warning: 1 uncommitted change
+https://github.com/GoogleCloudPlatform/k8s-config-connector/pull/3724
+[StorageTransferAgentPool] ALL PASS
+[SpannerDatabase] git-commit [llm] fix gobuilds for SpannerDatabase
+[SpannerInstanceConfig] git-commit [llm] fix gobuilds for SpannerInstanceConfig
+[SpannerInstanceConfig] git-commit add basic SpannerInstanceConfig reconciler
+[SpannerDatabase] git-commit [llm] fix gobuilds for SpannerDatabase
+[SpannerInstanceConfig] git-commit [llm] fix gobuilds for SpannerInstanceConfig
+[SpannerInstanceConfig] git-commit add basic SpannerInstanceConfig reconciler
+[StorageFolder] git-commit [llm] fix gobuilds for StorageFolder
+[SpannerBackupSchedule] git-commit [llm] fix gobuilds for SpannerBackupSchedule
+[SpannerBackup] git-commit [llm] fix gobuilds for SpannerBackup
+[SpannerDatabaseRole] git-commit [llm] fix gobuilds for SpannerDatabaseRole
+[StorageFolder] git-commit [llm] fix gobuilds for StorageFolder
+[StorageBucket] git-commit [llm] fix gobuilds for StorageBucket
+[StorageBucket] git-commit add basic StorageBucket reconciler
+[StorageManagedFolder] git-commit [llm] fix gobuilds for StorageManagedFolder
+[SpannerBackup] git-commit [llm] fix gobuilds for SpannerBackup
+[SpannerBackupSchedule] git-commit [llm] fix gobuilds for SpannerBackupSchedule
+[SpannerInstancePartition] git-commit [llm] fix gobuilds for SpannerInstancePartition
+[SpannerInstancePartition] git-commit add basic SpannerInstancePartition reconciler
+[StorageBucket] git-commit [llm] fix gobuilds for StorageBucket
+[StorageBucket] git-commit add basic StorageBucket reconciler
+[SpannerDatabaseRole] git-commit [llm] fix gobuilds for SpannerDatabaseRole
+[SpannerDatabaseRole] git-commit [llm] fix gobuilds for SpannerDatabaseRole
+[StorageStorageLayout] git-commit [llm] fix gobuilds for StorageStorageLayout
+[StorageStorageLayout] git-commit [llm] fix gobuilds for StorageStorageLayout
+[StorageStorageLayout] git-commit [llm] fix gobuilds for StorageStorageLayout

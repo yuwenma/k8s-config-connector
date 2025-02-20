@@ -17,12 +17,12 @@
 set -x
 set -o nounset
 
-echo "${SUFFIX}" # "export SUFFIX=\$(date +%d)" 
+echo "${SUFFIX}" # "export SUFFIX=$(date +%d)" 
 FEATURE_DIR=${HOME}/go/src/github.com/GoogleCloudPlatform
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 PASS_LOG="${REPO_ROOT}/iterate_800_compile-pass-19.log" 
 FAIL_LOG="${REPO_ROOT}/iterate_800_compile-failure-19.log"
-RESOURCE_LIST="${REPO_ROOT}/proto-list-1.yaml"
+RESOURCE_LIST="${REPO_ROOT}/proto-list-2.yaml"
 
 # TODO: remove once the code is merged
 UNCOMMIT_ROOT="/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatform/k8s-config-connector"
