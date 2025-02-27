@@ -29,7 +29,7 @@ UNCOMMIT_ROOT="/usr/local/google/home/yuwenma/go/src/github.com/GoogleCloudPlatf
 
 function project_name() {
     # Project has 6-30 characater limit, starting with a lower case char
-    project_name=${service,,}-${proto,,}-$(date +%d) # e.g. yuwenma-02-10-spanner-instance
+    project_name=${service,,}-${proto,,}-$SUFFIX # e.g. yuwenma-02-10-spanner-instance
     # project_name=${service,,}-${proto,,}-17
     while true; do
         if [[ ${#project_name} -ge 30 ]]; then
@@ -74,7 +74,7 @@ function workaround_to_use_uncommit_code() {
 }
 
 
-max_processes=20
+max_processes=5
 process_count=0
 
 while IFS= read -r -d "---" yaml_chunk; do

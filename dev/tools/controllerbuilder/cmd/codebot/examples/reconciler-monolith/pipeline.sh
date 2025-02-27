@@ -110,7 +110,7 @@ function run_worker() {
         ins="${INS_PATH}"/3-llm-gcp-imports.txt
         msg=$(cat $ins)
         msg=$(eval "echo \"$msg\"")
-        codebot --ui-type "bash" --base-dir "${REPO_ROOT}" --proto-dir "${REPO_ROOT}"/.build/third_party/googleapis/  --project "${PROJECT}" <<EOF 2>&1 | tee -a "${CODEBOT_LOG}" 
+        codebot --ui-type "bash" --base-dir "${REPO_ROOT}" --proto-dir "${REPO_ROOT}"/.build/third_party/googleapis/  --project "${PROJECT}" <<EOF >> ${CODEBOT_LOG} 2>&1 
 ${msg}
 EOF
         if [[ $? -eq 0 ]]; then
@@ -120,7 +120,7 @@ EOF
         ins="${INS_PATH}"/4-llm-fix-gobuild.txt
         msg=$(cat $ins)
         msg=$(eval "echo \"$msg\"")
-        codebot --ui-type "bash" --base-dir "${REPO_ROOT}" --proto-dir "${REPO_ROOT}"/.build/third_party/googleapis/  --project "${PROJECT}" <<EOF 2>&1 | tee -a "${CODEBOT_LOG}" 
+        codebot --ui-type "bash" --base-dir "${REPO_ROOT}" --proto-dir "${REPO_ROOT}"/.build/third_party/googleapis/  --project "${PROJECT}" <<EOF >> ${CODEBOT_LOG} 2>&1 
 "${msg}"
 EOF
         if [[ $? -eq 0 ]]; then
