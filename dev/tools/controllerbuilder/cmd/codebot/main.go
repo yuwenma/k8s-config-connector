@@ -24,6 +24,8 @@ import (
 
 	codebotui "github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/codebot/ui"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/llm"
+	"github.com/GoogleCloudPlatform/kubectl-ai/gollm"
+	"google.golang.org/genai"
 
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/codebot"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/dev/tools/controllerbuilder/pkg/toolbot"
@@ -119,6 +121,53 @@ func (cb *CodeBot) run(ctx context.Context) error {
 	}
 
 	defer llmClient.Close()
+
+	switch v := llmClient.(type) {
+	case *gollm.GoogleAIClient:
+		content := &genai.Content{
+			Role: "user",
+			Parts: []*genai.Part{
+				&genai.Part{
+					Text: `
+SERVICE is ${service}
+KIND names are defined in "var {KIND}GVK = GroupVersion.WithKind("{KIND}")" in each "apis/<SERVICE>/v1alpha1/*_types.go".
+
+Controller can be found under "pkg/controller/direct/<SERVICE>/", you can run "ls pkg/controller/direct/<SERVICE>/*_controller.go" to get all the controllers
+
+Mappers can be found under "pkg/controller/direct/<SERVICE>/", you can run "ls pkg/controller/direct/<SERVICE>/*map*.go" to get the mappers.
+File "mapper.generated.go" can only have code removed, but not changed: if you want to change a function in "mapper.generated.go", copy the function to another  "ls pkg/controller/direct/<SERVICE>/*_map*.go" file, change it there, and remove the orignal function from "mapper.generated.go".
+
+Fuzz test can be found under "pkg/controller/direct/<SERVICE>/", you can run "ls pkg/controller/direct/<SERVICE>/*_fuzzer.go" to get the fuzz.
+
+Fixture tests can be found under "pkg/test/resourcefixture/testdata/basic/<SERVICE>/"". 
+
+Service and Kind name should be lower case when used in file path.`,
+				},
+			},
+		}
+		sysContent := &genai.Content{
+			Role: "user",
+			Parts: []*genai.Part{
+				&genai.Part{
+					Text: "This is the prerequisite you should keep in mind. Re-read them if you hit a problem when you are doing tasks.",
+				},
+			},
+		}
+		config := &genai.CreateCachedContentConfig{
+			Contents: []*genai.Content{
+				content,
+			},
+			SystemInstruction: sysContent,
+		}
+		cached, err := v.GetClient().Caches.Create(ctx, o.Model, config)
+		if err != nil {
+			return fmt.Errorf("creating cached content for model %q: %w", o.Model, err)
+		}
+		klog.Infof("Using cached content for model %q: %s", o.Model, cached)
+
+	default:
+		klog.Infof("Using streaming LLM client %T", llmClient)
+	}
 
 	toolbox := codebot.NewToolbox(codebot.GetAllTools())
 
