@@ -469,8 +469,8 @@ func TestCRDFieldPresenceInUnstructured(t *testing.T) {
 			if version.Name == "v1alpha1" {
 				continue
 			}
-
 			kind := crd.Spec.Names.Kind
+
 			visitCRDVersion(version, func(field *CRDField) {
 				fieldPath := field.FieldPath
 				// Only consider fields under `spec`
@@ -508,14 +508,8 @@ func TestCRDFieldPresenceInUnstructured(t *testing.T) {
 					return
 				}
 
-				// Skip non-terminal fields (fields with children or slices)
-				if field.props != nil {
-					if len(field.props.Properties) > 0 || field.props.Type == "object" {
-						return
-					}
-					if field.props.Type == "array" && field.props.Items != nil {
-						return // Skip the array itself; focus on its elements
-					}
+				if field.props.Type == "array" {
+					return
 				}
 
 				// Any XYZRef field was already handled and handling the children will just double count
@@ -601,10 +595,6 @@ func bytesToUnstructured(t *testing.T, bytes []byte) *unstructured.Unstructured 
 	return ToUnstruct(t, updatedBytes)
 }
 
-// hasField checks if an unstructured object contains the given field path.
-// For list fields (indicated by [] in the path), it checks if any item in the list
-// contains the specified field. If the path ends with [], checks if the field exists
-// and is a non-empty list.
 func hasField(obj map[string]interface{}, fieldPath string) bool {
 	parts := strings.Split(strings.TrimPrefix(fieldPath, "."), ".")
 	current := obj
@@ -614,18 +604,14 @@ func hasField(obj map[string]interface{}, fieldPath string) bool {
 			listName := strings.TrimSuffix(part, "[]")
 			if next, ok := current[listName]; ok {
 				if items, ok := next.([]interface{}); ok {
-					// 1. If this is the last part, return true if the list exists
-					// For example, ".spec.automatedBackupPolicy.weeklySchedule.daysOfWeek[]"
 					if i == len(parts)-1 {
 						return true
 					}
-					// 2. Otherwise check remaining path in each item
-					// For example, ".spec.automatedBackupPolicy.weeklySchedule.startTimes[].hours"
 					remainingPath := strings.Join(parts[i+1:], ".")
 					for _, item := range items {
 						if itemMap, ok := item.(map[string]interface{}); ok {
 							if hasField(itemMap, remainingPath) {
-								return true // found the field in one of the items, we can stop searching
+								return true
 							}
 						}
 					}
@@ -637,14 +623,15 @@ func hasField(obj map[string]interface{}, fieldPath string) bool {
 		if next, ok := current[part]; ok {
 			if nextMap, ok := next.(map[string]interface{}); ok {
 				current = nextMap
-			} else {
-				return true
+			} else if i < len(parts)-1 {
+				// Reached a terminal value in the middle of the path
+				return false
 			}
 		} else {
 			return false
 		}
 	}
-	return false
+	return true
 }
 
 func ToUnstruct(t *testing.T, bytes []byte) *unstructured.Unstructured {
