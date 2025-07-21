@@ -37,7 +37,7 @@ spec:
     - networkRef:
         name: default
 ---
-apiVersion: backupdr.cnrm.cloud.google.com/v1alpha1
+apiVersion: backupdr.cnrm.cloud.google.com/v1beta1
 kind: BackupDRBackupVault
 metadata:
   name: backupdrbackupvault-minimal-${uniqueId}
@@ -49,7 +49,7 @@ spec:
   backupMinimumEnforcedRetentionDuration: "100000s"
   ignoreInactiveDatasources: true
 ---
-apiVersion: backupdr.cnrm.cloud.google.com/v1alpha1
+apiVersion: backupdr.cnrm.cloud.google.com/v1beta1
 kind: BackupDRBackupPlan
 metadata:
   name: backupdrbackupplan-minimal-${uniqueId}

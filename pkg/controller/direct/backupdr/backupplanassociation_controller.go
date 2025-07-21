@@ -16,7 +16,7 @@
 // proto.service: google.cloud.backupdr.v1.BackupDR
 // proto.message: google.cloud.backupdr.v1.BackupPlanAssociation
 // crd.type: BackupDRBackupPlanAssociation
-// crd.version: v1alpha1
+// crd.version: v1beta1
 
 package backupdr
 
@@ -25,7 +25,8 @@ import (
 	"fmt"
 	"reflect"
 
-	krm "github.com/GoogleCloudPlatform/k8s-config-connector/apis/backupdr/v1alpha1"
+	"github.com/GoogleCloudPlatform/k8s-config-connector/apis/backupdr/v1alpha1"
+	krm "github.com/GoogleCloudPlatform/k8s-config-connector/apis/backupdr/v1beta1"
 	refs "github.com/GoogleCloudPlatform/k8s-config-connector/apis/refs/v1beta1"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/config"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct"
@@ -253,10 +254,28 @@ func (a *BackupPlanAssociationAdapter) Delete(ctx context.Context, deleteOp *dir
 func (a *BackupPlanAssociationAdapter) normalizeReferenceFields(ctx context.Context) error {
 	obj := a.desired
 
-	if obj.Spec.BackupPlanRef != nil {
-		if _, err := obj.Spec.BackupPlanRef.NormalizedExternal(ctx, a.reader, obj.GetNamespace()); err != nil {
-			return err
+	if obj.Spec.BackupPlanRef != nil && obj.Spec.BackupPlanRef.External == "" {
+		if obj.Spec.BackupPlanRef.Name == "" {
+			return fmt.Errorf("must specify either name or external for backupPlanRef")
 		}
+		namespace := obj.GetNamespace()
+		if obj.Spec.BackupPlanRef.Namespace != "" {
+			namespace = obj.Spec.BackupPlanRef.Namespace
+		}
+
+		bp := &v1alpha1.BackupDRBackupPlan{}
+		key := client.ObjectKey{
+			Name:      obj.Spec.BackupPlanRef.Name,
+			Namespace: namespace,
+		}
+		if err := a.reader.Get(ctx, key, bp); err != nil {
+			return fmt.Errorf("getting referenced backupplan %v: %w", key, err)
+		}
+
+		if bp.Status.ExternalRef == nil || *bp.Status.ExternalRef == "" {
+			return fmt.Errorf("referenced backupplan %v has no external name", key)
+		}
+		obj.Spec.BackupPlanRef.External = *bp.Status.ExternalRef
 	}
 	if obj.Spec.Resource != nil {
 		if obj.Spec.Resource.ComputeInstanceRef != nil {

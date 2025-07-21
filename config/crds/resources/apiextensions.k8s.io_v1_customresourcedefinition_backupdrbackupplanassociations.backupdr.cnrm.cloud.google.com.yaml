@@ -39,7 +39,7 @@ spec:
       jsonPath: .status.conditions[?(@.type=='Ready')].lastTransitionTime
       name: Status Age
       type: date
-    name: v1alpha1
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: BackupDRBackupPlanAssociation is the Schema for the BackupDRBackupPlanAssociation
@@ -91,13 +91,11 @@ spec:
                     type: string
                 type: object
               location:
-                description: Immutable.
+                description: 'Required. The project and location for the backup plan
+                  association. Format: `projects/{project_id}/locations/{location}`'
                 type: string
-                x-kubernetes-validations:
-                - message: Location field is immutable
-                  rule: self == oldSelf
               projectRef:
-                description: The Project that this resource belongs to.
+                description: The project that this resource belongs to.
                 oneOf:
                 - not:
                     required:
@@ -174,7 +172,6 @@ spec:
             required:
             - backupPlanRef
             - location
-            - projectRef
             - resource
             - resourceType
             type: object
