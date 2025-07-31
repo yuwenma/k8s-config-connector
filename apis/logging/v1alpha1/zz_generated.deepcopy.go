@@ -19,7 +19,6 @@
 package v1alpha1
 
 import (
-	"github.com/GoogleCloudPlatform/k8s-config-connector/apis/logging/v1beta1"
 	k8sv1alpha1 "github.com/GoogleCloudPlatform/k8s-config-connector/pkg/apis/k8s/v1alpha1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )
@@ -209,11 +208,6 @@ func (in *LoggingLinkSpec) DeepCopyInto(out *LoggingLinkSpec) {
 	if in.Description != nil {
 		in, out := &in.Description, &out.Description
 		*out = new(string)
-		**out = **in
-	}
-	if in.LoggingLogBucketRef != nil {
-		in, out := &in.LoggingLogBucketRef, &out.LoggingLogBucketRef
-		*out = new(v1beta1.LoggingLogBucketRef)
 		**out = **in
 	}
 }

@@ -20,7 +20,8 @@ import (
 	loggingv1beta1 "github.com/GoogleCloudPlatform/k8s-config-connector/apis/logging/v1beta1"
 
 	pb "cloud.google.com/go/logging/apiv2/loggingpb"
-	krm "github.com/GoogleCloudPlatform/k8s-config-connector/apis/logging/v1alpha1"
+	krmv1alpha1 "github.com/GoogleCloudPlatform/k8s-config-connector/apis/logging/v1alpha1"
+	krm "github.com/GoogleCloudPlatform/k8s-config-connector/apis/logging/v1beta1"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct"
 )
 
@@ -88,15 +89,15 @@ func LoggingLinkObservedState_ToProto(mapCtx *direct.MapContext, in *krm.Logging
 	return out
 }
 
-func BigQueryDataset_FromProto(mapCtx *direct.MapContext, in *pb.BigQueryDataset) *krm.BigQueryDataset {
+func BigQueryDataset_FromProto(mapCtx *direct.MapContext, in *pb.BigQueryDataset) *krmv1alpha1.BigQueryDataset {
 	if in == nil {
 		return nil
 	}
-	out := &krm.BigQueryDataset{}
+	out := &krmv1alpha1.BigQueryDataset{}
 	// MISSING: DatasetID
 	return out
 }
-func BigQueryDataset_ToProto(mapCtx *direct.MapContext, in *krm.BigQueryDataset) *pb.BigQueryDataset {
+func BigQueryDataset_ToProto(mapCtx *direct.MapContext, in *krmv1alpha1.BigQueryDataset) *pb.BigQueryDataset {
 	if in == nil {
 		return nil
 	}
@@ -104,11 +105,11 @@ func BigQueryDataset_ToProto(mapCtx *direct.MapContext, in *krm.BigQueryDataset)
 	// MISSING: DatasetID
 	return out
 }
-func BigQueryDatasetObservedState_FromProto(mapCtx *direct.MapContext, in *pb.Link) *krm.BigQueryDatasetObservedState {
+func BigQueryDatasetObservedState_FromProto(mapCtx *direct.MapContext, in *pb.Link) *krmv1alpha1.BigQueryDatasetObservedState {
 	if in == nil {
 		return nil
 	}
-	out := &krm.BigQueryDatasetObservedState{}
+	out := &krmv1alpha1.BigQueryDatasetObservedState{}
 	dataset := in.GetBigqueryDataset()
 	if dataset != nil {
 		out.DatasetID = direct.LazyPtr(dataset.GetDatasetId())
@@ -116,7 +117,7 @@ func BigQueryDatasetObservedState_FromProto(mapCtx *direct.MapContext, in *pb.Li
 
 	return out
 }
-func BigQueryDatasetObservedState_ToProto(mapCtx *direct.MapContext, in *krm.BigQueryDatasetObservedState) *pb.BigQueryDataset {
+func BigQueryDatasetObservedState_ToProto(mapCtx *direct.MapContext, in *krmv1alpha1.BigQueryDatasetObservedState) *pb.BigQueryDataset {
 	if in == nil {
 		return nil
 	}

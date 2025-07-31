@@ -20,7 +20,8 @@ import (
 
 	//"reflect"
 
-	krm "github.com/GoogleCloudPlatform/k8s-config-connector/apis/logging/v1alpha1"
+	krmalpha "github.com/GoogleCloudPlatform/k8s-config-connector/apis/logging/v1alpha1"
+	krmbeta "github.com/GoogleCloudPlatform/k8s-config-connector/apis/logging/v1beta1"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/config"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct/common"
@@ -44,7 +45,7 @@ import (
 )
 
 func init() {
-	registry.RegisterModel(krm.LoggingLinkGVK, NewLoggingLinkModel)
+	registry.RegisterModel(krmbeta.LoggingLinkGVK, NewLoggingLinkModel)
 }
 
 func NewLoggingLinkModel(ctx context.Context, config *config.ControllerConfig) (directbase.Model, error) {
@@ -67,12 +68,12 @@ func (m *modelLoggingLink) client(ctx context.Context) (*gcp.ConfigClient, error
 }
 
 func (m *modelLoggingLink) AdapterForObject(ctx context.Context, reader client.Reader, u *unstructured.Unstructured) (directbase.Adapter, error) {
-	obj := &krm.LoggingLink{}
+	obj := &krmbeta.LoggingLink{}
 	if err := runtime.DefaultUnstructuredConverter.FromUnstructured(u.Object, &obj); err != nil {
 		return nil, fmt.Errorf("error converting to %T: %w", obj, err)
 	}
 
-	linkIdentity, err := krm.NewLinkIdentity(ctx, reader, obj)
+	linkIdentity, err := krmbeta.NewLinkIdentity(ctx, reader, obj)
 	if err != nil {
 		return nil, err
 	}
@@ -100,9 +101,9 @@ func (m *modelLoggingLink) AdapterForURL(ctx context.Context, url string) (direc
 }
 
 type LoggingLinkAdapter struct {
-	id        *krm.LinkIdentity
+	id        *krmalpha.LinkIdentity
 	gcpClient *gcp.ConfigClient
-	desired   *krm.LoggingLink
+	desired   *krmbeta.LoggingLink
 	actual    *loggingpb.Link
 }
 
@@ -166,7 +167,7 @@ func (a *LoggingLinkAdapter) Create(ctx context.Context, createOp *directbase.Cr
 	}
 	log.V(2).Info("successfully created Link", "name", a.id)
 
-	status := &krm.LoggingLinkStatus{}
+	status := &krmbeta.LoggingLinkStatus{}
 	status.ObservedState = LoggingLinkObservedState_FromProto(mapCtx, created)
 	if mapCtx.Err() != nil {
 		return mapCtx.Err()
@@ -192,7 +193,7 @@ func (a *LoggingLinkAdapter) Update(ctx context.Context, updateOp *directbase.Up
 	}
 	if len(paths) == 0 {
 		log.V(2).Info("no field needs update", "name", a.id)
-		status := &krm.LoggingLinkStatus{}
+		status := &krmbeta.LoggingLinkStatus{}
 		status.ObservedState = LoggingLinkObservedState_FromProto(mapCtx, a.actual)
 		if mapCtx.Err() != nil {
 			return mapCtx.Err()
@@ -210,7 +211,7 @@ func (a *LoggingLinkAdapter) Export(ctx context.Context) (*unstructured.Unstruct
 	}
 	u := &unstructured.Unstructured{}
 
-	obj := &krm.LoggingLink{}
+	obj := &krmbeta.LoggingLink{}
 	mapCtx := &direct.MapContext{}
 	obj.Spec = direct.ValueOf(LoggingLinkSpec_FromProto(mapCtx, a.actual))
 	if mapCtx.Err() != nil {
@@ -232,7 +233,7 @@ func (a *LoggingLinkAdapter) Export(ctx context.Context) (*unstructured.Unstruct
 	*/
 
 	u.SetName(a.actual.Name)
-	u.SetGroupVersionKind(krm.LoggingLinkGVK)
+	u.SetGroupVersionKind(krmbeta.LoggingLinkGVK)
 
 	// TODO uObj is set in the commented out code
 	//u.Object = uObj
