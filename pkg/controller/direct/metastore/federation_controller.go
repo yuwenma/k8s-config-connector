@@ -26,7 +26,8 @@ import (
 	"reflect"
 	"strconv"
 
-	krm "github.com/GoogleCloudPlatform/k8s-config-connector/apis/metastore/v1alpha1"
+	krmv1alpha1 "github.com/GoogleCloudPlatform/k8s-config-connector/apis/metastore/v1alpha1"
+	krm "github.com/GoogleCloudPlatform/k8s-config-connector/apis/metastore/v1beta1"
 	refs "github.com/GoogleCloudPlatform/k8s-config-connector/apis/refs/v1beta1"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/config"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct"
@@ -91,7 +92,7 @@ func (m *MetastoreFederationModel) AdapterForURL(ctx context.Context, url string
 
 type MetastoreFederationAdapter struct {
 	gcpClient *gcp.DataprocMetastoreFederationClient
-	id        *krm.FederationIdentity
+	id        *krmv1alpha1.FederationIdentity
 	desired   *krm.MetastoreFederation
 	actual    *pb.Federation
 	reader    client.Reader

@@ -24,7 +24,7 @@ import (
 	"context"
 	"fmt"
 
-	krm "github.com/GoogleCloudPlatform/k8s-config-connector/apis/metastore/v1alpha1"
+	krmv1alpha1 "github.com/GoogleCloudPlatform/k8s-config-connector/apis/metastore/v1alpha1"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/config"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct/directbase"
@@ -53,7 +53,7 @@ type MetastoreBackupModel struct {
 }
 
 func (m *MetastoreBackupModel) AdapterForObject(ctx context.Context, reader client.Reader, u *unstructured.Unstructured) (directbase.Adapter, error) {
-	obj := &krm.MetastoreBackup{}
+	obj := &krmv1alpha1.MetastoreBackup{}
 	if err := runtime.DefaultUnstructuredConverter.FromUnstructured(u.Object, &obj); err != nil {
 		return nil, fmt.Errorf("error converting to %T: %w", obj, err)
 	}
@@ -87,8 +87,8 @@ func (m *MetastoreBackupModel) AdapterForURL(ctx context.Context, url string) (d
 
 type MetastoreBackupAdapter struct {
 	gcpClient *gcp.DataprocMetastoreClient
-	id        *krm.BackupIdentity
-	desired   *krm.MetastoreBackup
+	id        *krmv1alpha1.BackupIdentity
+	desired   *krmv1alpha1.MetastoreBackup
 	actual    *pb.Backup
 	reader    client.Reader
 }
@@ -156,7 +156,7 @@ func (a *MetastoreBackupAdapter) Create(ctx context.Context, createOp *directbas
 	}
 	log.V(2).Info("successfully created MetastoreBackup", "name", a.id)
 
-	status := &krm.MetastoreBackupStatus{}
+	status := &krmv1alpha1.MetastoreBackupStatus{}
 	status.ObservedState = MetastoreBackupObservedState_FromProto(mapCtx, created)
 	if mapCtx.Err() != nil {
 		return mapCtx.Err()
@@ -172,7 +172,7 @@ func (a *MetastoreBackupAdapter) Update(ctx context.Context, updateOp *directbas
 	log.V(2).Info("resource has no mutable fields, skipping update", "name", a.id)
 
 	mapCtx := &direct.MapContext{}
-	status := &krm.MetastoreBackupStatus{}
+	status := &krmv1alpha1.MetastoreBackupStatus{}
 	status.ObservedState = MetastoreBackupObservedState_FromProto(mapCtx, a.actual)
 	if mapCtx.Err() != nil {
 		return mapCtx.Err()
@@ -188,7 +188,7 @@ func (a *MetastoreBackupAdapter) Export(ctx context.Context) (*unstructured.Unst
 	}
 	u := &unstructured.Unstructured{}
 
-	obj := &krm.MetastoreBackup{}
+	obj := &krmv1alpha1.MetastoreBackup{}
 	mapCtx := &direct.MapContext{}
 	obj.Spec = direct.ValueOf(MetastoreBackupSpec_FromProto(mapCtx, a.actual))
 	if mapCtx.Err() != nil {
@@ -196,7 +196,7 @@ func (a *MetastoreBackupAdapter) Export(ctx context.Context) (*unstructured.Unst
 	}
 
 	// Populate required references from the ID
-	obj.Spec.ServiceRef = krm.ServiceRef{
+	obj.Spec.ServiceRef = krmv1alpha1.ServiceRef{
 		External: a.id.Parent().String(), // Set external reference to the service name
 	}
 

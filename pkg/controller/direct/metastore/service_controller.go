@@ -25,7 +25,7 @@ import (
 	"fmt"
 	"reflect"
 
-	krm "github.com/GoogleCloudPlatform/k8s-config-connector/apis/metastore/v1alpha1"
+	krmv1alpha1 "github.com/GoogleCloudPlatform/k8s-config-connector/apis/metastore/v1alpha1"
 	refs "github.com/GoogleCloudPlatform/k8s-config-connector/apis/refs/v1beta1"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/config"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct"
@@ -56,7 +56,7 @@ type MetastoreServiceModel struct {
 }
 
 func (m *MetastoreServiceModel) AdapterForObject(ctx context.Context, reader client.Reader, u *unstructured.Unstructured) (directbase.Adapter, error) {
-	obj := &krm.MetastoreService{}
+	obj := &krmv1alpha1.MetastoreService{}
 	if err := runtime.DefaultUnstructuredConverter.FromUnstructured(u.Object, &obj); err != nil {
 		return nil, fmt.Errorf("error converting to %T: %w", obj, err)
 	}
@@ -90,8 +90,8 @@ func (m *MetastoreServiceModel) AdapterForURL(ctx context.Context, url string) (
 
 type MetastoreServiceAdapter struct {
 	gcpClient *gcp.DataprocMetastoreClient
-	id        *krm.ServiceIdentity
-	desired   *krm.MetastoreService
+	id        *krmv1alpha1.ServiceIdentity
+	desired   *krmv1alpha1.MetastoreService
 	actual    *pb.Service
 	reader    client.Reader
 }
@@ -182,7 +182,7 @@ func (a *MetastoreServiceAdapter) Create(ctx context.Context, createOp *directba
 	}
 	log.V(2).Info("successfully created MetastoreService", "name", a.id)
 
-	status := &krm.MetastoreServiceStatus{}
+	status := &krmv1alpha1.MetastoreServiceStatus{}
 	status.ObservedState = MetastoreServiceObservedState_FromProto(mapCtx, created)
 	if mapCtx.Err() != nil {
 		return mapCtx.Err()
@@ -256,7 +256,7 @@ func (a *MetastoreServiceAdapter) Update(ctx context.Context, updateOp *directba
 		log.V(2).Info("successfully updated MetastoreService", "name", a.id)
 	}
 
-	status := &krm.MetastoreServiceStatus{}
+	status := &krmv1alpha1.MetastoreServiceStatus{}
 	status.ObservedState = MetastoreServiceObservedState_FromProto(mapCtx, updated)
 	if mapCtx.Err() != nil {
 		return mapCtx.Err()
@@ -272,7 +272,7 @@ func (a *MetastoreServiceAdapter) Export(ctx context.Context) (*unstructured.Uns
 	}
 	u := &unstructured.Unstructured{}
 
-	obj := &krm.MetastoreService{}
+	obj := &krmv1alpha1.MetastoreService{}
 	mapCtx := &direct.MapContext{}
 	obj.Spec = direct.ValueOf(MetastoreServiceSpec_FromProto(mapCtx, a.actual))
 	if mapCtx.Err() != nil {
