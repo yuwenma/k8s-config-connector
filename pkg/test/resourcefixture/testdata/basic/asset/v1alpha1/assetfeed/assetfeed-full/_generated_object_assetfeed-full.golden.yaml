@@ -1,0 +1,36 @@
+apiVersion: asset.cnrm.cloud.google.com/v1alpha1
+kind: AssetFeed
+metadata:
+  finalizers:
+  - cnrm.cloud.google.com/finalizer
+  - cnrm.cloud.google.com/deletion-defender
+  generation: 2
+  labels:
+    cnrm-test: "true"
+  name: assetfeed-${uniqueId}
+  namespace: ${uniqueId}
+spec:
+  assetNames:
+  - //compute.googleapis.com/projects/${projectId}/zones/us-central1-a/instances/instance1
+  - //compute.googleapis.com/projects/${projectId}/zones/us-central1-a/disks/disk1
+  assetTypes:
+  - compute.googleapis.com/Disk
+  - compute.googleapis.com/Instance
+  condition:
+    expression: temporal_asset.deleted == true
+  contentType: RESOURCE
+  feedOutputConfig:
+    pubsubDestination:
+      topicRef:
+        name: kcc-assetfeed-${uniqueId}
+  projectRef:
+    external: ${projectNumber}
+status:
+  conditions:
+  - lastTransitionTime: "1970-01-01T00:00:00Z"
+    message: The resource is up to date
+    reason: UpToDate
+    status: "True"
+    type: Ready
+  externalRef: projects/${projectNumber}/feeds/assetfeed-${uniqueId}
+  observedGeneration: 2

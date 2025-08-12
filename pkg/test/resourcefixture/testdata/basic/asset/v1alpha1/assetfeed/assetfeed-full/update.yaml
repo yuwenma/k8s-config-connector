@@ -1,0 +1,20 @@
+apiVersion: asset.cnrm.cloud.google.com/v1alpha1
+kind: AssetFeed
+metadata:
+  name: assetfeed-${uniqueId}
+spec:
+  projectRef:
+    external: "${projectNumber}"
+  assetNames:
+    - "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/instances/instance1"
+    - "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/disks/disk1" # updated
+  assetTypes:
+    - "compute.googleapis.com/Disk"
+    - "compute.googleapis.com/Instance" # updated
+  contentType: "RESOURCE"
+  feedOutputConfig:
+    pubsubDestination:
+      topicRef:
+        name: "kcc-assetfeed-${uniqueId}"
+  condition:
+    expression: "temporal_asset.deleted == true"

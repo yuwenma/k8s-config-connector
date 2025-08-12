@@ -84,3 +84,7 @@ We have two scripts `hack/record-gcp` and `hack/compare-mock` to help streamline
 # GitHub Actions Workflow Generation
 
 `docs/ai/github-workflow.md` describes how to generate github workflows.
+
+# Promoting resources from alpha to beta
+
+`docs/ai/promote-alpha-to-beta.md` shares tips on how to promote alpha resources to beta.
