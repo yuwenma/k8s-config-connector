@@ -8,9 +8,15 @@ spec:
   assetNames:
     - "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/instances/instance1"
   assetTypes:
-    - "compute.googleapis.com/Disk"
-  contentType: "RESOURCE"
+    - "compute.googleapis.com/Instance"
+  contentType: "RELATIONSHIP"
   feedOutputConfig:
     pubsubDestination:
       topicRef:
         name: "kcc-assetfeed-${uniqueId}"
+  condition:
+    expression: "temporal_asset.deleted == false"
+    title: "deleted"
+    description: "deleted asset"
+  relationshipTypes:
+    - "INSTANCE_TO_INSTANCEGROUP"

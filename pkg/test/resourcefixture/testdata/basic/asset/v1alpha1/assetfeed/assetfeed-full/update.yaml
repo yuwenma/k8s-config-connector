@@ -7,14 +7,20 @@ spec:
     external: "${projectNumber}"
   assetNames:
     - "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/instances/instance1"
-    - "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/disks/disk1" # updated
+    - "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/images/image1" # updated
   assetTypes:
-    - "compute.googleapis.com/Disk"
-    - "compute.googleapis.com/Instance" # updated
-  contentType: "RESOURCE"
+    - "compute.googleapis.com/Instance" 
+    - "compute.googleapis.com/Image" # updated
+  contentType: "RELATIONSHIP"
   feedOutputConfig:
     pubsubDestination:
       topicRef:
         name: "kcc-assetfeed-${uniqueId}"
   condition:
     expression: "temporal_asset.deleted == true"
+    title: "deleted"
+    description: "deleted asset"
+    location: "us-central1"
+  relationshipTypes:
+    - "INSTANCE_TO_INSTANCEGROUP"
+    - "COMPUTE_IMAGE_BOOT_DISK" # updated

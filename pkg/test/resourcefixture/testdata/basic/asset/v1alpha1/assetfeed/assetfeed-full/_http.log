@@ -115,15 +115,23 @@ X-Goog-User-Project: ${projectNumber}
       "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/instances/instance1"
     ],
     "assetTypes": [
-      "compute.googleapis.com/Disk"
+      "compute.googleapis.com/Instance"
     ],
-    "contentType": 1,
+    "condition": {
+      "description": "deleted asset",
+      "expression": "temporal_asset.deleted == false",
+      "title": "deleted"
+    },
+    "contentType": 7,
     "feedOutputConfig": {
       "pubsubDestination": {
         "topic": "projects/${projectId}/topics/kcc-assetfeed-${uniqueId}"
       }
     },
-    "name": "projects/${projectNumber}/feeds/assetfeed-${uniqueId}"
+    "name": "projects/${projectNumber}/feeds/assetfeed-${uniqueId}",
+    "relationshipTypes": [
+      "INSTANCE_TO_INSTANCEGROUP"
+    ]
   },
   "feedId": "assetfeed-${uniqueId}",
   "parent": "projects/${projectNumber}"
@@ -144,15 +152,23 @@ X-Xss-Protection: 0
     "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/instances/instance1"
   ],
   "assetTypes": [
-    "compute.googleapis.com/Disk"
+    "compute.googleapis.com/Instance"
   ],
-  "contentType": 1,
+  "condition": {
+    "description": "deleted asset",
+    "expression": "temporal_asset.deleted == false",
+    "title": "deleted"
+  },
+  "contentType": 7,
   "feedOutputConfig": {
     "pubsubDestination": {
       "topic": "projects/${projectId}/topics/kcc-assetfeed-${uniqueId}"
     }
   },
-  "name": "projects/${projectNumber}/feeds/assetfeed-${uniqueId}"
+  "name": "projects/${projectNumber}/feeds/assetfeed-${uniqueId}",
+  "relationshipTypes": [
+    "INSTANCE_TO_INSTANCEGROUP"
+  ]
 }
 
 ---
@@ -178,15 +194,23 @@ X-Xss-Protection: 0
     "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/instances/instance1"
   ],
   "assetTypes": [
-    "compute.googleapis.com/Disk"
+    "compute.googleapis.com/Instance"
   ],
-  "contentType": 1,
+  "condition": {
+    "description": "deleted asset",
+    "expression": "temporal_asset.deleted == false",
+    "title": "deleted"
+  },
+  "contentType": 7,
   "feedOutputConfig": {
     "pubsubDestination": {
       "topic": "projects/${projectId}/topics/kcc-assetfeed-${uniqueId}"
     }
   },
-  "name": "projects/${projectNumber}/feeds/assetfeed-${uniqueId}"
+  "name": "projects/${projectNumber}/feeds/assetfeed-${uniqueId}",
+  "relationshipTypes": [
+    "INSTANCE_TO_INSTANCEGROUP"
+  ]
 }
 
 ---
@@ -201,24 +225,31 @@ X-Goog-User-Project: ${projectNumber}
   "feed": {
     "assetNames": [
       "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/instances/instance1",
-      "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/disks/disk1"
+      "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/images/image1"
     ],
     "assetTypes": [
-      "compute.googleapis.com/Disk",
-      "compute.googleapis.com/Instance"
+      "compute.googleapis.com/Instance",
+      "compute.googleapis.com/Image"
     ],
     "condition": {
-      "expression": "temporal_asset.deleted == true"
+      "description": "deleted asset",
+      "expression": "temporal_asset.deleted == true",
+      "location": "us-central1",
+      "title": "deleted"
     },
-    "contentType": 1,
+    "contentType": 7,
     "feedOutputConfig": {
       "pubsubDestination": {
         "topic": "projects/${projectId}/topics/kcc-assetfeed-${uniqueId}"
       }
     },
-    "name": "projects/${projectNumber}/feeds/assetfeed-${uniqueId}"
+    "name": "projects/${projectNumber}/feeds/assetfeed-${uniqueId}",
+    "relationshipTypes": [
+      "INSTANCE_TO_INSTANCEGROUP",
+      "COMPUTE_IMAGE_BOOT_DISK"
+    ]
   },
-  "updateMask": "assetNames,assetTypes,condition.expression"
+  "updateMask": "assetNames,assetTypes,condition.expression,condition.location,relationshipTypes"
 }
 
 200 OK
@@ -234,22 +265,29 @@ X-Xss-Protection: 0
 {
   "assetNames": [
     "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/instances/instance1",
-    "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/disks/disk1"
+    "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/images/image1"
   ],
   "assetTypes": [
-    "compute.googleapis.com/Disk",
-    "compute.googleapis.com/Instance"
+    "compute.googleapis.com/Instance",
+    "compute.googleapis.com/Image"
   ],
   "condition": {
-    "expression": "temporal_asset.deleted == true"
+    "description": "deleted asset",
+    "expression": "temporal_asset.deleted == true",
+    "location": "us-central1",
+    "title": "deleted"
   },
-  "contentType": 1,
+  "contentType": 7,
   "feedOutputConfig": {
     "pubsubDestination": {
       "topic": "projects/${projectId}/topics/kcc-assetfeed-${uniqueId}"
     }
   },
-  "name": "projects/${projectNumber}/feeds/assetfeed-${uniqueId}"
+  "name": "projects/${projectNumber}/feeds/assetfeed-${uniqueId}",
+  "relationshipTypes": [
+    "INSTANCE_TO_INSTANCEGROUP",
+    "COMPUTE_IMAGE_BOOT_DISK"
+  ]
 }
 
 ---
@@ -273,22 +311,29 @@ X-Xss-Protection: 0
 {
   "assetNames": [
     "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/instances/instance1",
-    "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/disks/disk1"
+    "//compute.googleapis.com/projects/${projectId}/zones/us-central1-a/images/image1"
   ],
   "assetTypes": [
-    "compute.googleapis.com/Disk",
-    "compute.googleapis.com/Instance"
+    "compute.googleapis.com/Instance",
+    "compute.googleapis.com/Image"
   ],
   "condition": {
-    "expression": "temporal_asset.deleted == true"
+    "description": "deleted asset",
+    "expression": "temporal_asset.deleted == true",
+    "location": "us-central1",
+    "title": "deleted"
   },
-  "contentType": 1,
+  "contentType": 7,
   "feedOutputConfig": {
     "pubsubDestination": {
       "topic": "projects/${projectId}/topics/kcc-assetfeed-${uniqueId}"
     }
   },
-  "name": "projects/${projectNumber}/feeds/assetfeed-${uniqueId}"
+  "name": "projects/${projectNumber}/feeds/assetfeed-${uniqueId}",
+  "relationshipTypes": [
+    "INSTANCE_TO_INSTANCEGROUP",
+    "COMPUTE_IMAGE_BOOT_DISK"
+  ]
 }
 
 ---

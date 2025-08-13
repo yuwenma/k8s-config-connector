@@ -12,19 +12,25 @@ metadata:
 spec:
   assetNames:
   - //compute.googleapis.com/projects/${projectId}/zones/us-central1-a/instances/instance1
-  - //compute.googleapis.com/projects/${projectId}/zones/us-central1-a/disks/disk1
+  - //compute.googleapis.com/projects/${projectId}/zones/us-central1-a/images/image1
   assetTypes:
-  - compute.googleapis.com/Disk
   - compute.googleapis.com/Instance
+  - compute.googleapis.com/Image
   condition:
+    description: deleted asset
     expression: temporal_asset.deleted == true
-  contentType: RESOURCE
+    location: us-central1
+    title: deleted
+  contentType: RELATIONSHIP
   feedOutputConfig:
     pubsubDestination:
       topicRef:
         name: kcc-assetfeed-${uniqueId}
   projectRef:
     external: ${projectNumber}
+  relationshipTypes:
+  - INSTANCE_TO_INSTANCEGROUP
+  - COMPUTE_IMAGE_BOOT_DISK
 status:
   conditions:
   - lastTransitionTime: "1970-01-01T00:00:00Z"
