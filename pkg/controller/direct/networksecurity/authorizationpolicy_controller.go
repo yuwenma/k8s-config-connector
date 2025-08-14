@@ -25,6 +25,7 @@ import (
 	"fmt"
 
 	"google.golang.org/api/option"
+	"google.golang.org/protobuf/proto"
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/util/sets"
@@ -45,6 +46,44 @@ import (
 
 func init() {
 	registry.RegisterModel(krm.NetworkSecurityAuthorizationPolicyGVK, NewAuthorizationPolicyModel)
+}
+
+// cleanupAuthorizationPolicy removes empty objects from the policy's lists.
+// This is to avoid perpetual diffs when the API returns empty objects in lists.
+func cleanupAuthorizationPolicy(policy *networksecuritypb.AuthorizationPolicy) {
+	if policy == nil {
+		return
+	}
+
+	var cleanedRules []*networksecuritypb.AuthorizationPolicy_Rule
+	for _, rule := range policy.Rules {
+		if rule == nil || proto.Equal(rule, &networksecuritypb.AuthorizationPolicy_Rule{}) {
+			continue
+		}
+
+		var cleanedSources []*networksecuritypb.AuthorizationPolicy_Rule_Source
+		for _, source := range rule.Sources {
+			if source != nil && !proto.Equal(source, &networksecuritypb.AuthorizationPolicy_Rule_Source{}) {
+				cleanedSources = append(cleanedSources, source)
+			}
+		}
+		rule.Sources = cleanedSources
+
+		var cleanedDests []*networksecuritypb.AuthorizationPolicy_Rule_Destination
+		for _, dest := range rule.Destinations {
+			if dest != nil && !proto.Equal(dest, &networksecuritypb.AuthorizationPolicy_Rule_Destination{}) {
+				cleanedDests = append(cleanedDests, dest)
+			}
+		}
+		rule.Destinations = cleanedDests
+
+		// A rule is empty if it has no sources and no destinations.
+		// The proto has only sources and destinations fields.
+		if len(rule.Sources) > 0 || len(rule.Destinations) > 0 {
+			cleanedRules = append(cleanedRules, rule)
+		}
+	}
+	policy.Rules = cleanedRules
 }
 
 func NewAuthorizationPolicyModel(ctx context.Context, config *config.ControllerConfig) (directbase.Model, error) {
@@ -130,6 +169,7 @@ func (a *authorizationPolicyAdapter) Find(ctx context.Context) (bool, error) {
 		return false, fmt.Errorf("getting networksecurity authorizationpolicy %q from gcp: %w", a.id.String(), err)
 	}
 
+	cleanupAuthorizationPolicy(actual)
 	a.actual = actual
 	return true, nil
 }
