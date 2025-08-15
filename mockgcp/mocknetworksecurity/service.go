@@ -47,7 +47,7 @@ func New(env *common.MockEnvironment, storage storage.Storage) *MockService {
 }
 
 func (s *MockService) ExpectedHosts() []string {
-	return []string{"networksecurity.googleapis.com"}
+	return []string{"networksecurity.googleapis.com:443"}
 }
 
 func (s *MockService) Register(grpcServer *grpc.Server) {
