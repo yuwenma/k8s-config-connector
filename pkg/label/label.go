@@ -16,7 +16,7 @@ package label
 
 import (
 	"fmt"
-	"strings"
+	"unicode"
 
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 )
@@ -48,13 +48,36 @@ func NewGCPLabelsFromK8sLabels(labels map[string]string) map[string]string {
 
 func removeLabelsWithKRMPrefix(labels map[string]string) map[string]string {
 	res := make(map[string]string)
+keyLoop:
 	for k, v := range labels {
-		if len(strings.Split(k, "/")) == 2 {
-			// Do not include any KRM-style labels (labels that include a prefix
-			// denoted with a '/').
-			// TODO(b/137755194): Determine long-term solution.
+		// GCP labels have strict validation rules. This function filters out any
+		// labels from Kubernetes metadata that do not conform to these rules,
+		// preventing them from being propagated to GCP.
+		// See: https://cloud.google.com/compute/docs/labeling-resources#requirements
+
+		// Key validation: 1-63 characters, lowercase letters, digits, underscores, hyphens. Must start with a letter.
+		if len(k) < 1 || len(k) > 63 {
 			continue
 		}
+		if !unicode.IsLower(rune(k[0])) {
+			continue
+		}
+		for _, r := range k {
+			if !(unicode.IsLower(r) || unicode.IsDigit(r) || r == '_' || r == '-') {
+				continue keyLoop
+			}
+		}
+
+		// Value validation: 0-63 characters, lowercase letters, digits, underscores, hyphens.
+		if len(v) > 63 {
+			continue
+		}
+		for _, r := range v {
+			if !(unicode.IsLower(r) || unicode.IsDigit(r) || r == '_' || r == '-') {
+				continue keyLoop
+			}
+		}
+
 		res[k] = v
 	}
 	return res
