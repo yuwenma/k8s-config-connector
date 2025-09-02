@@ -1,0 +1,40 @@
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeNetwork
+metadata:
+  name: composerenvironment-${uniqueId}
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeSubnetwork
+metadata:
+  name: composerenvironment-${uniqueId}
+spec:
+  networkRef:
+    name: composerenvironment-${uniqueId}
+  region: us-central1
+  ipCidrRange: 10.2.0.0/16
+---
+apiVersion: kms.cnrm.cloud.google.com/v1beta1
+kind: KMSKeyRing
+metadata:
+  name: composerenvironment-${uniqueId}
+spec:
+  location: us-central1
+---
+apiVersion: kms.cnrm.cloud.google.com/v1beta1
+kind: KMSCryptoKey
+metadata:
+  name: composerenvironment-${uniqueId}
+spec:
+  keyRingRef:
+    name: composerenvironment-${uniqueId}
+  purpose: ENCRYPT_DECRYPT
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMServiceAccount
+metadata:
+  name: composerenvironment-${uniqueId}
+---
+apiVersion: storage.cnrm.cloud.google.com/v1beta1
+kind: StorageBucket
+metadata:
+  name: composerenvironment-${uniqueId}

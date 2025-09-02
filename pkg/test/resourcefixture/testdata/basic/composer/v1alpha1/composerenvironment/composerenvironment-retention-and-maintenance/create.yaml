@@ -1,0 +1,117 @@
+apiVersion: composer.cnrm.cloud.google.com/v1alpha1
+kind: ComposerEnvironment
+metadata:
+  name: composerenvironment-${uniqueId}
+  labels:
+    key: value
+spec:
+  projectRef:
+    external: ${projectId}
+  location: us-central1
+  config:
+    dataRetentionConfig:
+      airflowMetadataRetentionConfig:
+        retentionDays: 7
+        retentionMode: "ENABLED"
+      taskLogsRetentionConfig:
+        storageMode: "CLOUD_LOGGING_ONLY"
+    databaseConfig:
+      machineType: "db-n1-standard-2"
+      zone: "us-central1-a"
+    environmentSize: "ENVIRONMENT_SIZE_SMALL"
+    masterAuthorizedNetworksConfig:
+      enabled: true
+      cidrBlocks:
+        - cidrBlock: "192.168.0.0/24"
+          displayName: "test"
+    nodeConfig:
+      networkRef:
+        name: composerenvironment-${uniqueId}
+      subnetworkRef:
+        name: composerenvironment-${uniqueId}
+      location: "us-central1-a"
+      machineType: "n1-standard-1"
+      oauthScopes:
+        - "https://www.googleapis.com/auth/cloud-platform"
+      serviceAccountRef:
+        name: composerenvironment-${uniqueId}
+      tags:
+        - "test"
+      diskSizeGb: 100
+    nodeCount: 3
+    privateEnvironmentConfig:
+      enablePrivateEnvironment: true
+      cloudSqlIpv4CidrBlock: "10.3.0.0/22"
+      webServerIpv4CidrBlock: "10.4.0.0/22"
+      cloudComposerNetworkIpv4CidrBlock: "10.5.0.0/22"
+      enablePrivateBuildsOnly: false
+      enablePrivatelyUsedPublicIPs: false
+      networkingConfig:
+        connectionType: "VPC_PEERING"
+      privateClusterConfig:
+        enablePrivateEndpoint: true
+        masterIpv4CidrBlock: "10.6.0.0/23"
+      cloudComposerConnectionSubnetworkRef:
+        name: composerenvironment-${uniqueId}
+    recoveryConfig:
+      scheduledSnapshotsConfig:
+        enabled: true
+        snapshotCreationSchedule: "0 0 * * *"
+        snapshotLocation: "gs://composerenvironment-${uniqueId}"
+        timeZone: "UTC"
+    resilienceMode: "HIGH_RESILIENCE"
+    softwareConfig:
+      imageVersion: "composer-1.20.12-airflow-2.4.3"
+      airflowConfigOverrides:
+        "core-dags_are_paused_at_creation": "true"
+      cloudDataLineageIntegration:
+        enabled: true
+      envVariables:
+        "FOO": "BAR"
+      pypiPackages:
+        "numpy": ""
+      pythonVersion: "3"
+      schedulerCount: 1
+      webServerPluginsMode: "PLUGINS_ENABLED"
+    webServerNetworkAccessControl:
+      allowedIpRanges:
+        - value: "0.0.0.0/0"
+          description: "Allow all"
+    webServerConfig:
+      machineType: "composer-n1-webserver-2"
+    encryptionConfig:
+      kmsKeyRef:
+        name: composerenvironment-${uniqueId}
+    maintenanceWindow:
+      startTime: "2025-01-01T00:00:00Z"
+      endTime: "2025-01-01T04:00:00Z"
+      recurrence: "FREQ=WEEKLY;BYDAY=SA,SU"
+    workloadsConfig:
+      dagProcessor:
+        count: 1
+        cpu: "0.5"
+        memoryGb: "1.25"
+        storageGb: "1.0"
+      scheduler:
+        count: 1
+        cpu: "0.5"
+        memoryGb: "1.25"
+        storageGb: "1.0"
+      triggerer:
+        count: 1
+        cpu: "0.5"
+        memoryGb: "1.25"
+      webServer:
+        cpu: "0.5"
+        memoryGb: "1.25"
+        storageGb: "1.0"
+      worker:
+        cpu: "0.5"
+        memoryGb: "1.25"
+        storageGb: "1.0"
+        minCount: 1
+        maxCount: 3
+  storageConfig:
+    bucketRef:
+      name: composerenvironment-${uniqueId}
+  resourceID: "composerenvironment-${uniqueId}"
