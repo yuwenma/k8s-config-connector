@@ -22,7 +22,18 @@ import (
 	api "google.golang.org/api/sqladmin/v1beta4"
 )
 
-func ApplySQLInstanceGCPDefaults(in *krm.SQLInstance, out *api.DatabaseInstance, actual *api.DatabaseInstance) {
+func ApplySQLInstanceGCPDefaults(in *krm.SQLInstance, out *api.DatabaseInstance, actual *api.DatabaseInstance, ignoreUnspecified bool) {
+	if !ignoreUnspecified {
+		// If we are not ignoring unspecified fields, we should not apply any defaults.
+		// The desired state should only contain what is in the spec.
+		if actual != nil {
+			// GCP API requires we set the current settings version, otherwise update will fail.
+			out.Settings.SettingsVersion = actual.Settings.SettingsVersion
+		}
+		return
+	}
+
+	// The following logic should only be executed when ignoreUnspecified is true.
 	if in.Spec.InstanceType == nil {
 		// GCP default InstanceType is CLOUD_SQL_INSTANCE.
 		out.InstanceType = "CLOUD_SQL_INSTANCE"
@@ -110,7 +121,7 @@ func ApplySQLInstanceGCPDefaults(in *krm.SQLInstance, out *api.DatabaseInstance,
 		// GCP default StorageAutoResize is true.
 		out.Settings.StorageAutoResize = direct.PtrTo(true)
 	}
-	if in.Spec.Settings.DiskSize == nil && actual != nil && *out.Settings.StorageAutoResize {
+	if in.Spec.Settings.DiskSize == nil && actual != nil && out.Settings.StorageAutoResize != nil && *out.Settings.StorageAutoResize {
 		// If desired DiskSize is not specified and StorageAutoResize is enabled, use the actual disk size.
 		// Note: This must be set AFTER setting the default value for StorageAutoResize.
 		out.Settings.DataDiskSizeGb = actual.Settings.DataDiskSizeGb

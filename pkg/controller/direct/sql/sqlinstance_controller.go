@@ -207,7 +207,7 @@ func (a *sqlInstanceAdapter) cloneInstance(ctx context.Context, u *unstructured.
 }
 
 func (a *sqlInstanceAdapter) insertInstance(ctx context.Context, u *unstructured.Unstructured, log klog.Logger) error {
-	desiredGCP, err := SQLInstanceKRMToGCP(a.desired, a.actual)
+	desiredGCP, err := SQLInstanceKRMToGCP(a.desired, a.actual, false) // ignoreUnspecified is false for Create
 	if err != nil {
 		return err
 	}
@@ -356,14 +356,17 @@ func (a *sqlInstanceAdapter) Update(ctx context.Context, updateOp *directbase.Up
 	}
 
 	// Finally, update rest of the fields
-	desiredGCP, err := SQLInstanceKRMToGCP(a.desired, a.actual)
+	// When the ignore-unspecified-fields annotation is set, we should not
+	// unexpectedly clear fields that are not specified in the spec.
+	ignoreUnspecified := u.GetAnnotations()["cnrm.cloud.google.com/ignore-unspecified-fields"] == "true"
+	desiredGCP, err := SQLInstanceKRMToGCP(a.desired, a.actual, ignoreUnspecified)
 	if err != nil {
 		return err
 	}
 
 	instanceForStatus := a.actual
 	instanceDiff := &structuredreporting.Diff{}
-	if !InstancesMatch(desiredGCP, a.actual, instanceDiff) {
+	if !InstancesMatch(desiredGCP, a.actual, instanceDiff, ignoreUnspecified) {
 		updateOp.RecordUpdatingEvent()
 
 		{

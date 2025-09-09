@@ -22,52 +22,70 @@ import (
 	api "google.golang.org/api/sqladmin/v1beta4"
 )
 
-func InstancesMatch(desired *api.DatabaseInstance, actual *api.DatabaseInstance, diff *structuredreporting.Diff) bool {
+func InstancesMatch(desired *api.DatabaseInstance, actual *api.DatabaseInstance, diff *structuredreporting.Diff, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.DatabaseVersion != actual.DatabaseVersion {
+	if ignoreUnspecified && desired.DatabaseVersion == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.DatabaseVersion != actual.DatabaseVersion {
 		diff.AddField(".databaseVersion", actual.DatabaseVersion, desired.DatabaseVersion)
 		return false
 	}
-	if !DiskEncryptionConfigurationsMatch(desired.DiskEncryptionConfiguration, actual.DiskEncryptionConfiguration) {
+	if ignoreUnspecified && desired.DiskEncryptionConfiguration == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !DiskEncryptionConfigurationsMatch(desired.DiskEncryptionConfiguration, actual.DiskEncryptionConfiguration, ignoreUnspecified) {
 		diff.AddField(".diskEncryptionConfiguration", actual.DiskEncryptionConfiguration, desired.DiskEncryptionConfiguration)
 		return false
 	}
 	// Ignore GeminiConfig. It is not supported in KRM API.
-	if desired.InstanceType != actual.InstanceType {
+	if ignoreUnspecified && desired.InstanceType == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.InstanceType != actual.InstanceType {
 		diff.AddField(".instanceType", actual.InstanceType, desired.InstanceType)
 		return false
 	}
 	// Ignore Kind. It is sometimes not set in API responses.
-	if desired.MaintenanceVersion != actual.MaintenanceVersion {
+	if ignoreUnspecified && desired.MaintenanceVersion == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.MaintenanceVersion != actual.MaintenanceVersion {
 		diff.AddField(".maintenanceVersion", actual.MaintenanceVersion, desired.MaintenanceVersion)
 		return false
 	}
-	if desired.MasterInstanceName != actual.MasterInstanceName {
+	if ignoreUnspecified && desired.MasterInstanceName == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.MasterInstanceName != actual.MasterInstanceName {
 		diff.AddField(".masterInstanceName", actual.MasterInstanceName, desired.MasterInstanceName)
 		return false
 	}
 	// Ignore MaxDiskSize. It is not supported in KRM API.
-	if desired.Name != actual.Name {
+	if ignoreUnspecified && desired.Name == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Name != actual.Name {
 		diff.AddField(".name", actual.Name, desired.Name)
 		return false
 	}
 	// Ignore OnPremisesConfiguration. It is not supported in KRM API.
-	if desired.Region != actual.Region {
+	if ignoreUnspecified && desired.Region == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Region != actual.Region {
 		diff.AddField(".region", actual.Region, desired.Region)
 		return false
 	}
-	if !ReplicaConfigurationsMatch(desired.ReplicaConfiguration, actual.ReplicaConfiguration) {
+	if ignoreUnspecified && desired.ReplicaConfiguration == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !ReplicaConfigurationsMatch(desired.ReplicaConfiguration, actual.ReplicaConfiguration, ignoreUnspecified) {
 		diff.AddField(".replicaConfiguration", actual.ReplicaConfiguration, desired.ReplicaConfiguration)
 		return false
 	}
 	// Ignore ReplicationCluster. It is not supported in KRM API.
 	// Ignore RootPassword. It is not exported.
-	if !SettingsMatch(desired.Settings, actual.Settings, diff) {
+	if ignoreUnspecified && desired.Settings == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !SettingsMatch(desired.Settings, actual.Settings, diff, ignoreUnspecified) {
 		return false
 	}
 	// Ignore SqlNetworkArchitecture. It is not supported in KRM API.
@@ -77,7 +95,7 @@ func InstancesMatch(desired *api.DatabaseInstance, actual *api.DatabaseInstance,
 	return true
 }
 
-func DiskEncryptionConfigurationsMatch(desired *api.DiskEncryptionConfiguration, actual *api.DiskEncryptionConfiguration) bool {
+func DiskEncryptionConfigurationsMatch(desired *api.DiskEncryptionConfiguration, actual *api.DiskEncryptionConfiguration, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
@@ -85,7 +103,9 @@ func DiskEncryptionConfigurationsMatch(desired *api.DiskEncryptionConfiguration,
 		return false
 	}
 	// Ignore Kind. It is sometimes not set in API responses.
-	if desired.KmsKeyName != actual.KmsKeyName {
+	if ignoreUnspecified && desired.KmsKeyName == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.KmsKeyName != actual.KmsKeyName {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -93,7 +113,7 @@ func DiskEncryptionConfigurationsMatch(desired *api.DiskEncryptionConfiguration,
 	return true
 }
 
-func ReplicaConfigurationsMatch(desired *api.ReplicaConfiguration, actual *api.ReplicaConfiguration) bool {
+func ReplicaConfigurationsMatch(desired *api.ReplicaConfiguration, actual *api.ReplicaConfiguration, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
@@ -101,11 +121,15 @@ func ReplicaConfigurationsMatch(desired *api.ReplicaConfiguration, actual *api.R
 		return false
 	}
 	// Ignore CascadableReplica. It is not supported in KRM API.
-	if desired.FailoverTarget != actual.FailoverTarget {
+	if ignoreUnspecified && desired.FailoverTarget == false {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.FailoverTarget != actual.FailoverTarget {
 		return false
 	}
 	// Ignore Kind. It is sometimes not set in API responses.
-	if !MysqlReplicaConfigurationsMatch(desired.MysqlReplicaConfiguration, actual.MysqlReplicaConfiguration) {
+	if ignoreUnspecified && desired.MysqlReplicaConfiguration == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !MysqlReplicaConfigurationsMatch(desired.MysqlReplicaConfiguration, actual.MysqlReplicaConfiguration, ignoreUnspecified) {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -113,7 +137,7 @@ func ReplicaConfigurationsMatch(desired *api.ReplicaConfiguration, actual *api.R
 	return true
 }
 
-func SettingsMatch(desired *api.Settings, actual *api.Settings, diff *structuredreporting.Diff) bool {
+func SettingsMatch(desired *api.Settings, actual *api.Settings, diff *structuredreporting.Diff, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
@@ -121,124 +145,182 @@ func SettingsMatch(desired *api.Settings, actual *api.Settings, diff *structured
 		diff.AddField(".settings", actual, desired)
 		return false
 	}
-	if desired.ActivationPolicy != actual.ActivationPolicy {
+	if ignoreUnspecified && desired.ActivationPolicy == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.ActivationPolicy != actual.ActivationPolicy {
 		diff.AddField(".settings.activationPolicy", actual.ActivationPolicy, desired.ActivationPolicy)
 		return false
 	}
-	if !ActiveDirectoryConfigsMatch(desired.ActiveDirectoryConfig, actual.ActiveDirectoryConfig) {
+	if ignoreUnspecified && desired.ActiveDirectoryConfig == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !ActiveDirectoryConfigsMatch(desired.ActiveDirectoryConfig, actual.ActiveDirectoryConfig, ignoreUnspecified) {
 		diff.AddField(".settings.activeDirectoryConfig", actual.ActiveDirectoryConfig, desired.ActiveDirectoryConfig)
 		return false
 	}
-	if !AdvancedMachineFeaturesMatch(desired.AdvancedMachineFeatures, actual.AdvancedMachineFeatures) {
+	if ignoreUnspecified && desired.AdvancedMachineFeatures == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !AdvancedMachineFeaturesMatch(desired.AdvancedMachineFeatures, actual.AdvancedMachineFeatures, ignoreUnspecified) {
 		diff.AddField(".settings.advancedMachineFeatures", actual.AdvancedMachineFeatures, desired.AdvancedMachineFeatures)
 		return false
 	}
-	if !slicesMatch(desired.AuthorizedGaeApplications, actual.AuthorizedGaeApplications) {
+	if ignoreUnspecified && desired.AuthorizedGaeApplications == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !slicesMatch(desired.AuthorizedGaeApplications, actual.AuthorizedGaeApplications) {
 		diff.AddField(".settings.authorizedGaeApplications", actual.AuthorizedGaeApplications, desired.AuthorizedGaeApplications)
 		return false
 	}
-	if desired.AvailabilityType != actual.AvailabilityType {
+	if ignoreUnspecified && desired.AvailabilityType == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.AvailabilityType != actual.AvailabilityType {
 		diff.AddField(".settings.availabilityType", actual.AvailabilityType, desired.AvailabilityType)
 		return false
 	}
-	if !BackupConfigurationsMatch(desired.BackupConfiguration, actual.BackupConfiguration) {
+	if ignoreUnspecified && desired.BackupConfiguration == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !BackupConfigurationsMatch(desired.BackupConfiguration, actual.BackupConfiguration, ignoreUnspecified) {
 		diff.AddField(".settings.backupConfiguration", actual.BackupConfiguration, desired.BackupConfiguration)
 		return false
 	}
-	if desired.Collation != actual.Collation {
+	if ignoreUnspecified && desired.Collation == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Collation != actual.Collation {
 		diff.AddField(".settings.collation", actual.Collation, desired.Collation)
 		return false
 	}
-	if desired.ConnectorEnforcement != actual.ConnectorEnforcement {
+	if ignoreUnspecified && desired.ConnectorEnforcement == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.ConnectorEnforcement != actual.ConnectorEnforcement {
 		diff.AddField(".settings.connectorEnforcement", actual.ConnectorEnforcement, desired.ConnectorEnforcement)
 		return false
 	}
 	// Ignore CrashSafeReplicationEnabled. It is only applicable to first-gen instances.
-	if !DataCacheConfigsMatch(desired.DataCacheConfig, actual.DataCacheConfig) {
+	if ignoreUnspecified && desired.DataCacheConfig == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !DataCacheConfigsMatch(desired.DataCacheConfig, actual.DataCacheConfig, ignoreUnspecified) {
 		diff.AddField(".settings.dataCacheConfig", actual.DataCacheConfig, desired.DataCacheConfig)
 		return false
 	}
-	if desired.DataDiskSizeGb != actual.DataDiskSizeGb {
+	if ignoreUnspecified && desired.DataDiskSizeGb == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.DataDiskSizeGb != actual.DataDiskSizeGb {
 		diff.AddField(".settings.dataDiskSizeGb", actual.DataDiskSizeGb, desired.DataDiskSizeGb)
 		return false
 	}
-	if desired.DataDiskType != actual.DataDiskType {
+	if ignoreUnspecified && desired.DataDiskType == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.DataDiskType != actual.DataDiskType {
 		diff.AddField(".settings.dataDiskType", actual.DataDiskType, desired.DataDiskType)
 		return false
 	}
-	if !DatabaseFlagListsMatch(desired.DatabaseFlags, actual.DatabaseFlags) {
+	if ignoreUnspecified && desired.DatabaseFlags == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !DatabaseFlagListsMatch(desired.DatabaseFlags, actual.DatabaseFlags, ignoreUnspecified) {
 		diff.AddField(".settings.databaseFlags", actual.DatabaseFlags, desired.DatabaseFlags)
 		return false
 	}
 	// Ignore DatabaseReplicationEnabled. It is not supported in KRM API.
-	if desired.DeletionProtectionEnabled != actual.DeletionProtectionEnabled {
+	if ignoreUnspecified && !desired.DeletionProtectionEnabled {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.DeletionProtectionEnabled != actual.DeletionProtectionEnabled {
 		diff.AddField(".settings.deletionProtectionEnabled", actual.DeletionProtectionEnabled, desired.DeletionProtectionEnabled)
 		return false
 	}
-	if !DenyMaintenancePeriodListsMatch(desired.DenyMaintenancePeriods, actual.DenyMaintenancePeriods) {
+	if ignoreUnspecified && desired.DenyMaintenancePeriods == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !DenyMaintenancePeriodListsMatch(desired.DenyMaintenancePeriods, actual.DenyMaintenancePeriods, ignoreUnspecified) {
 		diff.AddField(".settings.denyMaintenancePeriods", actual.DenyMaintenancePeriods, desired.DenyMaintenancePeriods)
 		return false
 	}
-	if desired.Edition != actual.Edition {
+	if ignoreUnspecified && desired.Edition == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Edition != actual.Edition {
 		diff.AddField(".settings.edition", actual.Edition, desired.Edition)
 		return false
 	}
 	// Ignore EnableDataplexIntegration. It is not supported in KRM API.
 	// Ignore EnableGoogleMlIntegration. It is not supported in KRM API.
-	if !InsightsConfigsMatch(desired.InsightsConfig, actual.InsightsConfig) {
+	if ignoreUnspecified && desired.InsightsConfig == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !InsightsConfigsMatch(desired.InsightsConfig, actual.InsightsConfig, ignoreUnspecified) {
 		diff.AddField(".settings.insightsConfig", actual.InsightsConfig, desired.InsightsConfig)
 		return false
 	}
-	if !IpConfigurationsMatch(desired.IpConfiguration, actual.IpConfiguration) {
+	if ignoreUnspecified && desired.IpConfiguration == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !IpConfigurationsMatch(desired.IpConfiguration, actual.IpConfiguration, ignoreUnspecified) {
 		diff.AddField(".settings.ipConfiguration", actual.IpConfiguration, desired.IpConfiguration)
 		return false
 	}
 	// Ignore Kind. It is sometimes not set in API responses.
-	if !LocationPreferencesMatch(desired.LocationPreference, actual.LocationPreference) {
+	if ignoreUnspecified && desired.LocationPreference == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !LocationPreferencesMatch(desired.LocationPreference, actual.LocationPreference, ignoreUnspecified) {
 		diff.AddField(".settings.locationPreference", actual.LocationPreference, desired.LocationPreference)
 		return false
 	}
-	if !MaintenanceWindowsMatch(desired.MaintenanceWindow, actual.MaintenanceWindow) {
+	if ignoreUnspecified && desired.MaintenanceWindow == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !MaintenanceWindowsMatch(desired.MaintenanceWindow, actual.MaintenanceWindow, ignoreUnspecified) {
 		diff.AddField(".settings.maintenanceWindow", actual.MaintenanceWindow, desired.MaintenanceWindow)
 		return false
 	}
-	if !PasswordValidationPoliciesMatch(desired.PasswordValidationPolicy, actual.PasswordValidationPolicy) {
+	if ignoreUnspecified && desired.PasswordValidationPolicy == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !PasswordValidationPoliciesMatch(desired.PasswordValidationPolicy, actual.PasswordValidationPolicy, ignoreUnspecified) {
 		diff.AddField(".settings.passwordValidationPolicy", actual.PasswordValidationPolicy, desired.PasswordValidationPolicy)
 		return false
 	}
-	if desired.PricingPlan != actual.PricingPlan {
+	if ignoreUnspecified && desired.PricingPlan == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.PricingPlan != actual.PricingPlan {
 		diff.AddField(".settings.pricingPlan", actual.PricingPlan, desired.PricingPlan)
 		return false
 	}
-	if desired.ReplicationType != actual.ReplicationType {
+	if ignoreUnspecified && desired.ReplicationType == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.ReplicationType != actual.ReplicationType {
 		diff.AddField(".settings.replicationType", actual.ReplicationType, desired.ReplicationType)
 		return false
 	}
-	if desired.SettingsVersion != actual.SettingsVersion {
+	if ignoreUnspecified && desired.SettingsVersion == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.SettingsVersion != actual.SettingsVersion {
 		diff.AddField(".settings.settingsVersion", actual.SettingsVersion, desired.SettingsVersion)
 		return false
 	}
-	if !SqlServerAuditConfigsMatch(desired.SqlServerAuditConfig, actual.SqlServerAuditConfig) {
+	if ignoreUnspecified && desired.SqlServerAuditConfig == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !SqlServerAuditConfigsMatch(desired.SqlServerAuditConfig, actual.SqlServerAuditConfig, ignoreUnspecified) {
 		diff.AddField(".settings.sqlServerAuditConfig", actual.SqlServerAuditConfig, desired.SqlServerAuditConfig)
 		return false
 	}
-	if !StorageAutoResizesMatch(desired.StorageAutoResize, actual.StorageAutoResize) {
+	if ignoreUnspecified && desired.StorageAutoResize == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !StorageAutoResizesMatch(desired.StorageAutoResize, actual.StorageAutoResize, ignoreUnspecified) {
 		diff.AddField(".settings.storageAutoResize", actual.StorageAutoResize, desired.StorageAutoResize)
 		return false
 	}
-	if desired.StorageAutoResizeLimit != actual.StorageAutoResizeLimit {
+	if ignoreUnspecified && desired.StorageAutoResizeLimit == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.StorageAutoResizeLimit != actual.StorageAutoResizeLimit {
 		diff.AddField(".settings.storageAutoResizeLimit", actual.StorageAutoResizeLimit, desired.StorageAutoResizeLimit)
 		return false
 	}
-	if desired.Tier != actual.Tier {
+	if ignoreUnspecified && desired.Tier == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Tier != actual.Tier {
 		diff.AddField(".settings.tier", actual.Tier, desired.Tier)
 		return false
 	}
-	if desired.TimeZone != actual.TimeZone {
+	if ignoreUnspecified && desired.TimeZone == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.TimeZone != actual.TimeZone {
 		diff.AddField(".settings.timeZone", actual.TimeZone, desired.TimeZone)
 		return false
 	}
-	if !reflect.DeepEqual(desired.UserLabels, actual.UserLabels) {
+	if ignoreUnspecified && desired.UserLabels == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !reflect.DeepEqual(desired.UserLabels, actual.UserLabels) {
 		diff.AddField(".settings.userLabels", actual.UserLabels, desired.UserLabels)
 		return false
 	}
@@ -259,40 +341,58 @@ func slicesMatch[T any](desired []T, actual []T) bool {
 	return reflect.DeepEqual(desired, actual)
 }
 
-func MysqlReplicaConfigurationsMatch(desired *api.MySqlReplicaConfiguration, actual *api.MySqlReplicaConfiguration) bool {
+func MysqlReplicaConfigurationsMatch(desired *api.MySqlReplicaConfiguration, actual *api.MySqlReplicaConfiguration, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.CaCertificate != actual.CaCertificate {
+	if ignoreUnspecified && desired.CaCertificate == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.CaCertificate != actual.CaCertificate {
 		return false
 	}
-	if desired.ClientCertificate != actual.ClientCertificate {
+	if ignoreUnspecified && desired.ClientCertificate == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.ClientCertificate != actual.ClientCertificate {
 		return false
 	}
-	if desired.ClientKey != actual.ClientKey {
+	if ignoreUnspecified && desired.ClientKey == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.ClientKey != actual.ClientKey {
 		return false
 	}
-	if desired.ConnectRetryInterval != actual.ConnectRetryInterval {
+	if ignoreUnspecified && desired.ConnectRetryInterval == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.ConnectRetryInterval != actual.ConnectRetryInterval {
 		return false
 	}
-	if desired.DumpFilePath != actual.DumpFilePath {
+	if ignoreUnspecified && desired.DumpFilePath == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.DumpFilePath != actual.DumpFilePath {
 		return false
 	}
 	// Ignore Kind. It is sometimes not set in API responses.
-	if desired.MasterHeartbeatPeriod != actual.MasterHeartbeatPeriod {
+	if ignoreUnspecified && desired.MasterHeartbeatPeriod == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.MasterHeartbeatPeriod != actual.MasterHeartbeatPeriod {
 		return false
 	}
 	// Ignore Password. It is not exported.
-	if desired.SslCipher != actual.SslCipher {
+	if ignoreUnspecified && desired.SslCipher == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.SslCipher != actual.SslCipher {
 		return false
 	}
-	if desired.Username != actual.Username {
+	if ignoreUnspecified && desired.Username == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Username != actual.Username {
 		return false
 	}
-	if desired.VerifyServerCertificate != actual.VerifyServerCertificate {
+	if ignoreUnspecified && !desired.VerifyServerCertificate {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.VerifyServerCertificate != actual.VerifyServerCertificate {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -300,14 +400,16 @@ func MysqlReplicaConfigurationsMatch(desired *api.MySqlReplicaConfiguration, act
 	return true
 }
 
-func ActiveDirectoryConfigsMatch(desired *api.SqlActiveDirectoryConfig, actual *api.SqlActiveDirectoryConfig) bool {
+func ActiveDirectoryConfigsMatch(desired *api.SqlActiveDirectoryConfig, actual *api.SqlActiveDirectoryConfig, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.Domain != actual.Domain {
+	if ignoreUnspecified && desired.Domain == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Domain != actual.Domain {
 		return false
 	}
 	// Ignore Kind. It is sometimes not set in API responses.
@@ -316,14 +418,16 @@ func ActiveDirectoryConfigsMatch(desired *api.SqlActiveDirectoryConfig, actual *
 	return true
 }
 
-func AdvancedMachineFeaturesMatch(desired *api.AdvancedMachineFeatures, actual *api.AdvancedMachineFeatures) bool {
+func AdvancedMachineFeaturesMatch(desired *api.AdvancedMachineFeatures, actual *api.AdvancedMachineFeatures, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.ThreadsPerCore != actual.ThreadsPerCore {
+	if ignoreUnspecified && desired.ThreadsPerCore == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.ThreadsPerCore != actual.ThreadsPerCore {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -331,35 +435,49 @@ func AdvancedMachineFeaturesMatch(desired *api.AdvancedMachineFeatures, actual *
 	return true
 }
 
-func BackupConfigurationsMatch(desired *api.BackupConfiguration, actual *api.BackupConfiguration) bool {
+func BackupConfigurationsMatch(desired *api.BackupConfiguration, actual *api.BackupConfiguration, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if !BackupRetentionSettingsMatch(desired.BackupRetentionSettings, actual.BackupRetentionSettings) {
+	if ignoreUnspecified && desired.BackupRetentionSettings == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !BackupRetentionSettingsMatch(desired.BackupRetentionSettings, actual.BackupRetentionSettings, ignoreUnspecified) {
 		return false
 	}
-	if desired.BinaryLogEnabled != actual.BinaryLogEnabled {
+	if ignoreUnspecified && !desired.BinaryLogEnabled {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.BinaryLogEnabled != actual.BinaryLogEnabled {
 		return false
 	}
-	if desired.Enabled != actual.Enabled {
+	if ignoreUnspecified && !desired.Enabled {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Enabled != actual.Enabled {
 		return false
 	}
 	// Ignore Kind. It is sometimes not set in API responses.
-	if desired.Location != actual.Location {
+	if ignoreUnspecified && desired.Location == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Location != actual.Location {
 		return false
 	}
-	if desired.PointInTimeRecoveryEnabled != actual.PointInTimeRecoveryEnabled {
+	if ignoreUnspecified && !desired.PointInTimeRecoveryEnabled {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.PointInTimeRecoveryEnabled != actual.PointInTimeRecoveryEnabled {
 		return false
 	}
 	// Ignore StartTime if it is not set. empty string is not a valid start time.
-	if desired.StartTime != "" && desired.StartTime != actual.StartTime {
+	if ignoreUnspecified && desired.StartTime == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.StartTime != "" && desired.StartTime != actual.StartTime {
 		return false
 	}
 	// Ignore TransactionLogRetentionDays if it is not set. 0 is not a valid transaction log retention days.
-	if desired.TransactionLogRetentionDays != 0 && desired.TransactionLogRetentionDays != actual.TransactionLogRetentionDays {
+	if ignoreUnspecified && desired.TransactionLogRetentionDays == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.TransactionLogRetentionDays != 0 && desired.TransactionLogRetentionDays != actual.TransactionLogRetentionDays {
 		return false
 	}
 
@@ -369,17 +487,21 @@ func BackupConfigurationsMatch(desired *api.BackupConfiguration, actual *api.Bac
 	// Ignore NullFields. Assume it is set correctly in desired.
 	return true
 }
-func BackupRetentionSettingsMatch(desired *api.BackupRetentionSettings, actual *api.BackupRetentionSettings) bool {
+func BackupRetentionSettingsMatch(desired *api.BackupRetentionSettings, actual *api.BackupRetentionSettings, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.RetainedBackups != actual.RetainedBackups {
+	if ignoreUnspecified && desired.RetainedBackups == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.RetainedBackups != actual.RetainedBackups {
 		return false
 	}
-	if desired.RetentionUnit != actual.RetentionUnit {
+	if ignoreUnspecified && desired.RetentionUnit == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.RetentionUnit != actual.RetentionUnit {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -387,14 +509,16 @@ func BackupRetentionSettingsMatch(desired *api.BackupRetentionSettings, actual *
 	return true
 }
 
-func DataCacheConfigsMatch(desired *api.DataCacheConfig, actual *api.DataCacheConfig) bool {
+func DataCacheConfigsMatch(desired *api.DataCacheConfig, actual *api.DataCacheConfig, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.DataCacheEnabled != actual.DataCacheEnabled {
+	if ignoreUnspecified && !desired.DataCacheEnabled {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.DataCacheEnabled != actual.DataCacheEnabled {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -402,29 +526,36 @@ func DataCacheConfigsMatch(desired *api.DataCacheConfig, actual *api.DataCacheCo
 	return true
 }
 
-func DatabaseFlagListsMatch(desired []*api.DatabaseFlags, actual []*api.DatabaseFlags) bool {
+func DatabaseFlagListsMatch(desired []*api.DatabaseFlags, actual []*api.DatabaseFlags, ignoreUnspecified bool) bool {
+	if ignoreUnspecified && desired == nil {
+		return true
+	}
 	if len(desired) != len(actual) {
 		return false
 	}
 	for i := 0; i < len(desired); i++ {
-		if !DatabaseFlagsMatch(desired[i], actual[i]) {
+		if !DatabaseFlagsMatch(desired[i], actual[i], ignoreUnspecified) {
 			return false
 		}
 	}
 	return true
 }
 
-func DatabaseFlagsMatch(desired *api.DatabaseFlags, actual *api.DatabaseFlags) bool {
+func DatabaseFlagsMatch(desired *api.DatabaseFlags, actual *api.DatabaseFlags, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.Name != actual.Name {
+	if ignoreUnspecified && desired.Name == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Name != actual.Name {
 		return false
 	}
-	if desired.Value != actual.Value {
+	if ignoreUnspecified && desired.Value == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Value != actual.Value {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -432,32 +563,41 @@ func DatabaseFlagsMatch(desired *api.DatabaseFlags, actual *api.DatabaseFlags) b
 	return true
 }
 
-func DenyMaintenancePeriodListsMatch(desired []*api.DenyMaintenancePeriod, actual []*api.DenyMaintenancePeriod) bool {
+func DenyMaintenancePeriodListsMatch(desired []*api.DenyMaintenancePeriod, actual []*api.DenyMaintenancePeriod, ignoreUnspecified bool) bool {
+	if ignoreUnspecified && desired == nil {
+		return true
+	}
 	if len(desired) != len(actual) {
 		return false
 	}
 	for i := 0; i < len(desired); i++ {
-		if !DenyMaintenancePeriodsMatch(desired[i], actual[i]) {
+		if !DenyMaintenancePeriodsMatch(desired[i], actual[i], ignoreUnspecified) {
 			return false
 		}
 	}
 	return true
 }
 
-func DenyMaintenancePeriodsMatch(desired *api.DenyMaintenancePeriod, actual *api.DenyMaintenancePeriod) bool {
+func DenyMaintenancePeriodsMatch(desired *api.DenyMaintenancePeriod, actual *api.DenyMaintenancePeriod, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.EndDate != actual.EndDate {
+	if ignoreUnspecified && desired.EndDate == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.EndDate != actual.EndDate {
 		return false
 	}
-	if desired.StartDate != actual.StartDate {
+	if ignoreUnspecified && desired.StartDate == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.StartDate != actual.StartDate {
 		return false
 	}
-	if desired.Time != actual.Time {
+	if ignoreUnspecified && desired.Time == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Time != actual.Time {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -465,26 +605,36 @@ func DenyMaintenancePeriodsMatch(desired *api.DenyMaintenancePeriod, actual *api
 	return true
 }
 
-func InsightsConfigsMatch(desired *api.InsightsConfig, actual *api.InsightsConfig) bool {
+func InsightsConfigsMatch(desired *api.InsightsConfig, actual *api.InsightsConfig, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.QueryInsightsEnabled != actual.QueryInsightsEnabled {
+	if ignoreUnspecified && !desired.QueryInsightsEnabled {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.QueryInsightsEnabled != actual.QueryInsightsEnabled {
 		return false
 	}
-	if desired.QueryPlansPerMinute != actual.QueryPlansPerMinute {
+	if ignoreUnspecified && desired.QueryPlansPerMinute == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.QueryPlansPerMinute != actual.QueryPlansPerMinute {
 		return false
 	}
-	if desired.QueryStringLength != actual.QueryStringLength {
+	if ignoreUnspecified && desired.QueryStringLength == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.QueryStringLength != actual.QueryStringLength {
 		return false
 	}
-	if desired.RecordApplicationTags != actual.RecordApplicationTags {
+	if ignoreUnspecified && !desired.RecordApplicationTags {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.RecordApplicationTags != actual.RecordApplicationTags {
 		return false
 	}
-	if desired.RecordClientAddress != actual.RecordClientAddress {
+	if ignoreUnspecified && !desired.RecordClientAddress {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.RecordClientAddress != actual.RecordClientAddress {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -492,36 +642,52 @@ func InsightsConfigsMatch(desired *api.InsightsConfig, actual *api.InsightsConfi
 	return true
 }
 
-func IpConfigurationsMatch(desired *api.IpConfiguration, actual *api.IpConfiguration) bool {
+func IpConfigurationsMatch(desired *api.IpConfiguration, actual *api.IpConfiguration, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.AllocatedIpRange != actual.AllocatedIpRange {
+	if ignoreUnspecified && desired.AllocatedIpRange == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.AllocatedIpRange != actual.AllocatedIpRange {
 		return false
 	}
-	if !AclEntryListsMatch(desired.AuthorizedNetworks, actual.AuthorizedNetworks) {
+	if ignoreUnspecified && desired.AuthorizedNetworks == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !AclEntryListsMatch(desired.AuthorizedNetworks, actual.AuthorizedNetworks, ignoreUnspecified) {
 		return false
 	}
-	if desired.EnablePrivatePathForGoogleCloudServices != actual.EnablePrivatePathForGoogleCloudServices {
+	if ignoreUnspecified && !desired.EnablePrivatePathForGoogleCloudServices {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.EnablePrivatePathForGoogleCloudServices != actual.EnablePrivatePathForGoogleCloudServices {
 		return false
 	}
-	if desired.Ipv4Enabled != actual.Ipv4Enabled {
+	if ignoreUnspecified && !desired.Ipv4Enabled {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Ipv4Enabled != actual.Ipv4Enabled {
 		return false
 	}
-	if desired.PrivateNetwork != actual.PrivateNetwork {
+	if ignoreUnspecified && desired.PrivateNetwork == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.PrivateNetwork != actual.PrivateNetwork {
 		return false
 	}
-	if !PscConfigsMatch(desired.PscConfig, actual.PscConfig) {
+	if ignoreUnspecified && desired.PscConfig == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !PscConfigsMatch(desired.PscConfig, actual.PscConfig, ignoreUnspecified) {
 		return false
 	}
-	if desired.RequireSsl != actual.RequireSsl {
+	if ignoreUnspecified && !desired.RequireSsl {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.RequireSsl != actual.RequireSsl {
 		return false
 	}
 	// Ignore ServerCaMode. It is not supported in KRM API.
-	if desired.SslMode != actual.SslMode {
+	if ignoreUnspecified && desired.SslMode == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.SslMode != actual.SslMode {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -536,7 +702,10 @@ func (a AclEntriesByName) Len() int           { return len(a) }
 func (a AclEntriesByName) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a AclEntriesByName) Less(i, j int) bool { return a[i].Name < a[j].Name }
 
-func AclEntryListsMatch(desired []*api.AclEntry, actual []*api.AclEntry) bool {
+func AclEntryListsMatch(desired []*api.AclEntry, actual []*api.AclEntry, ignoreUnspecified bool) bool {
+	if ignoreUnspecified && desired == nil {
+		return true
+	}
 	if len(desired) != len(actual) {
 		return false
 	}
@@ -546,46 +715,34 @@ func AclEntryListsMatch(desired []*api.AclEntry, actual []*api.AclEntry) bool {
 	sort.Sort(AclEntriesByName(actual))
 	// Compare the AclEntry lists.
 	for i := 0; i < len(desired); i++ {
-		if !AclEntriesMatch(desired[i], actual[i]) {
+		if !AclEntriesMatch(desired[i], actual[i], ignoreUnspecified) {
 			return false
 		}
 	}
 	return true
 }
 
-func AclEntriesMatch(desired *api.AclEntry, actual *api.AclEntry) bool {
+func AclEntriesMatch(desired *api.AclEntry, actual *api.AclEntry, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.ExpirationTime != actual.ExpirationTime {
+	if ignoreUnspecified && desired.ExpirationTime == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.ExpirationTime != actual.ExpirationTime {
 		return false
 	}
 	// Ignore Kind. It is sometimes not set in API responses.
-	if desired.Name != actual.Name {
+	if ignoreUnspecified && desired.Name == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Name != actual.Name {
 		return false
 	}
-	if desired.Value != actual.Value {
-		return false
-	}
-	// Ignore ForceSendFields. Assume it is set correctly in desired.
-	// Ignore NullFields. Assume it is set correctly in desired.
-	return true
-}
-
-func PscConfigsMatch(desired *api.PscConfig, actual *api.PscConfig) bool {
-	if desired == nil && actual == nil {
-		return true
-	}
-	if !PointersMatch(desired, actual) {
-		return false
-	}
-	if !reflect.DeepEqual(desired.AllowedConsumerProjects, actual.AllowedConsumerProjects) {
-		return false
-	}
-	if desired.PscEnabled != actual.PscEnabled {
+	if ignoreUnspecified && desired.Value == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Value != actual.Value {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -593,21 +750,49 @@ func PscConfigsMatch(desired *api.PscConfig, actual *api.PscConfig) bool {
 	return true
 }
 
-func LocationPreferencesMatch(desired *api.LocationPreference, actual *api.LocationPreference) bool {
+func PscConfigsMatch(desired *api.PscConfig, actual *api.PscConfig, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.FollowGaeApplication != actual.FollowGaeApplication {
+	if ignoreUnspecified && desired.AllowedConsumerProjects == nil {
+		// If the desired field is unspecified, ignore the diff.
+	} else if !reflect.DeepEqual(desired.AllowedConsumerProjects, actual.AllowedConsumerProjects) {
+		return false
+	}
+	if ignoreUnspecified && !desired.PscEnabled {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.PscEnabled != actual.PscEnabled {
+		return false
+	}
+	// Ignore ForceSendFields. Assume it is set correctly in desired.
+	// Ignore NullFields. Assume it is set correctly in desired.
+	return true
+}
+
+func LocationPreferencesMatch(desired *api.LocationPreference, actual *api.LocationPreference, ignoreUnspecified bool) bool {
+	if desired == nil && actual == nil {
+		return true
+	}
+	if !PointersMatch(desired, actual) {
+		return false
+	}
+	if ignoreUnspecified && desired.FollowGaeApplication == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.FollowGaeApplication != actual.FollowGaeApplication {
 		return false
 	}
 	// Ignore Kind. It is sometimes not set in API responses.
-	if desired.SecondaryZone != actual.SecondaryZone {
+	if ignoreUnspecified && desired.SecondaryZone == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.SecondaryZone != actual.SecondaryZone {
 		return false
 	}
-	if desired.Zone != actual.Zone {
+	if ignoreUnspecified && desired.Zone == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Zone != actual.Zone {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -615,21 +800,27 @@ func LocationPreferencesMatch(desired *api.LocationPreference, actual *api.Locat
 	return true
 }
 
-func MaintenanceWindowsMatch(desired *api.MaintenanceWindow, actual *api.MaintenanceWindow) bool {
+func MaintenanceWindowsMatch(desired *api.MaintenanceWindow, actual *api.MaintenanceWindow, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.Day != actual.Day {
+	if ignoreUnspecified && desired.Day == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Day != actual.Day {
 		return false
 	}
-	if desired.Hour != actual.Hour {
+	if ignoreUnspecified && desired.Hour == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Hour != actual.Hour {
 		return false
 	}
 	// Ignore Kind. It is sometimes not set in API responses.
-	if desired.UpdateTrack != actual.UpdateTrack {
+	if ignoreUnspecified && desired.UpdateTrack == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.UpdateTrack != actual.UpdateTrack {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -637,30 +828,42 @@ func MaintenanceWindowsMatch(desired *api.MaintenanceWindow, actual *api.Mainten
 	return true
 }
 
-func PasswordValidationPoliciesMatch(desired *api.PasswordValidationPolicy, actual *api.PasswordValidationPolicy) bool {
+func PasswordValidationPoliciesMatch(desired *api.PasswordValidationPolicy, actual *api.PasswordValidationPolicy, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.Complexity != actual.Complexity {
+	if ignoreUnspecified && desired.Complexity == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Complexity != actual.Complexity {
 		return false
 	}
 	// Ignore DisallowCompromisedCredentials. It is not supported in KRM API.
-	if desired.DisallowUsernameSubstring != actual.DisallowUsernameSubstring {
+	if ignoreUnspecified && !desired.DisallowUsernameSubstring {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.DisallowUsernameSubstring != actual.DisallowUsernameSubstring {
 		return false
 	}
-	if desired.EnablePasswordPolicy != actual.EnablePasswordPolicy {
+	if ignoreUnspecified && !desired.EnablePasswordPolicy {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.EnablePasswordPolicy != actual.EnablePasswordPolicy {
 		return false
 	}
-	if desired.MinLength != actual.MinLength {
+	if ignoreUnspecified && desired.MinLength == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.MinLength != actual.MinLength {
 		return false
 	}
-	if desired.PasswordChangeInterval != actual.PasswordChangeInterval {
+	if ignoreUnspecified && desired.PasswordChangeInterval == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.PasswordChangeInterval != actual.PasswordChangeInterval {
 		return false
 	}
-	if desired.ReuseInterval != actual.ReuseInterval {
+	if ignoreUnspecified && desired.ReuseInterval == 0 {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.ReuseInterval != actual.ReuseInterval {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -668,21 +871,27 @@ func PasswordValidationPoliciesMatch(desired *api.PasswordValidationPolicy, actu
 	return true
 }
 
-func SqlServerAuditConfigsMatch(desired *api.SqlServerAuditConfig, actual *api.SqlServerAuditConfig) bool {
+func SqlServerAuditConfigsMatch(desired *api.SqlServerAuditConfig, actual *api.SqlServerAuditConfig, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
 		return true
 	}
 	if !PointersMatch(desired, actual) {
 		return false
 	}
-	if desired.Bucket != actual.Bucket {
+	if ignoreUnspecified && desired.Bucket == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.Bucket != actual.Bucket {
 		return false
 	}
 	// Ignore Kind. It is sometimes not set in API responses.
-	if desired.RetentionInterval != actual.RetentionInterval {
+	if ignoreUnspecified && desired.RetentionInterval == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.RetentionInterval != actual.RetentionInterval {
 		return false
 	}
-	if desired.UploadInterval != actual.UploadInterval {
+	if ignoreUnspecified && desired.UploadInterval == "" {
+		// If the desired field is unspecified, ignore the diff.
+	} else if desired.UploadInterval != actual.UploadInterval {
 		return false
 	}
 	// Ignore ForceSendFields. Assume it is set correctly in desired.
@@ -690,8 +899,12 @@ func SqlServerAuditConfigsMatch(desired *api.SqlServerAuditConfig, actual *api.S
 	return true
 }
 
-func StorageAutoResizesMatch(desired *bool, actual *bool) bool {
+func StorageAutoResizesMatch(desired *bool, actual *bool, ignoreUnspecified bool) bool {
 	if desired == nil && actual == nil {
+		return true
+	}
+	if ignoreUnspecified && desired == nil {
+		// If the desired field is unspecified, ignore the diff.
 		return true
 	}
 	if !PointersMatch(desired, actual) {

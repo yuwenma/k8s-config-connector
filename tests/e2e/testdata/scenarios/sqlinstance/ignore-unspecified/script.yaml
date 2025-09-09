@@ -1,0 +1,39 @@
+apiVersion: sql.cnrm.cloud.google.com/v1beta1
+kind: SQLInstance
+metadata:
+  name: sqlinstance-ignore-unspecified-${uniqueId}
+  annotations:
+    cnrm.cloud.google.com/ignore-unspecified-fields: "true"
+spec:
+  databaseVersion: MYSQL_8_0
+  region: us-central1
+  settings:
+    tier: db-n1-standard-1
+---
+apiVersion: sql.cnrm.cloud.google.com/v1beta1
+kind: SQLInstance
+metadata:
+  name: sqlinstance-ignore-unspecified-${uniqueId}
+  annotations:
+    cnrm.cloud.google.com/ignore-unspecified-fields: "true"
+spec:
+  databaseVersion: MYSQL_8_0
+  region: us-central1
+  settings:
+    tier: db-n1-standard-1
+    activationPolicy: "NEVER"
+---
+apiVersion: sql.cnrm.cloud.google.com/v1beta1
+kind: SQLInstance
+metadata:
+  name: sqlinstance-ignore-unspecified-${uniqueId}
+  annotations:
+    # The ignore-unspecified-fields annotation is removed in this step.
+    # This should cause the controller to revert to the default prune behavior.
+    cnrm.cloud.google.com/ignore-unspecified-fields: null
+spec:
+  databaseVersion: MYSQL_8_0
+  region: us-central1
+  settings:
+    tier: db-n1-standard-1
+    activationPolicy: "NEVER"

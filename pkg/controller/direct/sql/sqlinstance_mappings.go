@@ -27,7 +27,7 @@ import (
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/label"
 )
 
-func SQLInstanceKRMToGCP(in *krm.SQLInstance, actual *api.DatabaseInstance) (*api.DatabaseInstance, error) {
+func SQLInstanceKRMToGCP(in *krm.SQLInstance, actual *api.DatabaseInstance, ignoreUnspecified bool) (*api.DatabaseInstance, error) {
 	if in == nil {
 		return nil, fmt.Errorf("cannot convert nil KRM SQLInstance to GCP DatabaseInstance")
 	}
@@ -52,8 +52,10 @@ func SQLInstanceKRMToGCP(in *krm.SQLInstance, actual *api.DatabaseInstance) (*ap
 		// SwitchTransactionLogsToCloudStorageEnabled is not supported in KRM API.
 	}
 
-	// Here be dragons.
-	ApplySQLInstanceGCPDefaults(in, out, actual)
+	if ignoreUnspecified {
+		// Here be dragons.
+		ApplySQLInstanceGCPDefaults(in, out, actual, ignoreUnspecified)
+	}
 
 	return out, nil
 }
