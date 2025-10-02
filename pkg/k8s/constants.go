@@ -73,8 +73,14 @@ const (
 	UnmanagedDetectorFieldManager = "cnrm-unmanaged-detector"
 	SupportsSSAManager            = "supports-ssa"
 
-	// State into spec annotation values
+	// StateIntoSpecAnnotation is the annotation for the user to specify how to merge the state from GCP to the spec of a resource.
 	StateIntoSpecAnnotation = "cnrm.cloud.google.com/state-into-spec"
+	// DefaultToGCPFieldsAnnotation is the annotation for the user to specify a list of fields to default to the GCP value during reconciliation.
+	DefaultToGCPFieldsAnnotation = "cnrm.cloud.google.com/default-to-gcp-fields"
+)
+
+const (
+
 	StateMergeIntoSpec      = "merge"
 	StateAbsentInSpec       = "absent"
 

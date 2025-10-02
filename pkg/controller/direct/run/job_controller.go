@@ -26,6 +26,7 @@ import (
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct/common"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct/directbase"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct/registry"
+	"sigs.k8s.io/controller-runtime/pkg/client"
 
 	gcp "cloud.google.com/go/run/apiv2"
 
@@ -35,7 +36,8 @@ import (
 	"k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/klog/v2"
-	"sigs.k8s.io/controller-runtime/pkg/client"
+
+	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/k8s"
 )
 
 func init() {
@@ -226,9 +228,19 @@ func (a *JobAdapter) Update(ctx context.Context, updateOp *directbase.UpdateOper
 
 	mapCtx := &direct.MapContext{}
 
-	desiredPb := RunJobSpec_ToProto(mapCtx, &a.desired.DeepCopy().Spec)
-	if mapCtx.Err() != nil {
-		return mapCtx.Err()
+	var desiredPb *runpb.Job
+	if _, ok := a.desired.GetAnnotations()[k8s.DefaultToGCPFieldsAnnotation]; ok {
+		// If the annotation is present, we need to build an effective desired state.
+		effectiveDesired, err := buildEffectiveDesiredRunJob(a.desired, a.actual)
+		if err != nil {
+			return err
+		}
+		desiredPb = effectiveDesired
+	} else {
+		desiredPb = RunJobSpec_ToProto(mapCtx, &a.desired.DeepCopy().Spec)
+		if mapCtx.Err() != nil {
+			return mapCtx.Err()
+		}
 	}
 	desiredPb.Name = a.id.String()
 
@@ -320,4 +332,228 @@ func (a *JobAdapter) Delete(ctx context.Context, deleteOp *directbase.DeleteOper
 		return false, fmt.Errorf("waiting delete Job %s: %w", a.id, err)
 	}
 	return true, nil
+}
+
+// buildEffectiveDesiredRunJob returns a new Job proto by overlaying the desired spec
+// onto the actual state for fields that are not specified in the spec but are listed
+// in the `cnrm.cloud.google.com/default-to-gcp-fields` annotation.
+func buildEffectiveDesiredRunJob(desired *krm.RunJob, actual *runpb.Job) (*runpb.Job, error) {
+	// Start with the desired state converted to a proto.
+	mapCtx := &direct.MapContext{}
+	effective := RunJobSpec_ToProto(mapCtx, &desired.Spec)
+	if mapCtx.Err() != nil {
+		return nil, mapCtx.Err()
+	}
+
+	annotations := desired.GetAnnotations()
+	fieldsToDefault, ok := annotations[k8s.DefaultToGCPFieldsAnnotation]
+	if !ok {
+		// If the annotation is not present, the initial desired state is the effective state.
+		return effective, nil
+	}
+
+	fieldSet := make(map[string]bool)
+	for _, field := range strings.Split(fieldsToDefault, ",") {
+		fieldSet[strings.TrimSpace(field)] = true
+	}
+
+	// Now, for each field in the annotation, check if it was specified in the spec.
+	// If not, copy the value from the actual state (GCP) to our effective desired state.
+
+	if fieldSet["spec.annotations"] && desired.Spec.Annotations == nil {
+		effective.Annotations = actual.Annotations
+	}
+	if fieldSet["spec.binaryAuthorization"] && desired.Spec.BinaryAuthorization == nil {
+		effective.BinaryAuthorization = actual.BinaryAuthorization
+	} else if desired.Spec.BinaryAuthorization != nil {
+		if fieldSet["spec.binaryAuthorization.useDefault"] && desired.Spec.BinaryAuthorization.UseDefault == nil {
+			if effective.BinaryAuthorization == nil {
+				effective.BinaryAuthorization = &runpb.BinaryAuthorization{}
+			}
+			effective.BinaryAuthorization.BinauthzMethod = actual.GetBinaryAuthorization().GetBinauthzMethod()
+		}
+		if fieldSet["spec.binaryAuthorization.breakglassJustification"] && desired.Spec.BinaryAuthorization.BreakglassJustification == nil {
+			if effective.BinaryAuthorization == nil {
+				effective.BinaryAuthorization = &runpb.BinaryAuthorization{}
+			}
+			effective.BinaryAuthorization.BreakglassJustification = actual.GetBinaryAuthorization().GetBreakglassJustification()
+		}
+	}
+
+	if fieldSet["spec.client"] && desired.Spec.Client == nil {
+		effective.Client = actual.Client
+	}
+	if fieldSet["spec.clientVersion"] && desired.Spec.ClientVersion == nil {
+		effective.ClientVersion = actual.ClientVersion
+	}
+	if fieldSet["spec.launchStage"] && desired.Spec.LaunchStage == nil {
+		effective.LaunchStage = actual.LaunchStage
+	}
+
+	// Handle nested fields within 'template'
+	if desired.Spec.Template == nil {
+		if strings.Contains(fieldsToDefault, "spec.template") {
+			// If the entire template is unspecified in the spec, but a subfield is in the annotation,
+			// we should default the whole template.
+			effective.Template = actual.Template
+		}
+		return effective, nil
+	}
+
+	if fieldSet["spec.template.annotations"] && desired.Spec.Template.Annotations == nil {
+		if actual.GetTemplate() != nil {
+			if effective.Template == nil {
+				effective.Template = &runpb.ExecutionTemplate{}
+			}
+			effective.Template.Annotations = actual.Template.Annotations
+		}
+	}
+	if fieldSet["spec.template.parallelism"] && desired.Spec.Template.Parallelism == nil {
+		if actual.GetTemplate() != nil {
+			if effective.Template == nil {
+				effective.Template = &runpb.ExecutionTemplate{}
+			}
+			effective.Template.Parallelism = actual.Template.Parallelism
+		}
+	}
+	if fieldSet["spec.template.taskCount"] && desired.Spec.Template.TaskCount == nil {
+		if actual.GetTemplate() != nil {
+			if effective.Template == nil {
+				effective.Template = &runpb.ExecutionTemplate{}
+			}
+			effective.Template.TaskCount = actual.Template.TaskCount
+		}
+	}
+
+	// Handle nested fields within 'template.template'
+	if desired.Spec.Template.Template == nil {
+		if strings.Contains(fieldsToDefault, "spec.template.template") {
+			if actual.GetTemplate() != nil {
+				if effective.Template == nil {
+					effective.Template = &runpb.ExecutionTemplate{}
+				}
+				effective.Template.Template = actual.Template.Template
+			}
+		}
+		return effective, nil
+	}
+
+	if fieldSet["spec.template.template.containers"] && len(desired.Spec.Template.Template.Containers) == 0 {
+		if actual.GetTemplate().GetTemplate() != nil {
+			if effective.GetTemplate().GetTemplate() == nil {
+				effective.Template.Template = &runpb.TaskTemplate{}
+			}
+			effective.Template.Template.Containers = actual.Template.Template.Containers
+		}
+	} else if len(desired.Spec.Template.Template.Containers) > 0 {
+		// User specified containers, so we need to merge sub-fields.
+		actualContainers := make(map[string]*runpb.Container)
+		if actual.GetTemplate() != nil && actual.GetTemplate().GetTemplate() != nil {
+			for _, c := range actual.GetTemplate().GetTemplate().GetContainers() {
+				actualContainers[c.GetName()] = c
+			}
+		}
+
+		// We need to iterate over the desired KRM containers to check for nil fields,
+		// and apply defaults to the corresponding effective proto containers.
+		for i, desiredContainer := range desired.Spec.Template.Template.Containers {
+			// This check is important to prevent panics if the effective proto has fewer containers
+			// than the desired spec, which shouldn't happen with the current logic but is good for safety.
+			if i >= len(effective.GetTemplate().GetTemplate().GetContainers()) {
+				continue
+			}
+			effectiveContainer := effective.GetTemplate().GetTemplate().GetContainers()[i]
+			actualContainer, ok := actualContainers[direct.ValueOf(desiredContainer.Name)]
+			if !ok {
+				continue
+			}
+
+			if fieldSet["spec.template.template.containers[].resources"] && desiredContainer.Resources == nil {
+				effectiveContainer.Resources = actualContainer.Resources
+			} else if desiredContainer.Resources != nil {
+				if fieldSet["spec.template.template.containers[].resources.limits"] {
+					if effectiveContainer.Resources == nil {
+						effectiveContainer.Resources = &runpb.ResourceRequirements{}
+					}
+					if effectiveContainer.Resources.Limits == nil {
+						effectiveContainer.Resources.Limits = make(map[string]string)
+					}
+					// Merge the maps: copy keys from actual if they don't exist in effective.
+					for k, v := range actualContainer.GetResources().GetLimits() {
+						if _, exists := effectiveContainer.Resources.Limits[k]; !exists {
+							effectiveContainer.Resources.Limits[k] = v
+						}
+					}
+				}
+			}
+			if fieldSet["spec.template.template.containers[].workingDir"] && desiredContainer.WorkingDir == nil {
+				effectiveContainer.WorkingDir = actualContainer.WorkingDir
+			}
+			if fieldSet["spec.template.template.containers[].livenessProbe"] && desiredContainer.LivenessProbe == nil {
+				effectiveContainer.LivenessProbe = actualContainer.LivenessProbe
+			}
+			if fieldSet["spec.template.template.containers[].startupProbe"] && desiredContainer.StartupProbe == nil {
+				effectiveContainer.StartupProbe = actualContainer.StartupProbe
+			}
+		}
+	}
+
+	if fieldSet["spec.template.template.volumes"] && len(desired.Spec.Template.Template.Volumes) == 0 {
+		if actual.GetTemplate().GetTemplate() != nil {
+			if effective.GetTemplate().GetTemplate() == nil {
+				effective.Template.Template = &runpb.TaskTemplate{}
+			}
+			effective.Template.Template.Volumes = actual.Template.Template.Volumes
+		}
+	}
+	if fieldSet["spec.template.template.maxRetries"] && desired.Spec.Template.Template.MaxRetries == nil {
+		if actual.GetTemplate().GetTemplate() != nil {
+			if effective.GetTemplate().GetTemplate() == nil {
+				effective.Template.Template = &runpb.TaskTemplate{}
+			}
+			effective.Template.Template.Retries = actual.Template.Template.Retries
+		}
+	}
+	if fieldSet["spec.template.template.timeout"] && desired.Spec.Template.Template.Timeout == nil {
+		if actual.GetTemplate().GetTemplate() != nil {
+			if effective.GetTemplate().GetTemplate() == nil {
+				effective.Template.Template = &runpb.TaskTemplate{}
+			}
+			effective.Template.Template.Timeout = actual.Template.Template.Timeout
+		}
+	}
+	if fieldSet["spec.template.template.serviceAccountRef"] && desired.Spec.Template.Template.ServiceAccountRef == nil {
+		if actual.GetTemplate().GetTemplate() != nil {
+			if effective.GetTemplate().GetTemplate() == nil {
+				effective.Template.Template = &runpb.TaskTemplate{}
+			}
+			effective.Template.Template.ServiceAccount = actual.Template.Template.ServiceAccount
+		}
+	}
+	if fieldSet["spec.template.template.executionEnvironment"] && desired.Spec.Template.Template.ExecutionEnvironment == nil {
+		if actual.GetTemplate().GetTemplate() != nil {
+			if effective.GetTemplate().GetTemplate() == nil {
+				effective.Template.Template = &runpb.TaskTemplate{}
+			}
+			effective.Template.Template.ExecutionEnvironment = actual.Template.Template.ExecutionEnvironment
+		}
+	}
+	if fieldSet["spec.template.template.encryptionKeyRef"] && desired.Spec.Template.Template.EncryptionKeyRef == nil {
+		if actual.GetTemplate().GetTemplate() != nil {
+			if effective.GetTemplate().GetTemplate() == nil {
+				effective.Template.Template = &runpb.TaskTemplate{}
+			}
+			effective.Template.Template.EncryptionKey = actual.Template.Template.EncryptionKey
+		}
+	}
+	if fieldSet["spec.template.template.vpcAccess"] && desired.Spec.Template.Template.VPCAccess == nil {
+		if actual.GetTemplate().GetTemplate() != nil {
+			if effective.GetTemplate().GetTemplate() == nil {
+				effective.Template.Template = &runpb.TaskTemplate{}
+			}
+			effective.Template.Template.VpcAccess = actual.Template.Template.VpcAccess
+		}
+	}
+
+	return effective, nil
 }
