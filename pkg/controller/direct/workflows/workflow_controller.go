@@ -25,6 +25,7 @@ import (
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct/directbase"
 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/controller/direct/registry"
+	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/label"
 
 	gcp "cloud.google.com/go/workflows/apiv1"
 
@@ -88,6 +89,11 @@ func (m *modelWorkflowsWorkflow) AdapterForObject(ctx context.Context, reader cl
 		return nil, fmt.Errorf("error converting to %T: %w", obj, err)
 	}
 
+	gcpLabels, err := label.NewGCPLabelsFromK8sLabels(obj.GetLabels())
+	if err != nil {
+		return nil, err
+	}
+
 	id, err := krm.NewWorkflowsWorkflowIdentity(ctx, reader, obj)
 	if err != nil {
 		return nil, err
@@ -103,6 +109,7 @@ func (m *modelWorkflowsWorkflow) AdapterForObject(ctx context.Context, reader cl
 		gcpClient: gcpClient,
 		desired:   obj,
 		reader:    reader,
+		gcpLabels: gcpLabels,
 	}, nil
 }
 
@@ -117,6 +124,7 @@ type WorkflowsWorkflowAdapter struct {
 	desired   *krm.WorkflowsWorkflow
 	actual    *workflowspb.Workflow
 	reader    client.Reader
+	gcpLabels *label.GCPLabels
 }
 
 var _ directbase.Adapter = &WorkflowsWorkflowAdapter{}
@@ -160,6 +168,7 @@ func (a *WorkflowsWorkflowAdapter) Create(ctx context.Context, createOp *directb
 		return mapCtx.Err()
 	}
 	resource.Name = a.id.String()
+	resource.Labels = a.gcpLabels.ToMap()
 
 	// TODO(contributor): Complete the gcp "CREATE" or "INSERT" request.
 	req := &workflowspb.CreateWorkflowRequest{
@@ -200,6 +209,7 @@ func (a *WorkflowsWorkflowAdapter) Update(ctx context.Context, updateOp *directb
 	if mapCtx.Err() != nil {
 		return mapCtx.Err()
 	}
+	desiredPb.Labels = a.gcpLabels.ToMap()
 
 	paths := []string{}
 	if !reflect.DeepEqual(desiredPb.Description, a.actual.Description) {
