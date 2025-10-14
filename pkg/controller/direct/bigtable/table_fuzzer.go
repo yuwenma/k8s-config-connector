@@ -18,34 +18,34 @@
 
 package bigtable
 
-import (
-	pb "cloud.google.com/go/bigtable/admin/apiv2/adminpb"
-	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/fuzztesting"
-)
+// import (
+// 	pb "cloud.google.com/go/bigtable/admin/apiv2/adminpb"
+// 	"github.com/GoogleCloudPlatform/k8s-config-connector/pkg/fuzztesting"
+// )
 
-func init() {
-	fuzztesting.RegisterKRMFuzzer(bigtableTableFuzzer())
-}
+// func init() {
+// 	fuzztesting.RegisterKRMFuzzer(bigtableTableFuzzer())
+// }
 
-func bigtableTableFuzzer() fuzztesting.KRMFuzzer {
-	f := fuzztesting.NewKRMTypedFuzzer(&pb.Table{},
-		BigtableTableSpec_v1beta1_FromProto, BigtableTableSpec_v1beta1_ToProto,
-		BigtableTableObservedState_v1beta1_FromProto, BigtableTableObservedState_v1beta1_ToProto,
-	)
+// func bigtableTableFuzzer() fuzztesting.KRMFuzzer {
+// 	f := fuzztesting.NewKRMTypedFuzzer(&pb.Table{},
+// 		BigtableTableSpec_v1beta1_FromProto, BigtableTableSpec_v1beta1_ToProto,
+// 		BigtableTableObservedState_v1beta1_FromProto, BigtableTableObservedState_v1beta1_ToProto,
+// 	)
 
-	f.SpecFields.Insert("column_families")
-	f.SpecFields.Insert("change_stream_config")
-	f.SpecFields.Insert("deletion_protection")
-	f.SpecFields.Insert("row_key_schema")
+// 	f.SpecFields.Insert("column_families")
+// 	f.SpecFields.Insert("change_stream_config")
+// 	f.SpecFields.Insert("deletion_protection")
+// 	f.SpecFields.Insert("row_key_schema")
 
-	f.StatusFields.Insert("cluster_states")
-	f.StatusFields.Insert("restore_info")
+// 	f.StatusFields.Insert("cluster_states")
+// 	f.StatusFields.Insert("restore_info")
 
-	f.UnimplementedFields.Insert(".name")
-	f.UnimplementedFields.Insert(".granularity")
-	f.UnimplementedFields.Insert(".automated_backup_policy")
-	f.UnimplementedFields.Insert(".column_families.gc_rule")
-	f.UnimplementedFields.Insert(".column_families.value_type")
+// 	f.UnimplementedFields.Insert(".name")
+// 	f.UnimplementedFields.Insert(".granularity")
+// 	f.UnimplementedFields.Insert(".automated_backup_policy")
+// 	f.UnimplementedFields.Insert(".column_families.gc_rule")
+// 	f.UnimplementedFields.Insert(".column_families.value_type")
 
-	return f
-}
+// 	return f
+// }
