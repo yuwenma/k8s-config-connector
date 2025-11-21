@@ -185,7 +185,7 @@ X-Xss-Protection: 0
     "@type": "type.googleapis.com/google.cloud.orchestration.airflow.service.v1.Environment",
     "config": {
       "airflowUri": "https://{uuid}-dot-{location}.composer.googleusercontent.com",
-      "dagGcsPrefix": "gs://{location}-composerenviron-{uniqueId}-bucket/dags",
+      "dagGcsPrefix": "gs://us-central1-composerenviron-{uniqueId}-bucket/dags",
       "dataRetentionConfig": {
         "airflowMetadataRetentionConfig": {
           "retentionMode": "RETENTION_MODE_DISABLED"
@@ -284,7 +284,7 @@ X-Xss-Protection: 0
 {
   "config": {
     "airflowUri": "https://{uuid}-dot-{location}.composer.googleusercontent.com",
-    "dagGcsPrefix": "gs://{location}-composerenviron-{uniqueId}-bucket/dags",
+    "dagGcsPrefix": "gs://us-central1-composerenviron-{uniqueId}-bucket/dags",
     "dataRetentionConfig": {
       "airflowMetadataRetentionConfig": {
         "retentionMode": 2
