@@ -25,6 +25,7 @@ status:
     status: "True"
     type: Ready
   externalRef: projects/${projectId}/locations/us-central1/environments/composerenvironment-${uniqueId}
+  lastModifiedCookie: normalized-cookie
   observedGeneration: 1
   observedState:
     config:
